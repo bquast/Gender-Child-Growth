@@ -7,7 +7,10 @@ This Code Book gives an overview of the files used for replications. As well as 
 
 Files
 --------------------------------------------------------
-* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R.
+* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R
+* [imported.RData](/imported.RData): contains all the imported separate data frames
+* [transform.R](/transform.R): contains the R instructions to perform the required transformations to the data
+* [transformed.RData](/transformed.RData): contains the transformed singel panel data frame (pdata.frame, from the plm package)
 
 
 The data source files are not included as they are licenced to be distributed only via the DataFirst portal
@@ -79,8 +82,13 @@ Importing
 --------------------------------------------------------
 The unzipped files are best imported with the R package called **foreign**. Full instructions for importing the data into R can be found in the [import.R](/import.R) file.
 
+The imported data objects are saved to the file [imported.RData](/imported.RData).
+
 Transformations
 --------------------------------------------------------
+The transformations applied to data are described in the file [transform.R](/transform.R).
+
+the transformed single panel data frame (pdata.frame, from the plm package) is saved to the [transformed.RData](/transformed.RData) file.
 
 
 Estimations

@@ -151,7 +151,10 @@ hr {
 <h2>Files</h2>
 
 <ul>
-<li><a href="/import.R">import.R</a>: instructions on importing the Stata data files (.dta) into R.</li>
+<li><a href="/import.R">import.R</a>: instructions on importing the Stata data files (.dta) into R</li>
+<li><a href="/imported.RData">imported.RData</a>: contains all the imported separate data frames</li>
+<li><a href="/transform.R">transform.R</a>: contains the R instructions to perform the required transformations to the data</li>
+<li><a href="/transformed.RData">transformed.RData</a>: contains the transformed singel panel data frame (pdata.frame, from the plm package)</li>
 </ul>
 
 <p>The data source files are not included as they are licenced to be distributed only via the DataFirst portal</p>
@@ -230,7 +233,13 @@ hr {
 
 <p>The unzipped files are best imported with the R package called <strong>foreign</strong>. Full instructions for importing the data into R can be found in the <a href="/import.R">import.R</a> file.</p>
 
+<p>The imported data objects are saved to the file <a href="/imported.RData">imported.RData</a>.</p>
+
 <h2>Transformations</h2>
+
+<p>The transformations applied to data are described in the file <a href="/transform.R">transform.R</a>.</p>
+
+<p>the transformed single panel data frame (pdata.frame, from the plm package) is saved to the <a href="/transformed.RData">transformed.RData</a> file.</p>
 
 <h2>Estimations</h2>
 
