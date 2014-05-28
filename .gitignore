@@ -1,9 +1,11 @@
 # History files
 .Rhistory
-
 # Example code in package build process
 *-Ex.R
-
 # R data files from past sessions
 .Rdata
 .Rproj.user
+nids-w1-2008-v5.2-20140213-stata12.zip
+nids-w2-2010-2011-v2.2-20140213-stata12.zip
+nids-w3-2012-v1.2-20140213-stata12.zip
+stata12
