@@ -73,13 +73,9 @@ This can be checked using the R command:
     list.files('stata12')
 
 
-
-The files are best imported with the R package called **foreign**. As described below in the section **Importing**.
-
-
 Importing
 --------------------------------------------------------
-
+The unzipped files are best imported with the R package called **foreign**. Full instructions for importing the data into R can be found in the [import.R](/import.R) file.
 
 Transformations
 --------------------------------------------------------
