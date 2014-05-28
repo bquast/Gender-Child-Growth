@@ -7,7 +7,7 @@ This Code Book gives an overview of the files used for replications. As well as 
 
 Files
 --------------------------------------------------------
-
+* [import.R](/import.R): instructions on importing the SPSS data files into R
 
 Transformations
 --------------------------------------------------------
