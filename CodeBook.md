@@ -78,20 +78,20 @@ It should look like this:
     [26] "Proxy_W3_Anon_V1.2.dta"
 
 
-Importing
+Import
 --------------------------------------------------------
 The unzipped files are best imported with the R package called **foreign**. Full instructions for importing the data into R can be found in the [import.R](/import.R) file.
 
 The imported data objects are saved to the file [imported.RData](/imported.RData).
 
-Transformations
+Transform
 --------------------------------------------------------
 The transformations applied to data are described in the file [transform.R](/transform.R).
 
 the transformed single panel data frame (pdata.frame, from the plm package) is saved to the [transformed.RData](/transformed.RData) file.
 
 
-Estimations
+Estimat
 --------------------------------------------------------
 
 
