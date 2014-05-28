@@ -7,7 +7,42 @@ This Code Book gives an overview of the files used for replications. As well as 
 
 Files
 --------------------------------------------------------
-* [import.R](/import.R): instructions on importing the SPSS data files into R
+* [import.R](/import.R): instructions on importing the SPSS data files into R.
+
+
+The data source files are not included as they are licenced to be distributed only via the DataFirst portal
+
+Data
+--------------------------------------------------------
+The data used in this project has been collected and processed by the [National Income Dynamics Survey of South Africa][1].
+
+The data can be downloaded from the [DataFirst postal][2]. They can be downloaded here free of cost, once an account has been created.
+
+At the time of writing, there are three available data sets (waves).
+
+* [Wave 1][3]
+* [Wave 2][4]
+* [Wave 3][5]
+
+The data is offered in three (or four) formats.
+
+* SPSS
+* Stata 12
+* SAS
+* (sometimes) Stata 8
+
+For the purpose of importing into R, the Stata 12 format is prefered. Both the SPSS and the SAS format do not import very well and the Stata 8 format is obsolete. The Stata files are available here (when logged in).
+
+* [Wave 1][6]
+* [Wave 2][7]
+* [Wave 3][8]
+
+The files are best imported with the R package called **foreign**. As described below in the section **Importing**.
+
+
+Importing
+--------------------------------------------------------
+
 
 Transformations
 --------------------------------------------------------
@@ -15,3 +50,15 @@ Transformations
 
 Estimations
 --------------------------------------------------------
+
+
+
+
+[1]: http://www.nids.uct.ac.za/
+[2]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/central/about
+[3]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451
+[4]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452
+[5]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453
+[6]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451/download/6038
+[7]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452/download/6001
+[8]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453/download/6052
