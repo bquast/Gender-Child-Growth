@@ -41,32 +41,32 @@ After having downloaded the above mentioned zip files, place them in the project
 
 We now have a folder **stata12** directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains the following files:
 
-1. Admin_W1_Anon_V5.2.dta          
-2. Admin_W2_Anon_V2.2.dta          
-3. Admin_W3_Anon_V1.2.dta          
-4. Adult_W1_Anon_V5.2.dta          
-5. Adult_W2_Anon_V2.2.dta          
-6. Adult_W3_Anon_V1.2.dta          
-7. Child_W1_Anon_V5.2.dta          
-8. Child_W2_Anon_V2.2.dta          
-9. Child_W3_Anon_V1.2.dta          
-10. hhderived_W1_Anon_V5.2.dta      
-11. hhderived_W2_Anon_V2.2.dta      
-12. hhderived_W3_Anon_V1.2.dta      
-13. HHQuestionnaire_W1_Anon_V5.2.dta
-14. HHQuestionnaire_W2_Anon_V2.2.dta
-15. HHQuestionnaire_W3_Anon_V1.2.dta
-16. HouseholdRoster_W1_Anon_V5.2.dta
-17. HouseholdRoster_W2_Anon_V2.2.dta
-18. HouseholdRoster_W3_Anon_V1.2.dta
-19. indderived_W1_Anon_V5.2.dta     
-20. indderived_W2_Anon_V2.2.dta     
-21. indderived_W3_Anon_V1.2.dta     
-22. Link_File_W2_Anon_V2.2.dta      
-23. Link_File_W3_Anon_V1.2.dta      
-24. Proxy_W1_Anon_V5.2.dta          
-25. Proxy_W2_Anon_V2.2.dta          
-26. Proxy_W3_Anon_V1.2.dta
+    1. Admin_W1_Anon_V5.2.dta          
+    2. Admin_W2_Anon_V2.2.dta          
+    3. Admin_W3_Anon_V1.2.dta          
+    4. Adult_W1_Anon_V5.2.dta          
+    5. Adult_W2_Anon_V2.2.dta          
+    6. Adult_W3_Anon_V1.2.dta          
+    7. Child_W1_Anon_V5.2.dta          
+    8. Child_W2_Anon_V2.2.dta          
+    9. Child_W3_Anon_V1.2.dta          
+    10. hhderived_W1_Anon_V5.2.dta      
+    11. hhderived_W2_Anon_V2.2.dta      
+    12. hhderived_W3_Anon_V1.2.dta      
+    13. HHQuestionnaire_W1_Anon_V5.2.dta
+    14. HHQuestionnaire_W2_Anon_V2.2.dta
+    15. HHQuestionnaire_W3_Anon_V1.2.dta
+    16. HouseholdRoster_W1_Anon_V5.2.dta
+    17. HouseholdRoster_W2_Anon_V2.2.dta
+    18. HouseholdRoster_W3_Anon_V1.2.dta
+    19. indderived_W1_Anon_V5.2.dta     
+    20. indderived_W2_Anon_V2.2.dta     
+    21. indderived_W3_Anon_V1.2.dta     
+    22. Link_File_W2_Anon_V2.2.dta      
+    23. Link_File_W3_Anon_V1.2.dta      
+    24. Proxy_W1_Anon_V5.2.dta          
+    25. Proxy_W2_Anon_V2.2.dta          
+    26. Proxy_W3_Anon_V1.2.dta
 
 This can be checked using the R command:
 
