@@ -7,7 +7,7 @@ This Code Book gives an overview of the files used for replications. As well as 
 
 Files
 --------------------------------------------------------
-* [import.R](/import.R): instructions on importing the SPSS data files into R.
+* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R.
 
 
 The data source files are not included as they are licenced to be distributed only via the DataFirst portal
