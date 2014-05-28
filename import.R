@@ -1,8 +1,7 @@
 # import.R
 # --------------------------------------------------------
-# instructions for importing the SPSS files
-# Bastiaan Quast
-# bquast@gmail.com
+# Bastiaan Quast, bquast@gmail.com
+# instructions for importing the Stata files
 
 # install and load the foreign package
 install.packages('foreign')
