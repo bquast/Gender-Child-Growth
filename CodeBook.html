@@ -151,8 +151,83 @@ hr {
 <h2>Files</h2>
 
 <ul>
-<li><a href="/import.R">import.R</a>: instructions on importing the SPSS data files into R</li>
+<li><a href="/import.R">import.R</a>: instructions on importing the SPSS data files into R.</li>
 </ul>
+
+<p>The data source files are not included as they are licenced to be distributed only via the DataFirst portal</p>
+
+<h2>Data</h2>
+
+<p>The data used in this project has been collected and processed by the <a href="http://www.nids.uct.ac.za/">National Income Dynamics Survey of South Africa</a>.</p>
+
+<p>The data can be downloaded from the <a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/central/about">DataFirst postal</a>. They can be downloaded here free of cost, once an account has been created.</p>
+
+<p>At the time of writing, there are three available data sets (waves).</p>
+
+<ul>
+<li><a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451">Wave 1</a></li>
+<li><a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452">Wave 2</a></li>
+<li><a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453">Wave 3</a></li>
+</ul>
+
+<p>The data is offered in three (or four) formats.</p>
+
+<ul>
+<li>SPSS</li>
+<li>Stata 12</li>
+<li>SAS</li>
+<li>(sometimes) Stata 8</li>
+</ul>
+
+<p>For the purpose of importing into R, the Stata 12 format is prefered. Both the SPSS and the SAS format do not import very well and the Stata 8 format is obsolete. The Stata files are available here (when logged in).</p>
+
+<ul>
+<li><a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451/download/6038">Wave 1</a></li>
+<li><a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452/download/6001">Wave 2</a></li>
+<li><a href="http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453/download/6052">Wave 3</a></li>
+</ul>
+
+<p>After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth). All three zip files contain a folder called <strong>stata12</strong> these should be placed directly in <strong>this</strong> folder, do <strong>not</strong> create a new folder with the same name as the zip file. Note, since the folders have the same names, a warning about merging will appear, since the containing files are named differently this will not be a problem, thus accept to merge the folders.</p>
+
+<p>We now have a folder <strong>stata12</strong> directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains the following files:</p>
+
+<ol>
+<li>Admin_W1_Anon_V5.2.dta<br/></li>
+<li>Admin_W2_Anon_V2.2.dta<br/></li>
+<li>Admin_W3_Anon_V1.2.dta<br/></li>
+<li>Adult_W1_Anon_V5.2.dta<br/></li>
+<li>Adult_W2_Anon_V2.2.dta<br/></li>
+<li>Adult_W3_Anon_V1.2.dta<br/></li>
+<li>Child_W1_Anon_V5.2.dta<br/></li>
+<li>Child_W2_Anon_V2.2.dta<br/></li>
+<li>Child_W3_Anon_V1.2.dta<br/></li>
+<li>hhderived_W1_Anon_V5.2.dta<br/></li>
+<li>hhderived_W2_Anon_V2.2.dta<br/></li>
+<li>hhderived_W3_Anon_V1.2.dta<br/></li>
+<li>HHQuestionnaire_W1_Anon_V5.2.dta</li>
+<li>HHQuestionnaire_W2_Anon_V2.2.dta</li>
+<li>HHQuestionnaire_W3_Anon_V1.2.dta</li>
+<li>HouseholdRoster_W1_Anon_V5.2.dta</li>
+<li>HouseholdRoster_W2_Anon_V2.2.dta</li>
+<li>HouseholdRoster_W3_Anon_V1.2.dta</li>
+<li>indderived_W1_Anon_V5.2.dta<br/></li>
+<li>indderived_W2_Anon_V2.2.dta<br/></li>
+<li>indderived_W3_Anon_V1.2.dta<br/></li>
+<li>Link_File_W2_Anon_V2.2.dta<br/></li>
+<li>Link_File_W3_Anon_V1.2.dta<br/></li>
+<li>Proxy_W1_Anon_V5.2.dta<br/></li>
+<li>Proxy_W2_Anon_V2.2.dta<br/></li>
+<li>Proxy_W3_Anon_V1.2.dta</li>
+</ol>
+
+<p>This can be checked using the R command:</p>
+
+<pre><code>list.files(&#39;stata12&#39;)
+</code></pre>
+
+<p>The files are best imported with the R package called <strong>foreign</strong>. As described below in the section <strong>Importing</strong>.</p>
+
+<h2>Importing</h2>
 
 <h2>Transformations</h2>
 
