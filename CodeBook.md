@@ -14,7 +14,7 @@ The data source files are not included as they are licenced to be distributed on
 
 Data
 --------------------------------------------------------
-The data used in this project has been collected and processed by the [National Income Dynamics Survey of South Africa][1].
+The data used in this project has been collected and processed by the [National Income Dynamics Survey of South Africa][1]. Which is conducted by the Southern Africa Labour and Development Research Unit ([SALDRU][2]), which is based at the University of Cape Towns School of Economics.
 
 The data can be downloaded from the [DataFirst postal][2]. They can be downloaded here free of cost, once an account has been created.
 
@@ -39,7 +39,13 @@ For the purpose of importing into R, the Stata 12 format is prefered. Both the S
 
 After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth). All three zip files contain a folder called **stata12** these should be placed directly in **this** folder, do **not** create a new folder with the same name as the zip file. Note, since the folders have the same names, a warning about merging will appear, since the containing files are named differently this will not be a problem, thus accept to merge the folders.
 
-We now have a folder **stata12** directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains the following files:
+We now have a folder **stata12** directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains all the source files.
+
+We can check the contents of this folder using the R command:
+
+    list.files('stata12')
+
+It should look like this:
 
     [1] "Admin_W1_Anon_V5.2.dta"          
     [2] "Admin_W2_Anon_V2.2.dta"          
@@ -68,10 +74,6 @@ We now have a folder **stata12** directly in our working directory (i.e. the fol
     [25] "Proxy_W2_Anon_V2.2.dta"          
     [26] "Proxy_W3_Anon_V1.2.dta"
 
-This can be checked using the R command:
-
-    list.files('stata12')
-
 
 Importing
 --------------------------------------------------------
@@ -88,10 +90,11 @@ Estimations
 
 
 [1]: http://www.nids.uct.ac.za/
-[2]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/central/about
-[3]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451
-[4]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452
-[5]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453
-[6]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451/download/6038
-[7]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452/download/6001
-[8]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453/download/6052
+[2]: http://www.saldru.uct.ac.za/
+[3]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/central/about
+[4]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451
+[5]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452
+[6]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453
+[7]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451/download/6038
+[8]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452/download/6001
+[9]: http://www.datafirst.uct.ac.za/dataportal/index.php/catalog/453/download/6052
