@@ -4,5 +4,9 @@
 # Bastiaan Quast
 # bquast@gmail.com
 
-# load the foreign package
+# install and load the foreign package
+install.packages('foreign')
 library(foreign)
+
+# read the stata file
+stata <- read.dta('stata12/Child_W1_Anon_V5.2.dta')
