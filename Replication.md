@@ -14,7 +14,7 @@ Included Files
 
 Excluded Files
 --------------------------------------------------------
-These data source files are not included as they are licenced to be distributed only via the DataFirst portal. However, they can be created by using the R scripts described above and provided on the [main page]{/} of the repository.
+These data source files are not included as they are licenced to be distributed only via the DataFirst portal. However, they can be created by using the R scripts described above and provided on the [main page](/) of the repository.
 
 * [imported.RData](/imported.RData): contains all the imported separate data frames
 * [transformed.Child.W1.RData](/transformed.Child.W1.RData): Contains the Child data frame with inserted need variables for Wave 1
