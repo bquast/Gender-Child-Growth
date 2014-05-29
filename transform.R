@@ -67,6 +67,7 @@ Child.W1$w1.c.intrv.dt <- as.Date(paste(Child.W1$w1.c.intrv.y, Child.W1$w1.c.int
 Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m,1, sep="-"))
 Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
+#### analyse these created variables and describe them above ####
 
 # construct woman dummies
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 6
