@@ -5,15 +5,20 @@ Bastiaan Quast, bquast@gmail.com
 
 This file gives an overview of the files used for replicating the results of this project. For a general overview of the project please refer to the [README.md](/README.md) file.
 
-Files
+Included Files
 --------------------------------------------------------
 * [import.R](/import.R): instructions on importing the Stata data files (.dta) into R
-* [imported.RData](/imported.RData): contains all the imported separate data frames
 * [transform.R](/transform.R): contains the R instructions to perform the required transformations to the data
-* [transformed.RData](/transformed.RData): contains the transformed singel panel data frame (pdata.frame, from the plm package)
 
 
-The data source files are not included as they are licenced to be distributed only via the DataFirst portal
+
+Excluded Files
+--------------------------------------------------------
+These data source files are not included as they are licenced to be distributed only via the DataFirst portal. However, they can be created by using the R scripts described above and provided on the [main page]{/} of the repository.
+
+* [imported.RData](/imported.RData): contains all the imported separate data frames
+* [transformed.Child.W1.RData](/transformed.Child.W1.RData): Contains the Child data frame with inserted need variables for Wave 1
+
 
 Data
 --------------------------------------------------------
