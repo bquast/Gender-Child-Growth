@@ -44,38 +44,29 @@ After having downloaded the above mentioned zip files, place them in the project
 
 We now have a folder **stata12** directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains all the source files.
 
-We can check the contents of this folder using the R command:
+We can check the contents of this folder using an R command, the output should be as per below:
 
-    list.files('stata12')
 
-It should look like this:
 
-    [1] "Admin_W1_Anon_V5.2.dta"          
-    [2] "Admin_W2_Anon_V2.2.dta"          
-    [3] "Admin_W3_Anon_V1.2.dta"          
-    [4] "Adult_W1_Anon_V5.2.dta"          
-    [5] "Adult_W2_Anon_V2.2.dta"          
-    [6] "Adult_W3_Anon_V1.2.dta"          
-    [7] "Child_W1_Anon_V5.2.dta"          
-    [8] "Child_W2_Anon_V2.2.dta"          
-    [9] "Child_W3_Anon_V1.2.dta"          
-    [10] "hhderived_W1_Anon_V5.2.dta"      
-    [11] "hhderived_W2_Anon_V2.2.dta"      
-    [12] "hhderived_W3_Anon_V1.2.dta"      
-    [13] "HHQuestionnaire_W1_Anon_V5.2.dta"
-    [14] "HHQuestionnaire_W2_Anon_V2.2.dta"
-    [15] "HHQuestionnaire_W3_Anon_V1.2.dta"
-    [16] "HouseholdRoster_W1_Anon_V5.2.dta"
-    [17] "HouseholdRoster_W2_Anon_V2.2.dta"
-    [18] "HouseholdRoster_W3_Anon_V1.2.dta"
-    [19] "indderived_W1_Anon_V5.2.dta"     
-    [20] "indderived_W2_Anon_V2.2.dta"     
-    [21] "indderived_W3_Anon_V1.2.dta"     
-    [22] "Link_File_W2_Anon_V2.2.dta"      
-    [23] "Link_File_W3_Anon_V1.2.dta"      
-    [24] "Proxy_W1_Anon_V5.2.dta"          
-    [25] "Proxy_W2_Anon_V2.2.dta"          
-    [26] "Proxy_W3_Anon_V1.2.dta"
+```r
+list.files('stata12')
+```
+
+```
+##  [1] "Admin_W1_Anon_V5.2.dta"           "Admin_W2_Anon_V2.2.dta"          
+##  [3] "Admin_W3_Anon_V1.2.dta"           "Adult_W1_Anon_V5.2.dta"          
+##  [5] "Adult_W2_Anon_V2.2.dta"           "Adult_W3_Anon_V1.2.dta"          
+##  [7] "Child_W1_Anon_V5.2.dta"           "Child_W2_Anon_V2.2.dta"          
+##  [9] "Child_W3_Anon_V1.2.dta"           "hhderived_W1_Anon_V5.2.dta"      
+## [11] "hhderived_W2_Anon_V2.2.dta"       "hhderived_W3_Anon_V1.2.dta"      
+## [13] "HHQuestionnaire_W1_Anon_V5.2.dta" "HHQuestionnaire_W2_Anon_V2.2.dta"
+## [15] "HHQuestionnaire_W3_Anon_V1.2.dta" "HouseholdRoster_W1_Anon_V5.2.dta"
+## [17] "HouseholdRoster_W2_Anon_V2.2.dta" "HouseholdRoster_W3_Anon_V1.2.dta"
+## [19] "indderived_W1_Anon_V5.2.dta"      "indderived_W2_Anon_V2.2.dta"     
+## [21] "indderived_W3_Anon_V1.2.dta"      "Link_File_W2_Anon_V2.2.dta"      
+## [23] "Link_File_W3_Anon_V1.2.dta"       "Proxy_W1_Anon_V5.2.dta"          
+## [25] "Proxy_W2_Anon_V2.2.dta"           "Proxy_W3_Anon_V1.2.dta"
+```
 
 
 Import
