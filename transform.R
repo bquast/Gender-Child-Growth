@@ -5,9 +5,7 @@
 
 # install and load the required packages
 install.packages('reshape2')
-install.packages('plm')
 library(reshape2)
-library(plm)
 
 # construct a length-of-month object
 month <- (3*365 + 366) / (4*12)
@@ -16,40 +14,40 @@ month <- (3*365 + 366) / (4*12)
 load("imported.RData")
 
 #### EVALUATE these variables before reencoding ####
-summary(Child.W1$w1.c.dob.y)
-summary(Child.W1$w1.c.dob.m)
-summary(Child.W1$w1.c.intrv.y)
-summary(Child.W1$w1.c.intrv.m)
-summary(Child.W1$w1.c.intrv.d)
-# and these also
 summary(Child.W1$w1.c.height.1)
-summary(Child.W1$w1.c.height.2)
-summary(Child.W1$w1.c.height.3)
-summary(Child.W1$w1.c.weight.1)
-summary(Child.W1$w1.c.weight.2)
-summary(Child.W1$w1.c.weight.3)
-# also
-summary(Child.W1$w1.c.gen)
 
-# encode certain variables of type factor as numeric
+summary(Child.W1$w1.c.height.2)
+
+summary(Child.W1$w1.c.height.3)
+table(Child.W1$w1.c.height.3)
+length(table(Child.W1$w1.c.height.3))
+str(Child.W1$w1.c.height.3)
+
+summary(Child.W1$w1.c.weight.1)
+
+summary(Child.W1$w1.c.weight.2)
+
+summary(Child.W1$w1.c.weight.3)
+table(Child.W1$w1.c.weight.3)
+length(table(Child.W1$w1.c.weight.3))
+str(Child.W1$w1.c.weight.3)
+
+# encode month factor variables as numeric
 Child.W1$w1.c.dob.m <- as.numeric(Child.W1$w1.c.dob.m)
 Child.W1$w1.c.intrv.m <- as.numeric(Child.W1$w1.c.intrv.m)
-Child.W1$w1.c.gen <- as.numeric(Child.W1$w1.c.gen)
-Household.Roster.W1$w1.r.gen <- as.numeric(Household.Roster.W1$w1.r.gen)
 
-#### CHECK THESE FOR WARNINGS #####
 # filter out the missing value codes and write them to separate variables
 attach(Child.W1)
-Child.W1$w1.c.dob.y.c <- ifelse(w1.c.dob.y >= 2009, w1.c.dob.y, NA)
-Child.W1$w1.c.dob.y <- ifelse(w1.c.dob.y <= 2008, w1.c.dob.y, NA)
-Child.W1$w1.c.dob.m.c <- ifelse(Child.W1$w1.c.dob.m >= 13, w1.c.dob.m, NA)
+Child.W1$w1.c.dob.y.c <- ifelse(w1.c.dob.y >= 2020, w1.c.dob.y, NA)
+Child.W1$w1.c.dob.y <- ifelse(w1.c.dob.y <= 2020, w1.c.dob.y, NA)
+Child.W1$w1.c.dob.m.c <- ifelse(Child.W1$w1.c.dob.m > 12, w1.c.dob.m, NA)
 Child.W1$w1.c.dob.m <- ifelse(w1.c.dob.m <= 12, w1.c.dob.m, NA)
 Child.W1$w1.c.intrv.y.c <- ifelse(w1.c.intrv.y <= 0, w1.c.intrv.y, NA)
 Child.W1$w1.c.intrv.y <- ifelse(w1.c.intrv.y >= 0, w1.c.intrv.y, NA)
-Child.W1$w1.c.intrv.m.c <- ifelse(w1.c.intrv.m <= 0, w1.c.intrv.m, NA)
-Child.W1$w1.c.intrv.m <- ifelse(w1.c.intrv.m >= 0, w1.c.intrv.m, NA)
-Child.W1$w1.c.intrv.d.c <- ifelse(w1.c.intrv.d <= 0, w1.c.intrv.d, NA)
-Child.W1$w1.c.intrv.d <- ifelse(w1.c.intrv.d >= 0, w1.c.intrv.d, NA)
+Child.W1$w1.c.intrv.m.c <- ifelse(w1.c.intrv.m > 12, w1.c.intrv.m, NA)
+Child.W1$w1.c.intrv.m <- ifelse(w1.c.intrv.m <= 12, w1.c.intrv.m, NA)
+Child.W1$w1.c.intrv.d.c <- ifelse(w1.c.intrv.d > 31, w1.c.intrv.d, NA)
+Child.W1$w1.c.intrv.d <- ifelse(w1.c.intrv.d <= 31, w1.c.intrv.d, NA)
 Child.W1$w1.c.height.1.c <- ifelse(w1.c.height.1 <= 0, w1.c.height.1, NA)
 Child.W1$w1.c.height.2.c <- ifelse(w1.c.height.2 <= 0, w1.c.height.2, NA)
 Child.W1$w1.c.height.3.c <- ifelse(w1.c.height.3 <= 0, w1.c.height.3, NA)
@@ -78,12 +76,11 @@ Individual.Derived.W1$w1.woman <- ifelse(Individual.Derived.W1$pid %in% w1.woman
 rm(w1.woman)
 
 
-#### REDO this procedure with nominal instead of dummies ####
+#### REDO this procedure with nominal values in stead of dummies ####
 
 # construct woman and man pension dummies
 # transform the pension variable into a dummy
-#### REDO THIS DUMMY ASAP #################################################
-Individual.Derived.W1$w1.spen.d <- ifelse(Individual.Derived.W1$w1.spen > 0, TRUE, FALSE)
+Individual.Derived.W1$w1.spen.d <- ifelse(is.na(Individual.Derived.W1$w1.spen), FALSE, TRUE)
 # list the household IDs with a female pension recipient
 w1.spen.d.w.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.spen.d == TRUE & Individual.Derived.W1$w1.woman == TRUE),]$w1.hhid
 # list the household IDs with a male pension recipient
@@ -109,7 +106,7 @@ Child.W1$w1.woman.60 <- Child.W1$w1.hhid %in% w1.woman.60.hhid
 Child.W1$w1.man.60 <- Child.W1$w1.hhid %in% w1.man.60.hhid
 Child.W1$w1.woman.65 <- Child.W1$w1.hhid %in% w1.woman.65.hhid
 Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
-#### ANALYSE these variables, add descriptions on top ####
+#### ANALYSE these variables, add descriptions above each line ####
 
 #### MERGE household income, parent education, etc. ####
 
