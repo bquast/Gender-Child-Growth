@@ -1,4 +1,4 @@
-Gender-Child-Growth
+Gender and Child Growth
 ========================================================
 Bastiaan Quast, bquast@gmail.com
 --------------------------------------------------------
