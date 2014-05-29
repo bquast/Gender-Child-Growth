@@ -1,6 +1,6 @@
 Gender-Child-Growth
 ========================================================
-Bastiaan Quast
+Bastiaan Quast, bquast@gmail.com
 --------------------------------------------------------
 
 Abstract
@@ -9,4 +9,4 @@ The effect of the gender of a pension recipient on growth of children in the sam
 
 Replication
 --------------------------------------------------------
-All operations are codified in R-files. The [CodeBook.md](/CodeBook.md) file gives an overview of the R-files and describes the steps taken in each.
+All operations are codified in R-files. The [Replication.md](/CodeBook.md) file gives an overview of the R-files and describes the steps taken in each.
