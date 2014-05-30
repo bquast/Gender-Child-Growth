@@ -72,15 +72,15 @@ Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 # construct woman dummies
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 6
 Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 6
-w1.woman <- Household.Roster.W1$pid[Household.Roster.W1$w1.r.woman == TRUE]
-Individual.Derived.W1$w1.woman <- ifelse(Individual.Derived.W1$pid %in% w1.woman, TRUE, FALSE)
-rm(w1.woman)
+Individual.Derived.W1$w1.best.gen <- ifelse(as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
+Individual.Derived.W1$w1.best.woman <- Individual.Derived.W1$w1.best.gen == 6
 
 
 #### REDO this procedure with nominal values in stead of dummies ####
 
-# construct woman and man pension dummies
+## possibly redo this with the match function ##
 # transform the pension variable into a dummy
+# construct woman and man pension dummies
 Individual.Derived.W1$w1.spen.d <- ifelse(is.na(Individual.Derived.W1$w1.spen), FALSE, TRUE)
 # list the household IDs with a female pension recipient
 w1.spen.d.w.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.spen.d == TRUE & Individual.Derived.W1$w1.woman == TRUE),]$w1.hhid
@@ -100,7 +100,9 @@ w1.woman.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.woma
 w1.man.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.woman == FALSE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
 
 
-# create a pension dummies in Child dataframe
+
+
+# create pension dummies in Child data frame
 Child.W1$w1.spen.d.w <- Child.W1$w1.hhid %in% w1.spen.d.w.hhid
 Child.W1$w1.spen.d.m <- Child.W1$w1.hhid %in% w1.spen.d.m.hhid
 Child.W1$w1.woman.60 <- Child.W1$w1.hhid %in% w1.woman.60.hhid
