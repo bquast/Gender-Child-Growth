@@ -81,7 +81,6 @@ Individual.Derived.W1$w1.best.woman <- Individual.Derived.W1$w1.best.gen == 6
 # transform the pension variable into a dummy
 Individual.Derived.W1$w1.spen.d <- ifelse(is.na(Individual.Derived.W1$w1.spen), FALSE, TRUE)
 
-
 ## possibly redo this with the match function ##
 # construct woman and man pension dummies
 # list the household IDs with a female pension recipient
@@ -110,6 +109,9 @@ Child.W1$w1.woman.65 <- Child.W1$w1.hhid %in% w1.woman.65.hhid
 Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
 #### ANALYSE these variables, add descriptions above each line ####
 
+
+#### REDO this using the Adult data sets ####
+table(Adult.W1$w1.a.incgovpen.v)
 # create dataframe of household pension income (by gender)
 Spen.W1 <- ddply(Individual.Derived.W1, .(w1.hhid, w1.best.woman), summarize, hh.spen = sum(w1.spen))
 Child.W1$w1.spen <- Spen.W1$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
