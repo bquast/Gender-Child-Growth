@@ -65,6 +65,8 @@ Child.W1$w1.c.weight.2 <- ifelse(w1.c.weight.2 >= 0, w1.c.weight.2, NA)
 Child.W1$w1.c.weight.3 <- ifelse(w1.c.weight.3 >= 0, w1.c.weight.3, NA)
 detach(Child.W1)
 
+#### do this without recoding the gen variables ####
+
 # construct age in days and months
 Child.W1$w1.c.intrv.dt <- as.Date(paste(Child.W1$w1.c.intrv.y, Child.W1$w1.c.intrv.m, Child.W1$w1.c.intrv.d, sep="-"))
 Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m,1, sep="-"))
@@ -74,6 +76,7 @@ Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 
 # construct woman dummies
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 6
+Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 'Female'
 Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 6
 Individual.Derived.W1$w1.best.gen <- ifelse(as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
 Individual.Derived.W1$w1.best.woman <- Individual.Derived.W1$w1.best.gen == 6
@@ -110,10 +113,10 @@ Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
 #### ANALYSE these variables, add descriptions above each line ####
 
 
-#### REDO this using the Adult data sets ####
-table(Adult.W1$w1.a.incgovpen.v)
+
+
 # create dataframe of household pension income (by gender)
-Spen.W1 <- ddply(Individual.Derived.W1, .(w1.hhid, w1.best.woman), summarize, hh.spen = sum(w1.spen))
+Spen.W1 <- ddply(Adult.W1, .(w1.hhid, w1.a.woman), summarize, hh.spen = sum(w1.a.incgovpen.v))
 Child.W1$w1.spen <- Spen.W1$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
 Child.W1$w1.spen.w <- Spen.W1[Spen.W1$w1.best.woman == TRUE,]$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
 Child.W1$w1.spen.m <- Spen.W1[Spen.W1$w1.best.woman == FALSE,]$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
