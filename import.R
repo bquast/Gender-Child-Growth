@@ -12,6 +12,10 @@ library(foreign)
 Admin.W1 <- read.dta( 'stata12/Admin_W1_Anon_V5.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
 Admin.W2 <- read.dta( 'stata12/Admin_W2_Anon_V2.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
 Admin.W3 <- read.dta( 'stata12/Admin_W3_Anon_V1.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
+# Adult file
+Adult.W1 <- read.dta( 'stata12/Adult_W1_Anon_V5.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
+Adult.W2 <- read.dta( 'stata12/Adult_W2_Anon_V2.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
+Adult.W3 <- read.dta( 'stata12/Adult_W3_Anon_V1.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
 # Child files
 Child.W1 <- read.dta( 'stata12/Child_W1_Anon_V5.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
 Child.W2 <- read.dta( 'stata12/Child_W2_Anon_V2.2.dta', convert.factors=TRUE, convert.underscore=TRUE, warn.missing.labels=FALSE )
