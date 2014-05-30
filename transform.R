@@ -6,6 +6,9 @@
 # install and load the required packages
 install.packages('reshape2')
 library(reshape2)
+install.packages('plyr')
+library(plyr)
+
 
 # construct a length-of-month object
 month <- (3*365 + 366) / (4*12)
