@@ -4,8 +4,6 @@
 # instructions for transforming the imported object to a tidy data frame
 
 # install and load the required packages
-install.packages('reshape2')
-library(reshape2)
 install.packages('plyr')
 library(plyr)
 
