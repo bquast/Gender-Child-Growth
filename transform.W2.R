@@ -1,4 +1,4 @@
-# transform.R
+# transform.W2.R
 # --------------------------------------------------------
 # Bastiaan Quast, bquast@gmail.com
 # instructions for transforming the imported object to a tidy data frame
