@@ -110,6 +110,8 @@ Child.W1$w1.woman.60 <- Child.W1$w1.hhid %in% w1.woman.60.hhid
 Child.W1$w1.man.60 <- Child.W1$w1.hhid %in% w1.man.60.hhid
 Child.W1$w1.woman.65 <- Child.W1$w1.hhid %in% w1.woman.65.hhid
 Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
+Child.W1$w1.woman.60.65 <- Child.W1$w1.hhid %in% w1.woman.60.65.hhid
+Child.W1$w1.man.60.65 <- Child.W1$w1.hhid %in% w1.man.60.65.hhid
 #### ANALYSE these variables, add descriptions above each line ####
 
 
