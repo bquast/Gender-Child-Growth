@@ -36,8 +36,8 @@ str(Child.W3$w3.c.weight.3)
 
 ### possibly treat these same as the other recoded vars ####
 # encode month factor variables as numeric
-Child.W3$w3.c.dob.m <- as.numeric(Child.W3$w3.c.dob.m)
-Child.W3$w3.c.intrv.m <- as.numeric(Child.W3$w3.c.intrv.m)
+Child.W3$w3.c.dob.m <- as.integer(Child.W3$w3.c.dob.m)
+Child.W3$w3.c.intrv.m <- as.integer(Child.W3$w3.c.intrv.m)
 
 # filter out the missing value codes and write them to separate variables
 attach(Child.W3)
@@ -49,8 +49,9 @@ Child.W3$w3.c.intrv.y.flg <- ifelse(w3.c.intrv.y <= 0, w3.c.intrv.y, NA)
 Child.W3$w3.c.intrv.y <- ifelse(w3.c.intrv.y >= 0, w3.c.intrv.y, NA)
 Child.W3$w3.c.intrv.m.flg <- ifelse(w3.c.intrv.m > 12, w3.c.intrv.m, NA)
 Child.W3$w3.c.intrv.m <- ifelse(w3.c.intrv.m <= 12, w3.c.intrv.m, NA)
-Child.W3$w3.c.intrv.d.flg <- ifelse(w3.c.intrv.d > 31, w3.c.intrv.d, NA)
-Child.W3$w3.c.intrv.d <- ifelse(w3.c.intrv.d <= 31, w3.c.intrv.d, NA)
+# all NAs for some reason
+# Child.W3$w3.c.intrv.d.flg <- ifelse(w3.c.intrv.d > 31, w3.c.intrv.d, NA)
+# Child.W3$w3.c.intrv.d <- ifelse(w3.c.intrv.d <= 31, w3.c.intrv.d, NA)
 Child.W3$w3.c.height.1.flg <- ifelse(w3.c.height.1 <= 0, w3.c.height.1, NA)
 Child.W3$w3.c.height.2.flg <- ifelse(w3.c.height.2 <= 0, w3.c.height.2, NA)
 Child.W3$w3.c.height.3.flg <- ifelse(w3.c.height.3 <= 0, w3.c.height.3, NA)
@@ -66,8 +67,8 @@ Child.W3$w3.c.weight.3 <- ifelse(w3.c.weight.3 >= 0, w3.c.weight.3, NA)
 detach(Child.W3)
 
 # construct age in days and months
-Child.W3$w3.c.intrv.dt <- as.Date(paste(Child.W3$w3.c.intrv.y, Child.W3$w3.c.intrv.m, Child.W3$w3.c.intrv.d, sep="-"))
-Child.W3$w3.c.dob.dt <- as.Date(paste(Child.W3$w3.c.dob.y, Child.W3$w3.c.dob.m,1, sep="-"))
+Child.W3$w3.c.intrv.dt <- as.Date(paste(Child.W3$w3.c.intrv.y, Child.W3$w3.c.intrv.m, 1, sep="-"))
+Child.W3$w3.c.dob.dt <- as.Date(paste(Child.W3$w3.c.dob.y, Child.W3$w3.c.dob.m, 1, sep="-"))
 Child.W3$w3.c.age.d <- as.numeric(Child.W3$w3.c.intrv.dt - Child.W3$w3.c.dob.dt)
 Child.W3$w3.c.age.m <- Child.W3$w3.c.age.d %/% month
 #### analyse these created variables and describe them above ####
