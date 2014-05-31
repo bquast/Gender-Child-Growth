@@ -35,6 +35,7 @@ table(Child.W1$w1.c.weight.3)
 length(table(Child.W1$w1.c.weight.3))
 str(Child.W1$w1.c.weight.3)
 
+#### REDO without recoding variables ####
 # encode month factor variables as numeric
 Child.W1$w1.c.dob.m <- as.numeric(Child.W1$w1.c.dob.m)
 Child.W1$w1.c.intrv.m <- as.numeric(Child.W1$w1.c.intrv.m)
@@ -66,7 +67,6 @@ Child.W1$w1.c.weight.3 <- ifelse(w1.c.weight.3 >= 0, w1.c.weight.3, NA)
 detach(Child.W1)
 
 #### do this without recoding the gen variables ####
-
 # construct age in days and months
 Child.W1$w1.c.intrv.dt <- as.Date(paste(Child.W1$w1.c.intrv.y, Child.W1$w1.c.intrv.m, Child.W1$w1.c.intrv.d, sep="-"))
 Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m,1, sep="-"))
@@ -74,6 +74,8 @@ Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 #### analyse these created variables and describe them above ####
 
+### why does this first one work? it should still be factor, rewrite using == 'Female' ###
+### all the other ones except for the second one, all should be as the second one ####
 # construct woman dummies
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 6
 Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 'Female'
@@ -116,14 +118,24 @@ Child.W1$w1.man.60.65 <- Child.W1$w1.hhid %in% w1.man.60.65.hhid
 
 
 
-
+#### missing value codes need to be filtered out before this is done ####
 # create dataframe of household pension income (by gender)
-Spen.W1 <- ddply(Adult.W1, .(w1.hhid, w1.a.woman), summarize, hh.spen = sum(w1.a.incgovpen.v))
-Child.W1$w1.spen <- Spen.W1$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
-Child.W1$w1.spen.w <- Spen.W1[Spen.W1$w1.best.woman == TRUE,]$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
-Child.W1$w1.spen.m <- Spen.W1[Spen.W1$w1.best.woman == FALSE,]$hh.spen[match (Child.W1$w1.hhid, Spen.W1$w1.hhid) ]
+Spen.A.W1 <- ddply(Adult.W1, .(w1.hhid, w1.a.woman), summarize, hh.spen = sum(w1.a.incgovpen.v))
+Child.W1$w1.a.spen <- Spen.A.W1$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
+Child.W1$w1.a.spen.w <- Spen.A.W1[Spen.A.W1$w1.a.woman == TRUE,]$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
+Child.W1$w1.a.spen.m <- Spen.A.W1[Spen.A.W1$w1.a.woman == FALSE,]$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
+Spen.IndD.W1 <- ddply(Individual.Derived.W1, .(w1.hhid, w1.best.woman), summarize, hh.spen = sum(w1.spen))
+Child.W1$w1.id.spen <- Spen.IndD.W1$hh.spen[match (Child.W1$w1.hhid, Spen.IndD.W1$w1.hhid) ]
+Child.W1$w1.id.spen.w <- Spen.IndD.W1[Spen.IndD.W1$w1.best.woman == TRUE,]$hh.spen[match (Child.W1$w1.hhid, Spen.IndD.W1$w1.hhid) ]
+Child.W1$w1.id.spen.m <- Spen.IndD.W1[Spen.IndD.W1$w1.best.woman == FALSE,]$hh.spen[match (Child.W1$w1.hhid, Spen.IndD.W1$w1.hhid) ]
+
 
 #### MERGE household income, parent education, etc. ####
+
+
+######
+#### AFTER EVERYTHING IS DONE, ANALYSE ALL NEWLY CREATED VARIABLES
+######
 
 # save the transformed pdata.frame to a file
 save(Child.W1, file = "transformed.Child.W1.RData")
