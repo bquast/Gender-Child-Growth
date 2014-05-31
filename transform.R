@@ -35,7 +35,6 @@ table(Child.W1$w1.c.weight.3)
 length(table(Child.W1$w1.c.weight.3))
 str(Child.W1$w1.c.weight.3)
 
-#### REDO without recoding variables ####
 # encode month factor variables as numeric
 Child.W1$w1.c.dob.m <- as.numeric(Child.W1$w1.c.dob.m)
 Child.W1$w1.c.intrv.m <- as.numeric(Child.W1$w1.c.intrv.m)
@@ -66,27 +65,40 @@ Child.W1$w1.c.weight.2 <- ifelse(w1.c.weight.2 >= 0, w1.c.weight.2, NA)
 Child.W1$w1.c.weight.3 <- ifelse(w1.c.weight.3 >= 0, w1.c.weight.3, NA)
 detach(Child.W1)
 
-#### do this without recoding the gen variables ####
 # construct age in days and months
 Child.W1$w1.c.intrv.dt <- as.Date(paste(Child.W1$w1.c.intrv.y, Child.W1$w1.c.intrv.m, Child.W1$w1.c.intrv.d, sep="-"))
 Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m,1, sep="-"))
 Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 #### analyse these created variables and describe them above ####
+summary(Child.W1$w1.c.intrv.dt)
+summary(Child.W1$w1.c.dob.dt)
+# minimum is now -230
+summary(Child.W1$w1.c.age.d)
+summary(Child.W1$w1.c.age.m)
 
-### why does this first one work? it should still be factor, rewrite using == 'Female' ###
-### all the other ones except for the second one, all should be as the second one ####
-# construct woman dummies
-Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 6
+# construct woman logical dummies
+summary(Child.W1$w1.c.gen)
+summary(Adult.W1$w1.a.gen)
+summary(Household.Roster.W1$w1.r.gen)
+summary(Individual.Derived.W1$w1.best.gen)
+Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 'Female'
 Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 'Female'
-Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 6
+Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 'Female'
+# Individual Derived dataset contains a 'Don't know', different method
+str(Individual.Derived.W1$w1.best.gen)
 Individual.Derived.W1$w1.best.gen <- ifelse(as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
-Individual.Derived.W1$w1.best.woman <- Individual.Derived.W1$w1.best.gen == 6
+str(Individual.Derived.W1$w1.best.gen)
+summary(Individual.Derived.W1$w1.best.gen)
+Individual.Derived.W1$w1.best.woman <- Individual.Derived.W1$w1.best.gen == 'Female'
+summary(Child.W1$w1.c.woman)
+summary(Adult.W1$w1.a.woman)
+summary(Household.Roster.W1$w1.r.woman)
+summary(Individual.Derived.W1$w1.best.woman)
+
 
 # transform the pension variable into a dummy
 Individual.Derived.W1$w1.spen.d <- ifelse(is.na(Individual.Derived.W1$w1.spen), FALSE, TRUE)
-
-## possibly redo this with the match function ##
 # construct woman and man pension dummies
 # list the household IDs with a female pension recipient
 w1.spen.d.w.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.spen.d == TRUE & Individual.Derived.W1$w1.woman == TRUE),]$w1.hhid
@@ -104,6 +116,7 @@ w1.man.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.woman == 
 w1.woman.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.woman == TRUE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
 # list the household IDs with a man agen 60-64
 w1.man.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.woman == FALSE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
+# this could also be done from the adult data set
 
 # create pension dummies in Child data frame
 Child.W1$w1.spen.d.w <- Child.W1$w1.hhid %in% w1.spen.d.w.hhid
@@ -118,7 +131,15 @@ Child.W1$w1.man.60.65 <- Child.W1$w1.hhid %in% w1.man.60.65.hhid
 
 
 
-#### missing value codes need to be filtered out before this is done ####
+# filter out missing value codes for the adults raw data set
+summary(Adult.W1$w1.a.incgovpen.v)
+attach(Adult.W1)
+Adult.W1$w1.a.incgovpen.v.c <- ifelse(w1.a.incgovpen.v < 0, w1.a.incgovpen.v, NA)
+Adult.W1$w1.a.incgovpen.v <- ifelse(w1.a.incgovpen.v >= 0, w1.a.incgovpen.v, NA)
+detach(Adult.W1)
+summary(Adult.W1$w1.a.incgovpen.v)
+summary(Adult.W1$w1.a.incgovpen.v.c)
+
 # create dataframe of household pension income (by gender)
 Spen.A.W1 <- ddply(Adult.W1, .(w1.hhid, w1.a.woman), summarize, hh.spen = sum(w1.a.incgovpen.v))
 Child.W1$w1.a.spen <- Spen.A.W1$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
