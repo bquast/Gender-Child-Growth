@@ -10,7 +10,11 @@ library(reshape2)
 install.packages('plm')
 library(plm)
 
-## MERGE THE WAVES
+# load the data
+load('transformed.Child.W1.RData')
+load('transformed.Child.W2.RData')
+
+# MERGE THE WAVES
 
 Child.W12 <- merge(Child.W1, Child.W2, by="pid")
 head(Child.W12)
@@ -54,14 +58,19 @@ typeof(Child.W12.Wide$zhfa)
 typeof(Child.W12.Wide$zwfa)
 typeof(Child.W12.Wide$zwfh)
 
-typeof(Child.W12.Wide$spen.d.m)
 typeof(Child.W12.Wide$spen.d.w)
+typeof(Child.W12.Wide$spen.d.m)
 
 typeof(Child.W12.Wide$c.age.d)
 typeof(Child.W12.Wide$c.age.m)
 
+typeof(Child.W12.Wide$a.spen)
+
 typeof(Child.W12.Wide$h.tinc)
 typeof(Child.W12.Wide$best.edu)
+typeof(Child.W12.Wide$fwag)
+
+
 
 # encode data types as numeric
 # IMPORTANT ENCODES SPEN AS INTEGER
@@ -74,11 +83,31 @@ Child.W12.Wide$zwfh <- as.double(Child.W12.Wide$zwfh)
 
 Child.W12.Wide$spen.d.m <- as.logical(Child.W12.Wide$spen.d.m) 
 Child.W12.Wide$spen.d.w <- as.logical(Child.W12.Wide$spen.d.w) 
+
+Child.W12.Wide$a.spen <- as.double(Child.W12.Wide$a.spen)
+Child.W12.Wide$a.spen.w <- as.double(Child.W12.Wide$a.spen.w)
+Child.W12.Wide$a.spen.m <- as.double(Child.W12.Wide$a.spen.m)
+Child.W12.Wide$id.spen <- as.double(Child.W12.Wide$id.spen)
+Child.W12.Wide$id.spen.w <- as.double(Child.W12.Wide$id.spen.w)
+Child.W12.Wide$id.spen.m <- as.double(Child.W12.Wide$id.spen.m)
+
+
 Child.W12.Wide$c.age.d <- as.integer(Child.W12.Wide$c.age.d)
 Child.W12.Wide$c.age.m <- as.integer(Child.W12.Wide$c.age.m)
 
-Child.W12.Wide$h.tinc <- as.integer(Child.W12.Wide$h.tinc)
+Child.W12.Wide$woman.60 <- as.logical(Child.W12.Wide$woman.60) 
+Child.W12.Wide$man.60 <- as.logical(Child.W12.Wide$man.60) 
+Child.W12.Wide$woman.65 <- as.logical(Child.W12.Wide$woman.65) 
+Child.W12.Wide$man.65 <- as.logical(Child.W12.Wide$man.65) 
+Child.W12.Wide$woman.60.65 <- as.logical(Child.W12.Wide$woman.60.65) 
+Child.W12.Wide$man.60.65 <- as.logical(Child.W12.Wide$man.60.65) 
+
+
+Child.W12.Wide$h.tinc <- as.double(Child.W12.Wide$h.tinc)
 Child.W12.Wide$best.edu <- as.factor(Child.W12.Wide$best.edu)
+
+
+
 
 # create time effect dummy
 Child.W12.Wide$elig.men.60 <- ifelse(Child.W12.Wide$wave == 2 | Child.W12.Wide$wave == 3, TRUE, FALSE)
@@ -89,5 +118,5 @@ Child.Panel <- pdata.frame(Child.W12.Wide, index=c("pid","wave"))
 
 
 # save the data
-save(Child.Panel, file="Child.Panel.RData")
-save.image("Child.Wide.RData")
+save(Child.Panel, file='Child.Panel.RData')
+save(Child.W12.Wide, file='Child.Wide.RData')
