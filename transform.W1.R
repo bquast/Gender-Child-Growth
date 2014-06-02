@@ -65,15 +65,20 @@ Child.W1$w1.c.weight.2 <- ifelse(w1.c.weight.2 >= 0, w1.c.weight.2, NA)
 Child.W1$w1.c.weight.3 <- ifelse(w1.c.weight.3 >= 0, w1.c.weight.3, NA)
 detach(Child.W1)
 
+# filter out the erronous dob months
+Child.W1$w1.c.dob.m[39] <- NA
+Child.W1$w1.c.dob.m[425] <- NA
+#### report these to NIDS ####
+
+
 # construct age in days and months
 Child.W1$w1.c.intrv.dt <- as.Date(paste(Child.W1$w1.c.intrv.y, Child.W1$w1.c.intrv.m, Child.W1$w1.c.intrv.d, sep="-"))
-Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m,1, sep="-"))
+Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m, 1, sep="-"))
 Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 #### analyse these created variables and describe them above ####
 summary(Child.W1$w1.c.intrv.dt)
 summary(Child.W1$w1.c.dob.dt)
-# minimum is now -230
 summary(Child.W1$w1.c.age.d)
 summary(Child.W1$w1.c.age.m)
 
@@ -134,11 +139,11 @@ Child.W1$w1.man.60.65 <- Child.W1$w1.hhid %in% w1.man.60.65.hhid
 # filter out missing value codes for the adults raw data set
 summary(Adult.W1$w1.a.incgovpen.v)
 attach(Adult.W1)
-Adult.W1$w1.a.incgovpen.v.c <- ifelse(w1.a.incgovpen.v < 0, w1.a.incgovpen.v, NA)
+Adult.W1$w1.a.incgovpen.v.flg <- ifelse(w1.a.incgovpen.v < 0, w1.a.incgovpen.v, NA)
 Adult.W1$w1.a.incgovpen.v <- ifelse(w1.a.incgovpen.v >= 0, w1.a.incgovpen.v, NA)
 detach(Adult.W1)
 summary(Adult.W1$w1.a.incgovpen.v)
-summary(Adult.W1$w1.a.incgovpen.v.c)
+summary(Adult.W1$w1.a.incgovpen.v.flg)
 
 # create dataframe of household pension income (by gender)
 Spen.A.W1 <- ddply(Adult.W1, .(w1.hhid, w1.a.woman), summarize, hh.spen = sum(w1.a.incgovpen.v))

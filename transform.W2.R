@@ -65,6 +65,9 @@ Child.W2$w2.c.weight.2 <- ifelse(w2.c.weight.2 >= 0, w2.c.weight.2, NA)
 Child.W2$w2.c.weight.3 <- ifelse(w2.c.weight.3 >= 0, w2.c.weight.3, NA)
 detach(Child.W2)
 
+# filter out the erronous dob months
+Child.W2$w2.c.dob.m[199] <- NA
+
 # construct age in days and months
 Child.W2$w2.c.intrv.dt <- as.Date(paste(Child.W2$w2.c.intrv.y, Child.W2$w2.c.intrv.m, Child.W2$w2.c.intrv.d, sep="-"))
 Child.W2$w2.c.dob.dt <- as.Date(paste(Child.W2$w2.c.dob.y, Child.W2$w2.c.dob.m,1, sep="-"))
@@ -73,25 +76,23 @@ Child.W2$w2.c.age.m <- Child.W2$w2.c.age.d %/% month
 #### analyse these created variables and describe them above ####
 summary(Child.W2$w2.c.intrv.dt)
 summary(Child.W2$w2.c.dob.dt)
-# minimum is now -13
 summary(Child.W2$w2.c.age.d)
 summary(Child.W2$w2.c.age.m)
 
-# construct woman logical dummies
-##### most have encoded NAs, needs to be sorted out ####
-summary(Child.W2$w2.c.gen)
-summary(Adult.W2$w2.a.gen)
-summary(Household.Roster.W2$w2.r.gen)
-summary(Individual.Derived.W2$w2.best.gen)
-Child.W2$w2.c.woman <- Child.W2$w2.c.gen == 'Female'
-Adult.W2$w2.a.woman <- Adult.W2$w2.a.gen == 'Female'
-Household.Roster.W2$w2.r.woman <- Household.Roster.W2$w2.r.gen == 'Female'
-# Individual Derived dataset contains a 'Don't know', different method
-str(Individual.Derived.W2$w2.best.gen)
+# filter out missing value codes
+### move these to flags ####
+Child.W2$w2.c.gen <- ifelse(as.numeric(Child.W2$w2.c.gen) %in% 5:6, Child.W2$w2.c.gen, NA)
+Adult.W2$w2.a.gen <- ifelse(as.numeric(Adult.W2$w2.a.gen) %in% 5:6, Adult.W2$w2.a.gen, NA)
+Household.Roster.W2$w2.r.gen <- ifelse(as.numeric(Household.Roster.W2$w2.r.gen) %in% 5:6, Household.Roster.W2$w2.r.gen, NA)
 Individual.Derived.W2$w2.best.gen <- ifelse(as.numeric(Individual.Derived.W2$w2.best.gen) %in% 5:6, Individual.Derived.W2$w2.best.gen, NA)
-str(Individual.Derived.W2$w2.best.gen)
-summary(Individual.Derived.W2$w2.best.gen)
+
+# create logical dummies
+Child.W2$w2.c.woman <- Child.W2$w2.c.gen == 6
+Adult.W2$w2.a.woman <- Adult.W2$w2.a.gen == 6
+Household.Roster.W2$w2.r.woman <- Household.Roster.W2$w2.r.gen == 6
 Individual.Derived.W2$w2.best.woman <- Individual.Derived.W2$w2.best.gen == 6
+
+# analyse the results
 summary(Child.W2$w2.c.woman)
 summary(Adult.W2$w2.a.woman)
 summary(Household.Roster.W2$w2.r.woman)
@@ -135,11 +136,11 @@ Child.W2$w2.man.60.65 <- Child.W2$w2.hhid %in% w2.man.60.65.hhid
 # filter out missing value codes for the adults raw data set
 summary(Adult.W2$w2.a.incgovpen.v)
 attach(Adult.W2)
-Adult.W2$w2.a.incgovpen.v.c <- ifelse(w2.a.incgovpen.v < 0, w2.a.incgovpen.v, NA)
+Adult.W2$w2.a.incgovpen.v.flg <- ifelse(w2.a.incgovpen.v < 0, w2.a.incgovpen.v, NA)
 Adult.W2$w2.a.incgovpen.v <- ifelse(w2.a.incgovpen.v >= 0, w2.a.incgovpen.v, NA)
 detach(Adult.W2)
 summary(Adult.W2$w2.a.incgovpen.v)
-summary(Adult.W2$w2.a.incgovpen.v.c)
+summary(Adult.W2$w2.a.incgovpen.v.flg)
 
 # create dataframe of household pension income (by gender)
 Spen.A.W2 <- ddply(Adult.W2, .(w2.hhid, w2.a.woman), summarize, hh.spen = sum(w2.a.incgovpen.v))
