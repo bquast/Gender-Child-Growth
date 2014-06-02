@@ -19,82 +19,75 @@ head(Child.W12)
 
 
 # convert to long format
-Child.W12.long <- melt(Child.W12, id.var="pid")
-head(Child.W12.long)
+Child.W12.Long <- melt(Child.W12, id.var="pid")
+head(Child.W12.Long)
 
 ## extract the wave indicatio in variable names
-all(grepl("^w[1-2].*", as.character(Child.W12.long$variable))) # check
-Child.W12.long$wave <- as.numeric(gsub("^w([1-3]).*","\\1",
-                                        as.character(Child.W12.long$variable)))
+all(grepl("^w[1-2].*", as.character(Child.W12.Long$variable)))
+Child.W12.Long$wave <- as.numeric(gsub("^w([1-3]).*","\\1", as.character(Child.W12.Long$variable)))
 
 ## remove the wave indication in variable names
-Child.W12.long$variable2 <- gsub("^w[1-3].","",
-                                  as.character(Child.W12.long$variable))
-
-
+Child.W12.Long$variable2 <- gsub("^w[1-3].","", as.character(Child.W12.Long$variable))
 
 ## back in wide for plm
-Child.W12.wide <- dcast(Child.W12.long[, c("pid", "variable2",
-                                             "value", "wave")], pid+wave~variable2)
-Child.W12.wide[1:5,1:7]
+Child.W12.Wide <- dcast(Child.W12.Long[, c("pid", "variable2", "value", "wave")], pid+wave~variable2)
+Child.W12.Wide[1:5,1:7]
 
 # save the finished data.frame
-save(Child.W12.wide, file="Child.Wide.RData")
+save(Child.W12.Wide, file="Child.Wide.RData")
 
 # levels(w12_child_long$variable)[!grepl("^w[1-3]",
 #                                        levels(w12_child_long$variable))]
 # levels(w12_child_long$variable)[grepl("\\.[xy]$",
 #                                      levels(w12_child_long$variable))]
 
+# small cleanup
 rm(Child.W12)
-rm(Child.W12.long)
+rm(Child.W12.Long)
 
-################# not looked at this bit yet ##########
+# some analysis of variables
+typeof(Child.W12.Wide$wave)
+typeof(Child.W12.Wide$pid)
+
+typeof(Child.W12.Wide$zbmi)
+typeof(Child.W12.Wide$zhfa)
+typeof(Child.W12.Wide$zwfa)
+typeof(Child.W12.Wide$zwfh)
+
+typeof(Child.W12.Wide$spen.d.m)
+typeof(Child.W12.Wide$spen.d.w)
+
+typeof(Child.W12.Wide$c.age.d)
+typeof(Child.W12.Wide$c.age.m)
+
+typeof(Child.W12.Wide$h.tinc)
+typeof(Child.W12.Wide$best.edu)
+
 # encode data types as numeric
 # IMPORTANT ENCODES SPEN AS INTEGER
-w123_child_wide$wave <- as.integer(w123_child_wide$wave)
-w123_child_wide$pid <- as.integer(w123_child_wide$pid)
+Child.W12.Wide$wave <- as.integer(Child.W12.Wide$wave)
 
-w123_child_wide$w_zbmi <- as.double(w123_child_wide$w_zbmi)
-w123_child_wide$w_zhfa <- as.double(w123_child_wide$w_zhfa)
-w123_child_wide$w_zwfa <- as.double(w123_child_wide$w_zwfa)
-w123_child_wide$w_zwfh <- as.double(w123_child_wide$w_zwfh)
-w123_child_wide$w_spen_m <- as.factor(w123_child_wide$w_spen_m) 
-w123_child_wide$w_spen_w <- as.factor(w123_child_wide$w_spen_w) 
-w123_child_wide$w_c_age_d <- as.double(w123_child_wide$w_c_age_d)
-w123_child_wide$w_c_age_m <- as.double(w123_child_wide$w_c_age_m)
+Child.W12.Wide$zbmi <- as.double(Child.W12.Wide$zbmi)
+Child.W12.Wide$zhfa <- as.double(Child.W12.Wide$zhfa)
+Child.W12.Wide$zwfa <- as.double(Child.W12.Wide$zwfa)
+Child.W12.Wide$zwfh <- as.double(Child.W12.Wide$zwfh)
 
-w123_child_wide$w_h_tinc <- as.double(w123_child_wide$w_h_tinc)
-w123_child_wide$w_best_edu <- as.factor(w123_child_wide$w_best_edu)
+Child.W12.Wide$spen.d.m <- as.logical(Child.W12.Wide$spen.d.m) 
+Child.W12.Wide$spen.d.w <- as.logical(Child.W12.Wide$spen.d.w) 
+Child.W12.Wide$c.age.d <- as.integer(Child.W12.Wide$c.age.d)
+Child.W12.Wide$c.age.m <- as.integer(Child.W12.Wide$c.age.m)
+
+Child.W12.Wide$h.tinc <- as.integer(Child.W12.Wide$h.tinc)
+Child.W12.Wide$best.edu <- as.factor(Child.W12.Wide$best.edu)
 
 # create time effect dummy
-w123_child_wide$elig.men.60 <- ifelse(w123_child_wide$wave == 2 | w123_child_wide$wave == 3, 1, 0)
+Child.W12.Wide$elig.men.60 <- ifelse(Child.W12.Wide$wave == 2 | Child.W12.Wide$wave == 3, TRUE, FALSE)
 
-# check object types
-typeof(w123_child_wide$pid)
-typeof(w123_child_wide$wave)
-
-typeof(w123_child_wide$w_zbmi)
-typeof(w123_child_wide$w_zhfa)
-typeof(w123_child_wide$w_zwfa)
-typeof(w123_child_wide$w_zwfh)
-typeof(w123_child_wide$w_spen_m)
-typeof(w123_child_wide$w_spen_w)
-typeof(w123_child_wide$w_c_age_d)
-typeof(w123_child_wide$w_c_age_m)
-
-typeof(w123_child_wide$w_h_tinc)
-typeof(w123_child_wide$w_best_edu)
-###################### until here ##################
 
 # declare panel data frame
-Child.Panel <- pdata.frame(Child.W12.wide, index=c("pid","wave"))
-save(Child.Panel, file="Child.Panel.RData")
+Child.Panel <- pdata.frame(Child.W12.Wide, index=c("pid","wave"))
 
 
 # save the data
+save(Child.Panel, file="Child.Panel.RData")
 save.image("Child.Wide.RData")
-
-
-# another test
-table(table(Child.W12.wide$wave))
