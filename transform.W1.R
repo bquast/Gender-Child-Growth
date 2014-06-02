@@ -117,6 +117,8 @@ w1.man.60.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woma
 w1.woman.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == TRUE & Individual.Derived.W1$w1.best.age.yrs >= 65),]$w1.hhid
 # list the household IDs with a man agen 65+
 w1.man.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == FALSE & Individual.Derived.W1$w1.best.age.yrs >= 65),]$w1.hhid
+
+### rename these to 60.64
 # list the household IDs with a woman agen 60-64
 w1.woman.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == TRUE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
 # list the household IDs with a man agen 60-64
@@ -130,6 +132,7 @@ Child.W1$w1.woman.60 <- Child.W1$w1.hhid %in% w1.woman.60.hhid
 Child.W1$w1.man.60 <- Child.W1$w1.hhid %in% w1.man.60.hhid
 Child.W1$w1.woman.65 <- Child.W1$w1.hhid %in% w1.woman.65.hhid
 Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
+# rename these to 60-64
 Child.W1$w1.woman.60.65 <- Child.W1$w1.hhid %in% w1.woman.60.65.hhid
 Child.W1$w1.man.60.65 <- Child.W1$w1.hhid %in% w1.man.60.65.hhid
 #### ANALYSE these variables, add descriptions above each line ####
