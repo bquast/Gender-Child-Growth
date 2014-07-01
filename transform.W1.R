@@ -56,6 +56,27 @@ Child.W1$w1.c.dob.dt <- as.Date(paste(Child.W1$w1.c.dob.y, Child.W1$w1.c.dob.m, 
 Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 
+
+
+#### improved method for woman dummies, run this remove the old one
+# filter out gender missing value codes
+Child.W1$w1.c.gen.flg <- ifelse(!as.numeric(Child.W1$w1.c.gen) %in% 5:6, Child.W1$w1.c.gen, NA)
+Child.W1$w1.c.gen <- ifelse(as.numeric(Child.W1$w1.c.gen) %in% 5:6, Child.W1$w1.c.gen, NA)
+Adult.W1$w1.a.gen.flg <- ifelse(!as.numeric(Adult.W1$w1.a.gen) %in% 5:6, Adult.W1$w1.a.gen, NA)
+Adult.W1$w1.a.gen <- ifelse(as.numeric(Adult.W1$w1.a.gen) %in% 5:6, Adult.W1$w1.a.gen, NA)
+Household.Roster.W1$w1.r.gen.flg <- ifelse(!as.numeric(Household.Roster.W1$w1.r.gen) %in% 5:6, Household.Roster.W1$w1.r.gen, NA)
+Household.Roster.W1$w1.r.gen <- ifelse(as.numeric(Household.Roster.W1$w1.r.gen) %in% 5:6, Household.Roster.W1$w1.r.gen, NA)
+Individual.Derived.W1$w1.best.gen.flg <- ifelse(!as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
+Individual.Derived.W1$w1.best.gen <- ifelse(as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
+
+# create woman logical dummies
+Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 6
+Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 6
+Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 6
+Individual.Derived.W1$w1.best.woman <- Individual.Derived.W1$w1.best.gen == 6
+
+
+### remove this one
 # construct woman logical dummies
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 'Female'
 Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 'Female'
