@@ -15,7 +15,9 @@ load( 'Child.Panel.RData' )
 attach( Child.Panel )
 table( a.spen )
 summary( a.spen )
+table( a.spen.w )
 summary( a.spen.w )
+table( a.spen.m )
 summary( a.spen.m )
 # recode the NAs to zero
 

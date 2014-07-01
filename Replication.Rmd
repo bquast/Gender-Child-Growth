@@ -46,12 +46,13 @@ For the purpose of importing into R, the Stata 12 format is prefered. Both the S
 * [Wave 2][7]
 * [Wave 3][8]
 
-After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth). All three zip files contain a folder called **stata12** these should be placed directly in **this** folder, do **not** create a new folder with the same name as the zip file. Note, since the folders have the same names, a warning about merging will appear, since the containing files are named differently this will not be a problem, thus accept to merge the folders.
+After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth).
 
-We now have a folder **stata12** directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains all the source files.
+Extract
+--------------------------------------------------------
+The [extract.R](/extract.R) file contains instructions for unzipping the zip files containing the **Stata 12** files. The script presumes the files are located in the working directory. All files will be unzipped to a new subdirectory called **stata12**.
 
-We can check the contents of this folder using an R command, the output should be as per below:
-
+We can list the extracted files.
 
 ```{r}
 list.files('stata12')
