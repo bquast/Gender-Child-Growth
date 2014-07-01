@@ -4,34 +4,13 @@
 # instructions for transforming the imported object to a tidy data frame
 
 # install and load the required packages
-install.packages('plyr')
-library(plyr)
-
+library(dplyr)
 
 # construct a length-of-month object
 month <- (3*365 + 366) / (4*12)
 
 # load the imported RData file
 load("imported.RData")
-
-#### EVALUATE these variables before reencoding ####
-summary(Child.W3$w3.c.height.1)
-
-summary(Child.W3$w3.c.height.2)
-
-summary(Child.W3$w3.c.height.3)
-table(Child.W3$w3.c.height.3)
-length(table(Child.W3$w3.c.height.3))
-str(Child.W3$w3.c.height.3)
-
-summary(Child.W3$w3.c.weight.1)
-
-summary(Child.W3$w3.c.weight.2)
-
-summary(Child.W3$w3.c.weight.3)
-table(Child.W3$w3.c.weight.3)
-length(table(Child.W3$w3.c.weight.3))
-str(Child.W3$w3.c.weight.3)
 
 
 ### possibly treat these same as the other recoded vars ####
@@ -67,12 +46,9 @@ Child.W3$w3.c.weight.2 <- ifelse(w3.c.weight.2 >= 0, w3.c.weight.2, NA)
 Child.W3$w3.c.weight.3 <- ifelse(w3.c.weight.3 >= 0, w3.c.weight.3, NA)
 detach(Child.W3)
 
-
 # filter out the erronous dob months
 Child.W3$w3.c.dob.m[6283] <- NA
-
 #### report these to NIDS ####
-
 
 # construct age in days and months
 Child.W3$w3.c.intrv.dt <- as.Date(
@@ -90,36 +66,21 @@ Child.W3$w3.c.dob.dt <- as.Date(
 Child.W3$w3.c.age.d <- as.numeric(Child.W3$w3.c.intrv.dt - Child.W3$w3.c.dob.dt)
 Child.W3$w3.c.age.m <- Child.W3$w3.c.age.d %/% month
 
-#### analyse these created variables and describe them above ####
-summary(Child.W3$w3.c.intrv.dt)
-summary(Child.W3$w3.c.dob.dt)
-# minimum is now -13
-summary(Child.W3$w3.c.age.d)
-summary(Child.W3$w3.c.age.m)
-
-# construct woman logical dummies
-summary(Child.W3$w3.c.gen)
-summary(Adult.W3$w3.a.gen)
-summary(Household.Roster.W3$w3.r.gen)
-summary(Individual.Derived.W3$w3.best.gen)
-
-# filter out missing value codes
-### move these to flags ####
+# filter out gender missing value codes
+Child.W3$w3.c.gen.flg <- ifelse(!as.numeric(Child.W3$w3.c.gen) %in% 5:6, Child.W3$w3.c.gen, NA)
 Child.W3$w3.c.gen <- ifelse(as.numeric(Child.W3$w3.c.gen) %in% 5:6, Child.W3$w3.c.gen, NA)
+Adult.W3$w3.a.gen.flg <- ifelse(!as.numeric(Adult.W3$w3.a.gen) %in% 5:6, Adult.W3$w3.a.gen, NA)
 Adult.W3$w3.a.gen <- ifelse(as.numeric(Adult.W3$w3.a.gen) %in% 5:6, Adult.W3$w3.a.gen, NA)
+Household.Roster.W3$w3.r.gen.flg <- ifelse(!as.numeric(Household.Roster.W3$w3.r.gen) %in% 5:6, Household.Roster.W3$w3.r.gen, NA)
 Household.Roster.W3$w3.r.gen <- ifelse(as.numeric(Household.Roster.W3$w3.r.gen) %in% 5:6, Household.Roster.W3$w3.r.gen, NA)
-Individual.Derived.W3$w3.best.gen <- ifelse(as.numeric(Individual.Derived.W3$w3.best.gen) %in% 5:6, Individual.Derived.W3$w3.best.gen, NA)
+Individual.Derived.W3$w3.best.gen.flg <- ifelse(!as.numeric(Individual.Derived.W3$w3.best.gen) %in% 2:3, Individual.Derived.W3$w3.best.gen, NA)
+Individual.Derived.W3$w3.best.gen <- ifelse(as.numeric(Individual.Derived.W3$w3.best.gen) %in% 2:3, Individual.Derived.W3$w3.best.gen, NA)
 
-# create logical dummies
+# create woman logical dummies
 Child.W3$w3.c.woman <- Child.W3$w3.c.gen == 6
 Adult.W3$w3.a.woman <- Adult.W3$w3.a.gen == 6
 Household.Roster.W3$w3.r.woman <- Household.Roster.W3$w3.r.gen == 6
-Individual.Derived.W3$w3.best.woman <- Individual.Derived.W3$w3.best.gen == 6
-
-summary(Child.W3$w3.c.woman)
-summary(Adult.W3$w3.a.woman)
-summary(Household.Roster.W3$w3.r.woman)
-summary(Individual.Derived.W3$w3.best.woman)
+Individual.Derived.W3$w3.best.woman <- Individual.Derived.W3$w3.best.gen == 3
 
 # transform the pension variable into a dummy
 Individual.Derived.W3$w3.spen.d <- ifelse(is.na(Individual.Derived.W3$w3.spen), FALSE, TRUE)
