@@ -84,24 +84,16 @@ Individual.Derived.W3$w3.best.woman <- Individual.Derived.W3$w3.best.gen == 3
 
 # transform the pension variable into a dummy
 Individual.Derived.W3$w3.spen.d <- ifelse(is.na(Individual.Derived.W3$w3.spen), FALSE, TRUE)
+
 # construct woman and man pension dummies
-# list the household IDs with a female pension recipient
 w3.spen.d.w.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.spen.d == TRUE & Individual.Derived.W3$w3.best.woman == TRUE),]$w3.hhid
-# list the household IDs with a male pension recipient
 w3.spen.d.m.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.spen.d == TRUE & Individual.Derived.W3$w3.best.woman == FALSE),]$w3.hhid
-# list the household IDs with awoman aged 60+
 w3.woman.60.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == TRUE & Individual.Derived.W3$w3.best.age.yrs >= 60),]$w3.hhid
-# list the household IDs with a man agen 60+
 w3.man.60.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == FALSE & Individual.Derived.W3$w3.best.age.yrs >= 60),]$w3.hhid
-# list the household IDs with a woman agen 65+
 w3.woman.65.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == TRUE & Individual.Derived.W3$w3.best.age.yrs >= 65),]$w3.hhid
-# list the household IDs with a man agen 65+
 w3.man.65.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == FALSE & Individual.Derived.W3$w3.best.age.yrs >= 65),]$w3.hhid
-# list the household IDs with a woman agen 60-64
-w3.woman.60.65.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == TRUE & Individual.Derived.W3$w3.best.age.yrs >= 60 & Individual.Derived.W3$w3.best.age.yrs < 65),]$w3.hhid
-# list the household IDs with a man agen 60-64
-w3.man.60.65.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == FALSE & Individual.Derived.W3$w3.best.age.yrs >= 60 & Individual.Derived.W3$w3.best.age.yrs < 65),]$w3.hhid
-# this could also be done from the adult data set
+w3.woman.60.64.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == TRUE & Individual.Derived.W3$w3.best.age.yrs >= 60 & Individual.Derived.W3$w3.best.age.yrs < 65),]$w3.hhid
+w3.man.60.64.hhid <- Individual.Derived.W3[which(Individual.Derived.W3$w3.best.woman == FALSE & Individual.Derived.W3$w3.best.age.yrs >= 60 & Individual.Derived.W3$w3.best.age.yrs < 65),]$w3.hhid
 
 # create pension dummies in Child data frame
 Child.W3$w3.spen.d.w <- Child.W3$w3.hhid %in% w3.spen.d.w.hhid
@@ -110,27 +102,27 @@ Child.W3$w3.woman.60 <- Child.W3$w3.hhid %in% w3.woman.60.hhid
 Child.W3$w3.man.60 <- Child.W3$w3.hhid %in% w3.man.60.hhid
 Child.W3$w3.woman.65 <- Child.W3$w3.hhid %in% w3.woman.65.hhid
 Child.W3$w3.man.65 <- Child.W3$w3.hhid %in% w3.man.65.hhid
-Child.W3$w3.woman.60.65 <- Child.W3$w3.hhid %in% w3.woman.60.65.hhid
-Child.W3$w3.man.60.65 <- Child.W3$w3.hhid %in% w3.man.60.65.hhid
+Child.W3$w3.woman.60.64 <- Child.W3$w3.hhid %in% w3.woman.60.64.hhid
+Child.W3$w3.man.60.64 <- Child.W3$w3.hhid %in% w3.man.60.64.hhid
 #### ANALYSE these variables, add descriptions above each line ####
 
 
-
-# filter out missing value codes for the adults raw data set
-summary(Adult.W3$w3.a.incgovpen.v)
+# filter out missing value codes for the adults raw data set pension income
 attach(Adult.W3)
 Adult.W3$w3.a.incgovpen.v.flg <- ifelse(w3.a.incgovpen.v < 0, w3.a.incgovpen.v, NA)
 Adult.W3$w3.a.incgovpen.v <- ifelse(w3.a.incgovpen.v >= 0, w3.a.incgovpen.v, NA)
 detach(Adult.W3)
-summary(Adult.W3$w3.a.incgovpen.v)
-summary(Adult.W3$w3.a.incgovpen.v.flg)
 
-# create dataframe of household pension income (by gender)
-Spen.A.W3 <- ddply(Adult.W3, .(w3.hhid, w3.a.woman), summarize, hh.spen = sum(w3.a.incgovpen.v))
+# create data frames of household pension income (by gender)
+Group.A.W3 <- group_by(Adult.W3, w3.hhid, w3.a.woman)
+Spen.A.W3 <- Group.A.W3 %>%  summarise(hh.spen = sum(w3.a.incgovpen.v) )
+Group.IndD.W3 <- group_by(Individual.Derived.W3, w3.hhid, w3.best.woman)
+Spen.IndD.W3 <- Group.IndD.W3 %>%  summarise(hh.spen = sum(w3.spen) )
+
+# merge pension income data to child
 Child.W3$w3.a.spen <- Spen.A.W3$hh.spen[match (Child.W3$w3.hhid, Spen.A.W3$w3.hhid) ]
 Child.W3$w3.a.spen.w <- Spen.A.W3[Spen.A.W3$w3.a.woman == TRUE,]$hh.spen[match (Child.W3$w3.hhid, Spen.A.W3$w3.hhid) ]
 Child.W3$w3.a.spen.m <- Spen.A.W3[Spen.A.W3$w3.a.woman == FALSE,]$hh.spen[match (Child.W3$w3.hhid, Spen.A.W3$w3.hhid) ]
-Spen.IndD.W3 <- ddply(Individual.Derived.W3, .(w3.hhid, w3.best.woman), summarize, hh.spen = sum(w3.spen))
 Child.W3$w3.id.spen <- Spen.IndD.W3$hh.spen[match (Child.W3$w3.hhid, Spen.IndD.W3$w3.hhid) ]
 Child.W3$w3.id.spen.w <- Spen.IndD.W3[Spen.IndD.W3$w3.best.woman == TRUE,]$hh.spen[match (Child.W3$w3.hhid, Spen.IndD.W3$w3.hhid) ]
 Child.W3$w3.id.spen.m <- Spen.IndD.W3[Spen.IndD.W3$w3.best.woman == FALSE,]$hh.spen[match (Child.W3$w3.hhid, Spen.IndD.W3$w3.hhid) ]
