@@ -57,10 +57,6 @@ Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 
 # construct woman logical dummies
-summary(Child.W1$w1.c.gen)
-summary(Adult.W1$w1.a.gen)
-summary(Household.Roster.W1$w1.r.gen)
-summary(Individual.Derived.W1$w1.best.gen)
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 'Female'
 Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 'Female'
 Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 'Female'
