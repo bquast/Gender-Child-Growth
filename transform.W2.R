@@ -55,7 +55,7 @@ Child.W2$w2.c.dob.dt <- as.Date(paste(Child.W2$w2.c.dob.y, Child.W2$w2.c.dob.m,1
 Child.W2$w2.c.age.d <- as.numeric(Child.W2$w2.c.intrv.dt - Child.W2$w2.c.dob.dt)
 Child.W2$w2.c.age.m <- Child.W2$w2.c.age.d %/% month
 
-# filter out missing value codes
+# filter out gender missing value codes
 Child.W2$w2.c.gen.flg <- ifelse(!as.numeric(Child.W2$w2.c.gen) %in% 5:6, Child.W2$w2.c.gen, NA)
 Child.W2$w2.c.gen <- ifelse(as.numeric(Child.W2$w2.c.gen) %in% 5:6, Child.W2$w2.c.gen, NA)
 Adult.W2$w2.a.gen.flg <- ifelse(!as.numeric(Adult.W2$w2.a.gen) %in% 5:6, Adult.W2$w2.a.gen, NA)
@@ -65,7 +65,7 @@ Household.Roster.W2$w2.r.gen <- ifelse(as.numeric(Household.Roster.W2$w2.r.gen) 
 Individual.Derived.W2$w2.best.gen.flg <- ifelse(!as.numeric(Individual.Derived.W2$w2.best.gen) %in% 5:6, Individual.Derived.W2$w2.best.gen, NA)
 Individual.Derived.W2$w2.best.gen <- ifelse(as.numeric(Individual.Derived.W2$w2.best.gen) %in% 5:6, Individual.Derived.W2$w2.best.gen, NA)
 
-# create logical dummies
+# create woman logical dummies
 Child.W2$w2.c.woman <- Child.W2$w2.c.gen == 6
 Adult.W2$w2.a.woman <- Adult.W2$w2.a.gen == 6
 Household.Roster.W2$w2.r.woman <- Household.Roster.W2$w2.r.gen == 6
@@ -94,19 +94,22 @@ Child.W2$w2.man.65 <- Child.W2$w2.hhid %in% w2.man.65.hhid
 Child.W2$w2.woman.60.65 <- Child.W2$w2.hhid %in% w2.woman.60.65.hhid
 Child.W2$w2.man.60.65 <- Child.W2$w2.hhid %in% w2.man.60.65.hhid
 
-# filter out missing value codes for the adults raw data set
-summary(Adult.W2$w2.a.incgovpen.v)
+# filter out missing value codes for the adults raw data set pension income
 attach(Adult.W2)
 Adult.W2$w2.a.incgovpen.v.flg <- ifelse(w2.a.incgovpen.v < 0, w2.a.incgovpen.v, NA)
 Adult.W2$w2.a.incgovpen.v <- ifelse(w2.a.incgovpen.v >= 0, w2.a.incgovpen.v, NA)
 detach(Adult.W2)
 
-# create dataframe of household pension income (by gender)
-Spen.A.W2 <- ddply(Adult.W2, .(w2.hhid, w2.a.woman), summarize, hh.spen = sum(w2.a.incgovpen.v))
+# create data frames of household pension income (by gender)
+Group.A.W2 <- group_by(Adult.W2, w2.hhid, w2.a.woman)
+Spen.A.W2 <- Group.A.W2 %>%  summarise(hh.spen = sum(w2.a.incgovpen.v) )
+Group.IndD.W2 <- group_by(Individual.Derived.W2, w2.hhid, w2.best.woman)
+Spen.IndD.W2 <- Group.IndD.W2 %>%  summarise(hh.spen = sum(w2.spen) )
+
+# merge pension income data to child
 Child.W2$w2.a.spen <- Spen.A.W2$hh.spen[match (Child.W2$w2.hhid, Spen.A.W2$w2.hhid) ]
 Child.W2$w2.a.spen.w <- Spen.A.W2[Spen.A.W2$w2.a.woman == TRUE,]$hh.spen[match (Child.W2$w2.hhid, Spen.A.W2$w2.hhid) ]
 Child.W2$w2.a.spen.m <- Spen.A.W2[Spen.A.W2$w2.a.woman == FALSE,]$hh.spen[match (Child.W2$w2.hhid, Spen.A.W2$w2.hhid) ]
-Spen.IndD.W2 <- ddply(Individual.Derived.W2, .(w2.hhid, w2.best.woman), summarize, hh.spen = sum(w2.spen))
 Child.W2$w2.id.spen <- Spen.IndD.W2$hh.spen[match (Child.W2$w2.hhid, Spen.IndD.W2$w2.hhid) ]
 Child.W2$w2.id.spen.w <- Spen.IndD.W2[Spen.IndD.W2$w2.best.woman == TRUE,]$hh.spen[match (Child.W2$w2.hhid, Spen.IndD.W2$w2.hhid) ]
 Child.W2$w2.id.spen.m <- Spen.IndD.W2[Spen.IndD.W2$w2.best.woman == FALSE,]$hh.spen[match (Child.W2$w2.hhid, Spen.IndD.W2$w2.hhid) ]
