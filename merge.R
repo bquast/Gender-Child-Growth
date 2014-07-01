@@ -5,9 +5,7 @@
 
 
 # instal and load packages
-install.packages('reshape2')
 library(reshape2)
-install.packages('plm')
 library(plm)
 
 # load the data
@@ -97,8 +95,8 @@ Child.Wide$woman.60 <- as.logical(Child.Wide$woman.60)
 Child.Wide$man.60 <- as.logical(Child.Wide$man.60) 
 Child.Wide$woman.65 <- as.logical(Child.Wide$woman.65) 
 Child.Wide$man.65 <- as.logical(Child.Wide$man.65) 
-Child.Wide$woman.60.65 <- as.logical(Child.Wide$woman.60.65) 
-Child.Wide$man.60.65 <- as.logical(Child.Wide$man.60.65) 
+Child.Wide$woman.60.64 <- as.logical(Child.Wide$woman.60.64) 
+Child.Wide$man.60.64 <- as.logical(Child.Wide$man.60.64) 
 
 
 Child.Wide$h.tinc <- as.double(Child.Wide$h.tinc)
