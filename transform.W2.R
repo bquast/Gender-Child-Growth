@@ -81,8 +81,8 @@ w2.woman.60.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.wo
 w2.man.60.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == FALSE & Individual.Derived.W2$w2.best.age.yrs >= 60),]$w2.hhid
 w2.woman.65.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == TRUE & Individual.Derived.W2$w2.best.age.yrs >= 65),]$w2.hhid
 w2.man.65.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == FALSE & Individual.Derived.W2$w2.best.age.yrs >= 65),]$w2.hhid
-w2.woman.60.65.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == TRUE & Individual.Derived.W2$w2.best.age.yrs >= 60 & Individual.Derived.W2$w2.best.age.yrs < 65),]$w2.hhid
-w2.man.60.65.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == FALSE & Individual.Derived.W2$w2.best.age.yrs >= 60 & Individual.Derived.W2$w2.best.age.yrs < 65),]$w2.hhid
+w2.woman.60.64.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == TRUE & Individual.Derived.W2$w2.best.age.yrs >= 60 & Individual.Derived.W2$w2.best.age.yrs < 65),]$w2.hhid
+w2.man.60.64.hhid <- Individual.Derived.W2[which(Individual.Derived.W2$w2.best.woman == FALSE & Individual.Derived.W2$w2.best.age.yrs >= 60 & Individual.Derived.W2$w2.best.age.yrs < 65),]$w2.hhid
 
 # create pension dummies in Child data frame
 Child.W2$w2.spen.d.w <- Child.W2$w2.hhid %in% w2.spen.d.w.hhid
@@ -91,8 +91,8 @@ Child.W2$w2.woman.60 <- Child.W2$w2.hhid %in% w2.woman.60.hhid
 Child.W2$w2.man.60 <- Child.W2$w2.hhid %in% w2.man.60.hhid
 Child.W2$w2.woman.65 <- Child.W2$w2.hhid %in% w2.woman.65.hhid
 Child.W2$w2.man.65 <- Child.W2$w2.hhid %in% w2.man.65.hhid
-Child.W2$w2.woman.60.65 <- Child.W2$w2.hhid %in% w2.woman.60.65.hhid
-Child.W2$w2.man.60.65 <- Child.W2$w2.hhid %in% w2.man.60.65.hhid
+Child.W2$w2.woman.60.64 <- Child.W2$w2.hhid %in% w2.woman.60.64.hhid
+Child.W2$w2.man.60.64 <- Child.W2$w2.hhid %in% w2.man.60.64.hhid
 
 # filter out missing value codes for the adults raw data set pension income
 attach(Adult.W2)
