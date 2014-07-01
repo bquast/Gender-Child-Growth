@@ -5,7 +5,8 @@
 
 # install and load the required packages
 install.packages('plyr')
-library(plyr)
+#library(plyr)
+library(dplyr)
 
 
 # construct a length-of-month object
@@ -90,6 +91,7 @@ summary(Individual.Derived.W1$w1.best.gen)
 Child.W1$w1.c.woman <- Child.W1$w1.c.gen == 'Female'
 Adult.W1$w1.a.woman <- Adult.W1$w1.a.gen == 'Female'
 Household.Roster.W1$w1.r.woman <- Household.Roster.W1$w1.r.gen == 'Female'
+
 # Individual Derived dataset contains a 'Don't know', different method
 str(Individual.Derived.W1$w1.best.gen)
 Individual.Derived.W1$w1.best.gen <- ifelse(as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
@@ -117,12 +119,10 @@ w1.man.60.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woma
 w1.woman.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == TRUE & Individual.Derived.W1$w1.best.age.yrs >= 65),]$w1.hhid
 # list the household IDs with a man agen 65+
 w1.man.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == FALSE & Individual.Derived.W1$w1.best.age.yrs >= 65),]$w1.hhid
-
-### rename these to 60.64
 # list the household IDs with a woman agen 60-64
-w1.woman.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == TRUE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
+w1.woman.60.64.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == TRUE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
 # list the household IDs with a man agen 60-64
-w1.man.60.65.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == FALSE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
+w1.man.60.64.hhid <- Individual.Derived.W1[which(Individual.Derived.W1$w1.best.woman == FALSE & Individual.Derived.W1$w1.best.age.yrs >= 60 & Individual.Derived.W1$w1.best.age.yrs < 65),]$w1.hhid
 # this could also be done from the adult data set
 
 # create pension dummies in Child data frame
@@ -132,9 +132,8 @@ Child.W1$w1.woman.60 <- Child.W1$w1.hhid %in% w1.woman.60.hhid
 Child.W1$w1.man.60 <- Child.W1$w1.hhid %in% w1.man.60.hhid
 Child.W1$w1.woman.65 <- Child.W1$w1.hhid %in% w1.woman.65.hhid
 Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
-# rename these to 60-64
-Child.W1$w1.woman.60.65 <- Child.W1$w1.hhid %in% w1.woman.60.65.hhid
-Child.W1$w1.man.60.65 <- Child.W1$w1.hhid %in% w1.man.60.65.hhid
+Child.W1$w1.woman.60.64 <- Child.W1$w1.hhid %in% w1.woman.60.64.hhid
+Child.W1$w1.man.60.64 <- Child.W1$w1.hhid %in% w1.man.60.64.hhid
 #### ANALYSE these variables, add descriptions above each line ####
 
 
@@ -145,18 +144,20 @@ attach(Adult.W1)
 Adult.W1$w1.a.incgovpen.v.flg <- ifelse(w1.a.incgovpen.v < 0, w1.a.incgovpen.v, NA)
 Adult.W1$w1.a.incgovpen.v <- ifelse(w1.a.incgovpen.v >= 0, w1.a.incgovpen.v, NA)
 detach(Adult.W1)
-summary(Adult.W1$w1.a.incgovpen.v)
-summary(Adult.W1$w1.a.incgovpen.v.flg)
 
 # create dataframe of household pension income (by gender)
-Spen.A.W1 <- ddply(Adult.W1, .(w1.hhid, w1.a.woman), summarize, hh.spen = sum(w1.a.incgovpen.v))
+Group.A.W1 <- group_by(Adult.W1, w1.hhid, w1.a.woman)
+Spen.A.W1 <- Group.A.W1 %>%  summarise(hh.spen = sum(w1.a.incgovpen.v) )
 Child.W1$w1.a.spen <- Spen.A.W1$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
 Child.W1$w1.a.spen.w <- Spen.A.W1[Spen.A.W1$w1.a.woman == TRUE,]$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
 Child.W1$w1.a.spen.m <- Spen.A.W1[Spen.A.W1$w1.a.woman == FALSE,]$hh.spen[match (Child.W1$w1.hhid, Spen.A.W1$w1.hhid) ]
-Spen.IndD.W1 <- ddply(Individual.Derived.W1, .(w1.hhid, w1.best.woman), summarize, hh.spen = sum(w1.spen))
+
+Group.IndD.W1 <- group_by(Individual.Derived.W1, w1.hhid, w1.best.woman)
+Spen.IndD.W1 <- Group.IndD.W1 %>%  summarise(hh.spen = sum(w1.spen) )
 Child.W1$w1.id.spen <- Spen.IndD.W1$hh.spen[match (Child.W1$w1.hhid, Spen.IndD.W1$w1.hhid) ]
 Child.W1$w1.id.spen.w <- Spen.IndD.W1[Spen.IndD.W1$w1.best.woman == TRUE,]$hh.spen[match (Child.W1$w1.hhid, Spen.IndD.W1$w1.hhid) ]
 Child.W1$w1.id.spen.m <- Spen.IndD.W1[Spen.IndD.W1$w1.best.woman == FALSE,]$hh.spen[match (Child.W1$w1.hhid, Spen.IndD.W1$w1.hhid) ]
+
 
 # merge the z-scores into the Child data frame
 Child.W1$w1.zhfa <- Individual.Derived.W1$w1.zhfa[match(Child.W1$pid, Individual.Derived.W1$pid)]
