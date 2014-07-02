@@ -48,6 +48,10 @@ For the purpose of importing into R, the Stata 12 format is prefered. Both the S
 
 After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth).
 
+Replicate
+--------------------------------------------------------
+The procedure for replication is described step-by-step below, whereby each section corresponds to an R-file. In stead of running every file separately, all files can be ran in the correct sequence, by running the [replicate.R](/replicate.R) file. As described above, the source **zip files** need to be placed in the working directory.
+
 Extract
 --------------------------------------------------------
 The [extract.R](/extract.R) file contains instructions for unzipping the zip files containing the **Stata 12** files. The script presumes the files are located in the working directory. All files will be unzipped to a new subdirectory called **stata12**.
