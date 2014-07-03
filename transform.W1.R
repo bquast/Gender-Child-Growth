@@ -12,43 +12,59 @@ month <- (3*365 + 366) / (4*12)
 # load the imported RData file
 load("imported.RData")
 
-
-### possibly treat these same as the other recoded vars ####
 # encode month factor variables as numeric
 Child.W1$w1.c.dob.m <- as.numeric(Child.W1$w1.c.dob.m)
 Child.W1$w1.c.intrv.m <- as.numeric(Child.W1$w1.c.intrv.m)
 
+# encode as numeric
+Household.Derived.W1$w1.hhgeo2011 <- as.numeric(Household.Derived.W1$w1.hhgeo2011)
+Household.Derived.W1$w1.hhgeo2001 <- as.numeric(Household.Derived.W1$w1.hhgeo2001)
+
+# filter out missing value codes for the adults raw data set pension income
+attach(Adult.W1)
+Adult.W1$w1.a.incgovpen.v.c <- ifelse(w1.a.incgovpen.v < 0, w1.a.incgovpen.v, NA)
+Adult.W1$w1.a.incgovpen.v <- ifelse(w1.a.incgovpen.v >= 0, w1.a.incgovpen.v, NA)
+detach(Adult.W1)
+
 # filter out the missing value codes and write them to separate variables
 attach(Child.W1)
-Child.W1$w1.c.dob.y.flg <- ifelse(w1.c.dob.y >= 2020, w1.c.dob.y, NA)
+Child.W1$w1.c.dob.y.c <- ifelse(w1.c.dob.y >= 2020, w1.c.dob.y, NA)
 Child.W1$w1.c.dob.y <- ifelse(w1.c.dob.y <= 2020, w1.c.dob.y, NA)
-Child.W1$w1.c.dob.m.flg <- ifelse(Child.W1$w1.c.dob.m > 12, w1.c.dob.m, NA)
+Child.W1$w1.c.dob.m.c <- ifelse(Child.W1$w1.c.dob.m > 12, w1.c.dob.m, NA)
 Child.W1$w1.c.dob.m <- ifelse(w1.c.dob.m <= 12, w1.c.dob.m, NA)
-Child.W1$w1.c.intrv.y.flg <- ifelse(w1.c.intrv.y <= 0, w1.c.intrv.y, NA)
+Child.W1$w1.c.intrv.y.c <- ifelse(w1.c.intrv.y <= 0, w1.c.intrv.y, NA)
 Child.W1$w1.c.intrv.y <- ifelse(w1.c.intrv.y >= 0, w1.c.intrv.y, NA)
-Child.W1$w1.c.intrv.m.flg <- ifelse(w1.c.intrv.m > 12, w1.c.intrv.m, NA)
+Child.W1$w1.c.intrv.m.c <- ifelse(w1.c.intrv.m > 12, w1.c.intrv.m, NA)
 Child.W1$w1.c.intrv.m <- ifelse(w1.c.intrv.m <= 12, w1.c.intrv.m, NA)
-Child.W1$w1.c.intrv.d.flg <- ifelse(w1.c.intrv.d > 31, w1.c.intrv.d, NA)
+Child.W1$w1.c.intrv.d.c <- ifelse(w1.c.intrv.d > 31, w1.c.intrv.d, NA)
 Child.W1$w1.c.intrv.d <- ifelse(w1.c.intrv.d <= 31, w1.c.intrv.d, NA)
-Child.W1$w1.c.height.1.flg <- ifelse(w1.c.height.1 <= 0, w1.c.height.1, NA)
-Child.W1$w1.c.height.2.flg <- ifelse(w1.c.height.2 <= 0, w1.c.height.2, NA)
-Child.W1$w1.c.height.3.flg <- ifelse(w1.c.height.3 <= 0, w1.c.height.3, NA)
+Child.W1$w1.c.height.1.c <- ifelse(w1.c.height.1 <= 0, w1.c.height.1, NA)
+Child.W1$w1.c.height.2.c <- ifelse(w1.c.height.2 <= 0, w1.c.height.2, NA)
+Child.W1$w1.c.height.3.c <- ifelse(w1.c.height.3 <= 0, w1.c.height.3, NA)
 Child.W1$w1.c.height.1 <- ifelse(w1.c.height.1 >= 0, w1.c.height.1, NA)
 Child.W1$w1.c.height.2 <- ifelse(w1.c.height.2 >= 0, w1.c.height.2, NA)
 Child.W1$w1.c.height.3 <- ifelse(w1.c.height.3 >= 0, w1.c.height.3, NA)
-Child.W1$w1.c.weight.1.flg <- ifelse(w1.c.weight.1 <= 0, w1.c.weight.1, NA)
-Child.W1$w1.c.weight.2.flg <- ifelse(w1.c.weight.2 <= 0, w1.c.weight.2, NA)
-Child.W1$w1.c.weight.3.flg <- ifelse(w1.c.weight.3 <= 0, w1.c.weight.3, NA)
+Child.W1$w1.c.weight.1.c <- ifelse(w1.c.weight.1 <= 0, w1.c.weight.1, NA)
+Child.W1$w1.c.weight.2.c <- ifelse(w1.c.weight.2 <= 0, w1.c.weight.2, NA)
+Child.W1$w1.c.weight.3.c <- ifelse(w1.c.weight.3 <= 0, w1.c.weight.3, NA)
 Child.W1$w1.c.weight.1 <- ifelse(w1.c.weight.1 >= 0, w1.c.weight.1, NA)
 Child.W1$w1.c.weight.2 <- ifelse(w1.c.weight.2 >= 0, w1.c.weight.2, NA)
 Child.W1$w1.c.weight.3 <- ifelse(w1.c.weight.3 >= 0, w1.c.weight.3, NA)
 detach(Child.W1)
 
+# filter out missing value code
+attach(Household.Derived.W1)
+Household.Derived.W1$w1.hhgeo2001.c <- ifelse(w1.hhgeo2001 < 0, w1.hhgeo2001, NA)
+Household.Derived.W1$w1.hhgeo2001 <- ifelse(w1.hhgeo2001 > 0, w1.hhgeo2001, NA)
+Household.Derived.W1$w1.hhgeo2011.c <- ifelse(w1.hhgeo2011 < 0, w1.hhgeo2011, NA)
+Household.Derived.W1$w1.hhgeo2011 <- ifelse(w1.hhgeo2011 > 0, w1.hhgeo2011, NA)
+Household.Derived.W1$w1.hhincome.c <- ifelse(w1.hhincome < 0, w1.hhincome, NA)
+Household.Derived.W1$w1.hhincome <- ifelse(w1.hhincome > 0, w1.hhincome, NA)
+detach(Household.Derived.W1)
+
 # filter out the erronous dob months
 Child.W1$w1.c.dob.m[39] <- NA
 Child.W1$w1.c.dob.m[425] <- NA
-#### report these to NIDS ####
-
 
 # construct age in days and months
 Child.W1$w1.c.intrv.dt <- as.Date(paste(Child.W1$w1.c.intrv.y, Child.W1$w1.c.intrv.m, Child.W1$w1.c.intrv.d, sep="-"))
@@ -57,13 +73,13 @@ Child.W1$w1.c.age.d <- as.numeric(Child.W1$w1.c.intrv.dt - Child.W1$w1.c.dob.dt)
 Child.W1$w1.c.age.m <- Child.W1$w1.c.age.d %/% month
 
 # filter out gender missing value codes
-Child.W1$w1.c.gen.flg <- ifelse(!as.numeric(Child.W1$w1.c.gen) %in% 5:6, Child.W1$w1.c.gen, NA)
+Child.W1$w1.c.gen.c <- ifelse(!as.numeric(Child.W1$w1.c.gen) %in% 5:6, Child.W1$w1.c.gen, NA)
 Child.W1$w1.c.gen <- ifelse(as.numeric(Child.W1$w1.c.gen) %in% 5:6, Child.W1$w1.c.gen, NA)
-Adult.W1$w1.a.gen.flg <- ifelse(!as.numeric(Adult.W1$w1.a.gen) %in% 5:6, Adult.W1$w1.a.gen, NA)
+Adult.W1$w1.a.gen.c <- ifelse(!as.numeric(Adult.W1$w1.a.gen) %in% 5:6, Adult.W1$w1.a.gen, NA)
 Adult.W1$w1.a.gen <- ifelse(as.numeric(Adult.W1$w1.a.gen) %in% 5:6, Adult.W1$w1.a.gen, NA)
-Household.Roster.W1$w1.r.gen.flg <- ifelse(!as.numeric(Household.Roster.W1$w1.r.gen) %in% 5:6, Household.Roster.W1$w1.r.gen, NA)
+Household.Roster.W1$w1.r.gen.c <- ifelse(!as.numeric(Household.Roster.W1$w1.r.gen) %in% 5:6, Household.Roster.W1$w1.r.gen, NA)
 Household.Roster.W1$w1.r.gen <- ifelse(as.numeric(Household.Roster.W1$w1.r.gen) %in% 5:6, Household.Roster.W1$w1.r.gen, NA)
-Individual.Derived.W1$w1.best.gen.flg <- ifelse(!as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
+Individual.Derived.W1$w1.best.gen.c <- ifelse(!as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
 Individual.Derived.W1$w1.best.gen <- ifelse(as.numeric(Individual.Derived.W1$w1.best.gen) %in% 5:6, Individual.Derived.W1$w1.best.gen, NA)
 
 # create woman logical dummies
@@ -94,15 +110,6 @@ Child.W1$w1.woman.65 <- Child.W1$w1.hhid %in% w1.woman.65.hhid
 Child.W1$w1.man.65 <- Child.W1$w1.hhid %in% w1.man.65.hhid
 Child.W1$w1.woman.60.64 <- Child.W1$w1.hhid %in% w1.woman.60.64.hhid
 Child.W1$w1.man.60.64 <- Child.W1$w1.hhid %in% w1.man.60.64.hhid
-#### ANALYSE these variables ####
-
-
-# filter out missing value codes for the adults raw data set pension income
-summary(Adult.W1$w1.a.incgovpen.v)
-attach(Adult.W1)
-Adult.W1$w1.a.incgovpen.v.flg <- ifelse(w1.a.incgovpen.v < 0, w1.a.incgovpen.v, NA)
-Adult.W1$w1.a.incgovpen.v <- ifelse(w1.a.incgovpen.v >= 0, w1.a.incgovpen.v, NA)
-detach(Adult.W1)
 
 # create data frames of household pension income (by gender)
 Group.A.W1 <- group_by(Adult.W1, w1.hhid, w1.a.woman)
@@ -127,9 +134,11 @@ Child.W1$w1.fwag <- Individual.Derived.W1$w1.fwag[match(Child.W1$pid, Individual
 
 # merge household income, parent education
 Child.W1$w1.fwag <- Individual.Derived.W1$w1.fwag[match(Child.W1$pid, Individual.Derived.W1$pid)]
-Child.W1$w1.h.tinc <- Household.Questionnaire.W1$w1.h.tinc[match(Child.W1$w1.hhid, Household.Questionnaire.W1$w1.hhid)]
 Child.W1$w1.best.edu <- Individual.Derived.W1$w1.best.edu[match(Child.W1$w1.c.respid, Individual.Derived.W1$pid)]
 Child.W1$w1.best.age.yrs <- Individual.Derived.W1$w1.best.age.yrs[match(Child.W1$w1.c.respid, Individual.Derived.W1$pid)]
+Child.W1$w1.hhincome <- Household.Derived.W1$w1.hhincome[match(Child.W1$w1.hhid, Household.Derived.W1$w1.hhid)]
+Child.W1$w1.h.tinc <- Household.Questionnaire.W1$w1.h.tinc[match(Child.W1$w1.hhid, Household.Questionnaire.W1$w1.hhid)]
+
 #### see what other covariates can be used ####
 
 
