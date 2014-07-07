@@ -7,7 +7,7 @@ This file gives an overview of the files used for replicating the results of thi
 
 Included Files
 --------------------------------------------------------
-* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R
+* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R and saving each wave to a separate .RData file
 * [transform.R](/transform.R): contains the R instructions to perform the required transformations to the data
 
 

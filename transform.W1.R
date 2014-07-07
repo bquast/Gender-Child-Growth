@@ -6,6 +6,27 @@
 # install and load the required packages
 library(dplyr)
 
+
+### add these variables of interest
+# w1_c_popgrp
+# w1_c_slpm - nights under roof month
+# w1_c_hlthdes perceived health status
+# w1_c_brwghtg weight at birth grams
+# w1_c_hlser child has/had serious disabilities
+# w1_c_hlserbrn born with disability
+# w1_c_hlserbrn ill 3 days last month
+# w1_c_mthali bio mother alive
+# w1_c_mthhh mother is resident
+# w1_c_mthsch mother highest school grade
+# w1_c_mthtrt mother secondary education
+# w1_c_fthali bio father alive
+# w1_c_fthhh bio father resident
+# w1_c_fthsch father highest school grade
+# w1_c_fthtrt father secondary education
+# w1_c_grcur child related social grant
+
+
+
 # construct a length-of-month object
 month <- (3*365 + 366) / (4*12)
 
@@ -58,6 +79,8 @@ Household.Derived.W1$w1.hhgeo2001.c <- ifelse(w1.hhgeo2001 < 0, w1.hhgeo2001, NA
 Household.Derived.W1$w1.hhgeo2001 <- ifelse(w1.hhgeo2001 > 0, w1.hhgeo2001, NA)
 Household.Derived.W1$w1.hhgeo2011.c <- ifelse(w1.hhgeo2011 < 0, w1.hhgeo2011, NA)
 Household.Derived.W1$w1.hhgeo2011 <- ifelse(w1.hhgeo2011 > 0, w1.hhgeo2011, NA)
+Household.Derived.W1$w1.hhsizer.c <- ifelse(w1.hhsizer < 0, w1.hhsizer, NA)
+Household.Derived.W1$w1.hhsizer <- ifelse(w1.hhsizer > 0, w1.hhsizer, NA)
 Household.Derived.W1$w1.hhincome.c <- ifelse(w1.hhincome < 0, w1.hhincome, NA)
 Household.Derived.W1$w1.hhincome <- ifelse(w1.hhincome > 0, w1.hhincome, NA)
 detach(Household.Derived.W1)
