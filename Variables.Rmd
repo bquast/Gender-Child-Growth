@@ -1,0 +1,15 @@
+Variables
+========================================================
+Bastiaan Quast, bquast@gmail.com
+--------------------------------------------------------
+
+Here we briefly describe the variables.
+
+We start by loading the plm library and the data
+```{r}
+library(plm)
+load('Child.Panel.Rdata')
+```
+
+```{r}
+names(Child.Panel)

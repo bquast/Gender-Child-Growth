@@ -7,7 +7,7 @@ This file gives an overview of the files used for replicating the results of thi
 
 Included Files
 --------------------------------------------------------
-* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R
+* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R and saving each wave to a separate .RData file
 * [transform.R](/transform.R): contains the R instructions to perform the required transformations to the data
 
 
@@ -23,7 +23,7 @@ These data source files are not included as they are licenced to be distributed 
 
 Data
 --------------------------------------------------------
-The data used in this project has been collected and processed by the [National Income Dynamics Survey of South Africa][1]. Which is conducted by the Southern Africa Labour and Development Research Unit ([SALDRU][2]), which is based at the University of Cape Towns School of Economics.
+The data used in this project has been collected and processed by the [National Income Dynamics Survey of South Africa][1]. Which is conducted by the Southern Africa Labour and Development Research Unit ([SALDRU][2]), which is based at the University of Cape Town’s School of Economics.
 
 The data can be downloaded from the [DataFirst postal][2]. They can be downloaded here free of cost, once an account has been created.
 
@@ -46,12 +46,17 @@ For the purpose of importing into R, the Stata 12 format is prefered. Both the S
 * [Wave 2][7]
 * [Wave 3][8]
 
-After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth). All three zip files contain a folder called **stata12** these should be placed directly in **this** folder, do **not** create a new folder with the same name as the zip file. Note, since the folders have the same names, a warning about merging will appear, since the containing files are named differently this will not be a problem, thus accept to merge the folders.
+After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth).
 
-We now have a folder **stata12** directly in our working directory (i.e. the folder called Gender-Child-Growth) which contains all the source files.
+Replicate
+--------------------------------------------------------
+The procedure for replication is described step-by-step below, whereby each section corresponds to an R-file. In stead of running every file separately, all files can be ran in the correct sequence, by running the [replicate.R](/replicate.R) file. As described above, the source **zip files** need to be placed in the working directory.
 
-We can check the contents of this folder using an R command, the output should be as per below:
+Extract
+--------------------------------------------------------
+The [extract.R](/extract.R) file contains instructions for unzipping the zip files containing the **Stata 12** files. The script presumes the files are located in the working directory. All files will be unzipped to a new subdirectory called **stata12**.
 
+We can list the extracted files.
 
 
 ```r
