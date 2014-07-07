@@ -18,8 +18,7 @@ spss
 # transformed data
 imported.RData
 transformed.RData
-transformed.Child.W1.RData
-transformed.Child.W2.RData
-transformed.Child.W3.RData
+transformed.Child.W*.RData
 Child.Panel.RData
 Child.Wide.RData
+Wave*.RData
