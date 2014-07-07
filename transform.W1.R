@@ -10,7 +10,7 @@ library(dplyr)
 month <- (3*365 + 366) / (4*12)
 
 # load the imported RData file
-load("imported.RData")
+load("Wave1.RData")
 
 # encode month factor variables as numeric
 Child.W1$w1.c.dob.m <- as.numeric(Child.W1$w1.c.dob.m)

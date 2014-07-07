@@ -10,7 +10,7 @@ library(dplyr)
 month <- (3*365 + 366) / (4*12)
 
 # load the imported RData file
-load("imported.RData")
+load("Wave3.RData")
 
 
 ### possibly treat these same as the other recoded vars ####
