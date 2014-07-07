@@ -92,11 +92,13 @@ The transformations applied to data are described in the file [transform.R](/tra
 
 the transformed single panel data frame (pdata.frame, from the plm package) is saved to the [transformed.RData](/transformed.RData) file.
 
-
 Estimate
 --------------------------------------------------------
 
 
+Variables
+--------------------------------------------------------
+The transformed variables which are eventually used for the estimations are described in [Variables.md](/Variables.md).
 
 
 [1]: http://www.nids.uct.ac.za/
