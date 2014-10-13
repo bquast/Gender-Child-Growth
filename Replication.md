@@ -25,13 +25,13 @@ Data
 --------------------------------------------------------
 The data used in this project has been collected and processed by the [National Income Dynamics Survey of South Africa][1]. Which is conducted by the Southern Africa Labour and Development Research Unit ([SALDRU][2]), which is based at the University of Cape Town’s School of Economics.
 
-The data can be downloaded from the [DataFirst postal][2]. They can be downloaded here free of cost, once an account has been created.
+The data can be downloaded from the [DataFirst postal][3]. They can be downloaded here free of cost, once an account has been created.
 
 At the time of writing, there are three available data sets (waves).
 
-* [Wave 1][3]
-* [Wave 2][4]
-* [Wave 3][5]
+* [Wave 1][4]
+* [Wave 2][5]
+* [Wave 3][6]
 
 The data is offered in three (or four) formats.
 
@@ -42,9 +42,9 @@ The data is offered in three (or four) formats.
 
 For the purpose of importing into R, the Stata 12 format is prefered. Both the SPSS and the SAS format do not import very well and the Stata 8 format is obsolete. The Stata files are available here (when logged in).
 
-* [Wave 1][6]
-* [Wave 2][7]
-* [Wave 3][8]
+* [Wave 1][7]
+* [Wave 2][8]
+* [Wave 3][9]
 
 After having downloaded the above mentioned zip files, place them in the project directory (i.e. the same folder as this file is in, Gender-Child-Growth).
 
