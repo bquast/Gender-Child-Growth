@@ -16,7 +16,7 @@ for (i in stata12_files) {
 }
 
 # list the SAS zip files
-sas_files <- dir(pattern = 'stata12.zip$')
+sas_files <- dir(pattern = 'sas.zip$')
 
 # unzip the listed SAS files
 for (i in sas_files) {
@@ -24,7 +24,7 @@ for (i in sas_files) {
 }
 
 # list the SPSS zip files
-spss_files <- dir(pattern = 'stata12.zip$')
+spss_files <- dir(pattern = 'spss.zip$')
 
 # unzip the listed SPSS files
 for (i in spss_files) {
