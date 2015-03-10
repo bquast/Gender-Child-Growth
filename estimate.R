@@ -5,7 +5,6 @@
 
 
 # instal and load packages
-install.packages( 'plm' )
 library( plm )
 
 # load the data
