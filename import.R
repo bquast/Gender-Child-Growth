@@ -32,7 +32,7 @@ Household.Roster.W2 <- read.dta( 'stata12/HouseholdRoster_W2_Anon_V2.2.dta', con
 Individual.Derived.W2 <- read.dta( 'stata12/indderived_W2_Anon_V2.2.dta', convert.underscore=TRUE, warn.missing.labels=FALSE )
 
 # save wave 2 data
-save.image('Wave2.Rdata')
+save.image('Wave2.RData')
 
 # clear workspace
 rm(list = ls())
