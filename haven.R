@@ -1,0 +1,14 @@
+# haven.r
+# Bastiaan Quast
+# bquast@gmail.com
+#
+# import SPSS of Stata files using the new haven package (development version)
+
+library(haven)
+
+# test read SPSS
+Child_W1_SPSS <- read_spss("spss/Child_W1_Anon_V5.2.sav")
+
+
+# test read Stata12
+Child_W1_Stata <- read_sav("stata12/Child_W1_Anon_V5.2.dta")
