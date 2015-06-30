@@ -1,7 +1,9 @@
-Replication
-========================================================
-Bastiaan Quast, bquast@gmail.com
---------------------------------------------------------
+---
+title: "CodeBook"
+author: "Bastiaan Quast"
+date: "30 Jun 2015"
+output: md_document
+---
 
 This file gives an overview of the files used for replicating the results of this project. For a general overview of the project please refer to the [README.md](/README.md) file.
 
