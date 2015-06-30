@@ -1,7 +1,9 @@
-Gender and Child Growth
-========================================================
-Bastiaan Quast, bquast@gmail.com
---------------------------------------------------------
+---
+title: "Guardian Gender and Child Growth"
+author: "Bastiaan Quast"
+date: "30 Jun 2015"
+output: md_document
+---
 
 Abstract
 --------------------------------------------------------
