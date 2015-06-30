@@ -2,7 +2,9 @@
 title: "CodeBook"
 author: "Bastiaan Quast"
 date: "30 Jun 2015"
-output: md_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 This file gives an overview of the files used for replicating the results of this project. For a general overview of the project please refer to the [README.md](/README.md) file.
