@@ -16,14 +16,3 @@ Wave*.RData
 
 # data files
 data/
-
-# Raw data file
-nids-w1-2008-v5.3-20150619-sas.zip
-nids-w1-2008-v5.3-20150619-spss.zip
-nids-w1-2008-v5.3-20150619-stata12.zip
-nids-w2-2010-2011-v2.3-20150619-sas.zip
-nids-w2-2010-2011-v2.3-20150619-spss.zip
-nids-w2-2010-2011-v2.3-20150619-stata12.zip
-nids-w3-2012-v1.3-20150619-sas.zip
-nids-w3-2012-v1.3-20150619-spss.zip
-nids-w3-2012-v1.3-20150619-stata.zip
