@@ -5,7 +5,6 @@
 # R data files from past sessions
 .Rdata
 .Rproj.user
-
 # transformed data
 imported.RData
 transformed.RData
@@ -13,6 +12,6 @@ transformed.Child.W*.RData
 Child.Panel.RData
 Child.Wide.RData
 Wave*.RData
-
 # data files
 data/
+.DS_Store
