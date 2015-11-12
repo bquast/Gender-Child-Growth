@@ -1,16 +1,18 @@
 # haven.r
+# ----------------------------------------------------
+# import SPSS of Stata files using the haven package
+#
 # Bastiaan Quast
 # bquast@gmail.com
-#
-# import SPSS of Stata files using the new haven package (development version)
 
+# load libraries
 library(haven)
 
-# test read Stata12
-Child_W1_Stata <- read_sav("stata12/Child_W1_Anon_V5.2.dta")
+# test read SAS
+Child_W1_SAS <- read_sas('data/nids-v1-2008-v5.3-20150619-sas/ChildW1AnonV5_3.sas7bdat')
 
 # test read SPSS
-Child_W1_SPSS <- read_spss("spss/Child_W1_Anon_V5.2.sav")
+Child_W1_SPSS <- read_spss('data/nids-v1-2008-v5.3-20150619-spss/Child_W1_Anon_V5.3.sav')
 
-# test read SAS
-Child_W1_SAS <- read_sas("sas/Child_W1_Anon_V5_2.sas7bdat")
+# test read Stata12
+Child_W1_Stata <- read_dta('data/nids-v1-2008-v5.3-20150619-stata/Child_W1_Anon_V5.3.dta')
