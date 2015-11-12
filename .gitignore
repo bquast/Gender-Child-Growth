@@ -5,10 +5,7 @@
 # R data files from past sessions
 .Rdata
 .Rproj.user
-# unzipped raw data
-stata12
-spss
-sas
+
 # transformed data
 imported.RData
 transformed.RData
@@ -16,6 +13,9 @@ transformed.Child.W*.RData
 Child.Panel.RData
 Child.Wide.RData
 Wave*.RData
+
+# data files
+data/
 
 # Raw data file
 nids-w1-2008-v5.3-20150619-sas.zip
