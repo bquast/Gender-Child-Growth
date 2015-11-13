@@ -5,35 +5,34 @@
 # Bastiaan Quast
 # bquast@gmail.com
 
-# load the data
-load( 'Child.Panel.RData' )
+# model specification
+m1 <- formula(zhfa ~ c_gen)
 
-# inspect the data
-attach( Child.Panel )
-table( a.spen )
-summary( a.spen )
-table( a.spen.w )
-summary( a.spen.w )
-table( a.spen.m )
-summary( a.spen.m )
-# recode the NAs to zero
 
-table( id.spen )
-summary( id.spen )
-summary( id.spen.w )
-summary( id.spen.m )
-# why is this one so different from a.spen?
+# basic estimation
+pls1 <- lm(formula = m1, data = childder1)
 
-summary( c.woman ) # very high number of NAs
+# neural networks
+library(nnet)
+library(neuralnet)
+library(NeuralNetTools)
+library(caret)
 
-summary( zhfa )
-summary( zwfa )
-summary( zwfh )
-summary( zbmi )
-# many NAs
+# using nnet
+nn1  <- nnet(formula = m1, data = childder1, size = 1)
+plotnet(nn1)
 
-summary( h.tinc )
-table( h.tinc ) # still has missing value codes
+# using neuralnet
+nn1a <- neuralnet(formula = m1, data = childder1, hidden = 2)
+plotnet(nn1a)
+plot(nn1a, rep = 'best')
 
-detach( Child.Panel )
+# using caret to use nnet
+c1 <- train(form = m1, data = childder1, method = 'nnet')
+plotnet(c1)
+plot(c1)
 
+# using caret to use neuralnet
+c1a <- train(form = m1, data = childder1, method = 'neuralnet')
+plotnet(c1a)
+plot(c1a)
