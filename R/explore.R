@@ -12,3 +12,20 @@ explore <- function(data) {
   names(chr) <- NULL
   data.frame(description = chr, id = ids)
 }
+
+# child1 data.frame
+
+# b1 - Gender
+child$c_gen
+
+# b2 - Population group
+child1$c_popgrp
+
+# b3 - Home language
+child1$c_lng
+
+# b4 - No. of nights spent under roof (Week)
+child1$c_slpw
+
+# b5 - No. of nights spent under roof (Month)
+child1$c_slpm
