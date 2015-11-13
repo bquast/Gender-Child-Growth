@@ -1,17 +1,9 @@
-# History files
+# base files
 .Rhistory
-# Example code in package build process
-*-Ex.R
-# R data files from past sessions
-.Rdata
 .Rproj.user
-# transformed data
-imported.RData
-transformed.RData
-transformed.Child.W*.RData
-Child.Panel.RData
-Child.Wide.RData
-Wave*.RData
+
 # data files
 data/
+
+# OSX file
 .DS_Store
