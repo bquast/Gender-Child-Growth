@@ -42,7 +42,6 @@ Not much yet.
 
 
 # References
-<!-- \setlength{\bibhang}{11pt}% the hanging indent -->
 \setlength{\parindent}{-0.2in}
 \setlength{\leftskip}{0.2in}
 \setlength{\parskip}{8pt}
