@@ -25,9 +25,9 @@ Difference-in-differences, maybe use plm package, maybe world bank.
 
 # Data
 
-The data comes from the National Income Dynamics Survey in South Africa [@saldru2008nids; @saldru2012nids; @saldru2013nids].
+The data comes from the National Income Dynamics Survey in South Africa conducted by the Southern Africa Labour and Development Research Unit [-@saldru2008nids; -@saldru2012nids; -@saldru2013nids].
 
-For more information on the data collection methodology see Leibbrandt et al. [-@leibbrandt2009methodology]
+For more information on the data-collection methodology see Leibbrandt et al. [-@leibbrandt2009methodology]
 
 # Results
 
