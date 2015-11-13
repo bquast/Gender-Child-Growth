@@ -1,22 +1,48 @@
 ---
-title:       "Grandparent Gender and Child Growth"
-author:
-  - name: Bastiaan Quast
-    affiliation: The Graduate Institute, Geneva
-    address: >
-      Maison de la paix
-      Geneva, Switzerland
-    email: bquast@gmail.com
-    url: http://qua.st/
+title:  "Grandparent Gender and Child Growth"
+author: Bastiaan Quast
 abstract: The effect of the gender of a pension recipient on growth of children in the same household; an impact evaluation of the lowering of the male pension age from 65 to 60.
 keywords: [development, gender, growth]
 preamble: >
   \usepackage{amsmath}
 output:
-   md_document
-   
-   rticles::article
+  pdf_document:
+    number_sections: yes
 bibliography: bibliography.bib
 ---
 
+# Introduction
+
 The effect of the gender of a pension recipient on growth of children in the same household; an impact evaluation of the lowering of the male pension age from 65 to 60.
+
+
+# Methods
+
+Based onDuflo [-@duflo2000child; -@duflo2003grandmothers].
+Difference-in-differences, maybe use plm package, maybe world bank.
+
+
+
+# Data
+
+The data comes from the National Income Dynamics Survey in South Africa [@saldru2008nids; @saldru2012nids; @saldru2013nids].
+
+For more information on the data collection methodology see Leibbrandt et al. [-@leibbrandt2009methodology]
+
+# Results
+
+```{r res}
+1+1
+```
+
+
+# Conclusions and Limitations
+
+Not much yet.
+
+
+# References
+<!-- \setlength{\bibhang}{11pt}% the hanging indent -->
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
