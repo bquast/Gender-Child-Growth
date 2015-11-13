@@ -6,8 +6,8 @@ This file gives an overview of the files used for replicating the results of thi
 
 Included Files
 --------------------------------------------------------
-* [import.R](/import.R): instructions on importing the Stata data files (.dta) into R and saving each wave to a separate .RData file
-* [transform.R](/transform.R): contains the R instructions to perform the required transformations to the data
+* [import.R](/R/import.R): instructions on importing the Stata data files (.dta) into R and saving each wave to a separate .RData file
+* [transform.R](/R/transform.W1.R): contains the R instructions to perform the required transformations to the data
 
 
 
@@ -78,15 +78,6 @@ Transform
 The transformations applied to data are described in the file [transform.R](/transform.R).
 
 the transformed single panel data frame (pdata.frame, from the plm package) is saved to the [transformed.RData](/transformed.RData) file.
-
-Estimate
---------------------------------------------------------
-
-
-Variables
---------------------------------------------------------
-The transformed variables which are eventually used for the estimations are described in [Variables.md](/Variables.md).
-
 
 [1]: http://www.nids.uct.ac.za/
 [2]: http://www.saldru.uct.ac.za/
