@@ -29,3 +29,6 @@ child1$c_slpw
 
 # b5 - No. of nights spent under roof (Month)
 child1$c_slpm
+
+# historgram of pension
+hist(indiv1$spen)
