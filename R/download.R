@@ -32,8 +32,7 @@ unzip(zipfile = stata1, exdir = 'data')
 # Wave 2
 
 ## download the SAS-version of the Wave 2 dataset
-sas2 <- 'nids-w2-2010-2011-v2.3-20150619-sas.zip'
-write(sas2, file = '.gitignore', append = TRUE)
+sas2 <- 'data/nids-w2-2010-2011-v2.3-20150619-sas.zip'
 download.file(url = 'https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/452/download/5999', destfile = sas2)
 unzip(zipfile = sas2, exdir = 'data')
 
