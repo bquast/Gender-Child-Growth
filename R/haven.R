@@ -40,9 +40,5 @@ adulthouse1 <- cbind(wave = 1, adulthouse1)
 # child2 <- cbind(wave = 2, child2)
 # child3 <- cbind(wave = 3, child3)
 
-# merge data.frames by 'pid' variable (Person ID)
-child12 <- merge(child1, child2, by = 'pid')
-child_sas <- merge(child12, child3, by = 'pid')
-
 # save results
-save(file = 'data/child_sas.RData', child_sas)
+save(file = 'data/child_sas.RData', child1, child2, child3)
