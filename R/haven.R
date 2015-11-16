@@ -42,3 +42,19 @@ adulthouse1 <- cbind(wave = 1, adulthouse1)
 
 # save results
 save(file = 'data/child_sas.RData', child1, child2, child3)
+
+# new method
+# --------------------
+
+child1 <- read_sas(b7dat = 'data/nids-v1-2008-v5.3-20150619-sas/ChildW1AnonV5_3.sas7bdat')
+child2 <- read_sas(b7dat = 'data/nids-w2-2010-2012-2.3-20150619-sas/ChildW2AnonV2_3.sas7bdat')
+child1_long <- gather(child1, key, value, -pid)
+child2_long <- gather(child2, key, value, -pid)
+child1_long$key <- gsub('^w[1-3].', "", as.character(child1_long$key) )
+child2_long$key <- gsub('^w[1-3].', "", as.character(child2_long$key) )\
+child2_long$key <- gsub('^w[1-3].', "", as.character(child2_long$key) )
+child1_long <- cbind(child1_long, wave = 1)
+child2_long <- cbind(child2_long, wave = 2)
+child12_long <- rbind(child1_long, child2_long)
+child12_wide <- spread(child12_long, key, value)
+
