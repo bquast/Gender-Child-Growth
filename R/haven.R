@@ -6,10 +6,10 @@
 # bquast@gmail.com
 
 # load libraries
+library(magrittr)
 library(haven)
 library(dplyr)
 library(tidyr)
-library(magrittr)
 
 # read SAS source files
 child1 <- read_sas(b7dat = 'data/nids-v1-2008-v5.3-20150619-sas/ChildW1AnonV5_3.sas7bdat')
