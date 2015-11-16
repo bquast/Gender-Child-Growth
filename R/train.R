@@ -12,7 +12,7 @@ load(file = 'data/child_sas.RData')
 m1 <- formula(zhfa ~ c_gen)
 
 # basic linear model estimation
-pls1 <- lm(formula = m1, data = childder1)
+pols1 <- lm(formula = m1, data = childder1)
 
 # neural networks
 library(nnet)
@@ -25,7 +25,7 @@ nn1  <- nnet(formula = m1, data = childder1, size = 1)
 plotnet(nn1)
 
 ## using neuralnet
-nn1a <- neuralnet(formula = m1, data = childder1, hidden = 2)
+nn1a <- neuralnet(formula = m1, data = childder1, hidden = 1)
 plotnet(nn1a)
 plot(nn1a, rep = 'best')
 
