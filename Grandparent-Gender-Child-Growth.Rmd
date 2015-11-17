@@ -1,25 +1,32 @@
 ---
-title:  "Grandparent Gender and Child Growth"
-author: Bastiaan Quast
-abstract: The effect of the gender of a pension recipient on growth of children in the same household; an impact evaluation of the lowering of the male pension age from 65 to 60.
-keywords: [development, gender, growth]
-preamble: >
-  \usepackage{amsmath}
+title: "Grandparent Gender and Child Growth"
+author: "Bastiaan Quast"
+bibliography: bibliography.bib
 output:
+  html_document:
+    number_sections: yes
   pdf_document:
     number_sections: yes
-bibliography: bibliography.bib
+keywords:
+- development
+- gender
+- growth
+preamble: |
+  \usepackage{amsmath}
+abstract: The effect of the gender of a pension recipient on growth of children in
+  the same household; an impact evaluation of the lowering of the male pension age
+  from 65 to 60.
 ---
 
 # Introduction
 
-The effect of the gender of a pension recipient on growth of children in the same household; an impact evaluation of the lowering of the male pension age from 65 to 60.
+The effect of the gender of a pension recipient on growth of children in the same household; an impact evaluation of the lowering of the male pension age from 65 to 60 in South Africa.
 
 
 # Methods
 
 Based onDuflo [-@duflo2000child; -@duflo2003grandmothers].
-Difference-in-differences, maybe use plm package, maybe world bank.
+Difference-in-differences, maybe use plm package [@croissant2008panel], maybe world bank.
 
 
 
