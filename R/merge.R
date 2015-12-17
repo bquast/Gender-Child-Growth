@@ -25,6 +25,10 @@ names(hhder1)[9] <- 'hhimprent' # instead of hhimprent_exp
 names(adult3)[372] <- 'a_incppen' # instead of a_incret
 names(adult3)[373] <- 'a_incppen_v'# instead of a_incret_v
 
+## recode variable if recorder differently in waves
+child3$w3_c_mthhh <- ifelse(child3$w3_c_mthhh_pid > 0, 1, 2)
+child3$w3_c_fthhh <- ifelse(child3$w3_c_fthhh_pid > 0, 1, 2)
+
 
 ## create a list of variables for each type of data.frame
 vars_adult <- c('hhid',         # household ID
@@ -37,7 +41,17 @@ vars_adult <- c('hhid',         # household ID
                 'a_incppen_v')   
 
 vars_child <- c('hhid',       # household ID
-                'pid')        # person ID
+                'pid',        # person ID
+                'c_gen',      # gender
+                'c_dob_m',    # date-of-birth month
+                'c_dob_y',    # date-of-birth year
+                'c_hlthdes',  # perceived health status
+                'c_mthali',   # mother alive
+                'c_fthali',   # father alive
+                'c_mthhh',    # mother in household
+                'c_fthhh',    # father in household
+                'c_mthtrt',   # mother secondary school
+                'c_fthtrt')   # father secondary school
 
 vars_hhder <- c('hhid',       # household ID
                 'hhincome',   # household income
