@@ -11,6 +11,7 @@ library(magrittr)
 library(haven)
 library(dplyr)
 library(tidyr)
+library(plm)
 
 
 # load data
@@ -28,6 +29,7 @@ names(adult3)[373] <- 'a_incppen_v'# instead of a_incret_v
 ## create a list of variables for each type of data.frame
 vars_adult <- c('hhid',         # household ID
                 'pid',          # person ID
+                'a_gen',        # gender
                 'a_aspen',      # state persion
                 'a_incgovpen',  # income government persion
                 'a_incgovpen_v',
@@ -139,11 +141,41 @@ inder1 %<>% cbind(wave = 1)
 inder2 %<>% cbind(wave = 2)
 inder3 %<>% cbind(wave = 3)
 
-## merge
+## merge inter-temporal
 adult <- rbind(adult1, adult2, adult3)
 child <- rbind(child1, child2, child3)
 hhder <- rbind(hhder1, hhder2, hhder3)
 inder <- rbind(inder1, inder2, inder3)
+
+
+# recode certain variables
+
+## gender numeric to woman logical
+adult$a_woman <- ifelse(adult$a_gen == 2, TRUE, FALSE)
+## state pension numeric to logical
+adult$a_incgovpen   <- ifelse(adult$a_incgovpen <  0, NA, adult$a_incgovpen)
+adult$a_incgovpen_l <- ifelse(adult$a_incgovpen == 2, TRUE, FALSE)
+## state pension value NA to zero
+adult$a_incgovpen_v <- ifelse(adult$a_incgovpen_v < 0, NA, adult$a_incgovpen_v)
+adult$a_incgovpen_v <- ifelse(is.na(adult$a_incgovpen_v), 0, adult$a_incgovpen_v)
+
+
+# save data
+save(file = 'data/adult.RData', adult)
+save(file = 'data/child.RData', child)
+save(file = 'data/hhder.RData', hhder)
+save(file = 'data/inder.RData', inder)
+
+
+# put into panel data.frame (pdata.frame)
+adult %<>% pdata.frame(index = c('pid', 'wave'))
+child %<>% pdata.frame(index = c('pid', 'wave'))
+hhder %<>% pdata.frame(index = c('hhid', 'wave'))
+inder %<>% pdata.frame(index = c('pid', 'wave'))
+
+
+# merge across data.frame types
+childinder <- merge(child, inder, by = c('pid', 'wave'))
 
 
 # save to file
