@@ -10,6 +10,9 @@
 library(magrittr)
 library(dplyr)
 library(plm)
+library(neuralnet)
+library(nnet)
+library(NeuralNetTools)
 
 
 # load data
@@ -25,19 +28,21 @@ summary(zhfa2)
 summary(zhfa3)
 
 
-# weight for height
+# weight for age
 zwfa1 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
 zwfa2 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zwfa3 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="within")
 zwfa4 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
 zwfa5 <- plm(zwfa ~ spen_man + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
 zwfa6 <- plm(zwfa ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
+zwfa7 <- nnet(zwfa ~ spen_man + spen_woman + hhincome, child[which(child$best_age_yrs < 6),], size = 3)
 summary(zwfa1)
 summary(zwfa2)
 summary(zwfa3)
 summary(zwfa4)
 summary(zwfa5)
 summary(zwfa6)
+plotnet(zwfa7)
 
 
 # weight for height
@@ -63,3 +68,4 @@ summary(zbmi1)
 summary(zbmi2)
 summary(zbmi3)
 summary(zbmi4)
+
