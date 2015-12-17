@@ -1,5 +1,5 @@
 # download.R
-# -----------------------------------------
+# ------------------------------------------------------------------
 # download files from www.datafirst.ac.za/dataportal
 # NOTA BENE: must be logged in to portal in order to downlaod files
 #
