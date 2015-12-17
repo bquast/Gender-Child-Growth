@@ -8,9 +8,7 @@
 
 # load libraries
 library(magrittr)
-library(haven)
 library(dplyr)
-library(tidyr)
 library(plm)
 
 
@@ -179,6 +177,8 @@ adult$a_incgovpen_l <- ifelse(adult$a_incgovpen == 2, TRUE, FALSE)
 ## state pension value NA to zero
 adult$a_incgovpen_v <- ifelse(adult$a_incgovpen_v < 0, NA, adult$a_incgovpen_v)
 adult$a_incgovpen_v <- ifelse(is.na(adult$a_incgovpen_v), 0, adult$a_incgovpen_v)
+## post treatment dummy
+child$post_treatment <- ifelse(child$wave == 1, FALSE, TRUE)
 
 
 
@@ -209,21 +209,22 @@ inder %>%
 
 
 # put into panel data.frame (pdata.frame)
-adult %<>% pdata.frame(index = c('pid', 'wave'))
+# adult %<>% pdata.frame(index = c('pid', 'wave')) # somehow there in no PID here
 child %<>% pdata.frame(index = c('pid', 'wave'))
 hhder %<>% pdata.frame(index = c('hhid', 'wave'))
 inder %<>% pdata.frame(index = c('pid', 'wave'))
-spen_woman %<>% pdata.frame(spen_woman, index = c('hhid', 'wave'))
-spen_man   %<>% pdata.frame(spen_man,   index = c('hhid', 'wave'))
+spen_woman %<>% pdata.frame(index = c('hhid', 'wave'))
+spen_man   %<>% pdata.frame(index = c('hhid', 'wave'))
 
 
 # merge pension variables into child data.frame
-child <- merge(child, spen_woman_panel, by = c('hhid', 'wave'), all.x = TRUE)
-child <- merge(child, spen_man_panel,   by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_woman, by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_man,   by = c('hhid', 'wave'), all.x = TRUE)
 
 
 # merge across data.frame types
 child <- merge(child, hhder, by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, inder, by = c('pid', 'wave'),  all.x = TRUE)
 
 
 # save to file
