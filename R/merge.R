@@ -42,6 +42,9 @@ vars_adult <- c('hhid',         # household ID
 
 vars_child <- c('hhid',       # household ID
                 'pid',        # person ID
+                'c_intrv_y',  # interview year
+                'c_intrv_m',  # interview month
+                'c_intrv_d',  # interview day
                 'c_gen',      # gender
                 'c_dob_m',    # date-of-birth month
                 'c_dob_y',    # date-of-birth year
@@ -173,6 +176,7 @@ adult$a_incgovpen_l <- ifelse(adult$a_incgovpen == 2, TRUE, FALSE)
 ## state pension value NA to zero
 adult$a_incgovpen_v <- ifelse(adult$a_incgovpen_v < 0, NA, adult$a_incgovpen_v)
 adult$a_incgovpen_v <- ifelse(is.na(adult$a_incgovpen_v), 0, adult$a_incgovpen_v)
+
 
 
 # save data
