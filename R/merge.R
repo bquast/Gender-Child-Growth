@@ -21,15 +21,18 @@ load('data/imported.RData')
 
 ## homogenise some variable names across waves
 names(hhder1)[9] <- 'hhimprent' # instead of hhimprent_exp
+names(adult3)[372] <- 'a_incppen' # instead of a_incret
+names(adult3)[373] <- 'a_incppen_v'# instead of a_incret_v
+
 
 ## create a list of variables for each type of data.frame
-vars_adult <- c('hhid,',      # household ID
-                'pid,',       # person ID
-                'aspen',      # state persion
-                'incgovpen',  # income government persion
-                'incgovpen_v',
-                'incppen',    # income personal pension
-                'incppen_v')   
+vars_adult <- c('hhid',         # household ID
+                'pid',          # person ID
+                'a_aspen',      # state persion
+                'a_incgovpen',  # income government persion
+                'a_incgovpen_v',
+                'a_incppen',    # income personal pension
+                'a_incppen_v')   
 
 vars_child <- c('hhid',       # household ID
                 'pid')        # person ID
@@ -41,16 +44,31 @@ vars_hhder <- c('hhid',       # household ID
                 'expenditure',# expenditure
                 'hhgeo2011',  # geo location for 2011
                 'rentexpend', # rent expenditure
-                'hhimprent', # imputed rent expenditure
+                'hhimprent',  # imputed rent expenditure
                 'hhagric')    # agricultural household
 
-vars_indiv <- c('hhid',       # household ID
+vars_inder <- c('hhid',       # household ID
                 'pid',        # person ID
+                'best_age_yrs',# best age years
                 'best_race',  # race
                 'best_gen',   # gender 
                 'best_dob_m', # date of birth: month
                 'best_dob_y', # date of brith: year
                 'best_edu',   # best education
+                'best_mthpid',# mother person ID
+                'best_fthpid',# father person ID
+                'fwag',       # monthly income primary and secondary job
+                'cwag',       # monthly income casual work
+                'swag',       # monthly income self-employment
+                'chdl',       # child support grant
+                'fost',       # foster care grant
+                'cdep',       # care dependency grant
+                'spen',       # old age state pension (RSA)
+                'spen_flg',   # data old age state pension (RSA)
+                'ppen',       # month income private / foreign pension
+                'ppen_flg',   # data monthly income private / foreign pension
+                'uif',        # montly income UIF payments (unemployment)
+                'remt',       # monthly income remittances
                 'zhfa',       # z-score height-for-age 
                 'zwfa',       # z-score weight-for-age
                 'zbmi',       # z-score BMI
