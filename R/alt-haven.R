@@ -86,18 +86,25 @@ names(hhder3) %<>%
 child1 %<>% subset(select=vars_child)
 child2 %<>% subset(select=vars_child)
 child3 %<>% subset(select=vars_child)
-hhder1 %<>% subset(select=vars_house)
-hhder2 %<>% subset(select=vars_house)
-hhder3 %<>% subset(select=vars_house)
+hhder1 %<>% subset(select=vars_hhder)
+hhder2 %<>% subset(select=vars_hhder)
+hhder3 %<>% subset(select=vars_hhder)
 
 ## add wave indicator
 child1 %<>% cbind(wave = 1)
 child2 %<>% cbind(wave = 2)
 child3 %<>% cbind(wave = 3)
 hhder1 %<>% cbind(wave = 1)
-hhder2 %<>% cbind(wave = 1)
-hhder3 %<>% cbind(wave = 1)
+hhder2 %<>% cbind(wave = 2)
+hhder3 %<>% cbind(wave = 3)
 
 ## merge
 child <- rbind(child1, child2, child3)
 hhder <- rbind(hhder1, hhder2, hhder3)
+
+
+# recode some things
+
+## gender to woman
+
+## some to dummies e.g. spen
