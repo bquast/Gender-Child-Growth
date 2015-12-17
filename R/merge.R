@@ -166,6 +166,7 @@ inder <- rbind(inder1, inder2, inder3)
 
 ## gender numeric to woman logical
 adult$a_woman <- ifelse(adult$a_gen == 2, TRUE, FALSE)
+child$c_woman <- ifelse(child$c_gen == 2, TRUE, FALSE)
 ## state pension numeric to logical
 adult$a_incgovpen   <- ifelse(adult$a_incgovpen <  0, NA, adult$a_incgovpen)
 adult$a_incgovpen_l <- ifelse(adult$a_incgovpen == 2, TRUE, FALSE)
