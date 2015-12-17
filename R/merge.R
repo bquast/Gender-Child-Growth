@@ -60,9 +60,8 @@ vars_inder <- c('hhid',       # household ID
                 'fwag',       # monthly income primary and secondary job
                 'cwag',       # monthly income casual work
                 'swag',       # monthly income self-employment
-                'chdl',       # child support grant
+                'chld',       # child support grant
                 'fost',       # foster care grant
-                'cdep',       # care dependency grant
                 'spen',       # old age state pension (RSA)
                 'spen_flg',   # data old age state pension (RSA)
                 'ppen',       # month income private / foreign pension
@@ -148,4 +147,4 @@ inder <- rbind(inder1, inder2, inder3)
 
 
 # save to file
-save(adult, child, hhder, indiv)
+save(adult, child, hhder, inder, file = 'data/merged.RData')
