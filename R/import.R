@@ -1,5 +1,9 @@
-# alternative haven.R
+# import.R
+# --------------------------------------------
+# instructions for importing and merging data
+#
 # Bastiaan Quast
+# bquast@gmail.com
 
 
 # load libraries
