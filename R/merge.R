@@ -223,8 +223,8 @@ child <- merge(child, spen_man_panel,   by = c('hhid', 'wave'), all.x = TRUE)
 
 
 # merge across data.frame types
-childinder <- merge(child, inder, by = c('pid', 'wave'))
+child <- merge(child, hhder, by = c('hhid', 'wave'), all.x = TRUE)
 
 
 # save to file
-save(adult, child, hhder, inder, file = 'data/merged.RData')
+save(child, file = 'data/merged.RData')
