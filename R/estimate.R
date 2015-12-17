@@ -30,10 +30,14 @@ zwfa1 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, mode
 zwfa2 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zwfa3 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="within")
 zwfa4 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
+zwfa5 <- plm(zwfa ~ spen_man + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
+zwfa6 <- plm(zwfa ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
 summary(zwfa1)
 summary(zwfa2)
 summary(zwfa3)
 summary(zwfa4)
+summary(zwfa5)
+summary(zwfa6)
 
 
 # weight for height
@@ -41,11 +45,14 @@ zwfh1 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, mode
 zwfh2 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zwfh3 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="within")
 zwfh4 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
+zwfh5 <- plm(zwfh ~ spen_man + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
+zwfh6 <- plm(zwfh ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
 summary(zwfh1)
 summary(zwfh2)
 summary(zwfh3)
 summary(zwfh4)
-
+summary(zwfh5)
+summary(zwfh6)
 
 # BMI (Body Mass Index)
 zbmi1 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
