@@ -170,6 +170,9 @@ inder <- rbind(inder1, inder2, inder3)
 ## gender numeric to woman logical
 adult$a_woman <- ifelse(adult$a_gen == 2, TRUE, FALSE)
 child$c_woman <- ifelse(child$c_gen == 2, TRUE, FALSE)
+inder$woman   <- ifelse(inder$best_gen == 2, TRUE, FALSE)
+inder$spen    <- ifelse(is.na(inder$spen), 0, inder$spen)
+inder$ppen    <- ifelse(is.na(inder$ppen), 0, inder$ppen)
 ## state pension numeric to logical
 adult$a_incgovpen   <- ifelse(adult$a_incgovpen <  0, NA, adult$a_incgovpen)
 adult$a_incgovpen_l <- ifelse(adult$a_incgovpen == 2, TRUE, FALSE)
@@ -186,11 +189,37 @@ save(file = 'data/hhder.RData', hhder)
 save(file = 'data/inder.RData', inder)
 
 
+# create pension variables in child 
+inder %>%
+  filter(woman==TRUE) %>%
+  group_by(hhid, wave) %>%
+  summarise(spen_woman = sum(spen)) -> spen_woman
+inder %>%
+  filter(woman==FALSE) %>%
+  group_by(hhid, wave) %>%
+  summarise(spen_man = sum(spen)) -> spen_man
+inder %>%
+  filter(woman==TRUE) %>%
+  group_by(hhid, wave) %>%
+  summarise(ppen_woman = sum(ppen)) -> ppen_woman
+inder %>%
+  filter(woman==FALSE) %>%
+  group_by(hhid, wave) %>%
+  summarise(ppen_man = sum(ppen)) -> ppen_man
+
+
 # put into panel data.frame (pdata.frame)
 adult %<>% pdata.frame(index = c('pid', 'wave'))
 child %<>% pdata.frame(index = c('pid', 'wave'))
 hhder %<>% pdata.frame(index = c('hhid', 'wave'))
 inder %<>% pdata.frame(index = c('pid', 'wave'))
+spen_woman %<>% pdata.frame(spen_woman, index = c('hhid', 'wave'))
+spen_man   %<>% pdata.frame(spen_man,   index = c('hhid', 'wave'))
+
+
+# merge pension variables into child data.frame
+child <- merge(child, spen_woman_panel, by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_man_panel,   by = c('hhid', 'wave'), all.x = TRUE)
 
 
 # merge across data.frame types
