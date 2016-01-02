@@ -19,7 +19,9 @@ library(NeuralNetTools)
 load('data/merged.RData')
 
 
-# height for age
+# estimation
+
+## height for age
 zhfa1 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
 zhfa2 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zhfa3 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
@@ -29,8 +31,7 @@ summary(zhfa2)
 summary(zhfa3)
 summary(zhfa4)
 
-
-# weight for age
+## weight for age
 zwfa1 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
 zwfa2 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zwfa3 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="within")
@@ -46,8 +47,7 @@ summary(zwfa5)
 summary(zwfa6)
 plotnet(zwfa7)
 
-
-# weight for height
+## weight for height
 zwfh1 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
 zwfh2 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zwfh3 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="within")
@@ -61,7 +61,7 @@ summary(zwfh4)
 summary(zwfh5)
 summary(zwfh6)
 
-# BMI (Body Mass Index)
+## BMI (Body Mass Index)
 zbmi1 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
 zbmi2 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zbmi3 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="within")
