@@ -23,9 +23,11 @@ load('data/merged.RData')
 zhfa1 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
 zhfa2 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zhfa3 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
+zhfa4 <- plm(zhfa ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
 summary(zhfa1)
 summary(zhfa2)
 summary(zhfa3)
+summary(zhfa4)
 
 
 # weight for age
@@ -35,7 +37,7 @@ zwfa3 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best
 zwfa4 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
 zwfa5 <- plm(zwfa ~ spen_man + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
 zwfa6 <- plm(zwfa ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
-zwfa7 <- nnet(zwfa ~ spen_man + spen_woman + hhincome, child[which(child$best_age_yrs < 6),], size = 3)
+zwfa7 <- nnet(zwfa ~ spen_man + spen_woman + hhincome + post_treatment, child[which(child$best_age_yrs < 6),], size = 3)
 summary(zwfa1)
 summary(zwfa2)
 summary(zwfa3)
