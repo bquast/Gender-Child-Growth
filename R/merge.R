@@ -90,6 +90,10 @@ vars_inder <- c('hhid',       # household ID
                 'zbmi',       # z-score BMI
                 'zwfh')       # z-score weight-for-height
 
+## household questionnaire
+## w1_h_nfalc           # e2_1_2 - Household spent on beer, wine and spirits in the last 30 days
+## w1_h_nfalcspn        # e2_2_2 - Amount spent on beer, wine and spirits in last 30 days
+
 ## remove wave indicator from variable names
 names(adult1) %<>% 
   as.character() %>%
