@@ -1,0 +1,536 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage[style=philosophy-modern,backend=biber]{biblatex}
+\addbibresource{/Users/quast/MaleFemale-Income-Child-Growth/man/bibliography.bib}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command biber
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Male/Female Income and Child Growth"
+\pdf_author "Bastiaan Quast"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Male/Female Income and Child Growth
+\end_layout
+
+\begin_layout Author
+Bastiaan Quast
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Abstract
+\end_layout
+
+\begin_layout Standard
+In this paper we look at variation in the health of young children driven
+ by the gender of the household income recipient.
+ We do this by comparing z-scores of anthropometrics of South-African children
+ living in the same household as state pension recipients.
+\end_layout
+
+\begin_layout Standard
+This paper exploits the lowering of the state-pension eligibility-age of
+ men, to the same age as women (60, previously 65).
+ This takes place between two waves in the South-African National Income
+ Dynamics Survey.
+ This enables us to perform a Difference-in-Difference estimation on the
+ panel data set.
+\end_layout
+
+\begin_layout Standard
+Our finding is that policy change had a negative effect on long-term growth
+ metrics of young children and the general male pension income had a negative
+ effect on young children's BMI.
+\end_layout
+
+\begin_layout Standard
+These results provide support for the idea that it is preferable to use
+ female recipients in poverty-relief projects such as CCTs.
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:intro"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+This paper looks at the effect of the gender of pension recipients on the
+ growth of children in the same household.
+ The study is based on South-African data and the approach is very similar
+ to 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2000child,duflo2003grandmothers"
+
+\end_inset
+
+, and originally based on the work of 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "thomas1994like"
+
+\end_inset
+
+.
+ The difference from international standards 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "who2006child"
+
+\end_inset
+
+ for anthropometrics are computed as z-scores.
+ Using these standardised metrics, we compare children living in household
+ with pension recipients of different gender.
+\end_layout
+
+\begin_layout Standard
+This study deviates from the Duflo study in several ways.
+ The core contribution of this paper is the analysis of exogenous change
+ in men's pension eligibility age, which is the main explanatum.
+ The pension eligibility age for men was lowered from 65 to 60 between mid
+ 2009 and 1-1-2011.
+ This brought the pension eligibility age for men at par with women.
+ There are two reasons why this warrants a further look at this topic in
+ this dataset.
+\end_layout
+
+\begin_layout Standard
+Firstly, life expectancy is South Africa is substantially below the pension
+ eligibility age.
+ Around the end of the first decade of the century, which is when our data
+ was collected, the average life expectancy at birth was only slightly above
+ 50 years old.
+ In the year 1993, when 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2000child,duflo2003grandmothers"
+
+\end_inset
+
+ are analysed, the average life expectancy at birth was somewhat higher
+ (slightly above 55 years old).
+ A further discussion of this can be found in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:results"
+
+\end_inset
+
+.
+ However, in both cases, there is a substantial selection bias in the pension
+ recipient base.
+ Moreover, the fact that men receive pension only at 65, and women at sixty,
+ causes an even more pronounced selection bias in the male pension recipient
+ base.
+ This also makes the comparing of the effect of male pension recipient and
+ female pension recipients, on the anthropometrics of children in the same
+ household problematic, since much more attrition will have take place in
+ the male pension base.
+ The drop in life expectancy also aggravates the issue of attrition, and
+ the associated selection bias.
+ However, since pension eligibility becomes equal, for both men and women,
+ at least, provides us with effects which internally more comparable.
+ We say more, because the difference in attrition between the male and female
+ pension base in our sample has not entirely been eliminated.
+ Throughout the evolution of the average life expectancy at birth in South
+ Africa, female life expectancy has been higher than male life expectancy
+ by about one year.
+ Bearing in mind that the difference between average life expectancy and
+ pension eligibility is around 9 years, this additional selection bias effect,
+ should not be underestimated.
+ Furthermore, is seems likely that a healthy lifestyle, which increases
+ the chance of becoming a pension recipient, also has an effect on the lifestyle
+ of household members.
+ In this is so, then our observed attrition will be an actual cause of a
+ selection bias effect.
+\end_layout
+
+\begin_layout Standard
+Secondly, we employ a Difference-in-Difference (or Fixed Effects) analysis
+ of this change.
+ Under then assumptions of the Difference-in-Difference model, this enables
+ us to make a causal inference on the policy variable.
+\end_layout
+
+\begin_layout Standard
+The other deviations are of a more practical nature.
+ Firstly, the data from the 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "saldru2008nids,saldru2012nids,saldru2013nids"
+
+\end_inset
+
+ surveys contains actual information on income, including pension recipient
+ status, whereas Duflo uses age as a proxy for recipient status.
+ Secondly, another minor deviation is the usage of 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "who2006child"
+
+\end_inset
+
+, in stead of 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nchs2000cdc"
+
+\end_inset
+
+, since these have superseded the CDC charts.
+ As long as all observations are held against the same standards, this should
+ not be of any consequence.
+\end_layout
+
+\begin_layout Standard
+The impetus for this paper lies in the optimal design of cash transfer schemes
+ such as CCTs and UCTs.
+ The lack Pareto optimal allocation of resources within households as discussed
+ in i.a.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "udry1995gender,udry1996gender"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2004intrahousehold"
+
+\end_inset
+
+, indicates the necessity of optimal design in such schemes.
+ Based on this lack of Pareto optimal allocation, we have to reject the
+ idea of households acting as a unit in an economic sense.
+ For the design of cash transfer schemes it is therefore necessary to determine
+ the preferred recipient within the household 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+For a good overview see e.g.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "haddad1997intrahousehold"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As mentioned above, we follow 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2000child,duflo2003grandmothers"
+
+\end_inset
+
+ general design.
+ Looking at the gender of pension recipients gives a reasonably clean analysis,
+ because of it's relative exogeneity.
+ We therefore use these pension receipts as the Right-Hand Side variables,
+ or explanata.
+ Anthropometrics for children are used, since these capture well, the effects
+ of both malnutrition and disease, the two most common health impediments
+ that we are addressing.
+\end_layout
+
+\begin_layout Standard
+The South African pension system is an interesting object of study because
+ of its eligibility criteria.
+ The primary criterium is the age of the recipient.
+ In addition to this there is a maximum income threshold.
+ Outside of this, there are very few criteria.
+ The relative general applicability of the program makes that there are
+ few selection bias issues when studying this.
+ A thorough, though a points somewhat dated, discussion can be found in
+\begin_inset CommandInset citation
+LatexCommand cite
+key "case1998large"
+
+\end_inset
+
+.
+ Although the pension system was intended as a form of poverty relief for
+ the elder population, it has also become that for the South-African rural
+ population
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tangwe2013impact"
+
+\end_inset
+
+.
+ Average household income in rural area is much lower than in urban areas.
+ Pension receipt have therefore formed a large share of household income.
+ Upon the initial expansion to include the black population, in 1991, this
+ was a much as twice the mean monthly income.
+\end_layout
+
+\begin_layout Standard
+The anthropometrics taken in the NIDS are useful for computing z-scores.
+ We distinguish between Age Based Z-scores (ABZ) and Height-Based Z-scores
+ (HBZ).
+ We use two types ABZs and two types of HBZs, for a total of four types
+ of z-scores.
+ This is described in further detail in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:data:who"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+These z-scores are considered a good representation of short-term or long-term
+ health issues, respectively.
+ This relation is especially well observed for children between 6 and 60
+ months old.
+ We therefore stay with the best practice and only include those observations
+ in our analysis.
+\end_layout
+
+\begin_layout Standard
+We formulate three models.
+ One model without the treatment dummy, one model with the treatment dummy,
+ and finally one model with the treatment dummy, and an interaction term
+ with male pension recipient status.
+ Each of these models is estimated with all four types of z-scores, which
+ gives a total of twelve estimation equations.
+ All twelve equation are estimated as fixed-effect panel models, with, where
+ included, a time effect.
+ We have only one data period before the policy change, which means that
+ we cannot test for a common trend.
+ The implicit assumption here is thus that the effects are level over the
+ time period studied here.
+\end_layout
+
+\begin_layout Standard
+Our main finding is a negative effect of the policy change on the age-based
+ growth metrics on children (HAZ and WAZ).
+ In the height-based metrics we find a negative effect of the state pension
+ income of men on the body mass index (though not on the WHZ).
+ Our results seems to indicate that the policy change had a negative impact
+ on the long-term growth of children.
+ Furthermore, we see a negative effect of the mens pension income on the
+ BMI of children.
+ These results provide support for the theory that exogenous incomes in
+ a poverty relief context, such as CCTs and UCTs are best transfered to
+ women in the households.
+\end_layout
+
+\begin_layout Section
+Methods
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:methods"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:data"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+World Health Organization
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:data:who"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:results"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusions and Limitations
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:conclusions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliography"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+printbibliography
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
