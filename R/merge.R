@@ -252,13 +252,31 @@ child <- merge(child, spen_man,         by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, spen_man_60_65,   by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, spen_man_65,      by = c('hhid', 'wave'), all.x = TRUE)
 
-# change missing to zero
+## change missing to zero
 child$spen_woman       <- ifelse(is.na(child$spen_woman),       0, child$spen_woman)
 child$spen_woman_60_65 <- ifelse(is.na(child$spen_woman_60_65), 0, child$spen_woman_60_65)
 child$spen_woman_65    <- ifelse(is.na(child$spen_woman_65),    0, child$spen_woman_65)
 child$spen_man         <- ifelse(is.na(child$spen_man),         0, child$spen_man)
 child$spen_man_60_65   <- ifelse(is.na(child$spen_man_60_65),   0, child$spen_man_60_65)
 child$spen_man_65      <- ifelse(is.na(child$spen_man_65),      0, child$spen_man_65)
+
+
+# create list of households with ages
+woman_60    <- inder[which(inder$woman==TRUE & inder$best_age_yrs >= 60),]$hhid
+woman_60_65 <- inder[which(inder$woman==TRUE & inder$best_age_yrs >= 60 & inder$best_age_yrs < 65),]$hhid
+woman_65    <- inder[which(inder$woman==TRUE & inder$best_age_yrs >= 65),]$hhid
+man_60    <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 60),]$hhid
+man_60_65 <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 60 & inder$best_age_yrs < 65),]$hhid
+man_65    <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 65),]$hhid
+
+
+# insert ages as dummies
+child$woman_60    <- child$hhid %in% woman_60
+child$woman_60_65 <- child$hhid %in% woman_60_65
+child$woman_65    <- child$hhid %in% woman_65
+child$man_60      <- child$hhid %in% man_60
+child$man_60_65   <- child$hhid %in% man_60_65
+child$man_65      <- child$hhid %in% man_65
 
 
 # merge across data.frame types
