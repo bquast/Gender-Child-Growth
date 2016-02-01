@@ -23,7 +23,7 @@ names(hhder1)[9] <- 'hhimprent' # instead of hhimprent_exp
 names(adult3)[372] <- 'a_incppen' # instead of a_incret
 names(adult3)[373] <- 'a_incppen_v'# instead of a_incret_v
 
-## recode variable if recorder differently in waves
+## recode variable if recorded differently in waves
 child3$w3_c_mthhh <- ifelse(child3$w3_c_mthhh_pid > 0, 1, 2)
 child3$w3_c_fthhh <- ifelse(child3$w3_c_fthhh_pid > 0, 1, 2)
 
@@ -197,48 +197,52 @@ save(file = 'data/inder.RData', inder)
 inder %>%
   filter(woman==TRUE)  %>%
   group_by(hhid, wave) %>%
-  summarise(spen_woman = sum(spen)) -> spen_woman
+  summarise(spen_woman = sum(spen))       -> spen_woman
 inder %>%
   filter(woman==TRUE)  %>%
   filter(best_age_yrs >= 60 & best_age_yrs < 65) %>%
   group_by(hhid, wave) %>%
-  summarise(spen_man_60_65 = sum(spen)) -> spen_man_60_65
+  summarise(spen_woman_60_65 = sum(spen)) -> spen_woman_60_65
 inder %>%
   filter(woman==TRUE)  %>%
   filter(best_age_yrs >= 65) %>%
   group_by(hhid, wave) %>%
-  summarise(spen_man_65 = sum(spen))    -> spen_man_65
+  summarise(spen_woman_65 = sum(spen))    -> spen_woman_65
 inder %>%
   filter(woman==FALSE) %>%
   group_by(hhid, wave) %>%
-  summarise(spen_man = sum(spen)) -> spen_man
+  summarise(spen_man = sum(spen))         -> spen_man
 inder %>%
   filter(woman==FALSE) %>%
   filter(best_age_yrs >= 60 & best_age_yrs < 65) %>%
   group_by(hhid, wave) %>%
-  summarise(spen_man_60_65 = sum(spen)) -> spen_man_60_65
+  summarise(spen_man_60_65 = sum(spen))   -> spen_man_60_65
 inder %>%
   filter(woman==FALSE) %>%
   filter(best_age_yrs >= 65) %>%
   group_by(hhid, wave) %>%
-  summarise(spen_man_65 = sum(spen))    -> spen_man_65
+  summarise(spen_man_65 = sum(spen))      -> spen_man_65
 inder %>%
   filter(woman==TRUE) %>%
   group_by(hhid, wave) %>%
-  summarise(ppen_woman = sum(ppen)) -> ppen_woman
+  summarise(ppen_woman = sum(ppen))       -> ppen_woman
 inder %>%
   filter(woman==FALSE) %>%
   group_by(hhid, wave) %>%
-  summarise(ppen_man = sum(ppen)) -> ppen_man
+  summarise(ppen_man = sum(ppen))         -> ppen_man
 
 
 # put into panel data.frame (pdata.frame)
 # adult %<>% pdata.frame(index = c('pid', 'wave')) # somehow there in no PID here
-child %<>% pdata.frame(index = c('pid', 'wave'))
-hhder %<>% pdata.frame(index = c('hhid', 'wave'))
-inder %<>% pdata.frame(index = c('pid', 'wave'))
-spen_woman %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_man   %<>% pdata.frame(index = c('hhid', 'wave'))
+child            %<>% pdata.frame(index = c('pid', 'wave'))
+hhder            %<>% pdata.frame(index = c('hhid', 'wave'))
+inder            %<>% pdata.frame(index = c('pid', 'wave'))
+spen_woman       %<>% pdata.frame(index = c('hhid', 'wave'))
+spen_woman_60_65 %<>% pdata.frame(index = c('hhid', 'wave'))
+spen_woman_65    %<>% pdata.frame(index = c('hhid', 'wave'))
+spen_man         %<>% pdata.frame(index = c('hhid', 'wave'))
+spen_man_60_65   %<>% pdata.frame(index = c('hhid', 'wave'))
+spen_man_65      %<>% pdata.frame(index = c('hhid', 'wave'))
 
 
 # merge pension variables into child data.frame
