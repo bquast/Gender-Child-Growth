@@ -26,10 +26,12 @@ zhfa1 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, mode
 zhfa2 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
 zhfa3 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
 zhfa4 <- plm(zhfa ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, child, best_age_yrs < 6, model="between")
+zhfa5 <- plm(zhfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, child, best_age_yrs < 6, model="between")
 summary(zhfa1)
 summary(zhfa2)
 summary(zhfa3) # use this one
-summary(zhfa4) # use this one
+summary(zhfa4) # use this one, woman added is not significant
+summary(zhfa5) # this one works using the 60-65 distinction for men but not for woman
 
 ## weight for age
 zwfa1 <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
