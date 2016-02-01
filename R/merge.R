@@ -185,7 +185,6 @@ adult$a_incgovpen_v <- ifelse(is.na(adult$a_incgovpen_v), 0, adult$a_incgovpen_v
 child$post_treatment <- ifelse(child$wave == 1, FALSE, TRUE)
 
 
-
 # save data
 save(file = 'data/adult.RData', adult)
 save(file = 'data/child.RData', child)
@@ -233,7 +232,7 @@ inder %>%
 
 
 # put into panel data.frame (pdata.frame)
-# adult %<>% pdata.frame(index = c('pid', 'wave')) # somehow there in no PID here
+adult            %<>% pdata.frame(index = c('pid', 'wave')) # somehow there in no PID here
 child            %<>% pdata.frame(index = c('pid', 'wave'))
 hhder            %<>% pdata.frame(index = c('hhid', 'wave'))
 inder            %<>% pdata.frame(index = c('pid', 'wave'))
