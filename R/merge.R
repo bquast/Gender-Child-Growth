@@ -195,13 +195,33 @@ save(file = 'data/inder.RData', inder)
 
 # create pension variables in child 
 inder %>%
-  filter(woman==TRUE) %>%
+  filter(woman==TRUE)  %>%
   group_by(hhid, wave) %>%
   summarise(spen_woman = sum(spen)) -> spen_woman
+inder %>%
+  filter(woman==TRUE)  %>%
+  filter(best_age_yrs >= 60 & best_age_yrs < 65) %>%
+  group_by(hhid, wave) %>%
+  summarise(spen_man_60_65 = sum(spen)) -> spen_man_60_65
+inder %>%
+  filter(woman==TRUE)  %>%
+  filter(best_age_yrs >= 65) %>%
+  group_by(hhid, wave) %>%
+  summarise(spen_man_65 = sum(spen))    -> spen_man_65
 inder %>%
   filter(woman==FALSE) %>%
   group_by(hhid, wave) %>%
   summarise(spen_man = sum(spen)) -> spen_man
+inder %>%
+  filter(woman==FALSE) %>%
+  filter(best_age_yrs >= 60 & best_age_yrs < 65) %>%
+  group_by(hhid, wave) %>%
+  summarise(spen_man_60_65 = sum(spen)) -> spen_man_60_65
+inder %>%
+  filter(woman==FALSE) %>%
+  filter(best_age_yrs >= 65) %>%
+  group_by(hhid, wave) %>%
+  summarise(spen_man_65 = sum(spen))    -> spen_man_65
 inder %>%
   filter(woman==TRUE) %>%
   group_by(hhid, wave) %>%
