@@ -232,10 +232,10 @@ inder %>%
 
 
 # put into panel data.frame (pdata.frame)
-adult            %<>% pdata.frame(index = c('pid', 'wave')) # somehow there in no PID here
-child            %<>% pdata.frame(index = c('pid', 'wave'))
+adult            %<>% pdata.frame(index = c('pid',  'wave'))
+child            %<>% pdata.frame(index = c('pid',  'wave'))
+inder            %<>% pdata.frame(index = c('pid',  'wave'))
 hhder            %<>% pdata.frame(index = c('hhid', 'wave'))
-inder            %<>% pdata.frame(index = c('pid', 'wave'))
 spen_woman       %<>% pdata.frame(index = c('hhid', 'wave'))
 spen_woman_60_65 %<>% pdata.frame(index = c('hhid', 'wave'))
 spen_woman_65    %<>% pdata.frame(index = c('hhid', 'wave'))
@@ -245,8 +245,20 @@ spen_man_65      %<>% pdata.frame(index = c('hhid', 'wave'))
 
 
 # merge pension variables into child data.frame
-child <- merge(child, spen_woman, by = c('hhid', 'wave'), all.x = TRUE)
-child <- merge(child, spen_man,   by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_woman,       by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_woman_60_65, by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_woman_65,    by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_man,         by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_man_60_65,   by = c('hhid', 'wave'), all.x = TRUE)
+child <- merge(child, spen_man_65,      by = c('hhid', 'wave'), all.x = TRUE)
+
+# change missing to zero
+child$spen_woman       <- ifelse(is.na(child$spen_woman),       0, child$spen_woman)
+child$spen_woman_60_65 <- ifelse(is.na(child$spen_woman_60_65), 0, child$spen_woman_60_65)
+child$spen_woman_65    <- ifelse(is.na(child$spen_woman_65),    0, child$spen_woman_65)
+child$spen_man         <- ifelse(is.na(child$spen_man),         0, child$spen_man)
+child$spen_man_60_65   <- ifelse(is.na(child$spen_man_60_65),   0, child$spen_man_60_65)
+child$spen_man_65      <- ifelse(is.na(child$spen_man_65),      0, child$spen_man_65)
 
 
 # merge across data.frame types
