@@ -14,6 +14,7 @@
 \end_preamble
 \use_default_options true
 \begin_modules
+knitr
 logicalmkup
 \end_modules
 \maintain_unincluded_children false
@@ -1670,6 +1671,63 @@ reference "sa:ta:bmiz"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<load_data_libraries, include=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+opts_chunk$set(fig.path='../misc/latex-', cache.path='../data/cache/latex-')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(plm)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(dplyr)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(printr)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+load(file = '../data/merged.RData')
+\end_layout
+
+\begin_layout Plain Layout
+
+load(file = '../data/results.RData')
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 In these tables the dependent variable used it defined on the top row.
  The second row defines the model used (as defined in 
 \begin_inset CommandInset ref
@@ -1747,6 +1805,124 @@ w_h_tinc
 \end_inset
 
  which represents total household income.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Food Expenditure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expf1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<expf1, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(expf ~	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman,
+\end_layout
+
+\begin_layout Plain Layout
+
+		data = NIDS,
+\end_layout
+
+\begin_layout Plain Layout
+
+		subset = best_age_yrs < 6,
+\end_layout
+
+\begin_layout Plain Layout
+
+		model='between')
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\begin_layout Plain Layout
+
+<<print_expf1, echo=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(expf1)$coef)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
