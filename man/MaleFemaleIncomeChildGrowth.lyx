@@ -8,6 +8,9 @@
 \addbibresource{/Users/quast/MaleFemale-Income-Child-Growth/man/bibliography.bib}
 \end_preamble
 \use_default_options true
+\begin_modules
+logicalmkup
+\end_modules
 \maintain_unincluded_children false
 \language english
 \language_package default
@@ -1344,21 +1347,39 @@ Before this policy change, the eligibility age for men was 65 years old.
 \begin_layout Standard
 We operationalise this natural experiment, by constructing a policy dummy.
  This policy dummy is called 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 elig.men.60
-\series default
+\end_layout
+
+\end_inset
+
 , and takes the value 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 1
-\series default
+\end_layout
+
+\end_inset
+
  for data after the policy change (i.e.
 \begin_inset space ~
 \end_inset
 
 waves 2 & 3), and the value 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 0
-\series default
+\end_layout
+
+\end_inset
+
  otherwise (i.e.
 \begin_inset space ~
 \end_inset
@@ -1390,76 +1411,29 @@ The time effect estimated here is symmetric to the individual effect.
 \end_layout
 
 \begin_layout Standard
-We perform the estimations using the R package `PLM' 
-\begin_inset ERT
-status collapsed
+We perform the estimations using the R package 
+\begin_inset Flex Code
+status open
 
 \begin_layout Plain Layout
-
-
-\backslash
-parencite
+plm
 \end_layout
 
 \end_inset
 
-[see][]
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-croissant2008panel
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "croissant2008panel"
 
 \end_inset
 
 .
  It is worth noting that questions have been raised about the Difference-in-Diff
-erences estimator being employed in certain situations, for example by (ironical
-ly) 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-textcite
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-bertrand2004much
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+erences estimator being employed in certain situations, for example by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bertrand2004much"
 
 \end_inset
 
@@ -1534,37 +1508,9 @@ name "sa:models"
 
 \begin_layout Standard
 We can now formally specify our base estimations as in 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:eq:base
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:eq:base"
 
 \end_inset
 
@@ -1582,37 +1528,9 @@ y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\epsilon_{it}
 
 \begin_layout Standard
 In 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:eq:policy
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:eq:policy"
 
 \end_inset
 
@@ -1634,40 +1552,13 @@ Lastly, we formulate a variant of the model which includes an interaction
  term of the policy dummy with the male pension-recipien dummy (as well
  as the variables themselves).
  We refer to this as model 3, and the formal specification is given in 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:eq:interaction"
 
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:eq:interaction
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
+.
  
 \begin_inset Formula 
 \begin{equation}
@@ -1688,25 +1579,10 @@ As described above, we have a total of four z-scores available as dependent
  Combining these four LHSs with each of the three RHSs, gives a total of
  twelve estimation equations.
  The results of the estimation of each of these twelve equations is presented
- in autoref
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:results
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:results"
 
 \end_inset
 
@@ -1739,143 +1615,31 @@ name "sec:results"
 \end_inset
 
  In 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:ta:haz"
 
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:ta:haz
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- and 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:ta:waz
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:ta:waz"
 
 \end_inset
 
  we present our estimation results for the age-based z-scores.
  In 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:ta:whz
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:ta:whz"
 
 \end_inset
 
  and 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:ta:bmiz
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:ta:bmiz"
 
 \end_inset
 
@@ -1885,72 +1649,80 @@ status collapsed
 \begin_layout Standard
 In these tables the dependent variable used it defined on the top row.
  The second row defines the model used (as defined in 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-autoref
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-sa:models
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sa:models"
 
 \end_inset
 
 ).
  The other rows represent the independent variables.
  Where 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 w_spen_w
-\series default
+\end_layout
+
+\end_inset
+
  represents the dummy variable for children living in a household with a
  state pension eligible woman.
  The variable 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 w_spen_m
-\series default
+\end_layout
+
+\end_inset
+
  is the dummy for the child living in the same household as a male state
  pension recipient.
  The policy variable 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 elig.men.60
-\series default
+\end_layout
+
+\end_inset
+
  is a dummy which takes the value 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 1
-\series default
+\end_layout
+
+\end_inset
+
  for waves 2 and 3.
  An interaction term of the later two is also included as 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 eli.men.60:w_spen_m
-\series default
+\end_layout
+
+\end_inset
+
 .
  Lastly, we include the covariate 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 w_h_tinc
-\series default
+\end_layout
+
+\end_inset
+
  which represents total household income.
 \end_layout
 
