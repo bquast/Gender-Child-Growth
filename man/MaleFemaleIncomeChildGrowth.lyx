@@ -6,6 +6,11 @@
 \begin_preamble
 \usepackage[style=philosophy-modern,backend=biber]{biblatex}
 \addbibresource{/Users/quast/MaleFemale-Income-Child-Growth/man/bibliography.bib}
+
+\AtBeginDocument{%
+\let\ref\autoref
+\renewcommand\equationautorefname{\@gobble}
+}
 \end_preamble
 \use_default_options true
 \begin_modules
