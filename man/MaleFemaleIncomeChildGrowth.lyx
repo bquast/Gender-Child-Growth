@@ -4,7 +4,7 @@
 \begin_header
 \textclass article
 \begin_preamble
-\usepackage[style=philosophy-modern,backend=biber]{biblatex}
+\usepackage[style=philosophy-modern,natbib=true,backend=biber]{biblatex}
 \addbibresource{/Users/quast/MaleFemale-Income-Child-Growth/man/bibliography.bib}
 
 \AtBeginDocument{%
@@ -17,6 +17,9 @@
 logicalmkup
 \end_modules
 \maintain_unincluded_children false
+\begin_local_layout
+Provides natbib 1
+\end_local_layout
 \language english
 \language_package default
 \inputencoding auto
@@ -62,8 +65,8 @@ logicalmkup
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type authoryear
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -1287,11 +1290,11 @@ Data Structure
 \end_layout
 
 \begin_layout Standard
-The NIDS uses a file and data structure which is ill suied for panel data
+The NIDS uses a file and data structure which is ill suited for panel data
  analysis.
  We therefore transform the data to a format which is more conducive to
  our analysis.
- In doing so, we try to stay as close as possible to the`Tidy data' structure,
+ In doing so, we try to stay as close as possible to the `Tidy Data' structure,
  as described in
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1578,8 +1581,23 @@ These three models the are variations that we use on the Right-Hand Side
 
 \begin_layout Standard
 As described above, we have a total of four z-scores available as dependent
- variables, Height-for-Age (HAZ), Weight-for-Age (WAZ), Weight-for-Height
- (WHZ), and Body Mass Index (BMI).
+ variables, Height-for-Age (
+\series bold
+HAZ
+\series default
+), Weight-for-Age (
+\series bold
+WAZ
+\series default
+), Weight-for-Height (
+\series bold
+WHZ
+\series default
+), and Body Mass Index (
+\series bold
+BMI
+\series default
+).
  Each of these is used in a different estimation as the Left-Hand Side (LHS).
  Combining these four LHSs with each of the three RHSs, gives a total of
  twelve estimation equations.
@@ -2366,9 +2384,15 @@ The interpretation of the coefficients of these dummy variables is as follows.
 -0.3419
 \series default
  of the dummy 
-\series bold
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 elig.men.60
-\series default
+\end_layout
+
+\end_inset
+
  in HAZ model 2, thus indicates that, after the lowering of the male pension
  eligibility age, ceteris paribus, a child's expected Height-for-Age Z-score
  is 0.3410 standard deviation lower than before the lowering of the eligibility
@@ -2997,8 +3021,6 @@ We thus find a negative effect of the treatment on growth metrics.
  of male pension recipients on growth metrics.
  Additionally, it is surprising that we find significant coefficients for
  
-\series bold
-
 \begin_inset Flex Code
 status open
 
@@ -3008,8 +3030,6 @@ w_spen_m
 
 \end_inset
 
-
-\series default
  in one height-based z-score (
 \series bold
 BMIZ
