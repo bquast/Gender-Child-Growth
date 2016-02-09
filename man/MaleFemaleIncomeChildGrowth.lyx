@@ -1809,6 +1809,7 @@ w_h_tinc
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -1829,7 +1830,7 @@ Food Expenditure
 \align center
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:expf1"
+name "tab:expf"
 
 \end_inset
 
@@ -1878,7 +1879,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		data = NIDS,
+		data   = NIDS,
 \end_layout
 
 \begin_layout Plain Layout
@@ -1888,7 +1889,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		model='between')
+		model  = 'between')
 \end_layout
 
 \begin_layout Plain Layout
@@ -1904,6 +1905,128 @@ plm(expf ~	post_treatment*man_60_65 +
 \begin_layout Plain Layout
 
 kable(summary(expf1)$coef)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Non-Food Expenditure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expnf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<expnf1, eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(expnf ~	post_treatment*man_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman,
+\end_layout
+
+\begin_layout Plain Layout
+
+		data   = NIDS,
+\end_layout
+
+\begin_layout Plain Layout
+
+		subset = best_age_yrs < 6,
+\end_layout
+
+\begin_layout Plain Layout
+
+		model  = 'between')
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\begin_layout Plain Layout
+
+<<print_expnf1, echo=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(expnf1)$coef)
 \end_layout
 
 \begin_layout Plain Layout
