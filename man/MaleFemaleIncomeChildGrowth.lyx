@@ -564,7 +564,11 @@ name "tab:zscore"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -972,7 +976,11 @@ name "tab:income"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -1947,48 +1955,18 @@ w_h_tinc
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX table created manually
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Fri Dec 27 23:22:00 2013
-\end_layout
-
-\end_inset
-
-
+OLD: 
 \begin_inset Float table
 placement !ht
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2004,7 +1982,10 @@ name "sa:ta:haz"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -2252,49 +2233,24 @@ w_h_tinc
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX table created manually
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Fri Dec 27 23:22:00 2013
-\end_layout
-
-\end_inset
-
-
+OLD: 
 \begin_inset Float table
 placement !ht
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2310,7 +2266,10 @@ name "sa:ta:waz"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -2558,6 +2517,11 @@ w_h_tinc
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 As 
 \begin_inset ERT
@@ -2685,48 +2649,18 @@ elig.men.60
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX table created manually
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Fri Dec 27 23:53 2013
-\end_layout
-
-\end_inset
-
-
+OLD: 
 \begin_inset Float table
 placement !ht
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2743,6 +2677,9 @@ name "sa:ta:whz"
 \end_inset
 
  
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -2990,49 +2927,24 @@ w_h_tinc
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX table created manually
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Fri Dec 27 23:53 2013
-\end_layout
-
-\end_inset
-
-
+OLD: 
 \begin_inset Float table
 placement !ht
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3049,6 +2961,9 @@ name "sa:ta:bmiz"
 \end_inset
 
  
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="4">
 <features rotate="0" tabularvalignment="middle">
@@ -3285,6 +3200,11 @@ w_h_tinc
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3726,12 +3646,11 @@ After the year 2005, life expectancy started rising slowly, however, as
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% Include graph
+include graph
 \end_layout
 
 \end_inset
@@ -3740,12 +3659,11 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% stats of people over 65.
+include stats of people
 \end_layout
 
 \end_inset
@@ -3754,26 +3672,18 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+OLD: 
 \begin_inset Float table
 placement ht!
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3789,7 +3699,10 @@ name "sa:ta:hmr"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -3998,27 +3911,24 @@ Ratio of Male Recipients
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+OLD: 
 \begin_inset Float table
 placement ht!
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
- 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -4034,7 +3944,10 @@ name "sa:ta:hfr"
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="5">
 <features rotate="0" tabularvalignment="middle">
@@ -4232,6 +4145,11 @@ Ratio
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
