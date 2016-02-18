@@ -338,7 +338,7 @@ key "haddad1997intrahousehold"
 \end_layout
 
 \begin_layout Standard
-As mentioned above, we follow 
+As mentioned above, we follow the 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "duflo2000child,duflo2003grandmothers"
@@ -1558,7 +1558,7 @@ y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\delta T_{it}
 
 \begin_layout Standard
 Lastly, we formulate a variant of the model which includes an interaction
- term of the policy dummy with the male pension-recipien dummy (as well
+ term of the policy dummy with the male pension-recipient dummy (as well
  as the variables themselves).
  We refer to this as model 3, and the formal specification is given in 
 \begin_inset CommandInset ref
@@ -1671,12 +1671,21 @@ reference "sa:ta:bmiz"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset Flex Chunk
 status open
 
 \begin_layout Plain Layout
 
-<<load_data_libraries, include=FALSE>>=
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+load_data_libraries, include=FALSE
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1715,11 +1724,6 @@ load(file = '../data/merged.RData')
 \begin_layout Plain Layout
 
 load(file = '../data/results.RData')
-\end_layout
-
-\begin_layout Plain Layout
-
-@
 \end_layout
 
 \end_inset
@@ -1827,7 +1831,6 @@ Food Expenditure
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:expf"
@@ -1838,13 +1841,21 @@ name "tab:expf"
 \end_layout
 
 \begin_layout Plain Layout
-\align center
-\begin_inset ERT
+\begin_inset Flex Chunk
 status open
 
 \begin_layout Plain Layout
 
-<<expf1, eval=FALSE>>=
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expf1_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1892,24 +1903,23 @@ plm(expf ~	post_treatment*man_60_65 +
 		model  = 'between')
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-@
+
 \end_layout
 
 \begin_layout Plain Layout
-
-<<print_expf1, echo=FALSE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-kable(summary(expf1)$coef)
-\end_layout
+\begin_inset Flex Chunk
+status open
 
 \begin_layout Plain Layout
 
-@
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+expf1, echo=FALSE
 \end_layout
 
 \end_inset
@@ -1918,6 +1928,12 @@ kable(summary(expf1)$coef)
 \end_layout
 
 \begin_layout Plain Layout
+
+kable(summary(expf1)$coef)
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -1949,7 +1965,6 @@ Non-Food Expenditure
 \end_layout
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:expnf"
@@ -1960,13 +1975,21 @@ name "tab:expnf"
 \end_layout
 
 \begin_layout Plain Layout
-\align center
-\begin_inset ERT
+\begin_inset Flex Chunk
 status open
 
 \begin_layout Plain Layout
 
-<<expnf1, eval=FALSE>>=
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expnf1_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2014,24 +2037,22 @@ plm(expnf ~	post_treatment*man_60_65 +
 		model  = 'between')
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
-@
+
 \end_layout
 
 \begin_layout Plain Layout
-
-<<print_expnf1, echo=FALSE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-kable(summary(expnf1)$coef)
-\end_layout
+\begin_inset Flex Chunk
+status open
 
 \begin_layout Plain Layout
 
-@
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_expnf1, echo=FALSE
 \end_layout
 
 \end_inset
@@ -2040,6 +2061,12 @@ kable(summary(expnf1)$coef)
 \end_layout
 
 \begin_layout Plain Layout
+
+kable(summary(expnf1)$coef)
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
