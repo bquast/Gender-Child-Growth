@@ -120,25 +120,16 @@ In this paper we look at variation in the health of young children driven
  by the gender of the household income recipient.
  We do this by comparing z-scores of anthropometrics of South-African children
  living in the same household as state pension recipients.
-\end_layout
-
-\begin_layout Standard
-This paper exploits the lowering of the state-pension eligibility-age of
+ This paper exploits the lowering of the state-pension eligibility-age of
  men, to the same age as women (60, previously 65).
  This takes place between two waves in the South-African National Income
  Dynamics Survey.
  This enables us to perform a Difference-in-Difference estimation on the
  panel data set.
-\end_layout
-
-\begin_layout Standard
-Our finding is that policy change had a negative effect on long-term growth
+ Our finding is that policy change had a negative effect on long-term growth
  metrics of young children and the general male pension income had a negative
  effect on young children's BMI.
-\end_layout
-
-\begin_layout Standard
-These results provide support for the idea that it is preferable to use
+ These results provide support for the idea that it is preferable to use
  female recipients in poverty-relief projects such as CCTs.
 \begin_inset Newpage newpage
 \end_inset
@@ -1918,7 +1909,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 expf1, echo=FALSE
 \end_layout
 
