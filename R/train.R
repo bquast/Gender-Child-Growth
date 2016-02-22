@@ -5,14 +5,17 @@
 # Bastiaan Quast
 # bquast@gmail.com
 
+
+
 # load the data
-load(file = 'data/child_sas.RData')
+load(file = 'data/merged.RData')
 
 # model specification
-m1 <- formula(zhfa ~ c_gen)
+mzhfa5 <- formula(zhfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome)
 
 # basic linear model estimation
-pols1 <- lm(formula = m1, data = childder1)
+zhfa5 <- lm(mzhfa5, child, best_age_yrs < 6)
+summary(zhfa5)
 
 # neural networks
 library(nnet)
@@ -20,8 +23,11 @@ library(neuralnet)
 library(NeuralNetTools)
 library(caret)
 
+## create training and testing dataset
+trainIndex <- createDataPartition(child$zhfa, p = 0.75)
+
 ## using nnet
-nn1  <- nnet(formula = m1, data = childder1, size = 1)
+nn1  <- nnet(formula = mzhfa5, data = child, size = c(8,5))
 plotnet(nn1)
 
 ## using neuralnet
