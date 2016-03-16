@@ -2634,6 +2634,123 @@ w_h_tinc
 \end_layout
 
 \begin_layout Standard
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Height for Age
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+hfa_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(zhfa ~ 	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		child, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		best_age_yrs < 4, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		model="between")
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_hfa, echo=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(zhfa7)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 As 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3520,6 +3637,10 @@ reference "sa:fig:lifeExp"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
@@ -3547,23 +3668,18 @@ name "sa:fig:lifeExp"
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename ../../Downloads/lifeExp.png
 	scale 50
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
 
- 
+
 \end_layout
 
 \end_inset
