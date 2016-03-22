@@ -116,19 +116,19 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-In this paper we look at variation in the health of young children driven
- by the gender of the household income recipient.
- We do this by comparing z-scores of anthropometrics of South-African children
+In this paper I look at variation in the health of young children driven
+ by the sex of the household income recipient.
+ I do this by comparing z-scores of anthropometrics of South-African children
  living in the same household as state pension recipients.
  This paper exploits the lowering of the state-pension eligibility-age of
  men, to the same age as women (60, previously 65).
- This takes place between two waves in the South-African National Income
+ This takes place inbetween two waves in the South-African National Income
  Dynamics Survey.
- This enables us to perform a Difference-in-Difference estimation on the
+ This enables us to perform a Difference-in-Differences estimation on the
  panel data set.
- Our finding is that policy change had a negative effect on long-term growth
- metrics of young children and the general male pension income had a negative
- effect on young children's BMI.
+ Our finding is that the policy change had a negative effect on long-term
+ growth metrics of young children in spit of having a positive effect on
+ food expenditure.
  These results provide support for the idea that it is preferable to use
  female recipients in poverty-relief projects such as CCTs.
 \begin_inset Newpage newpage
@@ -154,8 +154,8 @@ name "sec:intro"
 \begin_layout Standard
 This paper looks at the effect of the gender of pension recipients on the
  growth of children in the same household.
- The study is based on South-African data and the approach is very similar
- to 
+ The study is based on South-African data and the approach is similar to
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "duflo2000child,duflo2003grandmothers"
@@ -179,8 +179,21 @@ key "who2006child"
 \end_inset
 
  for anthropometrics are computed as z-scores.
- Using these standardised metrics, we compare children living in household
+ Using these standardised metrics, I compare children living in household
  with pension recipients of different gender.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+all the below should not be about Duflo, but about this paper
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -246,10 +259,9 @@ reference "sec:results"
 \end_layout
 
 \begin_layout Standard
-Secondly, we employ a Difference-in-Difference (or Fixed Effects) analysis
- of this change.
- Under then assumptions of the Difference-in-Difference model, this enables
- us to make a causal inference on the policy variable.
+Secondly, I employ a Difference-in-Differences analysis of this change.
+ Under then assumptions of the Difference-in-Differences model, this enables
+ us to make a causal inference about the effect of the policy variable.
 \end_layout
 
 \begin_layout Standard
@@ -505,32 +517,36 @@ key "duflo2000child,duflo2003grandmothers"
 \end_inset
 
 , this survey is conducted in cooperation with the World Bank.
- Unlike the 1993 survey, this survey does not use a random selection household,
- rather it collects data on a representative set of approximately 10,000
- South-African households over time.
+ Unlike the 1993 survey, this survey does not use a random selection of
+ households, rather it collects data on a representative set of approximately
+ 10,000 South-African households over time.
  Currently three `waves' of data are available, these waves date from 2008,
- 2012, and 2013 respectively.
- The primary information types we use are: 
+ 2012, and 2013.
+ The primary information types I use are: 
 \end_layout
 
 \begin_layout Itemize
-child anthropometrics, 
+child anthropometrics,;
 \end_layout
 
 \begin_layout Itemize
-child age (in days) 
+food and non-food expenditure;
 \end_layout
 
 \begin_layout Itemize
-child gender 
+child age (in days);
 \end_layout
 
 \begin_layout Itemize
-adult pension recipient status 
+child sex;
 \end_layout
 
 \begin_layout Itemize
-adult gender 
+adult pension recipient status;
+\end_layout
+
+\begin_layout Itemize
+adult sex.
 \end_layout
 
 \begin_layout Standard
@@ -539,11 +555,11 @@ In addition to these variables of interest, we include a number of covariates
 \end_layout
 
 \begin_layout Itemize
-Household income 
+household income;
 \end_layout
 
 \begin_layout Itemize
-Parents education 
+parents education.
 \end_layout
 
 \begin_layout Standard
@@ -567,6 +583,16 @@ Z-score distributions
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:zscore"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+update figures
+\end_layout
 
 \end_inset
 
@@ -983,6 +1009,16 @@ name "tab:income"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+update figures
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1224,7 +1260,7 @@ In general, can distinguish between two types of anthropometric z-scores,
 \end_layout
 
 \begin_layout Subsubsection
-Age-Based Z-scores
+Age-based Z-scores
 \end_layout
 
 \begin_layout Standard
@@ -1244,7 +1280,7 @@ The ABZs are constructed on a weekly basis up to the age of 60 months, and
 \end_layout
 
 \begin_layout Subsubsection
-Height-Based Z-scores
+Height-based Z-scores
 \end_layout
 
 \begin_layout Standard
@@ -1311,7 +1347,7 @@ add dplyr and tidyr citations
 \end_layout
 
 \begin_layout Section
-Methods
+Empirical methodology
 \end_layout
 
 \begin_layout Standard
@@ -1334,7 +1370,7 @@ name "sec:methods"
 \end_layout
 
 \begin_layout Subsection
-Identification Strategy
+Identification strategy
 \end_layout
 
 \begin_layout Standard
@@ -1681,7 +1717,7 @@ load_data_libraries, include=FALSE
 
 \begin_layout Plain Layout
 
-opts_chunk$set(fig.path='../misc/latex-', cache.path='../data/cache/latex-')
+opts_chunk$set(fig.path='figures/latex-', cache.path='../data/cache/latex-')
 \end_layout
 
 \begin_layout Plain Layout
@@ -2634,7 +2670,6 @@ w_h_tinc
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset Float table
 wide false
 sideways false
@@ -2699,7 +2734,7 @@ plm(zhfa ~ 	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		child, 
+		NIDS, 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4221,7 +4256,7 @@ Ratio
 \end_layout
 
 \begin_layout Section
-Conclusions and Limitations
+Conclusions and limitations
 \end_layout
 
 \begin_layout Standard
