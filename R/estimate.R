@@ -19,16 +19,20 @@ library(magrittr)
 load('data/merged.RData')
 
 
+# create pdata.frame
+NIDS <- pdata.frame(child, index = c('pid','wave') )
+
+
 # estimation
 
 ## height for age
-zhfa1 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="within")
-zhfa2 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, model="between")
-zhfa3 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, child, best_age_yrs < 6, model="between")
-zhfa4 <- plm(zhfa ~ post_treatment*spen_man + post_treatment*spen_woman + hhincome, child, best_age_yrs < 6, model="between")
-zhfa5 <- plm(zhfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, child, best_age_yrs < 6, model="between")
-zhfa6 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, child, best_age_yrs < 6, model="between")
-zhfa7 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, child, best_age_yrs < 4, model="between")
+zhfa1 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="within")
+zhfa2 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="between")
+zhfa3 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zhfa4 <- plm(zhfa ~ post_treatment*spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zhfa5 <- plm(zhfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
+zhfa6 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
+zhfa7 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 4, model="between")
 summary(zhfa1)
 summary(zhfa2)
 summary(zhfa3) # use this one
@@ -108,3 +112,13 @@ summary(expnf1)
 summary(expnf2)
 summary(expnf3)
 summary(expnf4)
+
+
+# save results
+
+## remove data
+rm(NIDS)
+rm(child)
+
+## save everything else
+save.image(file = 'data/results.RData')
