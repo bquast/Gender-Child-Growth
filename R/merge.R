@@ -284,5 +284,24 @@ child <- merge(child, hhder, by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, inder, by = c('pid', 'wave'),  all.x = TRUE)
 
 
+# create dates and age for child
+
+## set missing codes to NA
+child$c_dob_y <- ifelse(child$c_dob_y > 2016, NA, child$c_dob_y)
+child$c_dob_m <- ifelse(child$c_dob_m > 12, NA, child$c_dob_m)
+
+
+## combine year, month, day to date
+child$c_intrv_dt <- as.Date(paste(child$c_intrv_y, child$c_intrv_m, child$c_intrv_d, sep='-'))
+child$c_dob1      <- as.Date(paste(child$c_dob_y, child$c_dob_m, 1,  sep='-'))
+child$c_dob15     <- as.Date(paste(child$c_dob_y, child$c_dob_m, 15, sep='-'))
+child$c_dob28     <- as.Date(paste(child$c_dob_y, child$c_dob_m, 28, sep='-'))
+
+## calculate age in days
+child$c_age_days1  <- child$c_intrv_dt - child$c_dob1
+child$c_age_days15 <- child$c_intrv_dt - child$c_dob15
+child$c_age_days28 <- child$c_intrv_dt - child$c_dob28
+
+
 # save to file
 save(child, file = 'data/merged.RData')
