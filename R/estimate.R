@@ -107,15 +107,15 @@ summary(zbmi6)
 
 
 # Food expenditure
-expf1 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
-expf2 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
+expf1 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
+expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
 summary(expf1)
 summary(expf2)
 
 
 # Non-Food expenditure
-expnf1 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
-expnf2 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
+expnf1 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
+expnf2 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
 summary(expnf1)
 summary(expnf2)
 
