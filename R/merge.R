@@ -23,6 +23,9 @@ names(hhder1)[9] <- 'hhimprent' # instead of hhimprent_exp
 names(adult3)[372] <- 'a_incppen' # instead of a_incret
 names(adult3)[373] <- 'a_incppen_v'# instead of a_incret_v
 
+# wave as integer
+NIDS$wave <- as.integer(NIDS$wave)
+
 ## recode variable if recorded differently in waves
 child3$w3_c_mthhh <- ifelse(child3$w3_c_mthhh_pid > 0, 1, 2)
 child3$w3_c_fthhh <- ifelse(child3$w3_c_fthhh_pid > 0, 1, 2)
