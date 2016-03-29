@@ -742,7 +742,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 expf_descr
 \end_layout
 
@@ -812,7 +811,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 expnf_descr
 \end_layout
 
@@ -915,7 +913,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 hhincome_descr
 \end_layout
 
@@ -1602,6 +1599,17 @@ name "tab:expf"
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+this below one should go to an appendix, use the one with only man_60_65
+ here
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1629,17 +1637,17 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		post_treatment*man_65 + 
+		man_65 + 
 \end_layout
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_60_65 + 
+		woman_60_65 + 
 \end_layout
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_65 + 
+		woman_65 + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1659,12 +1667,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		subset = best_age_yrs < 6,
-\end_layout
-
-\begin_layout Plain Layout
-
-		model  = 'between')
+		model  = 'random')
 \end_layout
 
 \end_inset
@@ -1674,7 +1677,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 \begin_inset Flex Chunk
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -1709,11 +1712,7 @@ kable(summary(expf1)$coef)
 \begin_inset Float table
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1731,6 +1730,17 @@ Non-Food Expenditure
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:expnf"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+this below one should go to an appendix, use the one with only man_60_65
+ here
+\end_layout
 
 \end_inset
 
@@ -1762,17 +1772,17 @@ plm(expnf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		post_treatment*man_65 + 
+		man_65 + 
 \end_layout
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_60_65 + 
+		woman_60_65 + 
 \end_layout
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_65 + 
+		woman_65 + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1792,12 +1802,7 @@ plm(expnf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		subset = best_age_yrs < 6,
-\end_layout
-
-\begin_layout Plain Layout
-
-		model  = 'between')
+		model  = 'random')
 \end_layout
 
 \end_inset
@@ -4313,6 +4318,264 @@ status open
 
 \backslash
 printbibliography
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+
+\end_layout
+
+\begin_layout Section
+Additional Estimates
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Food Expenditure Interact All
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expf2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expf2_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(expf ~	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman,
+\end_layout
+
+\begin_layout Plain Layout
+
+		data   = NIDS,
+\end_layout
+
+\begin_layout Plain Layout
+
+		model  = 'random')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expf2, echo=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(expf2)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Non-Food Expenditure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expnf2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expnf2_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(expnf ~	post_treatment*man_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman,
+\end_layout
+
+\begin_layout Plain Layout
+
+		data   = NIDS,
+\end_layout
+
+\begin_layout Plain Layout
+
+		model  = 'random')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_expnf2, echo=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(expnf1)$coef)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
