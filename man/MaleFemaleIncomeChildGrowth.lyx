@@ -525,17 +525,7 @@ name "sec:data"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-DESCRIPTIVE STATISTICS OF THE DATASET AND POSSIBLY THE GROWTH STANDARDS
-\end_layout
-
-\end_inset
-
- In this paper we use data from two sources.
+In this paper we use data from two sources.
  The first is the South African National Income Dynamics Survey 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -964,7 +954,17 @@ name "sub:data:who"
 
 \end_inset
 
- In 2006 the WHO published its standards for child growth
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add descriptive stats on the growth standard
+\end_layout
+
+\end_inset
+
+In 2006 the WHO published its standards for child growth
 \begin_inset CommandInset citation
 LatexCommand citep
 key "who2006child"
@@ -996,7 +996,7 @@ key "who2006child"
 status open
 
 \begin_layout Plain Layout
-update to use only HAZ
+update to use only HAZ and WAZ
 \end_layout
 
 \end_inset
@@ -1596,17 +1596,6 @@ Food Expenditure
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:expf"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-this below one should go to an appendix, use the one with only man_60_65
- here
-\end_layout
 
 \end_inset
 
