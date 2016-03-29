@@ -4,6 +4,7 @@
 \begin_header
 \textclass article
 \begin_preamble
+\usepackage{appendix}
 \usepackage[style=philosophy-modern,natbib=true,backend=biber]{biblatex}
 \addbibresource{/Users/quast/MaleFemale-Income-Child-Growth/man/bibliography.bib}
 
@@ -4326,7 +4327,18 @@ printbibliography
 \end_layout
 
 \begin_layout Standard
-\start_of_appendix
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{subappendices}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -4576,6 +4588,22 @@ kable(summary(expnf1)$coef)
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{subappendices}
 \end_layout
 
 \end_inset
