@@ -651,7 +651,7 @@ Height-for-Age z-score distributions
 
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:zscore"
+name "tab:haz_descr"
 
 \end_inset
 
@@ -668,7 +668,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-hazdesc
+haz_descr
 \end_layout
 
 \end_inset
@@ -694,6 +694,146 @@ NIDS %>%
 \begin_layout Plain Layout
 
   do(tidy(summary(.$zhfa)))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Food expenditure 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expf_descr"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+expf_descr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  do(tidy(summary(.$expf)))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Non-food expenditure 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expnf_descr"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+expnf_descr
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  do(tidy(summary(.$expnf)))
 \end_layout
 
 \end_inset
