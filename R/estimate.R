@@ -19,6 +19,10 @@ library(magrittr)
 load('data/merged.RData')
 
 
+# wave as integer
+NIDS$wave <- as.integer(NIDS$wave)
+
+
 # create pdata.frame
 NIDS <- pdata.frame(child, index = c('pid','wave') )
 
