@@ -107,25 +107,17 @@ summary(zbmi6)
 
 
 # Food expenditure
-expf1 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="random")
-expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
-expf3 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="random")
-expf4 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
+expf1 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
+expf2 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
 summary(expf1)
 summary(expf2)
-summary(expf3)
-summary(expf4)
 
 
 # Non-Food expenditure
-expnf1 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
-expnf2 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="between")
-expnf3 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
-expnf4 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="between")
+expnf1 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="between")
+expnf2 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="between")
 summary(expnf1)
 summary(expnf2)
-summary(expnf3)
-summary(expnf4)
 
 
 # save results
