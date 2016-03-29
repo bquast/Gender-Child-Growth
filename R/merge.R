@@ -306,5 +306,8 @@ child$c_age_days15 <- child$c_intrv_dt - child$c_dob15
 child$c_age_days28 <- child$c_intrv_dt - child$c_dob28
 
 
+# rename to NIDS
+NIDS <- child
+
 # save to file
-save(child, file = 'data/merged.RData')
+save(child, NIDS, file = 'data/merged.RData')
