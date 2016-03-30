@@ -250,8 +250,8 @@ name "sec:intro"
  I exploit this change by estimatig a Difference-in-Differences model, quantifyi
 ng the effect of increased male bargaining power in households with men
  between the ages of 60 and 64 and find increased expenditure on food, improve
- Weight-for-Height Z-scores in young children, and deteriorated Height-for-Age
- Z-scores for very young children living in the same households.
+ Weight-for-Height Z-scores (WAZ) in young children, and deteriorated Height-for
+-Age Z-scores (HAZ) for very young children living in the same households.
 \end_layout
 
 \begin_layout Standard
@@ -266,6 +266,23 @@ key "thomas1994like"
 .
  However, conclusive evidence on the effects of male and female bargaining
  within the household remains scarce.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+A further discussion of this can be found in 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:results"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
  In a previously study of the effects of the South-African state pension
  system, 
 \begin_inset CommandInset citation
@@ -306,26 +323,67 @@ The lower of the pension eligibility age for men took place in between the
 \begin_layout Standard
 The availability of data directly prior to and after the policy change,
  allow us to estimate the effect of the increased bargaining power of the
- newly eligible group of males aged 60 through 64 using a Difference-in-Differen
-ces approach.
+ newly eligible group of males aged 60 through 64 in their households using
+ a Difference-in-Differences approach.
+ I estimate effect of this change on food/non-food expenditure as well as
+ on the anthropometric Z-scores of young children living in the same households.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The core contribution of this paper is the analysis of exogenous change
- in men's pension eligibility age, which is the main explanatum.
- The pension eligibility age for men was lowered from 65 to 60 between mid
- 2009 and the end of 2010.
- This brought the pension eligibility age for men at par with women's.
- There are two additional reasons why this is of particular importance.
+I find that the above mentioned change leads to an increase in food expenditure,
+ but shows no significant impact on non-food expenditure.
+ The effects on the anthropometric of children in the same households are
+ more ambiguous.
+ The change led to an improvement in the Weight-for-Age Z-scores, as well
+ as a regression in the Height-for-Age Z-scores of younger children.
 \end_layout
+
+\begin_layout Standard
+The above results suggest that the increased expenditure in food results
+ in improvements in the short-term Weight-for-Age indicators, but at the
+ same time that the more long-term effect on Height-for-Age is opposite
+ to this.
+ A possible explanation for this is that the increase food expenditure goes
+ towards unhealthy food, increasing weight, but not leading to any long
+ term increases in growth.
+\end_layout
+
+\begin_layout Standard
+The following 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:data"
 
 \end_inset
 
+ discussed the National Income Dynamics Survey, as well as the WHO standards
+ used to computer the anthropometirc Z-scores.
+ This is followed by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:methods"
 
+\end_inset
+
+ which discusses the empirical model estimated, as well as the tools employed
+ for this.
+ In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:results"
+
+\end_inset
+
+ I present the outcome of these estimations.
+ Finally, in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:conclusions"
+
+\end_inset
+
+ I discuss these results and their limitations, as well as some possible
+ future directions for further research.
 \end_layout
 
 \begin_layout Standard
@@ -360,15 +418,7 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
-A further discussion of this can be found in 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sec:results"
-
-\end_inset
-
-.
- Causing a substantial selection bias in the pension recipient base.
+Causing a substantial selection bias in the pension recipient base.
  Moreover, the fact that men receive pension only at 65, and women at sixty,
  causes an even more pronounced selection bias in the male pension recipient
  base.
@@ -396,23 +446,11 @@ reference "sec:results"
 \end_layout
 
 \begin_layout Standard
-I employ a Difference-in-Differences analysis of this change.
- Under then assumptions of the Difference-in-Differences model, this enables
- us to make a causal inference about the effect of the policy variable.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-The other deviations are of a more practical nature.
- 
-\end_layout
-
-\end_inset
-
-Firstly, the data from the 
+The data from the 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "saldru2008nids,saldru2012nids,saldru2013nids"
@@ -421,7 +459,16 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 
  surveys contains actual information on income, including pension recipient
  status, whereas Duflo uses age as a proxy for recipient status.
- Secondly, another minor deviation is the usage of 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ Usage of 
 \begin_inset CommandInset citation
 LatexCommand citet
 after "WHO Child Growth Standards"
@@ -438,14 +485,33 @@ key "nchs2000cdc"
 \end_inset
 
 , since these have superseded the CDC charts.
- As long as all observations are held against the same standards, this should
- not be of any consequence.
+ As long as all observations are held against the same standards.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The impetus for this paper lies in the optimal design of cash transfer schemes
- such as CCTs and UCTs.
- The lack Pareto optimal allocation of resources within households as discussed
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+a reasonably clean analysis, because of it's relative exogeneity
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The lack Pareto optimal allocation of resources within households as discussed
  in i.a.
  
 \begin_inset CommandInset citation
@@ -462,50 +528,67 @@ key "duflo2004intrahousehold"
 \end_inset
 
 , indicates the necessity of optimal design in such schemes.
- Based on this lack of Pareto optimal allocation, we have to reject the
- idea of households acting as a unit in an economic sense.
- For the design of cash transfer schemes it is therefore necessary to determine
- the preferred recipient within the household 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-For a good overview see e.g.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "haddad1997intrahousehold"
-
-\end_inset
-
-
+ [CCTs and UCTs]
 \end_layout
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
-As mentioned above, we follow the 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Based on this lack of Pareto optimal allocation, we have to reject the idea
+ of households acting as a unit in an economic sense.
+ For the design of cash transfer schemes it is therefore necessary to determine
+ the preferred recipient within the household [REWRITE THIS]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+follow the 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
- general design.
- Looking at the effect of male vs.
- female pension recipients gives a reasonably clean analysis, because of
- it's relative exogeneity.
- We therefore use these pension receipts as the Right-Hand Side variables,
- or explanata.
- Anthropometrics for children are used, since these capture well, the effects
+ general design
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Anthropometrics for children are used, since these capture well, the effects
  of both malnutrition and disease, the two most common health impediments
  that we are addressing.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 The South African pension system is an interesting object of study because
  of its eligibility criteria.
  The primary criterium is the age of the recipient.
@@ -513,15 +596,16 @@ The South African pension system is an interesting object of study because
  Outside of this, there are very few criteria.
  The relative general applicability of the program makes that there are
  few selection bias issues when studying this.
- A thorough, though a points somewhat dated, discussion can be found in
-\begin_inset CommandInset citation
-LatexCommand cite
-key "case1998large"
+\end_layout
 
 \end_inset
 
-.
- Although the pension system was intended as a form of poverty relief for
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Although the pension system was intended as a form of poverty relief for
  the elder population, it has also become that for the South-African rural
  population
 \begin_inset CommandInset citation
@@ -531,29 +615,32 @@ key "tangwe2013impact"
 \end_inset
 
 .
- Average household income in rural area is much lower than in urban areas.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Average household income in rural area is much lower than in urban areas.
  Pension receipt have therefore formed a large share of household income.
  Upon the initial expansion to include the black population, in 1991, this
  was a much as twice the mean monthly income.
 \end_layout
 
-\begin_layout Standard
-The anthropometrics taken in the NIDS are useful for computing z-scores.
- We distinguish between Age Based Z-scores (ABZ) and Height-Based Z-scores
- (HBZ).
- We use two types ABZs and two types of HBZs, for a total of four types
- of z-scores.
- This is described in further detail in 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sub:data:who"
-
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 These z-scores are considered a good representation of short-term or long-term
  health issues, respectively.
  This relation is especially well observed for children between 6 and 60
@@ -562,33 +649,55 @@ These z-scores are considered a good representation of short-term or long-term
  in our analysis.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-We formulate three models.
- One model without the treatment dummy, one model with the treatment dummy,
- and finally one model with the treatment dummy, and an interaction term
- with male pension recipient status.
- Each of these models is estimated with all four types of z-scores, which
- gives a total of twelve estimation equations.
- All twelve equation are estimated as fixed-effect panel models, with, where
- included, a time effect.
- We have only one data period before the policy change, which means that
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We formulate two models.
+ One model with the event dummy, and an interaction term with male pension
+ recipient status and a second model with the event dummy and an interaction
+ term eligibility dummy, as well as with the dummies for women between 60
+ and 65 and women and men 65 and above.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ Each of these models is estimated with all four types of z-scores, as well
+ as food and non-food expenditure which gives a total of twelve estimation
+ equations.
+ All twelve equation are estimated as fixed-effect panel models.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We have only one data period before the policy change, which means that
  we cannot test for a common trend.
  The implicit assumption here is thus that the effects are level over the
  time period studied here.
 \end_layout
 
-\begin_layout Standard
-Our main finding is a negative effect of the policy change on the age-based
- growth metrics on children (HAZ and WAZ).
- In the height-based metrics we find a negative effect of the state pension
- income of men on the body mass index (though not on the WHZ).
- Our results seems to indicate that the policy change had a negative impact
- on the long-term growth of children.
- Furthermore, we see a negative effect of the mens pension income on the
- BMI of children.
- These results provide support for the theory that exogenous incomes in
- a poverty relief context, such as CCTs and UCTs are best transfered to
- women in the households.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
