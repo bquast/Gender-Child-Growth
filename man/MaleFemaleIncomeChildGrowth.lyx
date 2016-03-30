@@ -3199,9 +3199,13 @@ man_60_65
 \end_layout
 
 \begin_layout Standard
-The main impetus for this paper lies in the optimal design of cash transfer
- schemes, such as Conditional Cash Transfers (CCTs) and the newly fashionable
- Uncondional Cash Transfers (UCTs).
+The impetus for this paper is paper is better understanding the role that
+ male vs.
+ female bargaining power plays in household expenditure.
+ A typical application of this would be Conditional or Unconditional Cash
+ Transfer schemes (CCTs/UCTs), where the recipient of the transfer is typically
+ the (male) head of the household, which might not be optimal under all
+ circumstances.
  Which is the optimal manner in which these grants are distributed, measured
  along the bars of health, as well as education and work force participation.
  In this paper 
@@ -3224,14 +3228,14 @@ s of the South-African old-age state pension system.
 \end_layout
 
 \begin_layout Standard
-This approach is identical to 
+This method employed here is similar to 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
-, however this analysis offers some additional value.
+, but offers some additional value.
  Firstly, we analyse data around a policy change, which lowers the pension
  eligibility age for men from 65 to 60, which brings it at par with women's
  pension eligibility age.
@@ -3423,23 +3427,6 @@ The later result seems to indicate that, at least in the short-run, the
  preferred recipient of cash transfers would be a female household member.
  As discussed, the selection bias issue in age, leads to the need for a
  careful interpretation of the possible external validity of this results.
-\end_layout
-
-\begin_layout Standard
-Regarding the former result, the significant negative coefficient of the
- treatment variable, the analysis in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:results"
-
-\end_inset
-
- seems to indicate a need to establish the common trend, at least over the
- period 2008-2012.
- Since the female recipient base in this period serves as a control group,
- we possibly could establish this, using the evolution here.
- Alternatively, it would be possible to establish a trend using statistics
- on nationwide pension recipients.
 \end_layout
 
 \begin_layout Standard
