@@ -151,13 +151,6 @@ In this paper I look at variation in the health of young children driven
  men, to the same age as women (60, previously 65).
  This takes place inbetween two waves in the South-African National Income
  Dynamics Survey.
- This enables us to perform a Difference-in-Differences estimation on the
- panel data set.
- Our finding is that the policy change had a negative effect on long-term
- growth metrics of young children in spit of having a positive effect on
- food expenditure.
- These results provide support for the idea that it is preferable to use
- female recipients in poverty-relief projects such as CCTs.
 \end_layout
 
 \end_inset
@@ -249,13 +242,14 @@ name "sec:intro"
 
 \end_inset
 
- In 2010 the pension eligibility age for South African males was lower from
- 65 to 60 years old, at par with that of women.
+ In 2010 the pension eligibility age for South African males was lowered
+ from 65 to 60 years old, at par with female eligibility.
  I exploit this change by estimatig a Difference-in-Differences model, quantifyi
 ng the effect of increased male bargaining power in households with men
- between the ages of 60 and 64 and find increased expenditure on food, improve
- Weight-for-Height Z-scores (WAZ) in young children, and deteriorated Height-for
--Age Z-scores (HAZ) for very young children living in the same households.
+ aged 60 through 64.
+ I find the following effects: increased expenditure on food, improved Weight-fo
+r-Age Z-scores (WAZ) in young children, and deteriorated Height-for-Age
+ Z-scores (HAZ) for very young children living in the same households.
 \end_layout
 
 \begin_layout Standard
@@ -268,6 +262,24 @@ key "thomas1994like"
 \end_inset
 
 .
+ The lack Pareto optimal allocation of resources within households as discussed
+ in i.a.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "udry1995gender,udry1996gender"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2004intrahousehold"
+
+\end_inset
+
+ indicates that this assumption in many cases, does not correspond to revealed
+ behaviour.
  However, conclusive evidence on the effects of male and female bargaining
  within the household remains scarce.
 \begin_inset Foot
@@ -328,25 +340,17 @@ add paper find positive effect of male bargaining
 
 \begin_layout Standard
 State pension systems are a useful variable of interest to study bargaining
- power, since they are generally available to all citizens upon reaching
+ power, since they are generally available to most citizens upon reaching
  a certain age.
  This is unlike most other sources of income, such as labour, which are
  almost always influenced by other demographic factors such education, place
  of residence, etc., which give rise to selection bias issues in the estimation.
- The South African pension system is particularly interesting because of
- its few and simple eligibility criteria.
- The primary criterium is the age of the recipient.
- In addition to this there is a maximum income threshold, which is not met
- by the vast majority of the population.
- The relatively general applicability of the program makes that there are
- few selection bias issues when studying this, allowing for a clean estimation
- of bargaining power.
- Additionally, although the pension system was intended as a form of poverty
- relief for the elder population, it has also become that for the South-African
- rural population, serving as a general source of income to many households,
- upon the initial expansion to include the black population, in 1991, this
- was a much as twice the mean monthly income.
- 
+\end_layout
+
+\begin_layout Standard
+The South African pension system is of particularl interest, because its
+ relatively high amount, upon the initial expansion to include the black
+ population, in 1991, this was a much as twice the mean monthly income 
 \begin_inset CommandInset citation
 LatexCommand citep*
 before "see"
@@ -355,41 +359,44 @@ key "tangwe2013impact"
 \end_inset
 
 .
+ As a result of this, although the pension system was intended as a form
+ of poverty relief for the elderly population, it has also become that for
+ the South-African rural population, serving as a general source of income
+ to many households.
+\end_layout
+
+\begin_layout Standard
+In addition to this, it meets the requirements of few and simple eligibility
+ criteria.
+ The primary criterium is the age of the recipient.
+ In addition to this there is a maximum income threshold, which is not met
+ by the vast majority of the population.
+ This relatively general applicability of the program makes that there are
+ few selection bias issues when studying its effects.
+ Here allowing for a clean estimation of changes in bargaining power.
  However, the previously-existing eligibility-age differential made it hard
  to make a male/female comparison, especially since average life expectancy
  is South Africa is substantially lower than the persion eligibility age.
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-###s
+figures on life exp
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+.
+ For instance, one might suspect that a healthy lifestyle, which increases
+ the chance of one becoming a pension recipient, also has an effect on the
+ lifestyle of household members.
+ In this is so, then our observed attrition would results in a selection
+ bias effect.
+ The equalising of eligibility age removes this limitation.
+ 
 \begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-It seems likely that a healthy lifestyle, which increases the chance of
- becoming a pension recipient, also has an effect on the lifestyle of household
- members.
- In this is so, then our observed attrition will be an actual cause of a
- selection bias effect.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Causing a substantial selection bias in the pension recipient base.
@@ -425,8 +432,8 @@ Child anthropometrics can be seen as a proxy for general health in the household
  as well as disease.
  Both of these factors adversely affect weight in the short run, as well
  as height in the long run.
- By comparing these anthropometrics against an international standard, malnutrit
-ion and disease can thereby be captured, as well as changes therein.
+ By comparing these anthropometrics against the international WHO standards,
+ malnutrition and disease can hereby be captured, as well as changes herein.
 \end_layout
 
 \begin_layout Standard
@@ -434,10 +441,11 @@ The lowering of the pension eligibility age for men took place in between
  the first and the second wave of data collection for the South African
  National Income Dynamics Survey (NIDS), which took place respectively in
  2008 and 2012.
- This survey includes data on age, elibility, children's anthropometric
- Z-scores, income, food/non-food expenditure, etc.
- The children's Z-scores are computed by comparing the anthropometics against
- the WHO standards.
+ This survey includes data on age, state-pension eligibility and receipts,
+ children's anthropometric z-scores, income, food/non-food expenditure,
+ etc.
+ The children's Z-scores are computed by comparing their anthropometics
+ against the WHO standards.
 \end_layout
 
 \begin_layout Standard
@@ -446,7 +454,7 @@ The availability of data directly prior to and after the policy change,
  newly eligible group of males aged 60 through 64 in their households using
  a Difference-in-Differences approach.
  I estimate effect of this change on food/non-food expenditure as well as
- on the anthropometric Z-scores of young children living in the same households.
+ on the anthropometric z-scores of young children living in the same households.
 \end_layout
 
 \begin_layout Standard
@@ -455,7 +463,7 @@ I find that the above mentioned change leads to an increase in food expenditure,
  The effects on the anthropometric of children in the same households are
  more ambiguous.
  The change led to an improvement in the Weight-for-Age Z-scores, as well
- as a regression in the Height-for-Age Z-scores of younger children.
+ as a regression in the Height-for-Age z-scores of younger children.
 \end_layout
 
 \begin_layout Standard
@@ -506,52 +514,6 @@ reference "sec:conclusions"
  future directions for further research.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The lack Pareto optimal allocation of resources within households as discussed
- in i.a.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "udry1995gender,udry1996gender"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2004intrahousehold"
-
-\end_inset
-
-, indicates the necessity of optimal design in such schemes.
- [CCTs and UCTs]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Based on this lack of Pareto optimal allocation, we have to reject the idea
- of households acting as a unit in an economic sense.
- For the design of cash transfer schemes it is therefore necessary to determine
- the preferred recipient within the household [REWRITE THIS]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Data
 \end_layout
@@ -563,8 +525,8 @@ name "sec:data"
 
 \end_inset
 
-In this paper I use data from two sources.
- The first is the South African National Income Dynamics Survey 
+The main source of data is the South African National Income Dynamics Survey
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "NIDS,"
@@ -572,55 +534,38 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
 
- and the second is the World Health Organization's Child Growth Standards
- 
+.
+ Several of the datasets key variable for this study, rely in turn on the
+ World Health Organization's Child Growth Standards 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "who2006child"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Subsection
-South Africa: National Income Dynamics Survey
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:data:nids"
+, which are discussed separately in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:data:who"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
-The main source of data is the National Income Dynamics Survey of South
- Africa 
+The National Income Dynamics Survey of South Africa is collected by 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
 
-.
- Like the 1993 survey used by 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2000child,duflo2003grandmothers"
-
-\end_inset
-
-, this survey is conducted in cooperation with the World Bank.
- Unlike the 1993 survey, this survey does not use a random selection of
- households, rather it collects data on a representative set of approximately
- 10,000 South-African households over time.
+ in cooperation with the World Bank, it collects information on a representative
+ set of approximately 10,000 South-African households over time.
  Currently three `waves' of data are available, these waves date from 2008,
  2012, and 2013.
- The primary information types I use are: 
+ The primary types of information that I use are: 
 \end_layout
 
 \begin_layout Itemize
@@ -628,7 +573,7 @@ child anthropometrics,;
 \end_layout
 
 \begin_layout Itemize
-food and non-food expenditure;
+food/non-food expenditure;
 \end_layout
 
 \begin_layout Itemize
@@ -640,7 +585,7 @@ child sex;
 \end_layout
 
 \begin_layout Itemize
-adult pension recipient status;
+adult pension eligibility status;
 \end_layout
 
 \begin_layout Itemize
@@ -648,8 +593,8 @@ adult sex.
 \end_layout
 
 \begin_layout Standard
-In addition to these variables of interest, I include a number of covariates
- in the analysis, these are: 
+In addition to these variables of interest, I include a number relevant
+ of covariates in the analysis, these are: 
 \end_layout
 
 \begin_layout Itemize
@@ -658,6 +603,35 @@ household income;
 
 \begin_layout Itemize
 parents education.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:haz_descr"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:waz_descr"
+
+\end_inset
+
+, and 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:expf_descr"
+
+\end_inset
+
+ descriptive statistics of each of the different Left-Hand Side (LHS) variables
+ are presented.
+ Children's anthropometrics are taken, these are length/height, weight,
+ and waist.
+ Using these anthropometrics and WHO growth standards, z-scores are calculated.
 \end_layout
 
 \begin_layout Standard
@@ -811,12 +785,6 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
-Children's anthropometrics are taken, these are length/height, weight, and
- waist.
- Using these anthropometrics and WHO growth standards, z-scores are calculated.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -956,7 +924,7 @@ NIDS %>%
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 For adults several variables measure the different amounts and sources of
@@ -979,7 +947,16 @@ For adults several variables measure the different amounts and sources of
 \end_layout
 
 \begin_layout Standard
-The income from the pension system is just above 1000 SAR.
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:spen"
+
+\end_inset
+
+ descriptive statistics of the Right-Hand Side (RHS) variable of interest
+ are presented.
+ Income from the state pension system is generally just above 1000 SAR.
  There are a number of different exact amounts.
  
 \begin_inset Note Note
@@ -991,15 +968,7 @@ use a dummy?
 
 \end_inset
 
-  
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:income"
-
-\end_inset
-
- gives a description of the distribution of income as found in the NIDS
- data sets.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1045,7 +1014,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 spen, cache=TRUE
 \end_layout
 
@@ -1086,6 +1054,20 @@ NIDS %>%
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In addition to the explanandum, a number of relevant covariates are included
+ in the RHS.
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:income"
+
+\end_inset
+
+ gives a description of the distribution of income as found in the NIDS
+ data sets.
 \end_layout
 
 \begin_layout Standard
@@ -1214,7 +1196,6 @@ name "sa:fig:lifeExp"
 status open
 
 \begin_layout Plain Layout
-OLD: 
 \begin_inset Float table
 placement ht!
 wide false
@@ -1459,7 +1440,6 @@ Ratio
 status open
 
 \begin_layout Plain Layout
-OLD: 
 \begin_inset Float table
 placement ht!
 wide false
@@ -1732,7 +1712,8 @@ key "nchs2000cdc"
 \end_inset
 
 , since these have superseded the CDC charts.
- As long as all observations are held against the same standards.
+ This of minimal importance, as long as all observations are held against
+ the same standards the results should not differ.
 \end_layout
 
 \end_inset
@@ -1865,11 +1846,11 @@ In general, can distinguish between two types of anthropometric z-scores,
 
 \end_layout
 
-\begin_layout Subsubsection
-Age-based Z-scores
-\end_layout
-
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 The Age-Based Z-scores (ABZs) are constituted by the Height-for-Age Z-score
  (HAZ) and the Weight-for-Age Z-score (WAZ).
  Since these metrics are age-based, they provide information about all past
@@ -1880,23 +1861,22 @@ The Age-Based Z-scores (ABZs) are constituted by the Height-for-Age Z-score
  which is in turn a function of the age.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The ABZs are constructed on a weekly basis up to the age of 60 months, and
  on a monthly basis thereafter.
 \end_layout
 
-\begin_layout Subsubsection
-Height-based Z-scores
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sa:hbz"
+\begin_inset Note Note
+status open
 
-\end_inset
-
- The Height-Based Z-scores (HBZs) are the Weight-for-Height Z-score (WHZ)
+\begin_layout Plain Layout
+The Height-Based Z-scores (HBZs) are the Weight-for-Height Z-score (WHZ)
  and Body Mass Index Z-score (BMIZ).
  Where the BMI (or Quetelet) is a transformed version of the WHZ, which
  has a quadratic height effect.
@@ -1911,15 +1891,20 @@ name "sa:hbz"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 These scores compare children with others of the same height, irrispective
  of their age.
  As a results we observe only the relatively short-term effect of weight.
  The height-based metrics thus provide is with a short-term insight.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The HBZs are available on a semi-centimeter level throughout all heights.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1932,7 +1917,7 @@ The NIDS uses a file and data structure which is ill suited for panel data
  We therefore transform the data to a format which is more conducive to
  our analysis.
  In doing so, we try to stay as close as possible to the `Tidy Data' structure,
- as described in
+ as described in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wickham2014tidy"
@@ -1963,7 +1948,17 @@ name "sec:methods"
 
 \end_inset
 
- 
+ This study focuses on a policy change in the South-African state pension
+ system.
+ Until mid 2009, men became eligible for pension at the age of 65.
+ Between mid 2009 and December 31st 2010, this was gradually lowered to
+ 60.
+ The South-African National Income Dynamics Survey is a full-panel dataset,
+ which contains information on household from before and after this policy
+ change.
+ We study the effect of the policy change, as well as the general effect
+ on the pension system, on the health of children in the same household.
+ The research setup in discussed in further detail below.
 \begin_inset Note Note
 status open
 
@@ -1980,16 +1975,7 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
- This study focuses on a policy change in the South-African state pension
- system.
- Until mid 2009, men became eligible for pension at the age of 65.
- Between mid 2009 and January 1st 2011, this was gradually lowered to 60.
- The South-African National Income Dynamics Survey is a full-panel dataset,
- which contains information on household from before and after this policy
- change.
- We study the effect of the policy change, as well as the general effect
- on the pension system, on the health of children in the same household.
- The research setup in discussed in further detail below.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2003,18 +1989,7 @@ name "sa:identification"
 
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-inclusing household income covaraite allows isolation of causal from income
- effect
-\end_layout
-
-\end_inset
-
-The identification strategy in this paper is based on a policy change in
+ The identification strategy in this paper is based on a policy change in
  the pension eligibility age for men, which was introduced between mid 2009
  and January 1st 2011.
  This policy change thus fall between waves 1 and 2 (2008 and 2012 respectively)
@@ -2070,6 +2045,20 @@ status open
 wave 1).
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+including household income covaraite allows isolation of causal bargaining
+ from income effect
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Estimation
 \end_layout
@@ -2079,21 +2068,31 @@ Estimation
 status open
 
 \begin_layout Plain Layout
-We have only one data period before the policy change, which means that
- we cannot test for a common trend.
+I have only one data period before the policy change, which means that we
+ cannot test for a common trend.
  The implicit assumption here is thus that the effects are level over the
  time period studied here.
 \end_layout
 
 \end_inset
 
-In order to fully exploit the available data and the policy change, we employ
- a `Difference-in-Difference' (DiD) estimator.
- This estimator operationalised by using the fixed-effects (within) estimator.
+In order to identify the effect of the policy change, I employ a `Difference-in-
+Difference' estimation.
+ This estimator operationalised by using the fixed-effects estimator.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+within
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-We perform the estimations using the R package 
+We perform these panel estimations using the R package 
 \begin_inset Flex Code
 status open
 
@@ -2111,8 +2110,13 @@ key "croissant2008panel"
 \end_inset
 
 .
- It is worth noting that questions have been raised about the Difference-in-Diff
-erences estimator being employed in certain situations, for example by 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It is worth noting that questions have been raised about the Difference-in-Diffe
+rences estimator being employed in certain situations, for example by 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "bertrand2004much"
@@ -2122,8 +2126,9 @@ key "bertrand2004much"
 .
 \end_layout
 
-\begin_layout Subsubsection
-Models and Variations
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2340,34 +2345,20 @@ name "sec:results"
 
  In 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:haz"
+LatexCommand formatted
+reference "tab:expf"
 
 \end_inset
 
-and 
+, and 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sa:ta:waz"
+reference "tab:haz1"
 
 \end_inset
 
- we present our estimation results for the age-based z-scores.
- In 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:whz"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:bmiz"
-
-\end_inset
-
- we present our estimation results for the height-based z-scores.
+ I present the estimation results for the age-based z-scores.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2725,6 +2716,17 @@ Height for Age
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:haz1"
+
+\end_inset
+
+
 \begin_inset Flex Chunk
 status open
 
@@ -2734,7 +2736,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-hfa_vis, eval=FALSE
+haz_vis, eval=FALSE
 \end_layout
 
 \end_inset
@@ -2829,7 +2831,7 @@ kable(summary(zhfa7)$coef)
 As 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sa:ta:haz"
+reference "tab:haz1"
 
 \end_inset
 
