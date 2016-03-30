@@ -105,6 +105,10 @@ Male/Female Income and Child Growth
 Bastiaan Quast
 \end_layout
 
+\begin_layout Date
+April 2016
+\end_layout
+
 \begin_layout Standard
 \begin_inset VSpace vfill
 \end_inset
@@ -559,7 +563,7 @@ name "sec:data"
 
 \end_inset
 
-In this paper we use data from two sources.
+In this paper I use data from two sources.
  The first is the South African National Income Dynamics Survey 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -644,7 +648,7 @@ adult sex.
 \end_layout
 
 \begin_layout Standard
-In addition to these variables of interest, we include a number of covariates
+In addition to these variables of interest, I include a number of covariates
  in the analysis, these are: 
 \end_layout
 
@@ -951,6 +955,10 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 For adults several variables measure the different amounts and sources of
  income.
  Among those, a variable if the adult receives a state pension, and if so,
@@ -965,13 +973,25 @@ For adults several variables measure the different amounts and sources of
  Therefore, there is still a selection bias issue in the data we are analysing.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 The income from the pension system is just above 1000 SAR.
- There are a number of different exact amount, which we have simplified
- to a dummy.
- Since the variation in the amount is around 5% this should not be without
- much loss of generality.
+ There are a number of different exact amounts.
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+use a dummy?
+\end_layout
+
+\end_inset
+
+  
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:income"
@@ -1729,8 +1749,8 @@ These z-scores are considered a good representation of short-term or long-term
  health issues, respectively.
  This relation is especially well observed for children between 6 and 60
  months old.
- We therefore stay with the best practice and only include those observations
- in our analysis.
+ I therefore stay with the best practice and only include those observations
+ in the analysis.
 \end_layout
 
 \end_inset
@@ -1761,8 +1781,8 @@ key "who2006child"
 Z-score anthropometrics are used since they are considered to be a good
  representation of a child's health, and by extension, the household in
  which they grow up.
- With z-scores we refer to the practice of standardising the anthropometrics
- using an `idea' standard
+ Z-scores refer to the practice of standardising the anthropometrics using
+ an `idea' standard
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "who2006child"
@@ -1825,15 +1845,24 @@ These ideal scores are based on a sample of children from different ethnic
 \end_layout
 
 \begin_layout Standard
-We stay with the best practice of using only metrics for children between
- the ages of 6 months and 60 months.
+It is best practice to use only metrics for children between the ages of
+ 6 months and 60 months.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 In general, can distinguish between two types of anthropometric z-scores,
  the age-based z-scores and the height-based z-scores.
  Whereby `based' refers to the reference point at which anthropometrics
  are standardised.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1885,7 +1914,7 @@ name "sa:hbz"
 \begin_layout Standard
 These scores compare children with others of the same height, irrispective
  of their age.
- As a results we only observe the relatively short-term effect of weight.
+ As a results we observe only the relatively short-term effect of weight.
  The height-based metrics thus provide is with a short-term insight.
 \end_layout
 
@@ -3465,9 +3494,25 @@ status open
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 begin{subappendices}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
 \end_layout
 
 \end_inset
@@ -3734,7 +3779,7 @@ status open
 
 \begin_layout Plain Layout
 
-
+%
 \backslash
 end{subappendices}
 \end_layout
