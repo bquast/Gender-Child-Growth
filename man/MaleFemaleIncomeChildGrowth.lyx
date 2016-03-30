@@ -310,10 +310,50 @@ Paper find something opposite.
 \end_layout
 
 \begin_layout Standard
-The lower of the pension eligibility age for men took place in between the
- first and the second wave of data collection for the South African National
- Income Dynamics Survey (NIDS), which took place respectively in 2008 and
- 2012.
+State pension systems are a useful variable of interest to study bargaining
+ power, since they are generally available to all citizens upon reaching
+ a certain age.
+ This is unlike most other sources of income, such as labour, which are
+ almost always influenced by other demographic factors such education, place
+ of residence, etc., which give rise to selection bias issues in the estimation.
+ The South African pension system is particularly interesting because of
+ its few and simple eligibility criteria.
+ The primary criterium is the age of the recipient.
+ In addition to this there is a maximum income threshold, which is not met
+ by the vast majority of the population.
+ The relatively general applicability of the program makes that there are
+ few selection bias issues when studying this, allowing for a clean estimation
+ of bargaining power.
+ Additionally, although the pension system was intended as a form of poverty
+ relief for the elder population, it has also become that for the South-African
+ rural population, serving as a general source of income to many households
+ 
+\begin_inset CommandInset citation
+LatexCommand citep*
+before "see"
+key "tangwe2013impact"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Child anthropometrics can be seen as a proxy for general health in the household.
+ They are an effective way to capture both the effects of malnutrition,
+ as well as disease.
+ Both of these factors adversely affect weight in the short run, as well
+ as height in the long run.
+ By comparing these anthropometrics against an international standard, malnutrit
+ion and disease can thereby be captured, as well as changes therein.
+\end_layout
+
+\begin_layout Standard
+The lowering of the pension eligibility age for men took place in between
+ the first and the second wave of data collection for the South African
+ National Income Dynamics Survey (NIDS), which took place respectively in
+ 2008 and 2012.
  This survey includes data on age, elibility, children's anthropometric
  Z-scores, income, food/non-food expenditure, etc.
  The children's Z-scores are computed by comparing the anthropometics against
@@ -418,6 +458,11 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Causing a substantial selection bias in the pension recipient base.
  Moreover, the fact that men receive pension only at 65, and women at sixty,
  causes an even more pronounced selection bias in the male pension recipient
@@ -445,6 +490,11 @@ Causing a substantial selection bias in the pension recipient base.
  selection bias effect.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Note Note
 status open
@@ -459,46 +509,6 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 
  surveys contains actual information on income, including pension recipient
  status, whereas Duflo uses age as a proxy for recipient status.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- Usage of 
-\begin_inset CommandInset citation
-LatexCommand citet
-after "WHO Child Growth Standards"
-key "who2006child"
-
-\end_inset
-
-, in stead of 
-\begin_inset CommandInset citation
-LatexCommand citet
-after "CDC Growth Charts: United States"
-key "nchs2000cdc"
-
-\end_inset
-
-, since these have superseded the CDC charts.
- As long as all observations are held against the same standards.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-a reasonably clean analysis, because of it's relative exogeneity
 \end_layout
 
 \end_inset
@@ -570,57 +580,9 @@ key "duflo2000child,duflo2003grandmothers"
 \end_inset
 
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Anthropometrics for children are used, since these capture well, the effects
- of both malnutrition and disease, the two most common health impediments
- that we are addressing.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The South African pension system is an interesting object of study because
- of its eligibility criteria.
- The primary criterium is the age of the recipient.
- In addition to this there is a maximum income threshold.
- Outside of this, there are very few criteria.
- The relative general applicability of the program makes that there are
- few selection bias issues when studying this.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Although the pension system was intended as a form of poverty relief for
- the elder population, it has also become that for the South-African rural
- population
-\begin_inset CommandInset citation
-LatexCommand citep*
-key "tangwe2013impact"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\end_inset
-
-
 \begin_inset Note Note
 status open
 
@@ -1843,6 +1805,33 @@ name "sub:data:who"
 \end_inset
 
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ Usage of 
+\begin_inset CommandInset citation
+LatexCommand citet
+after "WHO Child Growth Standards"
+key "who2006child"
+
+\end_inset
+
+, in stead of 
+\begin_inset CommandInset citation
+LatexCommand citet
+after "CDC Growth Charts: United States"
+key "nchs2000cdc"
+
+\end_inset
+
+, since these have superseded the CDC charts.
+ As long as all observations are held against the same standards.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
