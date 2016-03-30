@@ -2009,7 +2009,7 @@ We operationalise this natural experiment, by constructing a policy dummy.
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -2064,6 +2064,16 @@ Estimation
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:estimation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -2076,8 +2086,8 @@ I have only one data period before the policy change, which means that we
 
 \end_inset
 
-In order to identify the effect of the policy change, I employ a `Difference-in-
-Difference' estimation.
+In order to identify the effect of the policy change, I employ a Difference-in-D
+ifference estimation.
  This estimator operationalised by using the fixed-effects estimator.
 \begin_inset Note Note
 status open
@@ -2132,13 +2142,6 @@ key "bertrand2004much"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sa:models"
-
-\end_inset
-
-
 \begin_inset Note Note
 status open
 
@@ -2310,7 +2313,7 @@ BMI
  The results of the estimation of each of these twelve equations is presented
  in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:results"
 
 \end_inset
@@ -2350,9 +2353,16 @@ reference "tab:expf"
 
 \end_inset
 
+, 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:waz1"
+
+\end_inset
+
 , and 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:haz1"
 
 \end_inset
@@ -2365,8 +2375,8 @@ reference "tab:haz1"
 In these tables the dependent variable used it defined on the top row.
  The second row defines the model used (as defined in 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:models"
+LatexCommand formatted
+reference "sub:estimation"
 
 \end_inset
 
@@ -2401,7 +2411,7 @@ w_spen_m
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -2576,140 +2586,6 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Non-Food Expenditure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:expnf"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-might still have to go to appendix
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-expnf1_vis, eval=FALSE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-plm(expnf ~	post_treatment*man_60_65 + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		man_65 + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		woman_60_65 + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		woman_65 + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		hhincome + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		woman,
-\end_layout
-
-\begin_layout Plain Layout
-
-		data   = NIDS,
-\end_layout
-
-\begin_layout Plain Layout
-
-		model  = 'random')
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-print_expnf1, echo=FALSE, cache=TRUE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-kable(summary(expnf1)$coef)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
 Height for Age
 \end_layout
 
@@ -2786,7 +2662,7 @@ plm(zhfa ~ 	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		model="between")
+		model='between")
 \end_layout
 
 \end_inset
@@ -2828,17 +2704,144 @@ kable(summary(zhfa7)$coef)
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Weight for Age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:waz1"
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+waz_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(zwfa ~ 	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		NIDS, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		best_age_yrs < 4, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		model='between')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_wfa, echo=FALSE, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(zwfa7)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 As 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:haz1"
 
 \end_inset
 
  and
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:waz"
+LatexCommand formatted
+reference "tab:waz1"
 
 \end_inset
 
@@ -2850,7 +2853,7 @@ reference "sa:ta:waz"
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -2898,7 +2901,7 @@ The interpretation of the coefficients of these dummy variables is as follows.
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -2929,7 +2932,7 @@ reference "sa:ta:bmiz"
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -3184,7 +3187,7 @@ We find two results from out estimations.
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -3314,7 +3317,7 @@ In our estimations we use the Difference-in-Differences method, which is
 status open
 
 \begin_layout Plain Layout
-elig.men.60
+man_60_65
 \end_layout
 
 \end_inset
@@ -3524,6 +3527,140 @@ appendix
 
 \begin_layout Section
 Additional Estimates
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Non-Food Expenditure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expnf"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+might still have to go to appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expnf1_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(expnf ~	post_treatment*man_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman,
+\end_layout
+
+\begin_layout Plain Layout
+
+		data   = NIDS,
+\end_layout
+
+\begin_layout Plain Layout
+
+		model  = 'random')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_expnf1, echo=FALSE, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(expnf1)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
