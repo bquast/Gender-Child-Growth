@@ -301,7 +301,20 @@ key "duflo2000child,duflo2003grandmothers"
 status open
 
 \begin_layout Plain Layout
-Paper find something opposite.
+Life expectancy is South Africa is substantially below the pension eligibility
+ age.
+ Around the end of the 10s, which is when our data was collected, the average
+ life expectancy at birth was only slightly above 50 years old.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add paper find positive effect of male bargaining
 \end_layout
 
 \end_inset
@@ -326,7 +339,9 @@ State pension systems are a useful variable of interest to study bargaining
  of bargaining power.
  Additionally, although the pension system was intended as a form of poverty
  relief for the elder population, it has also become that for the South-African
- rural population, serving as a general source of income to many households
+ rural population, serving as a general source of income to many households,
+ upon the initial expansion to include the black population, in 1991, this
+ was a much as twice the mean monthly income.
  
 \begin_inset CommandInset citation
 LatexCommand citep*
@@ -336,7 +351,68 @@ key "tangwe2013impact"
 \end_inset
 
 .
- 
+ However, the previously-existing eligibility-age differential made it hard
+ to make a male/female comparison, especially since average life expectancy
+ is South Africa is substantially lower than the persion eligibility age.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+###s
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It seems likely that a healthy lifestyle, which increases the chance of
+ becoming a pension recipient, also has an effect on the lifestyle of household
+ members.
+ In this is so, then our observed attrition will be an actual cause of a
+ selection bias effect.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Causing a substantial selection bias in the pension recipient base.
+ Moreover, the fact that men receive pension only at 65, and women at sixty,
+ causes an even more pronounced selection bias in the male pension recipient
+ base.
+ This also makes the comparing of the effect of male pension recipient and
+ female pension recipients, on the anthropometrics of children in the same
+ household problematic, since much more attrition will have take place in
+ the male pension base.
+ The drop in life expectancy also aggravates the issue of attrition, and
+ the associated selection bias.
+ However, since pension eligibility becomes equal, for both men and women,
+ at least, provides us with effects which internally more comparable.
+ We say more, because the difference in attrition between the male and female
+ pension base in our sample has not entirely been eliminated.
+ Throughout the evolution of the average life expectancy at birth in South
+ Africa, female life expectancy has been higher than male life expectancy
+ by about one year.
+ Bearing in mind that the difference between average life expectancy and
+ pension eligibility is around 9 years, this additional selection bias effect,
+ should not be underestimated.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -431,96 +507,6 @@ reference "sec:conclusions"
 status open
 
 \begin_layout Plain Layout
-Life expectancy is South Africa is substantially below the pension eligibility
- age.
- Around the end of the 10s, which is when our data was collected, the average
- life expectancy at birth was only slightly above 50 years old.
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-In the year 1993, when 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2000child,duflo2003grandmothers"
-
-\end_inset
-
- are analysed, the average life expectancy at birth was somewhat higher
- (slightly above 55 years old).
- 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Causing a substantial selection bias in the pension recipient base.
- Moreover, the fact that men receive pension only at 65, and women at sixty,
- causes an even more pronounced selection bias in the male pension recipient
- base.
- This also makes the comparing of the effect of male pension recipient and
- female pension recipients, on the anthropometrics of children in the same
- household problematic, since much more attrition will have take place in
- the male pension base.
- The drop in life expectancy also aggravates the issue of attrition, and
- the associated selection bias.
- However, since pension eligibility becomes equal, for both men and women,
- at least, provides us with effects which internally more comparable.
- We say more, because the difference in attrition between the male and female
- pension base in our sample has not entirely been eliminated.
- Throughout the evolution of the average life expectancy at birth in South
- Africa, female life expectancy has been higher than male life expectancy
- by about one year.
- Bearing in mind that the difference between average life expectancy and
- pension eligibility is around 9 years, this additional selection bias effect,
- should not be underestimated.
- Furthermore, is seems likely that a healthy lifestyle, which increases
- the chance of becoming a pension recipient, also has an effect on the lifestyle
- of household members.
- In this is so, then our observed attrition will be an actual cause of a
- selection bias effect.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The data from the 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "saldru2008nids,saldru2012nids,saldru2013nids"
-
-\end_inset
-
- surveys contains actual information on income, including pension recipient
- status, whereas Duflo uses age as a proxy for recipient status.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 The lack Pareto optimal allocation of resources within households as discussed
  in i.a.
  
@@ -555,106 +541,6 @@ Based on this lack of Pareto optimal allocation, we have to reject the idea
  of households acting as a unit in an economic sense.
  For the design of cash transfer schemes it is therefore necessary to determine
  the preferred recipient within the household [REWRITE THIS]
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-follow the 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2000child,duflo2003grandmothers"
-
-\end_inset
-
- general design
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Average household income in rural area is much lower than in urban areas.
- Pension receipt have therefore formed a large share of household income.
- Upon the initial expansion to include the black population, in 1991, this
- was a much as twice the mean monthly income.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-These z-scores are considered a good representation of short-term or long-term
- health issues, respectively.
- This relation is especially well observed for children between 6 and 60
- months old.
- We therefore stay with the best practice and only include those observations
- in our analysis.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-We formulate two models.
- One model with the event dummy, and an interaction term with male pension
- recipient status and a second model with the event dummy and an interaction
- term eligibility dummy, as well as with the dummies for women between 60
- and 65 and women and men 65 and above.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- Each of these models is estimated with all four types of z-scores, as well
- as food and non-food expenditure which gives a total of twelve estimation
- equations.
- All twelve equation are estimated as fixed-effect panel models.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-We have only one data period before the policy change, which means that
- we cannot test for a common trend.
- The implicit assumption here is thus that the effects are level over the
- time period studied here.
 \end_layout
 
 \end_inset
@@ -1832,6 +1718,24 @@ key "nchs2000cdc"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+These z-scores are considered a good representation of short-term or long-term
+ health issues, respectively.
+ This relation is especially well observed for children between 6 and 60
+ months old.
+ We therefore stay with the best practice and only include those observations
+ in our analysis.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
@@ -2030,6 +1934,23 @@ name "sec:methods"
 
 \end_inset
 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+follow the 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2000child,duflo2003grandmothers"
+
+\end_inset
+
+ general design
+\end_layout
+
+\end_inset
+
  This study focuses on a policy change in the South-African state pension
  system.
  Until mid 2009, men became eligible for pension at the age of 65.
@@ -2125,6 +2046,18 @@ Estimation
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We have only one data period before the policy change, which means that
+ we cannot test for a common trend.
+ The implicit assumption here is thus that the effects are level over the
+ time period studied here.
+\end_layout
+
+\end_inset
+
 In order to fully exploit the available data and the policy change, we employ
  a `Difference-in-Difference' (DiD) estimator.
  This estimator operationalised by using the fixed-effects (within) estimator.
@@ -2168,6 +2101,33 @@ Models and Variations
 \begin_inset CommandInset label
 LatexCommand label
 name "sa:models"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+We formulate two models.
+ One model with the event dummy, and an interaction term with male pension
+ recipient status and a second model with the event dummy and an interaction
+ term eligibility dummy, as well as with the dummies for women between 60
+ and 65 and women and men 65 and above.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ Each of these models is estimated with all four types of z-scores, as well
+ as food and non-food expenditure which gives a total of twelve estimation
+ equations.
+ All twelve equation are estimated as fixed-effect panel models.
+\end_layout
 
 \end_inset
 
