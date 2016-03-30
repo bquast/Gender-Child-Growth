@@ -1039,7 +1039,7 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  do( tidy(summary(.$man_60_65)) )
+  do( tidy(summary(.$post_treatment)) )
 \end_layout
 
 \end_inset
@@ -2009,7 +2009,7 @@ We operationalise this natural experiment, by constructing a policy dummy.
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
@@ -2387,7 +2387,7 @@ reference "sub:estimation"
 status open
 
 \begin_layout Plain Layout
-w_spen_w
+woman_60_65
 \end_layout
 
 \end_inset
@@ -2399,7 +2399,7 @@ w_spen_w
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -2411,7 +2411,7 @@ w_spen_m
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
@@ -2432,7 +2432,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-eli.men.60:w_spen_m
+eli.men.60:man_60_65
 \end_layout
 
 \end_inset
@@ -2500,7 +2500,7 @@ expf1_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(expf ~	post_treatment*man_60_65 +
+plm(expf ~	post_treatment*post_treatment +
 \end_layout
 
 \begin_layout Plain Layout
@@ -2510,7 +2510,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		woman_60_65 + 
+		wopost_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2622,7 +2622,7 @@ haz_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(zhfa ~ 	post_treatment*man_60_65 +
+plm(zhfa ~ 	post_treatment*post_treatment +
 \end_layout
 
 \begin_layout Plain Layout
@@ -2632,7 +2632,7 @@ plm(zhfa ~ 	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_60_65 + 
+		post_treatment*wopost_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2749,7 +2749,7 @@ waz_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(zwfa ~ 	post_treatment*man_60_65 +
+plm(zwfa ~ 	post_treatment*post_treatment +
 \end_layout
 
 \begin_layout Plain Layout
@@ -2759,7 +2759,7 @@ plm(zwfa ~ 	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_60_65 + 
+		post_treatment*wopost_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2847,61 +2847,46 @@ reference "tab:waz1"
 
  shows the Height-for-Age and the Weight-for-Age estimations for all three
  Right-Hand Side variations give similar results.
- For all the height-based z-score estimations, we find that the policy variable
- 
+ For Height-for-Age Z-scores as an explanandum, we find that the policy
+ variable 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
 
- has a negative coefficient estimate, which is highly significant (where
- included).
- In all cases the estimate has a p-value of less that 
-\series bold
-0.01
-\series default
-.
- Meaning that the probability that this coefficient represents a non-existent
- relation (Type II error) is less than one percent.
- In the model 2 specification of the Weight-for-Height dependent variable,
- the p-value is even less that 0.001.
- However, upon the inclusion of the interaction term (model 3) this falls
- back to below 0.01.
+ has a negative coefficient estimate.
+ 
 \end_layout
 
 \begin_layout Standard
-The fact that this outcome is consistent across different Right-Hand Side,
- as well as Left-Hand Side specifications, further lends credibility of
- there not being a Type II error.
- As mentioned above, the HAZ and the WAZ Z-scores capture long-term or past
- health issues.
-\end_layout
-
-\begin_layout Standard
-Furthermore, when using Height-for-Age as the LHS, and the model 2 on the
- RHS, we find a positive effect of living with a male pension recipient.
- However, the coefficient output here is no longer significant when we include
- the interaction term in the model 3 specification.
-\end_layout
-
-\begin_layout Standard
-The interpretation of the coefficients of these dummy variables is as follows.
- The coefficient represents the change in the expected value of a child's
+The coefficient represents the change in the expected value of a child's
  deviation for the standard growth anthropometics in standard deviations.
  A coefficient of 
 \series bold
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
 -0.3419
+\end_layout
+
+\end_inset
+
+
 \series default
  of the dummy 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
@@ -2932,7 +2917,7 @@ reference "sa:ta:bmiz"
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
@@ -2952,7 +2937,7 @@ BMIZ
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -2970,7 +2955,7 @@ We thus find a negative effect of the treatment on growth metrics.
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -2994,7 +2979,7 @@ The last result is surprising, in the sense that it is significant for one
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3060,7 +3045,7 @@ BMIZ
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3074,7 +3059,7 @@ WHZ
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3187,7 +3172,7 @@ We find two results from out estimations.
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
@@ -3203,7 +3188,7 @@ Height for Age and Weight for Height).
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3317,7 +3302,7 @@ In our estimations we use the Difference-in-Differences method, which is
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatment
 \end_layout
 
 \end_inset
@@ -3329,7 +3314,7 @@ man_60_65
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3381,7 +3366,7 @@ Secondly, we find that living with male pension recipient (
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3421,7 +3406,7 @@ In conclusion, we find a negative correlation between the treatment dummy
 status open
 
 \begin_layout Plain Layout
-w_spen_m
+man_60_65
 \end_layout
 
 \end_inset
@@ -3587,7 +3572,7 @@ expnf1_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(expnf ~	post_treatment*man_60_65 + 
+plm(expnf ~	post_treatment*post_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3597,7 +3582,7 @@ plm(expnf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		woman_60_65 + 
+		wopost_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3712,7 +3697,7 @@ expf2_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(expf ~	post_treatment*man_60_65 +
+plm(expf ~	post_treatment*post_treatment +
 \end_layout
 
 \begin_layout Plain Layout
@@ -3722,7 +3707,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_60_65 + 
+		post_treatment*wopost_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3836,7 +3821,7 @@ expnf2_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(expnf ~	post_treatment*man_60_65 + 
+plm(expnf ~	post_treatment*post_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3846,7 +3831,7 @@ plm(expnf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		post_treatment*woman_60_65 + 
+		post_treatment*wopost_treatment + 
 \end_layout
 
 \begin_layout Plain Layout
