@@ -74,13 +74,13 @@ summary(zwfa10) # works very well
 summary(zwfa11) # with random too
 
 ## weight for height
-zwfh1 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="within")
-zwfh2 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="between")
-zwfh3 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
-zwfh4 <- plm(zwfh ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh5 <- plm(zwfh ~ spen_man + spen_woman*post_treatment + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh6 <- plm(zwfh ~ spen_man*post_treatment + spen_woman*post_treatment + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh7 <- plm(zwfh ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh1 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, model="within")
+zwfh2 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, model="between")
+zwfh3 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
+zwfh4 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh5 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman*post_treatment + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh6 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman*post_treatment + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh7 <- plm(zwfh ~ post_treatment*man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfh8 <- plm(zwfh ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
 summary(zwfh1) # these all do no work, suggesting the effect is more long run
 summary(zwfh2)
