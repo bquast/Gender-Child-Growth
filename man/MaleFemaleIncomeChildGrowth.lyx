@@ -185,11 +185,17 @@ load_data_libraries, include=FALSE
 
 \begin_layout Plain Layout
 
-opts_chunk$set(fig.path='figures/latex-', cache.path='../data/cache/latex-')
+opts_chunk$set(fig.path='figures/latex-', cache.path='../data/cache/latex-',
+ fig.width=9, fig.height=5)
 \end_layout
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+library(ggplot2)
 \end_layout
 
 \begin_layout Plain Layout
@@ -210,6 +216,10 @@ library(broom)
 \begin_layout Plain Layout
 
 library(printr)
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -543,7 +553,7 @@ key "who2006child"
 
 \end_inset
 
-, which are discussed separately in section 
+, which are discussed separately in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sub:data:who"
@@ -950,36 +960,59 @@ For adults several variables measure the different amounts and sources of
 In 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:spen"
+reference "fig:man_60_65"
 
 \end_inset
 
  descriptive statistics of the Right-Hand Side (RHS) variable of interest
  are presented.
- Income from the state pension system is generally just above 1000 SAR.
- There are a number of different exact amounts.
- 
-\begin_inset Note Note
+ Income from the state pension system is generally the same just above 1000
+ SAR.
+ I construct a dummy variable for children living in a household with a
+ man aged 60 until 65 (
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-use a dummy?
+man_60_65
 \end_layout
 
 \end_inset
 
- 
+).
+ As well as dummies for a man 65 years or older (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_65
+\end_layout
+
+\end_inset
+
+) and these same dummies for children living with women of those ages.
+ The interaction of this dummy variable with the event dummy 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+post_treatment
+\end_layout
+
+\end_inset
+
+ is the variable of interest.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1040,6 +1073,99 @@ NIDS %>%
 \begin_layout Plain Layout
 
   do( tidy(summary(.$post_treatment)) )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Children living with a man 60-64
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:man_60_65"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+man_60_65_descr, cache=TRUE, message=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave, c_woman) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  summarise(man_60_65=sum(man_60_65)) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + geom_histogram()
 \end_layout
 
 \end_inset
@@ -1196,506 +1322,7 @@ name "sa:fig:lifeExp"
 status open
 
 \begin_layout Plain Layout
-\begin_inset Float table
-placement ht!
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Children in Households with and without Female Pension Recipients
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sa:ta:hfr"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="5">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<row>
-<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Year 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2008 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2012 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2013 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Overall 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Female Recipient 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1637 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1498 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1509 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-4644 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-No Female Recipient 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5096 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5235 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-5224 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-15555 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ratio 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.2431 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.2225 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.2241 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.2299 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float table
-placement ht!
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Children in Households with and without Male Pension Recipients
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sa:ta:hmr"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="5">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<row>
-<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Year 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2008 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2012 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2013 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Overall 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Male Recipient 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-612 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-595 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-623 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-1830 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-No Male Recipient 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-6121 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-6138 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-6110 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-18369 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ratio of Male Recipients 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.0909 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.0884 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.0925 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.0906 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-WHO: Child Growth Standards
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:data:who"
-
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- Usage of 
+Usage of 
 \begin_inset CommandInset citation
 LatexCommand citet
 after "WHO Child Growth Standards"
@@ -1703,17 +1330,7 @@ key "who2006child"
 
 \end_inset
 
-, in stead of 
-\begin_inset CommandInset citation
-LatexCommand citet
-after "CDC Growth Charts: United States"
-key "nchs2000cdc"
-
-\end_inset
-
-, since these have superseded the CDC charts.
- This of minimal importance, as long as all observations are held against
- the same standards the results should not differ.
+, 
 \end_layout
 
 \end_inset
@@ -1753,9 +1370,20 @@ key "who2006child"
 
 \end_inset
 
+, superceding the previously used CDC Growth Charts of 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "CDC Growth Charts: United States"
+key "nchs2000cdc"
+
+\end_inset
+
 .
- These standards measure the difference between a child's anthropometrics
- standardised against an ideal score.
+ The WHO charts map the average growth of a varied sample of children living
+ in household with health lifestyles, setting an ideal benchmark for growth.
+ The actual values in these of minimal importance, as long as all observations
+ are held against the same standards the results does not differ.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1763,9 +1391,9 @@ Z-score anthropometrics are used since they are considered to be a good
  representation of a child's health, and by extension, the household in
  which they grow up.
  Z-scores refer to the practice of standardising the anthropometrics using
- an `idea' standard
+ an `ideal' standard
 \begin_inset CommandInset citation
-LatexCommand citealt
+LatexCommand citep
 key "who2006child"
 
 \end_inset
@@ -1787,7 +1415,7 @@ update to use only HAZ and WAZ
 \end_layout
 
 \begin_layout Standard
-For example, if we measure a height 
+For instance, if we measure a height 
 \begin_inset Formula $x$
 \end_inset
 
@@ -1820,25 +1448,20 @@ z_{xy}=\frac{x-\mu_{y}}{\sigma_{y}}
 These ideal scores are based on a sample of children from different ethnic
  populations, in households which observed a healthy lifestyle.
  Any health issues, such as malnutrition or disease will affect these metrics,
- by causing the child to be shorter or lighter.
- However, it is impossible to distinguish between the different causes of
- an observed slowed growth.
+ by causing the child to be shorter or lighter as compared to these ideal
+ standards.
+ It is however not possible to distinguish between the different causes
+ of an observed slowed growth.
 \end_layout
 
 \begin_layout Standard
 It is best practice to use only metrics for children between the ages of
  6 months and 60 months.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-In general, can distinguish between two types of anthropometric z-scores,
- the age-based z-scores and the height-based z-scores.
- Whereby `based' refers to the reference point at which anthropometrics
- are standardised.
+cite something for that
 \end_layout
 
 \end_inset
@@ -1847,68 +1470,19 @@ In general, can distinguish between two types of anthropometric z-scores,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The Age-Based Z-scores (ABZs) are constituted by the Height-for-Age Z-score
- (HAZ) and the Weight-for-Age Z-score (WAZ).
- Since these metrics are age-based, they provide information about all past
- growth issues.
+Here we use two type of z-scores, the Height-for-Age Z-score (HAZ) and the
+ Weight-for-Age Z-score (WAZ).
+ Since these metrics are both age-based, they provide information about
+ all past growth issues.
  Any past issues such a malnutrition and disease will have impaired growth,
  and these effects will still be captured by today's height.
- This also applies to the WAZ, as standard weight is a function of the height,
- which is in turn a function of the age.
-\end_layout
-
-\begin_layout Plain Layout
-The ABZs are constructed on a weekly basis up to the age of 60 months, and
- on a monthly basis thereafter.
-\end_layout
-
-\end_inset
-
-
+ This also applies to the WAZ, as the ideal weight is a function of the
+ height, which is in turn a function of the age.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The Height-Based Z-scores (HBZs) are the Weight-for-Height Z-score (WHZ)
- and Body Mass Index Z-score (BMIZ).
- Where the BMI (or Quetelet) is a transformed version of the WHZ, which
- has a quadratic height effect.
- The equation for BMI is: 
-\begin_inset Formula 
-\[
-\textbf{BMI}=\frac{\textbf{weight(kg)}}{\textbf{height(m)}^{2}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-These scores compare children with others of the same height, irrispective
- of their age.
- As a results we observe only the relatively short-term effect of weight.
- The height-based metrics thus provide is with a short-term insight.
-\end_layout
-
-\begin_layout Plain Layout
-The HBZs are available on a semi-centimeter level throughout all heights.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Data Structure
+These are constructed on a weekly basis up to the age of 60 months, and
+ on a monthly basis thereafter.
 \end_layout
 
 \begin_layout Standard
@@ -1925,16 +1499,34 @@ key "wickham2014tidy"
 \end_inset
 
 .
-\begin_inset Note Note
+ In order to merge data and compute of these statistics, I make use of the
+ dplyr and tidyr R packages 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wickham2015dplyr,wickham2016tidyr"
+
+\end_inset
+
+.
+ After having combined the various data.frames within each wave, the three
+ waves can be combined by simply joining the rows using base R's 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-add dplyr and tidyr citations
+rbind()
 \end_layout
 
 \end_inset
 
+ function
+\begin_inset CommandInset citation
+LatexCommand citep
+key "R"
 
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1948,14 +1540,14 @@ name "sec:methods"
 
 \end_inset
 
- This study focuses on a policy change in the South-African state pension
+ This study exploits on a policy change in the South-African state pension
  system.
  Until mid 2009, men became eligible for pension at the age of 65.
  Between mid 2009 and December 31st 2010, this was gradually lowered to
  60.
- The South-African National Income Dynamics Survey is a full-panel dataset,
- which contains information on household from before and after this policy
- change.
+ I combine this information with data from the South-African National Income
+ Dynamics Survey, a full-panel dataset, which contains information on household
+ from before and after this policy change.
  We study the effect of the policy change, as well as the general effect
  on the pension system, on the health of children in the same household.
  The research setup in discussed in further detail below.
@@ -1978,20 +1570,10 @@ key "duflo2000child,duflo2003grandmothers"
  
 \end_layout
 
-\begin_layout Subsection
-Identification strategy
-\end_layout
-
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sa:identification"
-
-\end_inset
-
- The identification strategy in this paper is based on a policy change in
+The identification strategy in this paper is based on a policy change in
  the pension eligibility age for men, which was introduced between mid 2009
- and January 1st 2011.
+ and Decenber 31st 2010.
  This policy change thus fall between waves 1 and 2 (2008 and 2012 respectively)
  of the NIDS data sets.
 \end_layout
@@ -2003,7 +1585,7 @@ Before this policy change, the eligibility age for men was 65 years old.
 \end_layout
 
 \begin_layout Standard
-We operationalise this natural experiment, by constructing a policy dummy.
+I operationalise this constructing a policy dummy.
  This policy dummy is called 
 \begin_inset Flex Code
 status open
@@ -2059,10 +1641,6 @@ including household income covaraite allows isolation of causal bargaining
 
 \end_layout
 
-\begin_layout Subsection
-Estimation
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
@@ -2114,7 +1692,7 @@ plm
 
  
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "croissant2008panel"
 
 \end_inset
@@ -2290,23 +1868,8 @@ These three models the are variations that we use on the Right-Hand Side
 
 \begin_layout Standard
 As described above, we have a total of four z-scores available as dependent
- variables, Height-for-Age (
-\series bold
-HAZ
-\series default
-), Weight-for-Age (
-\series bold
-WAZ
-\series default
-), Weight-for-Height (
-\series bold
-WHZ
-\series default
-), and Body Mass Index (
-\series bold
-BMI
-\series default
-).
+ variables, Height-for-Age (HAZ), Weight-for-Age (WAZ), and food and non-food
+ expenditure.
  Each of these is used in a different estimation as the Left-Hand Side (LHS).
  Combining these four LHSs with each of the three RHSs, gives a total of
  twelve estimation equations.
@@ -2880,6 +2443,81 @@ post_treatment
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Weight for Age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+fig:waz1, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave, man_60_65) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  summarise(zwfa=mean(zwfa, na.rm=TRUE)) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  ggplot(aes(x=wave, y=zwfa, colour=man_60_65)) + geom_line()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 The coefficient represents the change in the expected value of a child's
  deviation for the standard growth anthropometics in standard deviations.
  A coefficient of 
@@ -2940,16 +2578,8 @@ post_treatment
 \end_inset
 
  variable.
- In the 
-\series bold
-WHZ
-\series default
- estimation we do not find any significant variables.
- However, the 
-\series bold
-BMIZ
-\series default
- estimation we find 
+ In the WHZ estimation we do not find any significant variables.
+ However, the BMIZ estimation we find 
 \begin_inset Flex Code
 status open
 
@@ -2977,15 +2607,7 @@ man_60_65
 
 \end_inset
 
- in one height-based z-score (
-\series bold
-BMIZ
-\series default
-), but not in the other 
-\series bold
-WHZ
-\series default
-.
+ in one height-based z-score (BMIZ), but not in the other WHZ.
 \end_layout
 
 \begin_layout Standard
@@ -3001,29 +2623,14 @@ man_60_65
 
 \end_inset
 
- in the 
-\series bold
-WHZ
-\series default
- estimations are all similar to each other, and roughly half of the estimates
- of the 
-\series bold
-BMIZ
-\series default
- estimations.
+ in the WHZ estimations are all similar to each other, and roughly half
+ of the estimates of the BMIZ estimations.
 \end_layout
 
 \begin_layout Standard
-For the higher coefficient estimates, it is important to note that 
-\series bold
-BMIZ
-\series default
- is essentially a convex mapping of 
-\series bold
-WHZ
-\series default
-, since height is squared in the denominator of the BMI function, as described
- in 
+For the higher coefficient estimates, it is important to note that BMIZ
+ is essentially a convex mapping of WHZ, since height is squared in the
+ denominator of the BMI function, as described in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sa:hbz"
@@ -3037,13 +2644,9 @@ t estimates can have different significance levels, can be explained as
  The squaring of the height in the denominator of the Body-Mass Index function,
  makes it a non-linear mapping of the Weight-for-Height Z-scores.
  Furthermore, from the significance at the 5% level of the coefficients
- in the 
-\series bold
-BMIZ
-\series default
- estimations, we can conclude that the coefficient estimates are higher
- that the standard error estimates, by a factor of several times (for Degrees
- of Freedom 
+ in the BMIZ estimations, we can conclude that the coefficient estimates
+ are higher that the standard error estimates, by a factor of several times
+ (for Degrees of Freedom 
 \begin_inset Formula $\sim380$
 \end_inset
 
@@ -3053,11 +2656,7 @@ BMIZ
  than the coefficient estimates.
  This then gives the results, that with t-testing the significance of the
  convexly mapped coefficients and standard errors, we can find significance
- at the 5% level for the convexly mapped 
-\series bold
-BMIZ
-\series default
- estimates of 
+ at the 5% level for the convexly mapped BMIZ estimates of 
 \begin_inset Flex Code
 status open
 
@@ -3067,11 +2666,7 @@ man_60_65
 
 \end_inset
 
-, where for the 
-\series bold
-WHZ
-\series default
- estimates of 
+, where for the WHZ estimates of 
 \begin_inset Flex Code
 status open
 
@@ -3392,11 +2987,7 @@ man_60_65
 
 \end_inset
 
-), is negatively correlated with a the BMI z-scores (
-\series bold
-BMIZ
-\series default
-).
+), is negatively correlated with a the BMI z-scores (BMIZ).
  As discussed in 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3432,11 +3023,7 @@ man_60_65
 
 \end_inset
 
-) and the short-run 
-\series bold
-BMIZ
-\series default
-.
+) and the short-run BMIZ.
 \end_layout
 
 \begin_layout Standard
