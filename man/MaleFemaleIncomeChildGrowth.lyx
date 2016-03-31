@@ -3495,6 +3495,81 @@ kable(summary(expnf1)$coef)
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Children living with a man 65 or over
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+man_65, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave, man_65) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  summarise(zwfa=mean(zwfa, na.rm=TRUE)) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  ggplot(aes(x=wave, weight=zwfa, fill=man_65)) + geom_bar(position='dodge')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
