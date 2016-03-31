@@ -479,7 +479,7 @@ The above results suggest that the increased expenditure in food results
 \begin_layout Standard
 The following 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sec:data"
 
 \end_inset
@@ -488,7 +488,7 @@ reference "sec:data"
  used to computer the anthropometirc Z-scores.
  This is followed by 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sec:methods"
 
 \end_inset
@@ -497,7 +497,7 @@ reference "sec:methods"
  for this.
  In 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sec:results"
 
 \end_inset
@@ -505,7 +505,7 @@ reference "sec:results"
  I present the outcome of these estimations.
  Finally, in 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sec:conclusions"
 
 \end_inset
@@ -608,21 +608,21 @@ parents education.
 \begin_layout Standard
 In 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:haz_descr"
 
 \end_inset
 
 , 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand eqref
 reference "tab:waz_descr"
 
 \end_inset
 
 , and 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:expf_descr"
 
 \end_inset
@@ -949,7 +949,7 @@ For adults several variables measure the different amounts and sources of
 \begin_layout Standard
 In 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:spen"
 
 \end_inset
@@ -1061,7 +1061,7 @@ In addition to the explanandum, a number of relevant covariates are included
  in the RHS.
  
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:income"
 
 \end_inset
@@ -2348,21 +2348,21 @@ name "sec:results"
 
  In 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:expf"
 
 \end_inset
 
 , 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:waz1"
 
 \end_inset
 
 , and 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:haz1"
 
 \end_inset
@@ -2375,7 +2375,7 @@ reference "tab:haz1"
 In these tables the dependent variable used it defined on the top row.
  The second row defines the model used (as defined in 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sub:estimation"
 
 \end_inset
@@ -2471,6 +2471,7 @@ Food Expenditure
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:expf"
@@ -2550,7 +2551,7 @@ status open
 \begin_layout Plain Layout
 
 \begin_inset Argument 1
-status collapsed
+status open
 
 \begin_layout Plain Layout
 expf1, echo=FALSE, cache=TRUE
@@ -2595,10 +2596,18 @@ Height for Age
 \end_layout
 
 \begin_layout Plain Layout
-\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:haz1"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2662,7 +2671,7 @@ plm(zhfa ~ 	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		model='between")
+		model='between')
 \end_layout
 
 \end_inset
@@ -2722,10 +2731,18 @@ Weight for Age
 \end_layout
 
 \begin_layout Plain Layout
-\align center
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:waz1"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2784,7 +2801,7 @@ plm(zwfa ~ 	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		best_age_yrs < 4, 
+		best_age_yrs < 8, 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2799,7 +2816,7 @@ plm(zwfa ~ 	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 \begin_inset Flex Chunk
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2833,14 +2850,14 @@ kable(summary(zwfa7)$coef)
 \begin_layout Standard
 As 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:haz1"
 
 \end_inset
 
  and
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "tab:waz1"
 
 \end_inset
