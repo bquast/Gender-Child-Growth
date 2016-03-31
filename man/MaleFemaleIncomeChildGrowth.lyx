@@ -200,6 +200,11 @@ library(ggplot2)
 
 \begin_layout Plain Layout
 
+library(magrittr)
+\end_layout
+
+\begin_layout Plain Layout
+
 library(plm)
 \end_layout
 
@@ -2506,7 +2511,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, weight=zwfa, fill=man_60_65)) + geom_bar(position='dodge')
+  ggplot(aes(x=wave, y=zwfa, fill=man_60_65))%>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  add(geom_bar(stat='identity', position='dodge'))
 \end_layout
 
 \end_inset
@@ -3552,7 +3562,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, weight=zwfa, fill=man_65)) + geom_bar(position='dodge')
+  ggplot(aes(x=wave, y=zwfa, fill=man_65)) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  add(geom_bar(stat='identity', position='dodge'))
 \end_layout
 
 \end_inset
