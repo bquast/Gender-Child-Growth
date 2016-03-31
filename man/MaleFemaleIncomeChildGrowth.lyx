@@ -1155,6 +1155,11 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
+  filter( !is.na(c_woman) ) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
   group_by(wave, c_woman) %>%
 \end_layout
 
@@ -1165,7 +1170,8 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + geom_histogram()
+  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + geom_bar(position='dodge
+')
 \end_layout
 
 \end_inset
@@ -2495,12 +2501,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  summarise(zwfa=mean(zwfa, na.rm=TRUE)) %>%
+  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, y=zwfa, colour=man_60_65)) + geom_line()
+  ggplot(aes(x=wave, weight=zwfa, fill=man_60_65)) + geom_bar(position='dodge')
 \end_layout
 
 \end_inset
