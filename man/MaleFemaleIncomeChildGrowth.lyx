@@ -1175,8 +1175,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + geom_bar(position='dodge
-')
+  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + 
+\end_layout
+
+\begin_layout Plain Layout
+
+  geom_bar(position='dodge')
 \end_layout
 
 \end_inset
@@ -2485,7 +2489,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 fig:waz1, cache=TRUE, warning=FALSE
 \end_layout
 
@@ -2511,17 +2514,17 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, y=zwfa, fill=man_60_65)) %>%
+  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) +
 \end_layout
 
 \begin_layout Plain Layout
 
-  add(geom_bar(stat='identity')) %>%
+  geom_bar(stat='identity') + 
 \end_layout
 
 \begin_layout Plain Layout
 
-  add(facet_grid(~man_60_65))
+  facet_grid(~man_60_65)
 \end_layout
 
 \end_inset
@@ -3541,7 +3544,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 man_65, cache=TRUE, warning=FALSE
 \end_layout
 
@@ -3562,22 +3564,22 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  summarise(zwfa=mean(zwfa, na.rm=TRUE)) %>%
+  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, y=zwfa, fill=man_65)) %>%
+  ggplot( aes(x=wave, y=zwfa, fill=man_65) ) +
 \end_layout
 
 \begin_layout Plain Layout
 
-  add(geom_bar(stat='identity')) %>%
+  geom_bar(stat='identity') +
 \end_layout
 
 \begin_layout Plain Layout
 
-  add(facet_grid(~man_65))
+  facet_grid(~man_65)
 \end_layout
 
 \end_inset
