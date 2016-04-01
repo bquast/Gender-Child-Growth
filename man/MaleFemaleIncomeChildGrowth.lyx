@@ -121,10 +121,10 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-Increased in male bargaining power in households causes greater expenditure
+Increased male bargaining power in households causes greater expenditure
  on food, an improvement in Weight-for-Age Z-scores in young children, and
- a deterioration in Height-for-Age Z-scores in very young children, in the
- content of South Africa's 2010 state persion expansion for males.
+ a deterioration in Height-for-Age Z-scores in very young children, as observed
+ in the content of South Africa's 2010 state persion expansion for males.
  In 2010 the male eligibility age for the South-African state pension was
  brought to par with female eligibility age (60, previously 65).
  I exploit this policy change in order to estimate the effect of the increased
@@ -550,8 +550,8 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 \end_inset
 
 .
- Several of the datasets key variable for this study, rely in turn on the
- World Health Organization's Child Growth Standards 
+ Several of the dataset's key variables for this study, in turn rely on
+ the World Health Organization's Child Growth Standards 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "who2006child"
@@ -577,32 +577,138 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 \end_layout
 
 \begin_layout Itemize
-child anthropometrics,;
+child anthropometrics (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zwfa
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zhfa
+\end_layout
+
+\end_inset
+
+);
 \end_layout
 
 \begin_layout Itemize
-food/non-food expenditure;
+food/non-food expenditure (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+expf
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+expnf
+\end_layout
+
+\end_inset
+
+);
 \end_layout
 
 \begin_layout Itemize
-child age (in days);
+child age (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+c_age_days1
+\end_layout
+
+\end_inset
+
+);
 \end_layout
 
 \begin_layout Itemize
-child sex;
+sex of the child (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+c_woman
+\end_layout
+
+\end_inset
+
+); 
 \end_layout
 
 \begin_layout Itemize
-adult pension eligibility status;
+pension eligibile adult (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
 \end_layout
 
-\begin_layout Itemize
-adult sex.
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_60_65
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_65
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_65
+\end_layout
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
 In addition to these variables of interest, I include a number relevant
- of covariates, such as household income, in the analysis.
+ of covariates, such as household income (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+hhincome
+\end_layout
+
+\end_inset
+
+), in the analysis.
 \end_layout
 
 \begin_layout Standard
@@ -636,82 +742,7 @@ reference "tab:expf_descr"
 
 \begin_layout Standard
 \begin_inset Float table
-placement hb!
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Height-for-Age z-score distributions
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:haz_descr"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-haz_descr, cache=TRUE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-NIDS %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  filter(!is.na(c_woman)) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  group_by(c_woman, wave) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  do(tidy(summary(.$zhfa)))
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement hb!
+placement H
 wide false
 sideways false
 status open
@@ -786,6 +817,82 @@ NIDS %>%
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Height-for-Age z-score distributions
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:haz_descr"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+haz_descr, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  filter(!is.na(c_woman)) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(c_woman, wave) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  do(tidy(summary(.$zhfa)))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -841,75 +948,6 @@ NIDS %>%
 \begin_layout Plain Layout
 
   do(tidy(summary(.$expf)))
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Non-food expenditure 
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:expnf_descr"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-expnf_descr, cache=TRUE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-NIDS %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  group_by(wave) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  do(tidy(summary(.$expnf)))
 \end_layout
 
 \end_inset
@@ -2613,7 +2651,7 @@ post_treatmentTRUE:man_60_65TRUE
 
  on the Weight-for-Age Z-score Thirdly, we find a consistent and negative
  effect of the interaction term on the Height-for-Age Z-scores.
- Both of these effect are consistent across the different specifications
+ Both of these effect ae consistent across the different specifications
  used in our estimations.
 \end_layout
 
@@ -2685,7 +2723,7 @@ Secondly, analysing data around the policy change allows us to employ a
 We use the South-African National Income Dynamics Survey data 
 \begin_inset CommandInset citation
 LatexCommand citep
-after "jointly with The World Bankj"
+after "jointly with The World Bank"
 key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
@@ -2955,6 +2993,76 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Non-food expenditure 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:expnf_descr"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+expnf_descr, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  do(tidy(summary(.$expnf)))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3209,6 +3317,7 @@ kable(summary(expf2)$coef)
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3333,6 +3442,7 @@ kable(summary(expnf1)$coef)
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
