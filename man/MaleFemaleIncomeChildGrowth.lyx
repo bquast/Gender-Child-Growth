@@ -1653,7 +1653,18 @@ reference "tab:expf"
 
 \end_inset
 
-, 
+, the results of the estimation using food expenditure (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+expf
+\end_layout
+
+\end_inset
+
+) as a dependent variable are presented.
+ In 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:waz1"
@@ -1672,16 +1683,22 @@ reference "tab:haz1"
 \end_layout
 
 \begin_layout Standard
-In these tables the dependent variable used it defined on the top row.
- The second row defines the model used (as defined in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:estimation"
+The variable 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
+\end_layout
 
 \end_inset
 
-).
- The other rows represent the independent variables.
+ is a dummy variable for the child living in the same household as a male
+ aged 60 through 64.
+\end_layout
+
+\begin_layout Standard
+The other rows represent the independent variables.
  Where 
 \begin_inset Flex Code
 status open
@@ -1693,20 +1710,29 @@ woman_60_65
 \end_inset
 
  represents the dummy variable for children living in a household with a
- state pension eligible woman.
- The variable 
+ state pension eligible woman aged 60 through 64.
+ The variables 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-man_60_65
+man_65
 \end_layout
 
 \end_inset
 
- is the dummy for the child living in the same household as a male state
- pension recipient.
- The policy variable 
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_65
+\end_layout
+
+\end_inset
+
+ represent pension eligible men an women over the age of 65 respectively.
+ The event variable 
 \begin_inset Flex Code
 status open
 
@@ -1721,29 +1747,51 @@ post_treatment
 status open
 
 \begin_layout Plain Layout
+TRUE
+\end_layout
+
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
 1
 \end_layout
 
 \end_inset
 
- for waves 2 and 3.
- An interaction term of the later two is also included as 
+) for the data collected after the policy change, i.e.
+ waves 2 and 3 and 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-eli.men.60:man_60_65
+FALSE
 \end_layout
 
 \end_inset
 
-.
+ (i.e.
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+) for data collected before then.
  Lastly, we include the covariate 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-w_h_tinc
+hhincome
 \end_layout
 
 \end_inset
@@ -1878,142 +1926,95 @@ kable(summary(expf1)$coef)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
+The key result in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:expf"
+
+\end_inset
+
+ is the coefficient estimate for the interaction term 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Height for Age
+post_treatmentTRUE:man_60_65TRUE
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Note Note
+, which is positive at 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:haz1"
-
-\end_inset
-
-
+97.76
 \end_layout
 
 \end_inset
 
-
-\begin_inset Flex Chunk
+ with a corresponding p-value of 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
+0.04
+\end_layout
 
-\begin_inset Argument 1
+\end_inset
+
+.
+ The coefficient estimates for the other independent variables take form
+ as is to be expected.
+ The estimate for household income is positive at 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-haz_vis, eval=FALSE
+0.03
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-
-plm(zhfa ~ 	post_treatment*post_treatment +
-\end_layout
-
-\begin_layout Plain Layout
-
-		post_treatment*man_65 + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		post_treatment*wopost_treatment + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		post_treatment*woman_65 + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		hhincome + 
-\end_layout
-
-\begin_layout Plain Layout
-
-		woman, 
-\end_layout
-
-\begin_layout Plain Layout
-
-		NIDS, 
-\end_layout
-
-\begin_layout Plain Layout
-
-		best_age_yrs < 4, 
-\end_layout
-
-\begin_layout Plain Layout
-
-		model='between')
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
+ and highly significant at 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
+0.00
+\end_layout
 
-\begin_inset Argument 1
+\end_inset
+
+.
+ The parameter estimates for the other household member dummies are all
+ positive and generally significant.
+ The estimate for the child being a girl (
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-print_hfa, echo=FALSE, cache=TRUE
+womanTRUE
 \end_layout
 
 \end_inset
 
-
-\end_layout
+) is negative at 
+\begin_inset Flex Code
+status open
 
 \begin_layout Plain Layout
-
-kable(summary(zhfa7)$coef)
+-12.61
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
+ but not significant.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -2148,46 +2149,276 @@ kable(summary(zwfa9)$coef)
 \end_layout
 
 \begin_layout Standard
-As 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:haz1"
+When using Weight-for-Age (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zwfa
+\end_layout
 
 \end_inset
 
- and
+) as a dependent variable, the coefficient of interest is positive at 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.36
+\end_layout
+
+\end_inset
+
+ and significant, with a p-value of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.026
+\end_layout
+
+\end_inset
+
+.
+ The interaction terms of the event dummy with the other household member
+ dummies, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_65
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_60_65
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_65
+\end_layout
+
+\end_inset
+
+, are nowhere close to significant with p-values of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.74
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.18
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.57
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Height for Age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:haz1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+haz_vis, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(zhfa ~ 	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		data = NIDS, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		subset = best_age_yrs < 4, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		model='between')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_hfa, echo=FALSE, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(zhfa7)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:waz1"
 
 \end_inset
 
- shows the Height-for-Age and the Weight-for-Age estimations for all three
- Right-Hand Side variations give similar results.
- For Height-for-Age Z-scores as an explanandum, we find that the policy
- variable 
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:haz1"
+
+\end_inset
+
+ show, the Weight-for-Age and the Height-for-Age estimations for all three
+ Right-Hand Side variations give opposing results.
+ For Height-for-Age z-scores as an explanandum, we find that the policy
+ variable interaction term 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-post_treatment
+post_treatmentTRUE:man_60_65TRUE
 \end_layout
 
 \end_inset
 
  has a negative coefficient estimate.
- 
+ While this interaction term has a positive coefficient when using Weight-for-Ag
+e z-score as a dependent variable.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2211,7 +2442,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-fig:waz1, cache=TRUE, warning=FALSE
+waz1, cache=TRUE, warning=FALSE
 \end_layout
 
 \end_inset
@@ -2263,251 +2494,6 @@ NIDS %>%
 
 \end_layout
 
-\begin_layout Standard
-The coefficient represents the change in the expected value of a child's
- deviation for the standard growth anthropometics in standard deviations.
- A coefficient of 
-\series bold
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\series bold
--0.3419
-\end_layout
-
-\end_inset
-
-
-\series default
- of the dummy 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-post_treatment
-\end_layout
-
-\end_inset
-
- in HAZ model 2, thus indicates that, after the lowering of the male pension
- eligibility age, ceteris paribus, a child's expected Height-for-Age Z-score
- is 0.3410 standard deviation lower than before the lowering of the eligibility
- age.
-\end_layout
-
-\begin_layout Standard
-In 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:whz"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:bmiz"
-
-\end_inset
-
- we do not find an effect of the 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-post_treatment
-\end_layout
-
-\end_inset
-
- variable.
- In the WHZ estimation we do not find any significant variables.
- However, the BMIZ estimation we find 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-man_60_65
-\end_layout
-
-\end_inset
-
- to be significant at a 5% level of all specifications.
-\end_layout
-
-\begin_layout Standard
-We thus find a negative effect of the treatment on growth metrics.
- Furthermore, for one height-based z-score we also find a negative effect
- of male pension recipients on growth metrics.
- Additionally, it is surprising that we find significant coefficients for
- 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-man_60_65
-\end_layout
-
-\end_inset
-
- in one height-based z-score (BMIZ), but not in the other WHZ.
-\end_layout
-
-\begin_layout Standard
-The last result is surprising, in the sense that it is significant for one
- dependent variable, but not the other.
- Especially considering that the coefficient estimates for 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-man_60_65
-\end_layout
-
-\end_inset
-
- in the WHZ estimations are all similar to each other, and roughly half
- of the estimates of the BMIZ estimations.
-\end_layout
-
-\begin_layout Standard
-For the higher coefficient estimates, it is important to note that BMIZ
- is essentially a convex mapping of WHZ, since height is squared in the
- denominator of the BMI function, as described in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:hbz"
-
-\end_inset
-
-.
- In other words, the fact that the estimators, which give transformed coefficien
-t estimates can have different significance levels, can be explained as
- follows.
- The squaring of the height in the denominator of the Body-Mass Index function,
- makes it a non-linear mapping of the Weight-for-Height Z-scores.
- Furthermore, from the significance at the 5% level of the coefficients
- in the BMIZ estimations, we can conclude that the coefficient estimates
- are higher that the standard error estimates, by a factor of several times
- (for Degrees of Freedom 
-\begin_inset Formula $\sim380$
-\end_inset
-
-).
- Combining the small estimates of the standard errors, with the convex mapping,
- gives the results that the standard errors are scaled up to a lesser degree
- than the coefficient estimates.
- This then gives the results, that with t-testing the significance of the
- convexly mapped coefficients and standard errors, we can find significance
- at the 5% level for the convexly mapped BMIZ estimates of 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-man_60_65
-\end_layout
-
-\end_inset
-
-, where for the WHZ estimates of 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-man_60_65
-\end_layout
-
-\end_inset
-
- we could not.
-\end_layout
-
-\begin_layout Standard
-Regarding the negative effect of the expansionary policy change, we need
- to further disseminate the change in the independent variables.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:hmr"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:ta:hfr"
-
-\end_inset
-
- describe the evolution of the number of children living in a household
- with a pension recipient.
- We observe a substantial drop in both children living with male and female
- pension recipients.
- The change for the number of children living in the same household as a
- male pension recipient is from 612 children in 2008 to 595 children in
- 2012.
- A drop of 17 or -2.79 percent.
- However, if we compare the number of children living in the same household
- as a male pension recipient for the year 2013, the results are quite different.
- In the year 2013 we observe 623 children living with a male pension recipient,
- a rise of 1.8 percent vis-a-vis the year 2008.
- When comparing the number of children living in the same household as a
- female pension recipient, we see a different picture.
- In 2008 we observe 1637 children living with a female pension recipient,
- and in the year 2012 we observe a number of 1498, a drop of 8.49 percent.
- In the year 2013 we observe 1509 children living with female recipients
- in 2013, a drop of 8.48 oercent vis-a-vis 2008.
- We thus observe a drop in both the number of children living with male
- recipients, of children living with female recipients between the years
- 2008 and 2012.
- However, for male recipients the number rises to above 2008 levels in 2013,
- where as the number for female recipients remains around the lower 2012
- levels.
-\end_layout
-
-\begin_layout Standard
-We thus observe a drop even in the number of children living with female
- pension recipients, despite the fact that female pension recipients were
- unaffected by the policy change.
-\end_layout
-
-\begin_layout Standard
-The most immediate explanation for this is the life expectancy in South
- Africa.
- Since the year 1990 the life expectancy for both women and men has consistently
- been dropping.
- The predominant reason for the this drop in life expectancy is taken to
- be HIV/AIDS.
- In 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:fig:lifeExp"
-
-\end_inset
-
- we plot the evolution of the life expectancy at birth in South Africa.
-\end_layout
-
-\begin_layout Standard
-Around the year 2005 the life expectancy at birth was slighly above 50 years.
- Since pension eligibility age is 60 years (and 65 for men until 2009),
- there is an almost ten year gap between average life expectancy and pension
- eligibility.
- This gap causes a delayed in the effect of the drop in life expectancy.
- The attribition effect of a person passing away at the age of fifty, on
- the pension recipient base, will thus only be observed ten years after
- death.
-\end_layout
-
-\begin_layout Standard
-After the year 2005, life expectancy started rising slowly, however, as
- explained above, it will take some time for this effect to appear into
- the pension base.
-\end_layout
-
 \begin_layout Section
 Conclusions and limitations
 \end_layout
@@ -2523,40 +2509,41 @@ name "sec:conclusions"
 \end_layout
 
 \begin_layout Standard
-We find two results from out estimations.
- Firstly, we find that there is a significant and consistant negative effect
- of the policy variable 
+The estimation results present three key results.
+ Firstly, I find that there is a significant and consistant positive effect
+ of the interaction term (
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-post_treatment
+post_treatmentTRUE:man_60_65TRUE
 \end_layout
 
 \end_inset
 
- on the age-based z-scores (i.e.
-\begin_inset space ~
-\end_inset
-
-Height for Age and Weight for Height).
- Secondly, we find a consistent and negative effect of the men's pension
- variable (
+ on food expenditure.
+ Secondly, there is a significant and consistant positive effect of the
+ interaction term (
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-man_60_65
+post_treatmentTRUE:man_60_65TRUE
 \end_layout
 
 \end_inset
 
-) on the Body-Mass-Index Z-scores.
+ on the Weight-for-Age Z-score Thirdly, we find a consistent and negative
+ effect of the interaction term on the Height-for-Age Z-scores.
  Both of these effect are consistent across the different specifications
  used in our estimations.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 The impetus for this paper is paper is better understanding the role that
  male vs.
  female bargaining power plays in household expenditure.
@@ -2566,15 +2553,12 @@ The impetus for this paper is paper is better understanding the role that
  circumstances.
  Which is the optimal manner in which these grants are distributed, measured
  along the bars of health, as well as education and work force participation.
- In this paper 
-\begin_inset CommandInset citation
-LatexCommand citealt
-key "duflo2000child,duflo2003grandmothers"
+ 
+\end_layout
 
 \end_inset
 
- we try to address of the issue of differential effects relating to the
- gender of the cash recipient.
+
 \end_layout
 
 \begin_layout Standard
@@ -2583,10 +2567,7 @@ We do this by evaluating the z-scores of anthropometrics of children between
 s of the South-African old-age state pension system.
  We then compare the z-scores for children living with male pension recipients,
  which the z-scores of children living with female pension recipients.
-\end_layout
-
-\begin_layout Standard
-This method employed here is similar to 
+ This method employed here is similar to 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "duflo2000child,duflo2003grandmothers"
@@ -2634,10 +2615,15 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 .
  This full-panel dataset provides observations from 2008, 2012, and 2013.
  The treatment, a policy change which lowers the pension eligibility age
- for men from 65 to 60, takes place around 2009.
+ for men from 65 to 60, takes place in 2009 and 2010.
  Since we have only one time period before the treatment (the year 2008),
  we cannot establish the common trend.
- This common trend is used to validate the common trend assumption, which
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This common trend is used to validate the common trend assumption, which
  unpins the Difference-in-Differences method.
  As discussed in 
 \begin_inset CommandInset ref
@@ -2647,49 +2633,74 @@ reference "sec:results"
 \end_inset
 
 , we find that not establishing the trend proves problematic for our analysis.
- Between the years 2008 and 2012, we see a substantial drop in the number
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Between the years 2008 and 2012, we see a substantial drop in the number
  of children living in the same household as a female pension recipient.
  Since female pension recipients are unaffected by the policy change, we
  have to assume that a further exogenous factor is the cause of this drop.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 In our estimations we use the Difference-in-Differences method, which is
- operationalised a fixed-effect panel estimation with a time effect.
- The construct three Right-Hand Side (RHS) model.
- The first model is a fixed-effect estimation without the treatment dummy.
- The second model is a fixed-effects estimation with the treatment dummy
- (
+ operationalised a random-effects panel estimation model.
+ The construct two Right-Hand Side (RHS) models.
+ The first model is a random-effects estimation with an interaction between
+ the event dummy and a dummy for having a male aged 60 through 64 in the
+ same household.
+ The second model is a random-effects estimation with the same interaction,
+ as well as an interaction terms with other dummies: 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-post_treatment
+woman_60_65
 \end_layout
 
 \end_inset
 
-).
- the third model is a fixed-effects estimation with the treatment dummy,
- as well as an interaction term with the male pension recipient dummy (
+, 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-man_60_65
+man_65
 \end_layout
 
 \end_inset
 
-).
+, and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_65.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-On the Left-Hand Side (LHS) we use four different anthropometric z-scores,
- Height-for-Age (HAZ), Weight-for-Age (WAZ), Weight-for-Height (WHZ), and
- BMI (BMIZ).
- The first two z-scores are age based (ABZ), the latter two height based
- (since height factors in the BMI equation, HBZ).
+On the Left-Hand Side (LHS) we use two different anthropometric z-scores,
+ Height-for-Age (HAZ) and Weight-for-Age as well as food en non-food expenditure.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2699,84 +2710,71 @@ Combining the three RHS models with the four LHS z-scores gives us twelve
 \end_layout
 
 \begin_layout Standard
-Firstly, we find that in for both the Age-Based Z-scores (ABZs), the treatment
- dummy is significant for the models 2 and the models 3 (we do not find
- this in model 1, since it is not included the model 1 equation).
- In all cases, the coefficient for the treatment dummy is negative.
- Since both these Age-Based Z-scores (ABZs) reflect long-term or past health
- issues, this seems to indicate a negative correlation between the policy
- change on the long-term anthropometrics.
- Since this is the treatment dummy, this would suggest a negative causal
- effect of male pension receipts on child health.
- However, as discussed in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:results"
-
-\end_inset
-
-, this is likely to be a consequence of the common trend not having been
- established.
- Since we also observe a sharp drop in the number of children living with
- female pension recipients, despite the fact that the female pension recipient
- base in unaffected by the policy change.
-\end_layout
-
-\begin_layout Standard
-Secondly, we find that living with male pension recipient (
-\begin_inset Flex Code
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-man_60_65
+state results
 \end_layout
 
 \end_inset
 
-), is negatively correlated with a the BMI z-scores (BMIZ).
- As discussed in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:results"
 
-\end_inset
-
-, the Body-Mass-Index Z-score is a convex mapping of the Weight-for-Height
- z-score.
- This can explain the fact that these essentially similar estimations, give
- different significance levels.
- Considering that the use of the Body Mass Index is far more wide spread
- than the Weight for Height metric, we believe that the significance of
- these coefficients carries more weight.
- The fact that these coefficients are negative, indicates that for this
- short-term z-score, the preferred recipient would be female household members.
 \end_layout
 
 \begin_layout Standard
-In conclusion, we find a negative correlation between the treatment dummy
- and the long-term ABZs.
- This is likely to be a consequence of the common trend not having been
- established, since there is also a drop in the number of children living
- with female pension recipients, which serves as the control group.
- Furthermore, we find a negative correlation between the male pension recipient
- variable (
-\begin_inset Flex Code
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-man_60_65
+discuss results
 \end_layout
 
 \end_inset
 
-) and the short-run BMIZ.
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+discuss posible consequences
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 The later result seems to indicate that, at least in the short-run, the
  preferred recipient of cash transfers would be a female household member.
  As discussed, the selection bias issue in age, leads to the need for a
- careful interpretation of the possible external validity of this results.q
+ careful interpretation of the possible external validity of this results.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+discuss further research needed and possible
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
