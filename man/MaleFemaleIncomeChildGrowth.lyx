@@ -134,7 +134,7 @@ Increased in male bargaining power in households causes greater expenditure
  wave of South Africa's National Income Dynamics Survey and shortly before
  the start of the second wave, which lends itself well for a Difference-in-Diffe
 rences approach on the right hand side.
- On the left hand side I use Z-scores of growth anthropometrics of young
+ On the left hand side I use z-scores of growth anthropometrics of young
  children in the household (against WHO standards) as well as food expenditure.
 \end_layout
 
@@ -558,14 +558,7 @@ key "who2006child"
 
 \end_inset
 
-, which are discussed separately in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sub:data:who"
-
-\end_inset
-
-.
+, which are discussed at the end of this section.
 \end_layout
 
 \begin_layout Standard
@@ -609,15 +602,7 @@ adult sex.
 
 \begin_layout Standard
 In addition to these variables of interest, I include a number relevant
- of covariates in the analysis, these are: 
-\end_layout
-
-\begin_layout Itemize
-household income;
-\end_layout
-
-\begin_layout Itemize
-parents education.
+ of covariates, such as household income, in the analysis.
 \end_layout
 
 \begin_layout Standard
@@ -1010,92 +995,6 @@ post_treatment
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-NIDS state pension recipients
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:spen"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-spen, cache=TRUE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-NIDS %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  filter(!is.na(c_woman)) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  group_by(c_woman, wave) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  do( tidy(summary(.$post_treatment)) )
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -1286,94 +1185,12 @@ NIDS %>%
 status open
 
 \begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Evolution of Life Expectancy in South Africa
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "sa:fig:lifeExp"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../../Downloads/lifeExp.png
-	scale 50
-
-\end_inset
-
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Usage of 
-\begin_inset CommandInset citation
-LatexCommand citet
-after "WHO Child Growth Standards"
-key "who2006child"
-
-\end_inset
-
-, 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 These z-scores are considered a good representation of short-term or long-term
  health issues, respectively.
  This relation is especially well observed for children between 6 and 60
  months old.
  I therefore stay with the best practice and only include those observations
  in the analysis.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add descriptive stats on the growth standard
 \end_layout
 
 \end_inset
@@ -1395,9 +1212,10 @@ key "nchs2000cdc"
 
 .
  The WHO charts map the average growth of a varied sample of children living
- in household with health lifestyles, setting an ideal benchmark for growth.
+ in household with healthy lifestyles, setting a sort of ideal benchmark
+ for growth.
  The actual values in these of minimal importance, as long as all observations
- are held against the same standards the results does not differ.
+ are held against the same standards the results do not differ.
  
 \end_layout
 
@@ -1414,6 +1232,19 @@ key "who2006child"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add descriptive stats on the growth standard
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1561,27 +1392,11 @@ name "sec:methods"
  Between mid 2009 and December 31st 2010, this was gradually lowered to
  60.
  I combine this information with data from the South-African National Income
- Dynamics Survey, a full-panel dataset, which contains information on household
+ Dynamics Survey, a full-panel dataset, which contains information on households
  from before and after this policy change.
- We study the effect of the policy change, as well as the general effect
- on the pension system, on the health of children in the same household.
+ I study the effect of the policy change, on the growth anthropometrics
+ of children in the same household.
  The research setup in discussed in further detail below.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-follow the 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2000child,duflo2003grandmothers"
-
-\end_inset
-
- general design
-\end_layout
-
-\end_inset
-
  
 \end_layout
 
@@ -1589,19 +1404,17 @@ key "duflo2000child,duflo2003grandmothers"
 The identification strategy in this paper is based on a policy change in
  the pension eligibility age for men, which was introduced between mid 2009
  and Decenber 31st 2010.
- This policy change thus fall between waves 1 and 2 (2008 and 2012 respectively)
- of the NIDS data sets.
-\end_layout
-
-\begin_layout Standard
-Before this policy change, the eligibility age for men was 65 years old.
+ This policy change thus falls between waves 1 and 2 of the NIDS, taking
+ place between 2008 and 2012 respectively.
+ Before this policy change, the eligibility age for men was 65 years old.
  Post the policy change, the eligibility age is 60 years old, which bring
  it at par with the pension eligibility age for women.
 \end_layout
 
 \begin_layout Standard
-I operationalise this constructing a policy dummy.
- This policy dummy is called 
+I operationalise this identification strategy, by constructing a policy
+ or event dummy.
+ This event dummy is called 
 \begin_inset Flex Code
 status open
 
@@ -1640,30 +1453,8 @@ status open
 \end_inset
 
 wave 1).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-including household income covaraite allows isolation of causal bargaining
- from income effect
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:estimation"
-
-\end_inset
-
-
+ By also including household income as a covaraite, I can isolate the causal
+ bargaining effect from the income effect.
 \end_layout
 
 \begin_layout Standard
@@ -1682,97 +1473,43 @@ I have only one data period before the policy change, which means that we
 In order to identify the effect of the policy change, I employ a Difference-in-D
 ifference estimation.
  This estimator operationalised by using the fixed-effects estimator.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-within
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We perform these panel estimations using the R package 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-plm
-\end_layout
-
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "croissant2008panel"
-
-\end_inset
-
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-It is worth noting that questions have been raised about the Difference-in-Diffe
-rences estimator being employed in certain situations, for example by 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bertrand2004much"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-We formulate two models.
+ I formulate two base models.
  One model with the event dummy, and an interaction term with male pension
- recipient status and a second model with the event dummy and an interaction
- term eligibility dummy, as well as with the dummies for women between 60
- and 65 and women and men 65 and above.
+ recipient.
+ The second model has the event dummy and an interaction term with the eligibili
+ty dummy, as well as interaction term with the dummies for women between
+ 60 and 65 and women and men 65 and above.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Each of these models is estimated with both types of z-scores, as well as
+ food and non-food expenditure as dependent variables, which gives a total
+ of twelve estimation equations, to be estimated with random effects.
+ 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
- Each of these models is estimated with all four types of z-scores, as well
- as food and non-food expenditure which gives a total of twelve estimation
- equations.
- All twelve equation are estimated as fixed-effect panel models.
+random effects...do a Hausmann test and explain.
 \end_layout
 
 \end_inset
 
- We define the variables for our estimation equations.
- The outcome variable is 
+
+\end_layout
+
+\begin_layout Standard
+The outcome variable is 
 \begin_inset Formula $y_{it}$
 \end_inset
 
 , this outcome variable takes the form of the of the z-scores, such as HAZ
- or WAZ.
- Where 
+ or WAZ or food/non-food expenditure.
+ Here 
 \begin_inset Formula $t$
 \end_inset
 
- denotes the time and 
+ denotes time and 
 \begin_inset Formula $i$
 \end_inset
 
@@ -1805,71 +1542,14 @@ status open
 \begin_inset Formula $\epsilon_{it}$
 \end_inset
 
- is the error term, which is assumed to be distributed as: 
-\begin_inset Formula 
-\[
-\epsilon_{it}\sim N(0,\sigma)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We can now formally specify our base estimations as in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:eq:base"
-
-\end_inset
-
-, this represents model 1.
- 
-\begin_inset Formula 
-\begin{equation}
-y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\epsilon_{it}\label{sa:eq:base}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:eq:policy"
-
-\end_inset
-
- we include our policy dummy variable, this variation is denoted as model
- 2 in our results.
- 
-\begin_inset Formula 
-\begin{equation}
-y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\delta T_{it}+\epsilon_{it}\label{sa:eq:policy}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Lastly, we formulate a variant of the model which includes an interaction
- term of the policy dummy with the male pension-recipient dummy (as well
- as the variables themselves).
- We refer to this as model 3, and the formal specification is given in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sa:eq:interaction"
-
+ is the error term, which is assumed to be distributed as 
+\begin_inset Formula $\epsilon_{it}\sim N(0,\sigma)$
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\delta T_{it}+\rho T_{it}*P_{it}^{m}+\epsilon_{it}\label{sa:eq:interaction}
@@ -1877,15 +1557,27 @@ y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\delta T_{it}
 
 \end_inset
 
-These three models the are variations that we use on the Right-Hand Side
- (RHS) of the estimation equations.
+
 \end_layout
 
 \begin_layout Standard
-As described above, we have a total of four z-scores available as dependent
- variables, Height-for-Age (HAZ), Weight-for-Age (WAZ), and food and non-food
- expenditure.
- Each of these is used in a different estimation as the Left-Hand Side (LHS).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add other specification with all interaction terms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As described above, I use a total of four dependent variables, Height-for-Age
+ (HAZ), Weight-for-Age (WAZ), and food and non-food expenditure.
+ Each of these is used in a different estimation as the Left-Hand Side (LHS)
+ variable.
  Combining these four LHSs with each of the three RHSs, gives a total of
  twelve estimation equations.
  The results of the estimation of each of these twelve equations is presented
@@ -1911,6 +1603,36 @@ As we have only one time period before the treatment goes into effect, we
 \end_inset
 
  are level over time.
+\end_layout
+
+\begin_layout Standard
+The computation estimation of these models is performed using R 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "R"
+
+\end_inset
+
+, with the implementation of the panel data structure and models using the
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+plm
+\end_layout
+
+\end_inset
+
+ package 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "croissant2008panel"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section
@@ -2079,7 +1801,7 @@ expf1_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(expf ~	post_treatment*post_treatment +
+plm(expf ~	post_treatment*man_60_65 +
 \end_layout
 
 \begin_layout Plain Layout
@@ -2089,7 +1811,7 @@ plm(expf ~	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		wopost_treatment + 
+		woman_60_65 + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2344,7 +2066,7 @@ waz_vis, eval=FALSE
 
 \begin_layout Plain Layout
 
-plm(zwfa ~ 	post_treatment*post_treatment +
+plm(zwfa ~ 	post_treatment*man_60_65 +
 \end_layout
 
 \begin_layout Plain Layout
@@ -2354,7 +2076,7 @@ plm(zwfa ~ 	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		post_treatment*wopost_treatment + 
+		post_treatment*woman_60_65 + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2374,12 +2096,12 @@ plm(zwfa ~ 	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		NIDS, 
+		data = NIDS, 
 \end_layout
 
 \begin_layout Plain Layout
 
-		best_age_yrs < 8, 
+		subset = c_age_days1 > 180 & c_age_days1 < 2920, 
 \end_layout
 
 \begin_layout Plain Layout
@@ -2394,7 +2116,7 @@ plm(zwfa ~ 	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 \begin_inset Flex Chunk
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2412,7 +2134,7 @@ print_wfa, echo=FALSE, cache=TRUE
 
 \begin_layout Plain Layout
 
-kable(summary(zwfa7)$coef)
+kable(summary(zwfa9)$coef)
 \end_layout
 
 \end_inset
@@ -2514,12 +2236,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) +
+  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  geom_bar(stat='identity') + 
+  geom_bar(stat='identity') %+% 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3130,6 +2852,27 @@ Additional Estimates
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It is worth noting that questions have been raised about the Difference-in-Diffe
+rences estimator being employed in certain situations, for example by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bertrand2004much"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -3569,12 +3312,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot( aes(x=wave, y=zwfa, fill=man_65) ) +
+  ggplot( aes(x=wave, y=zwfa, fill=man_65) ) %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  geom_bar(stat='identity') +
+  geom_bar(stat='identity') %+%
 \end_layout
 
 \begin_layout Plain Layout
