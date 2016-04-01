@@ -2236,7 +2236,166 @@ status open
 status open
 
 \begin_layout Plain Layout
-0.57
+0.58
+\end_layout
+
+\end_inset
+
+.
+ These results can similarly be seen in Figure 2, which shows the average
+ lag in 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zwfa
+\end_layout
+
+\end_inset
+
+ for children living with a man between 60 and 65, before and after the
+ policy change on the left, as compared to children who do not have such
+ a household member on the right.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Weight for Age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+waz1, cache=TRUE, warning=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+NIDS %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  group_by(wave, man_60_65) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
+\end_layout
+
+\begin_layout Plain Layout
+
+  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) %+%
+\end_layout
+
+\begin_layout Plain Layout
+
+  geom_bar(stat='identity') %+% 
+\end_layout
+
+\begin_layout Plain Layout
+
+  facet_grid(~man_60_65)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When using Height-for-Age (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zhfa
+\end_layout
+
+\end_inset
+
+) as a dependent variable to results is the opposite.
+ I find a negative effect 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+-0.52
+\end_layout
+
+\end_inset
+
+ of the treatment on the dependent variable, which is just significant at
+ a p-value of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.09
+\end_layout
+
+\end_inset
+
+.
+ None of the interaction terms with any of the other household member dummies
+ are significant, at 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.31
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.24
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0.98
 \end_layout
 
 \end_inset
@@ -2411,87 +2570,6 @@ post_treatmentTRUE:man_60_65TRUE
  has a negative coefficient estimate.
  While this interaction term has a positive coefficient when using Weight-for-Ag
 e z-score as a dependent variable.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Weight for Age
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Flex Chunk
-status open
-
-\begin_layout Plain Layout
-
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-waz1, cache=TRUE, warning=FALSE
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-NIDS %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  group_by(wave, man_60_65) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
-\end_layout
-
-\begin_layout Plain Layout
-
-  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) %+%
-\end_layout
-
-\begin_layout Plain Layout
-
-  geom_bar(stat='identity') %+% 
-\end_layout
-
-\begin_layout Plain Layout
-
-  facet_grid(~man_60_65)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
