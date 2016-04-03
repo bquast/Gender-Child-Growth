@@ -2677,7 +2677,7 @@ The impetus for this paper is better understanding the role that male vs.
 \end_layout
 
 \begin_layout Standard
-The impertus for this paper is gaining a greater understanding of the effects
+The impertus for this paper is to gain a greater understanding of the effects
  of Male/Female bargaining power in households, for instance to improve
  designs of Conditional Cash Transfer schemes (CCTs).
  
@@ -2797,11 +2797,21 @@ Between the years 2008 and 2012, we see a substantial drop in the number
 
 \begin_layout Standard
 In my estimations I use the Difference-in-Differences method, which is operation
-alised as a random-effects panel estimation model.
- I construct two Right-Hand Side (RHS) models.
- The first model is a random-effects estimation with an interaction between
- the event dummy and a dummy for having a male aged 60 through 64 in the
- same household.
+alised as a random-effects panel model.
+ I construct two models on the Right-Hand Side.
+ The first is a random-effects model with an interaction between the event
+ dummy and a dummy for having a male aged 60 through 64 in the same household
+ (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
+\end_layout
+
+\end_inset
+
+).
  The second model is a random-effects estimation with the same interaction,
  as well as an interaction terms with other dummies: 
 \begin_inset Flex Code
@@ -2837,7 +2847,7 @@ woman_65.
 \end_layout
 
 \begin_layout Standard
-On the Left-Hand Side (LHS) we use two different anthropometric z-scores,
+On the Left-Hand Side (LHS) I use two different anthropometric z-scores,
  Height-for-Age (HAZ) and Weight-for-Age as well as food en non-food expenditure.
  
 \end_layout
@@ -2845,33 +2855,22 @@ On the Left-Hand Side (LHS) we use two different anthropometric z-scores,
 \begin_layout Standard
 Combining the three RHS models with the four LHS z-scores gives us twelve
  estimation equations.
- In the estimation of these twelve equations, we find two effects.
+ When I estimate of these equations, I find three effects key effects.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-state results
-\end_layout
-
-\end_inset
-
-
+Firstly, the greater male bargaining power, ceteris paribus, leads to an
+ increase in food expenditure.
+ Secondly, I observe a positive effect of the Weight-for-Age z-scores.
+ Thirdly, for very young children, I find a deterioration in the Height-for-Age
+ z-scores.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-discuss results
-\end_layout
-
-\end_inset
-
-
+These effects seem to suggest that the greater male bargaining power resulted
+ in greater food expenditure, but possibly also a change in the nature of
+ the food expenditure, helping improve the Weight-for-Age, but not improving
+ the Height-for-Age, with the later being a more long term health indicator.
 \end_layout
 
 \begin_layout Standard
@@ -2989,27 +2988,6 @@ Additional Estimates
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-It is worth noting that questions have been raised about the Difference-in-Diffe
-rences estimator being employed in certain situations, for example by 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "bertrand2004much"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
@@ -3101,16 +3079,6 @@ Non-Food Expenditure
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:expnf"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-might still have to go to appendix
-\end_layout
 
 \end_inset
 
