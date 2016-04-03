@@ -2660,8 +2660,7 @@ post_treatmentTRUE:man_60_65TRUE
 status open
 
 \begin_layout Plain Layout
-The impetus for this paper is paper is better understanding the role that
- male vs.
+The impetus for this paper is better understanding the role that male vs.
  female bargaining power plays in household expenditure.
  A typical application of this would be Conditional or Unconditional Cash
  Transfer schemes (CCTs/UCTs), where the recipient of the transfer is typically
@@ -2678,10 +2677,17 @@ The impetus for this paper is paper is better understanding the role that
 \end_layout
 
 \begin_layout Standard
-We do this by evaluating the z-scores of anthropometrics of children between
+The impertus for this paper is gaining a greater understanding of the effects
+ of Male/Female bargaining power in households, for instance to improve
+ designs of Conditional Cash Transfer schemes (CCTs).
+ 
+\end_layout
+
+\begin_layout Standard
+I do this by evaluating the z-scores of anthropometrics of children between
  the ages of six and sixty months old, living in the same household as recipient
 s of the South-African old-age state pension system.
- We then compare the z-scores for children living with male pension recipients,
+ I then compare the z-scores for children living with male pension recipients,
  which the z-scores of children living with female pension recipients.
  This method employed here is similar to 
 \begin_inset CommandInset citation
@@ -2690,37 +2696,45 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
-, but offers some additional value.
- Firstly, we analyse data around a policy change, which lowers the pension
- eligibility age for men from 65 to 60, which brings it at par with women's
- pension eligibility age.
- There are two impeti for further analysis of this data.
+.
+ 
 \end_layout
 
 \begin_layout Standard
-Firstly, this partly overcomes major issues with attrition and the associated
- selection bias.
- Since average life expectancy is well below pension eligibility age, there
- is a strong indication that such a selection bias issue would be present.
- It is also very likely that confounding variables would be effecting both
- the selection bias, as well as the dependent variable.
- With the differential in pension eligibility age, this would make the effect
- incomparable, however, as the men's eligibility age is brought to the same
- as women's, this makes comparison less problematic.
- Considering the fact that selection bias in our analysis is comparable,
- but nevertheless still present, we note that we cannot automatically draw
- inferences about the external validity of the results presented here.
+I analyse data around a policy change, which lowers the pension eligibility
+ age for men from 65 to 60, which brings it at par with women's pension
+ eligibility age.
+ There are two impeti for further analysis of outcomes surrounding this
+ policy change.
 \end_layout
 
 \begin_layout Standard
-Secondly, analysing data around the policy change allows us to employ a
+Firstly, this overcomes major issues with attrition and the associated selection
+ bias of the discrepancy in pension eligibility age, escpecially since average
+ life expectancy is well below pension eligibility age.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+there is a strong indication that such a selection bias issue would be present.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Secondly, analysing data around the policy change allows me to employ a
  Difference-in-Differences estimation (DiD).
- Which enables us to draw a causal inference from the treatment effect,
- which is ontologically more interesting than a correlation.
+ Which enables me to draw a causal inference from the treatment effect.
 \end_layout
 
 \begin_layout Standard
-We use the South-African National Income Dynamics Survey data 
+I use the South-African National Income Dynamics Survey data 
 \begin_inset CommandInset citation
 LatexCommand citep
 after "jointly with The World Bank"
@@ -2732,8 +2746,17 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
  This full-panel dataset provides observations from 2008, 2012, and 2013.
  The treatment, a policy change which lowers the pension eligibility age
  for men from 65 to 60, takes place in 2009 and 2010.
- Since we have only one time period before the treatment (the year 2008),
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Since we have only one time period before the treatment (the year 2008),
  we cannot establish the common trend.
+\end_layout
+
+\end_inset
+
  
 \begin_inset Note Note
 status open
@@ -2773,9 +2796,9 @@ Between the years 2008 and 2012, we see a substantial drop in the number
 \end_layout
 
 \begin_layout Standard
-In our estimations we use the Difference-in-Differences method, which is
- operationalised a random-effects panel estimation model.
- The construct two Right-Hand Side (RHS) models.
+In my estimations I use the Difference-in-Differences method, which is operation
+alised as a random-effects panel estimation model.
+ I construct two Right-Hand Side (RHS) models.
  The first model is a random-effects estimation with an interaction between
  the event dummy and a dummy for having a male aged 60 through 64 in the
  same household.
