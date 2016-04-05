@@ -58,9 +58,9 @@ zwfa5  <- plm(zwfa ~ spen_man + post_treatment*spen_woman + hhincome, NIDS, best
 zwfa6  <- plm(zwfa ~ post_treatment*spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfa7  <- plm(zwfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfa8  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
-zwfa9  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 2920, model='random')
-zwfa10 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='random')
-zwfa11 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='random')
+zwfa9  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 2920, model='pooling')
+zwfa10 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
+zwfa11 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
 summary(zwfa1)
 summary(zwfa2)
 summary(zwfa3)
@@ -107,15 +107,15 @@ summary(zbmi6)
 
 
 # Food expenditure
-expf1 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
-expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
+expf1 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='pooling')
+expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model='pooling')
 summary(expf1)
 summary(expf2)
 
 
 # Non-Food expenditure
-expnf1 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model="random")
-expnf2 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model="random")
+expnf1 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
+expnf2 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model='within')
 summary(expnf1)
 summary(expnf2)
 
