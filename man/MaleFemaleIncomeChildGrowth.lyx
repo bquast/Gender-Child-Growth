@@ -1673,6 +1673,19 @@ key "croissant2008panel"
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add White standard error correction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Results
 \end_layout
@@ -1892,17 +1905,17 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		man_65 + 
+		post_treatment*man_65 + 
 \end_layout
 
 \begin_layout Plain Layout
 
-		woman_60_65 + 
+		post_treatment*woman_60_65 + 
 \end_layout
 
 \begin_layout Plain Layout
 
-		woman_65 + 
+		post_treatment*woman_65 + 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1922,7 +1935,7 @@ plm(expf ~	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		model  = 'random')
+		model  = 'within')
 \end_layout
 
 \end_inset
@@ -1950,7 +1963,7 @@ expf1, echo=FALSE, cache=TRUE
 
 \begin_layout Plain Layout
 
-kable(summary(expf1)$coef)
+kable(summary(expf2)$coef)
 \end_layout
 
 \end_inset
@@ -3247,7 +3260,7 @@ plm(expf ~	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		model  = 'random')
+		model  = 'within')
 \end_layout
 
 \end_inset
@@ -3372,7 +3385,7 @@ plm(expnf ~	post_treatment*post_treatment +
 
 \begin_layout Plain Layout
 
-		model  = 'random')
+		model  = 'within')
 \end_layout
 
 \end_inset
@@ -3507,6 +3520,83 @@ status open
 %
 \backslash
 end{subappendices}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+expf2_hausman, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+model_expf2 <- expnf ~ post_treatment*man_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+woman_60_65*post_treatment + 
+\end_layout
+
+\begin_layout Plain Layout
+
+post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+hhincome + 
+\end_layout
+
+\begin_layout Plain Layout
+
+woman
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fe_expf2 <- plm(model_expf2, data=NIDS, model='within')
+\end_layout
+
+\begin_layout Plain Layout
+
+re_expf2 <- plm(model_expf2, data=NIDS, model='random')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+phtest(fe_expf2, re_expf2)
 \end_layout
 
 \end_inset
