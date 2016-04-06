@@ -6,7 +6,7 @@
 \begin_preamble
 \usepackage{appendix}
 \usepackage[style=philosophy-modern,natbib=true,backend=biber]{biblatex}
-\addbibresource{/Users/quast/MaleFemale-Income-Child-Growth/man/bibliography.bib}
+\addbibresource{/Users/quast/MaleFemale-Bargaining-Power-Child-Growth/man/bibliography.bib}
 
 \AtBeginDocument{%
 \let\ref\autoref
@@ -98,11 +98,31 @@ Provides natbib 1
 \begin_body
 
 \begin_layout Title
-Male/Female Income and Child Growth
+Male/Female Bargaining Power and Child Growth
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://qua.st/bargaining-power-growth
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Author
 Bastiaan Quast
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+http://qua.st | bastiaan.quast@graduateinstitute.ch | bquast@gmail.com
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Date
@@ -124,7 +144,7 @@ Abstract
 Increased male bargaining power in households causes greater expenditure
  on food, an improvement in Weight-for-Age Z-scores in young children, and
  a deterioration in Height-for-Age Z-scores in very young children, as observed
- in the content of South Africa's 2010 state persion expansion for males.
+ in the context of South Africa's 2010 state persion expansion for males.
  In 2010 the male eligibility age for the South-African state pension was
  brought to par with female eligibility age (60, previously 65).
  I exploit this policy change in order to estimate the effect of the increased
@@ -271,7 +291,7 @@ r-Age Z-scores (WAZ) in young children, and deteriorated Height-for-Age
 The household-as-a-unit aproach overlooks important aspects influencing
  the relative size of expenditure of households 
 \begin_inset CommandInset citation
-LatexCommand citealt
+LatexCommand citep
 key "thomas1994like"
 
 \end_inset
@@ -297,23 +317,6 @@ key "duflo2004intrahousehold"
  behaviour.
  However, conclusive evidence on the effects of male and female bargaining
  within the household remains scarce.
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-A further discussion of this can be found in 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "sec:results"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\end_inset
-
  In a previously study of the effects of the South-African state pension
  system, 
 \begin_inset CommandInset citation
@@ -1670,7 +1673,46 @@ key "croissant2008panel"
 \end_inset
 
 .
- 
+ All changes are logged using the version control system Git 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "git"
+
+\end_inset
+
+ and publicly available on GitHub at 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth/"
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The repository can by cloned to a local computer by entering in following
+ command in a terminal (with Git installed):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+git clone https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2984,6 +3026,7 @@ Additional Estimates
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3312,7 +3355,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Non-Food Expenditure
+Non-Food Expenditure Interact All
 \end_layout
 
 \end_inset
@@ -3537,7 +3580,6 @@ status open
 status open
 
 \begin_layout Plain Layout
-
 expf2_hausman, cache=TRUE
 \end_layout
 
