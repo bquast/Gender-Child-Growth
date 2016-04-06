@@ -577,7 +577,7 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 \end_inset
 
  in cooperation with the World Bank, it collects information on a representative
- set of approximately 10,000 South-African households over time.
+ set of approximately ten thousand South-African households over time.
  Currently three `waves' of data are available, these waves date from 2008,
  2012, and 2013.
  The primary types of information that I use are: 
@@ -1766,16 +1766,34 @@ expf
 
 ) as a dependent variable are presented.
  In 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:waz1"
 
 \end_inset
 
-, and 
+
+\end_layout
+
+\end_inset
+
+ Table 6 and Table 7
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:haz1"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
