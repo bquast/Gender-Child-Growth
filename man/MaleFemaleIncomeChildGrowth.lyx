@@ -144,7 +144,7 @@ Abstract
 Increased male bargaining power in households causes greater expenditure
  on food, an improvement in Weight-for-Age Z-scores in young children, and
  a deterioration in Height-for-Age Z-scores in very young children, as observed
- in the context of South Africa's 2010 state persion expansion for males.
+ in the context of South Africa's 2010 state pension expansion for males.
  In 2010 the male eligibility age for the South-African state pension was
  brought to par with female eligibility age (60, previously 65).
  I exploit this policy change in order to estimate the effect of the increased
@@ -169,7 +169,7 @@ In this paper I look at variation in the health of young children driven
  living in the same household as state pension recipients.
  This paper exploits the lowering of the state-pension eligibility-age of
  men, to the same age as women (60, previously 65).
- This takes place inbetween two waves in the South-African National Income
+ This takes place in-between two waves in the South-African National Income
  Dynamics Survey.
 \end_layout
 
@@ -279,16 +279,16 @@ name "sec:intro"
 
  In 2010 the pension eligibility age for South African males was lowered
  from 65 to 60 years old, at par with female eligibility.
- I exploit this change by estimatig a Difference-in-Differences model, quantifyi
-ng the effect of increased male bargaining power in households with men
- aged 60 through 64.
+ I exploit this change by estimating a Difference-in-Differences model,
+ quantifying the effect of increased male bargaining power in households
+ with men aged 60 through 64.
  I find the following effects: increased expenditure on food, improved Weight-fo
 r-Age Z-scores (WAZ) in young children, and deteriorated Height-for-Age
  Z-scores (HAZ) for very young children living in the same households.
 \end_layout
 
 \begin_layout Standard
-The household-as-a-unit aproach overlooks important aspects influencing
+The household-as-a-unit approach overlooks important aspects influencing
  the relative size of expenditure of households 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -325,14 +325,17 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
- finds that greater female bargaining power causes improvements in anthropometic
+ finds that greater female bargaining power causes improvements in 
+\lang british
+anthropometic
+\lang english
  Z-scores of girls living in the same household.
  Unfortunately, at the time of this study in 1993, the male eligibility
- age was 65 and the female age was 60, while average life expentancy in
+ age was 65 and the female age was 60, while average life expectancy in
  South Africa then and now is significantly lower than that, making the
  comparison difficult.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Life expectancy is South Africa is substantially below the pension eligibility
@@ -366,9 +369,10 @@ State pension systems are a useful variable of interest to study bargaining
 \end_layout
 
 \begin_layout Standard
-The South African pension system is of particularl interest, because its
- relatively high amount, upon the initial expansion to include the black
- population, in 1991, this was a much as twice the mean monthly income 
+The South African pension system is of particular interest, because of the
+ relatively high amount of the payout, upon the initial expansion to include
+ the black population, in 1991, this was a much as twice the mean monthly
+ income 
 \begin_inset CommandInset citation
 LatexCommand citep*
 before "see"
@@ -384,8 +388,8 @@ key "tangwe2013impact"
 \end_layout
 
 \begin_layout Standard
-In addition to this, it meets the requirements of few and simple eligibility
- criteria.
+In addition to this, the system also meets the requirements of having few
+ and general eligibility criteria.
  The primary criterium is the age of the recipient.
  In addition to this there is a maximum income threshold, which is not met
  by the vast majority of the population.
@@ -394,7 +398,7 @@ In addition to this, it meets the requirements of few and simple eligibility
  Here allowing for a clean estimation of changes in bargaining power.
  However, the previously-existing eligibility-age differential made it hard
  to make a male/female comparison, especially since average life expectancy
- is South Africa is substantially lower than the persion eligibility age.
+ is South Africa is substantially lower than the pension eligibility age.
  
 \begin_inset Note Note
 status open
@@ -463,7 +467,7 @@ The lowering of the pension eligibility age for men took place in between
  children's anthropometric z-scores, income, food/non-food expenditure,
  etc.
  The children's Z-scores are computed by comparing their anthropometics
- against the WHO standards.
+ against the WHO Child Growth standards.
 \end_layout
 
 \begin_layout Standard
@@ -656,7 +660,7 @@ c_woman
 \end_layout
 
 \begin_layout Itemize
-pension eligibile adult (
+pension eligible adult (
 \begin_inset Flex Code
 status open
 
@@ -979,7 +983,11 @@ For adults several variables measure the different amounts and sources of
  pension recipient.
  This implies that, despite the fact that men are now eligible at the same
  age as women, the vast majority of pension recipients is female.
- Therefore, there is still a selection bias issue in the data we are analysing.
+ Therefore, there is still a selection bias issue in the data we are 
+\lang british
+analysing
+\lang english
+.
 \end_layout
 
 \end_inset
@@ -1243,7 +1251,7 @@ key "who2006child"
 
 \end_inset
 
-, superceding the previously used CDC Growth Charts of 
+, superseding the previously used CDC Growth Charts of 
 \begin_inset CommandInset citation
 LatexCommand citep
 after "CDC Growth Charts: United States"
@@ -1444,7 +1452,7 @@ name "sec:methods"
 \begin_layout Standard
 The identification strategy in this paper is based on a policy change in
  the pension eligibility age for men, which was introduced between mid 2009
- and Decenber 31st 2010.
+ and December 31st 2010.
  This policy change thus falls between waves 1 and 2 of the NIDS, taking
  place between 2008 and 2012 respectively.
  Before this policy change, the eligibility age for men was 65 years old.
@@ -1494,7 +1502,7 @@ status open
 \end_inset
 
 wave 1).
- By also including household income as a covaraite, I can isolate the causal
+ By also including household income as a covariate, I can isolate the causal
  bargaining effect from the income effect.
 \end_layout
 
@@ -2681,7 +2689,7 @@ name "sec:conclusions"
 
 \begin_layout Standard
 The estimation results present three key results.
- Firstly, I find that there is a significant and consistant positive effect
+ Firstly, I find that there is a significant and consistent positive effect
  of the interaction term (
 \begin_inset Flex Code
 status open
@@ -2693,7 +2701,7 @@ post_treatmentTRUE:man_60_65TRUE
 \end_inset
 
  on food expenditure.
- Secondly, there is a significant and consistant positive effect of the
+ Secondly, there is a significant and consistent positive effect of the
  interaction term (
 \begin_inset Flex Code
 status open
@@ -2706,7 +2714,7 @@ post_treatmentTRUE:man_60_65TRUE
 
  on the Weight-for-Age Z-score Thirdly, we find a consistent and negative
  effect of the interaction term on the Height-for-Age Z-scores.
- Both of these effect ae consistent across the different specifications
+ Both of these effect are consistent across the different specifications
  used in our estimations.
 \end_layout
 
@@ -2732,7 +2740,7 @@ The impetus for this paper is better understanding the role that male vs.
 \end_layout
 
 \begin_layout Standard
-The impertus for this paper is to gain a greater understanding of the effects
+The impetus for this paper is to gain a greater understanding of the effects
  of Male/Female bargaining power in households, for instance to improve
  designs of Conditional Cash Transfer schemes (CCTs).
  
@@ -2759,13 +2767,13 @@ key "duflo2000child,duflo2003grandmothers"
 I analyse data around a policy change, which lowers the pension eligibility
  age for men from 65 to 60, which brings it at par with women's pension
  eligibility age.
- There are two impeti for further analysis of outcomes surrounding this
- policy change.
+ There are two main reasons for further analysis of outcomes surrounding
+ this policy change.
 \end_layout
 
 \begin_layout Standard
 Firstly, this overcomes major issues with attrition and the associated selection
- bias of the discrepancy in pension eligibility age, escpecially since average
+ bias of the discrepancy in pension eligibility age, especially since average
  life expectancy is well below pension eligibility age.
 \end_layout
 
@@ -2935,7 +2943,7 @@ A key outcome of this research is that food expenditure is some way too
  leading to a deterioration in Height-for-Age.
  In context such as these, the increased food expenditure would generally
  be thought of as a positive development.
- By further analyising the types of food purchased, it might be possible
+ By further analysing the types of food purchased, it might be possible
  to better understand the deterioration in Height-for-Age.
 \end_layout
 
