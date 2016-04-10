@@ -1,0 +1,68 @@
+---
+title: "Male/Female Bargaining Power and Child Growth"
+author: "Bastiaan Quast"
+date: "April 11, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.path='../misc/rmd-',
+                      cache.path='../data/cache/rmd-',
+                      fig.height=3)
+
+load(file = '../data/merged.RData')  # load source  data
+
+library(ggplot2)
+library(printr) # load (customised) printr package for clean output of lm()
+
+```
+
+## Introduction
+
+* bargaining power vs. household as a unit
+* income as bargaining power
+* CCTs, UCTs, etc.
+
+* Pension income and change in pension eligibility age for men
+
+
+## Data
+
+* South Africa: National Income Dynamics Survey
+* Waves in 2008, 2012, and 2013
+
+
+## Empirical Methodology
+
+* Age dummies `man_60_65`, `woman_60_65`, etc.
+* Difference-in-Differences
+* Household income covariate: isolate bargaining effect
+* 
+
+## Results Food Expenditure
+
+
+## Results Weight-for-Height
+
+## Results Weight-for-Height II
+
+```{r plot-zwfa}
+NIDS %>%
+  filter( !is.na(c_woman) ) %>%
+  group_by(wave, c_woman) %>%
+  summarise(man_60_65=sum(man_60_65)) %>%
+  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + 
+  geom_bar(position='dodge')
+```
+
+## Results Height-for-Age
+
+## Conclusion
+
+* Positive effect on food expenditure
+* Positive effect on Weight-for-Age
+* Negative effect on Height-for-Age
+
+* Might be more but lower nutritional value
+
+* Food expenditure might be misleading an indicator
