@@ -2,7 +2,7 @@
 title: "Male/Female Bargaining Power and Child Growth"
 author: "Bastiaan Quast"
 date: "April 11, 2016"
-output: html_document
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(fig.path='../misc/rmd-',
                       fig.height=3)
 
 load(file = '../data/merged.RData')  # load source  data
-
+library(dplyr)
 library(ggplot2)
 library(printr) # load (customised) printr package for clean output of lm()
 
@@ -46,13 +46,13 @@ library(printr) # load (customised) printr package for clean output of lm()
 
 ## Results Weight-for-Height II
 
-```{r plot-zwfa}
+```{r plot-zwfa, warning=FALSE}
 NIDS %>%
-  filter( !is.na(c_woman) ) %>%
-  group_by(wave, c_woman) %>%
-  summarise(man_60_65=sum(man_60_65)) %>%
-  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + 
-  geom_bar(position='dodge')
+  group_by(wave, man_60_65) %>%
+  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
+  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) %+%
+  geom_bar(stat='identity') %+% 
+  facet_grid(~man_60_65)
 ```
 
 ## Results Height-for-Age
