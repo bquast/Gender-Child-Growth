@@ -128,8 +128,8 @@
 <h3>Data</h3>
 
 <ul>
-<li>food expenditure</li>
-<li>Z-scores: Weight-for-Age (WAZ) / Height-for-Age (HAZ)</li>
+<li>food expenditure: <code>expf</code></li>
+<li>Z-scores: <code>zwfa</code>/<code>zhfa</code> (Weight-for-Age (WAZ) / Height-for-Age (HAZ))</li>
 <li>household members (over 60/65)</li>
 <li>household income</li>
 <li>boy / girl</li>
@@ -140,15 +140,16 @@
 <h3>Identification strategy</h3>
 
 <ul>
+<li>event dummy <code>post_treatment</code></li>
 <li>age dummies <code>man_60_65</code>, <code>woman_60_65</code>, etc.</li>
-<li>Difference-in-Differences: interaction term with event dummy</li>
-<li>household income covariate: isolate bargaining effect</li>
+<li>Difference-in-Differences: <code>post_treatmentTRUE:man_60_65TRUE</code></li>
+<li>household income covariate: <code>hhincome</code> isolate bargaining effect</li>
 </ul>
 
 <h3>Specifics</h3>
 
 <ul>
-<li>other covariates: woman</li>
+<li>other covariates: <code>woman</code></li>
 <li>high turnover (both sides): pooled estimation</li>
 <li>R package: <code>plm</code></li>
 </ul>
