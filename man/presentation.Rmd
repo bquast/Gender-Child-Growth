@@ -18,30 +18,56 @@ library(plm)
 library(dplyr)
 library(ggplot2)
 library(printr) # load (customised) printr package for clean output of lm()
-
 ```
 
 ## Introduction
+
+### Context
 
 * bargaining power vs. household as a unit
 * income as bargaining power
 * CCTs, UCTs, etc.
 
-* Pension income and change in pension eligibility age for men
+### Natural experiment
+
+* state pension income and change in pension eligibility age for men (2010)
+
+### State pension
+
+* general criteria: age and income -> little selection bias
+* high nominal value -> general household source of income
 
 
 ## Data
 
+### Dataset
+
 * South Africa: National Income Dynamics Survey
-* Waves in 2008, 2012, and 2013
+* waves in 2008, 2012, and 2013
+
+### Data
+
+* food expenditure
+* Z-scores: Weight-for-Age (WAZ) / Height-for-Age (HAZ)
+* household members (over 60/65)
+* household income
+* boy / girl
 
 
 ## Empirical Methodology
 
-* Age dummies `man_60_65`, `woman_60_65`, etc.
-* Difference-in-Differences
-* Household income covariate: isolate bargaining effect
-* 
+### Identification strategy
+
+* gge dummies `man_60_65`, `woman_60_65`, etc.
+* Difference-in-Differences: interaction term with event dummy
+* household income covariate: isolate bargaining effect
+
+### Specifics
+
+* other covariates: woman
+* high turnover (both sides): pooled estimation
+* R package: `plm`
+
 
 ## Results Food Expenditure
 
@@ -49,11 +75,13 @@ library(printr) # load (customised) printr package for clean output of lm()
 summary(expf2)$coef
 ```
 
+
 ## Results Weight-for-Height
 
 ```{r print-zwfa, echo=FALSE, cache=TRUE}
 summary(zwfa9)$coef
 ```
+
 
 ## Results Weight-for-Height II
 
@@ -66,6 +94,7 @@ NIDS %>%
   facet_grid(~man_60_65)
 ```
 
+
 ## Results Height-for-Age
 
 ```{r print-zhfa, echo=FALSE, cache=TRUE}
@@ -74,16 +103,16 @@ summary(zhfa7)$coef
 
 ## In conclusion
 
-Results
+### Results
 
-* Positive effect on food expenditure
-* Positive effect on Weight-for-Age
-* Negative effect on Height-for-Age
+* positive effect on food expenditure
+* positive effect on Weight-for-Age
+* negative effect on Height-for-Age
 
-Conclusions
+### Conclusion
 
-* Might be more but lower nutritional value
+* might be more but lower nutritional value
 
-Possible lessons
+### Possible lesson
 
-* Food expenditure might be misleading an indicator
+* food expenditure might be misleading an indicator
