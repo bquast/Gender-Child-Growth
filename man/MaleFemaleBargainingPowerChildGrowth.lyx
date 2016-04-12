@@ -163,14 +163,33 @@ rences approach on the right hand side.
 status open
 
 \begin_layout Plain Layout
-In this paper I look at variation in the health of young children driven
- by the sex of the household income recipient.
- I do this by comparing z-scores of anthropometrics of South-African children
- living in the same household as state pension recipients.
- This paper exploits the lowering of the state-pension eligibility-age of
- men, to the same age as women (60, previously 65).
- This takes place in-between two waves in the South-African National Income
- Dynamics Survey.
+mechanics of effect
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+include price index and dependency ratio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+higher order effects?
 \end_layout
 
 \end_inset
