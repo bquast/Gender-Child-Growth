@@ -8,7 +8,10 @@
 
 # load libraries
 library(plm)
+library(pglm)
+library(lmtest)
 library(magrittr)
+library(broom)
 # library(dplyr)
 # library(neuralnet)
 # library(nnet)
@@ -107,10 +110,13 @@ summary(zbmi6)
 
 
 # Food expenditure
-expf1 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='pooling')
-expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model='pooling')
+expf1 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
+expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model='within')
 summary(expf1)
 summary(expf2)
+
+# standard error correction
+tidy( coeftest(expf1, vcov=vcovHC(expf1,type="HC0",cluster="group")) )
 
 
 # Non-Food expenditure
