@@ -185,19 +185,6 @@ include price index and dependency ratio
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-higher order effects?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -2989,7 +2976,7 @@ A key outcome of this research is that food expenditure is some way too
 status open
 
 \begin_layout Plain Layout
-discuss posible consequences
+discuss possible consequences
 \end_layout
 
 \end_inset
@@ -3047,17 +3034,33 @@ begin{subappendices}
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Additional Estimates
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset Float table
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
 
+\end_layout
 
-\backslash
-appendix
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Standard Error Correction
 \end_layout
 
 \end_inset
@@ -3065,8 +3068,70 @@ appendix
 
 \end_layout
 
-\begin_layout Section
-Additional Estimates
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+se-correction, messages=FALSE, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(lmtest)  # standard error correction
+\end_layout
+
+\begin_layout Plain Layout
+
+library(broom)   # output formatting
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# standard error correction
+\end_layout
+
+\begin_layout Plain Layout
+
+tidy( coeftest(expf1, vcov=vcovHC(expf1,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  type="HC0",
+\end_layout
+
+\begin_layout Plain Layout
+
+                                  cluster="group")) )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
