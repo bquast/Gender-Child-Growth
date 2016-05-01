@@ -21,6 +21,13 @@ library(broom)
 # load data
 load('data/merged.RData')
 
+# add CPI
+# substantial changes to CPI in 2009, using jan 2009 for 2008
+# original 2008 value was 79.3
+# base year is 2008 (December)
+# using average here
+# CPI document is stored in 'misc' folder
+cpi <- data.frame(year = c(2008, 2012, 2013), cpi = c(81.4, 97.8, 103.4))
 
 # wave as integer
 NIDS$wave <- as.integer(NIDS$wave)
