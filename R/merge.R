@@ -309,6 +309,8 @@ child$c_age_days1  <- child$c_intrv_dt - child$c_dob1
 child$c_age_days15 <- child$c_intrv_dt - child$c_dob15
 child$c_age_days28 <- child$c_intrv_dt - child$c_dob28
 
+# wave as integer
+child$wave <- as.integer(child$wave)
 
 # rename to NIDS
 NIDS <- child

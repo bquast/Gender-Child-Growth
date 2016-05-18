@@ -29,9 +29,6 @@ load('data/merged.RData')
 # CPI document is stored in 'misc' folder
 cpi <- data.frame(year = c(2008, 2012, 2013), cpi = c(81.4, 97.8, 103.4))
 
-# wave as integer
-NIDS$wave <- as.integer(NIDS$wave)
-
 
 # create pdata.frame
 NIDS <- pdata.frame(child, index = c('pid','wave') )
