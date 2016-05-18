@@ -238,17 +238,17 @@ inder %>%
   summarise(ppen_man = sum(ppen))         -> ppen_man
 
 
-# put into panel data.frame (pdata.frame)
-adult            %<>% pdata.frame(index = c('pid',  'wave'))
-child            %<>% pdata.frame(index = c('pid',  'wave'))
-inder            %<>% pdata.frame(index = c('pid',  'wave'))
-hhder            %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_woman       %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_woman_60_65 %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_woman_65    %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_man         %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_man_60_65   %<>% pdata.frame(index = c('hhid', 'wave'))
-spen_man_65      %<>% pdata.frame(index = c('hhid', 'wave'))
+# # put into panel data.frame (pdata.frame)
+# adult            %<>% pdata.frame(index = c('pid',  'wave'))
+# child            %<>% pdata.frame(index = c('pid',  'wave'))
+# inder            %<>% pdata.frame(index = c('pid',  'wave'))
+# hhder            %<>% pdata.frame(index = c('hhid', 'wave'))
+# spen_woman       %<>% pdata.frame(index = c('hhid', 'wave'))
+# spen_woman_60_65 %<>% pdata.frame(index = c('hhid', 'wave'))
+# spen_woman_65    %<>% pdata.frame(index = c('hhid', 'wave'))
+# spen_man         %<>% pdata.frame(index = c('hhid', 'wave'))
+# spen_man_60_65   %<>% pdata.frame(index = c('hhid', 'wave'))
+# spen_man_65      %<>% pdata.frame(index = c('hhid', 'wave'))
 
 
 # merge pension variables into child data.frame
@@ -287,6 +287,7 @@ child$man_65      <- child$hhid %in% man_65
 
 
 # merge across data.frame types
+child <- merge(child, adult, by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, hhder, by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, inder, by = c('pid', 'wave'),  all.x = TRUE)
 
