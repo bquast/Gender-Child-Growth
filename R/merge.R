@@ -35,6 +35,7 @@ child3$w3_c_fthhh <- ifelse(child3$w3_c_fthhh_pid > 0, 1, 2)
 vars_adult <- c('hhid',         # household ID
                 'pid',          # person ID
                 'a_gen',        # gender
+                'a_bhlive',     # child currently living with you
                 'a_aspen',      # state persion
                 'a_incgovpen',  # income government persion
                 'a_incgovpen_v',
@@ -178,12 +179,15 @@ child$c_woman <- ifelse(child$c_gen == 2, TRUE, FALSE)
 inder$woman   <- ifelse(inder$best_gen == 2, TRUE, FALSE)
 inder$spen    <- ifelse(is.na(inder$spen), 0, inder$spen)
 inder$ppen    <- ifelse(is.na(inder$ppen), 0, inder$ppen)
+
 ## state pension numeric to logical
 adult$a_incgovpen   <- ifelse(adult$a_incgovpen <  0, NA, adult$a_incgovpen)
 adult$a_incgovpen_l <- ifelse(adult$a_incgovpen == 2, TRUE, FALSE)
+
 ## state pension value NA to zero
 adult$a_incgovpen_v <- ifelse(adult$a_incgovpen_v < 0, NA, adult$a_incgovpen_v)
 adult$a_incgovpen_v <- ifelse(is.na(adult$a_incgovpen_v), 0, adult$a_incgovpen_v)
+
 ## post treatment dummy
 child$post_treatment <- ifelse(child$wave == 1, FALSE, TRUE)
 
@@ -268,9 +272,9 @@ child$spen_man_65      <- ifelse(is.na(child$spen_man_65),      0, child$spen_ma
 woman_60    <- inder[which(inder$woman==TRUE & inder$best_age_yrs >= 60),]$hhid
 woman_60_65 <- inder[which(inder$woman==TRUE & inder$best_age_yrs >= 60 & inder$best_age_yrs < 65),]$hhid
 woman_65    <- inder[which(inder$woman==TRUE & inder$best_age_yrs >= 65),]$hhid
-man_60    <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 60),]$hhid
-man_60_65 <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 60 & inder$best_age_yrs < 65),]$hhid
-man_65    <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 65),]$hhid
+man_60      <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 60),]$hhid
+man_60_65   <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 60 & inder$best_age_yrs < 65),]$hhid
+man_65      <- inder[which(inder$woman==FALSE & inder$best_age_yrs >= 65),]$hhid
 
 
 # insert ages as dummies
