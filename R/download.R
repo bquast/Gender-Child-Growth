@@ -63,3 +63,8 @@ unzip(zipfile = spss3, exdir = 'data')
 stata3 <- 'data/nids-w3-2012-v1.3-20150619-stata.zip'
 download.file(url = 'https://www.datafirst.uct.ac.za/dataportal/index.php/catalog/451/download/7277', destfile = stata3)
 unzip(zipfile = stata3, exdir = 'data')
+
+
+# Wave 4
+
+unzip(zipfile = 'data/nids-w4-2014-2015-v1-stata12.zip', exdir = 'data')
