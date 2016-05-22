@@ -46,6 +46,8 @@ zhfa6 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_
 zhfa7 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 4, model="between")
 zhfa8 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 < 1460 & c_age_days1 > 180, model="between")
 zhfa9 <- plm(zhfa ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 1460, model="between")
+zhfa10 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome, NIDS, best_age_yrs < 4 & woman==FALSE, model="between")
+zhfa11 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome, NIDS, c_age_days1 < 1460 & c_age_days1 > 180 & woman==FALSE, model="between")
 summary(zhfa1)
 summary(zhfa2)
 summary(zhfa3) # use this one
@@ -55,6 +57,9 @@ summary(zhfa6)
 summary(zhfa7) # this one works with interaction for children < 4
 summary(zhfa8) # this one works slightly better than the one above
 summary(zhfa9)
+summary(zhfa10) # this works for boys only
+summary(zhfa11) # this works for boys only
+
 
 ## weight for age
 zwfa1  <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="within")
@@ -64,11 +69,11 @@ zwfa4  <- plm(zwfa ~ post_treatment*spen_man + spen_woman + hhincome, NIDS, best
 zwfa5  <- plm(zwfa ~ spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfa6  <- plm(zwfa ~ post_treatment*spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfa7  <- plm(zwfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfa8  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
+zwfa8  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6 , model="between")
 zwfa9  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 2920, model='pooling')
 zwfa10 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
 zwfa11 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
-summary(zwfa1)
+zwfa12 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome, NIDS, c_age_days1 > 180 & c_age_days1 < 2920 & woman==FALSE, model='pooling')
 summary(zwfa2)
 summary(zwfa3)
 summary(zwfa4)
@@ -79,6 +84,7 @@ summary(zwfa8)
 summary(zwfa9) # work well
 summary(zwfa10) # works very well
 summary(zwfa11) # with random too
+summary(zwfa12) # with random too # MALE CHILDREN ONLY
 
 ## weight for height
 zwfh1 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, model="within")
