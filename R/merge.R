@@ -287,7 +287,6 @@ child$man_65      <- child$hhid %in% man_65
 
 
 # merge across data.frame types
-child <- merge(child, adult, by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, hhder, by = c('hhid', 'wave'), all.x = TRUE)
 child <- merge(child, inder, by = c('pid', 'wave'),  all.x = TRUE)
 
