@@ -8,18 +8,16 @@
 
 # load libraries
 library(plm)
-library(pglm)
+# library(pglm)
 library(lmtest)
 library(magrittr)
 library(broom)
 # library(dplyr)
-# library(neuralnet)
-# library(nnet)
-# library(NeuralNetTools)
 
 
 # load data
 load('data/merged.RData')
+
 
 # add CPI
 # substantial changes to CPI in 2009, using jan 2009 for 2008
