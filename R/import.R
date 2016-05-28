@@ -25,12 +25,5 @@ hhder2 <- read_sas(b7dat = 'data/nids-w2-2010-2012-2.3-20150619-sas/hhderivedW2A
 hhder3 <- read_sas(b7dat = 'data/nids-w3-2012-v1.3-20150619-sas/hhderivedW3AnonV1_3.sas7bdat')
 
 
-# read stata source files (wave 4)
-adult4 <- read_dta(path  = 'data/nids-w4-2014-2015-v1-stata12/Adult_W4_Anon_V1.0.dta')
-child4 <- read_dta(path  = 'data/nids-w4-2014-2015-v1-stata12/Child_W4_Anon_V1.0.dta')
-hhder4 <- read_dta(path  = 'data/nids-w4-2014-2015-v1-stata12/hhderived_W4_Anon_V1.0.dta')
-inder4 <- read_dta(path  = 'data/nids-w4-2014-2015-v1-stata12/indderived_W4_Anon_V1.0.dta')
-
-
 # save to file
 save.image(file = 'data/imported.RData')
