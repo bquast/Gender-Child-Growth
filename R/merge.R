@@ -19,12 +19,10 @@ load('data/imported.RData')
 # now subset all to the important variables and merge
 
 ## homogenise some variable names across waves
-names(hhder1)[9] <- 'hhimprent' # instead of hhimprent_exp
+names(hhder1)[43]  <- 'hhimprent' # instead of hhimprent_exp
 names(adult3)[372] <- 'a_incppen' # instead of a_incret
 names(adult3)[373] <- 'a_incppen_v'# instead of a_incret_v
 
-# wave as integer
-NIDS$wave <- as.integer(NIDS$wave)
 
 ## recode variable if recorded differently in waves
 child3$w3_c_mthhh <- ifelse(child3$w3_c_mthhh_pid > 0, 1, 2)
@@ -190,6 +188,7 @@ adult$a_incgovpen_v <- ifelse(is.na(adult$a_incgovpen_v), 0, adult$a_incgovpen_v
 
 ## post treatment dummy
 child$post_treatment <- ifelse(child$wave == 1, FALSE, TRUE)
+child$event <- child$post_treatment
 
 
 # save data
