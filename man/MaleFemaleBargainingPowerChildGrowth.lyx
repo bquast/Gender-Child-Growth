@@ -100,7 +100,11 @@ Provides natbib 1
 \begin_body
 
 \begin_layout Title
-Male/Female Bargaining Power and Child Growth
+Grandfathers and Grandsons:
+\end_layout
+
+\begin_layout Title
+Effects of a Male only Pension Change
 \begin_inset Foot
 status open
 
@@ -140,6 +144,8 @@ Increased male bargaining power in households causes greater expenditure
  on food, an improvement in Weight-for-Age Z-scores in young children, and
  a deterioration in Height-for-Age Z-scores in very young children, as observed
  in the context of South Africa's 2010 state pension expansion for males.
+ When estimated separately, this effects disappear for girls, for boys they
+ remain the same, at a greater significance level.
  In 2010 the male eligibility age for the South-African state pension was
  brought to par with female eligibility age (60, previously 65).
  I exploit this policy change in order to estimate the effect of the increased
@@ -149,7 +155,7 @@ Increased male bargaining power in households causes greater expenditure
  wave of South Africa's National Income Dynamics Survey and shortly before
  the start of the second wave, which lends itself well for a Difference-in-Diffe
 rences approach on the right hand side.
- On the left hand side I use z-scores of growth anthropometrics of young
+ On the left hand side I use z-scores of the anthropometrics status of young
  children in the household (against WHO standards) as well as food expenditure.
 \end_layout
 
@@ -172,6 +178,20 @@ status open
 
 \begin_layout Plain Layout
 include price index and dependency ratio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Research Question: Effects of unconditional cash transfer, specific to male
+ recipients.
 \end_layout
 
 \end_inset
@@ -271,7 +291,29 @@ name "sec:intro"
 
 \end_inset
 
- In 2010 the pension eligibility age for South African males was lowered
+ Cash transfer schemes are increasingly common in developing countries,
+ electronic systems have made it easier to administrate these at a large
+ schale, with lower incidence of corruption.
+ However, the efficacy of these schemes as compared in-kind benefits such
+ as universal health care if often brought into question.
+\end_layout
+
+\begin_layout Standard
+Previous evidence shows lesser or even no impact when extra income accrues
+ to male members of the household.
+ With this study I aim to provide a closer examination of the impact of
+ male household member income.
+ I examine a policy change in the South African state pension that only
+ benefits men.
+ I find that this leads to an increased expenditure on food, improvements
+ in weight-for-age and a deterioration in height-for-age z-scores of young
+ children in the household.
+ Futhermore, when estimated separately for boys and girls, the effect for
+ girl disappears, for boys the sam effects remain.
+\end_layout
+
+\begin_layout Standard
+In 2010 the pension eligibility age for South African males was lowered
  from 65 to 60 years old, at par with female eligibility.
  I exploit this change by estimating a Difference-in-Differences model,
  quantifying the effect of increased male bargaining power in households
@@ -1648,88 +1690,6 @@ As we have only one time period before the treatment goes into effect, we
  are level over time.
 \end_layout
 
-\begin_layout Standard
-The computation estimation of these models is performed using R 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "R"
-
-\end_inset
-
-, with the implementation of the panel data structure and models using the
- 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-plm
-\end_layout
-
-\end_inset
-
- package 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "croissant2008panel"
-
-\end_inset
-
-.
- All changes are logged using the version control system Git 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "git"
-
-\end_inset
-
- and publicly available on GitHub at 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth/"
-
-\end_inset
-
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The repository can by cloned to a local computer by entering in following
- command in a terminal (with Git installed):
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-git clone https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth.git
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add White standard error correction
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Results
 \end_layout
@@ -2376,7 +2336,7 @@ zwfa
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2683,6 +2643,146 @@ post_treatmentTRUE:man_60_65TRUE
  has a negative coefficient estimate.
  While this interaction term has a positive coefficient when using Weight-for-Ag
 e z-score as a dependent variable.
+\end_layout
+
+\begin_layout Standard
+Additionally, I estimate these equation separately for boys and girls.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Height for Age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:haz1-girls"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+haz_vis_girls, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(zhfa ~ 	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman == TRUE, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		data = NIDS, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		subset = best_age_yrs < 4, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		model='between')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_hfa, echo=FALSE, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(zhfa7)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -3721,6 +3821,92 @@ re_expf2 <- plm(model_expf2, data=NIDS, model='random')
 \begin_layout Plain Layout
 
 phtest(fe_expf2, re_expf2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Software
+\end_layout
+
+\begin_layout Standard
+The computation estimation of these models is performed using R 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "R"
+
+\end_inset
+
+, with the implementation of the panel data structure and models using the
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+plm
+\end_layout
+
+\end_inset
+
+ package 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "croissant2008panel"
+
+\end_inset
+
+.
+ All changes are logged using the version control system Git 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "git"
+
+\end_inset
+
+ and publicly available on GitHub at 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth/"
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The repository can by cloned to a local computer by entering in following
+ command in a terminal (with Git installed):
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+git clone https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+add White standard error correction
 \end_layout
 
 \end_inset
