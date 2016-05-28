@@ -31,21 +31,22 @@ cpi <- data.frame(year = c(2008, 2012, 2013), cpi = c(81.4, 97.8, 103.4))
 # create pdata.frame
 NIDS <- pdata.frame(child, index = c('pid','wave') )
 
-
 # estimation
 
 ## height for age
-zhfa1 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="within")
-zhfa2 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="between")
-zhfa3 <- plm(zhfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
-zhfa4 <- plm(zhfa ~ post_treatment*spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zhfa1 <- plm(zhfa ~ spen_man*event + spen_woman + hhincome, NIDS, model="within")
+zhfa2 <- plm(zhfa ~ spen_man*event + spen_woman + hhincome, NIDS, model="between")
+zhfa3 <- plm(zhfa ~ spen_man*event + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zhfa4 <- plm(zhfa ~ event*spen_man + event*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
 zhfa5 <- plm(zhfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
-zhfa6 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
-zhfa7 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 4, model="between")
-zhfa8 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 < 1460 & c_age_days1 > 180, model="between")
-zhfa9 <- plm(zhfa ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 1460, model="between")
-zhfa10 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome, NIDS, best_age_yrs < 4 & woman==FALSE, model="between")
-zhfa11 <- plm(zhfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome, NIDS, c_age_days1 < 1460 & c_age_days1 > 180 & woman==FALSE, model="between")
+zhfa6 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
+zhfa7 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, best_age_yrs < 4, model="between")
+zhfa8 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 < 1460 & c_age_days1 > 180, model="between")
+zhfa9 <- plm(zhfa ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 1460, model="between")
+zhfa10 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, best_age_yrs < 4 & woman==TRUE, model="between")
+zhfa11 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, c_age_days1 < 1460 & c_age_days1 > 180 & woman==TRUE, model="between")
+zhfa12 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, best_age_yrs < 4 & woman==FALSE, model="between")
+zhfa13 <- plm(zhfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, c_age_days1 < 1460 & c_age_days1 > 180 & woman==FALSE, model="between")
 summary(zhfa1)
 summary(zhfa2)
 summary(zhfa3) # use this one
@@ -55,23 +56,26 @@ summary(zhfa6)
 summary(zhfa7) # this one works with interaction for children < 4
 summary(zhfa8) # this one works slightly better than the one above
 summary(zhfa9)
-summary(zhfa10) # this works for boys only
-summary(zhfa11) # this works for boys only
+summary(zhfa10) # no result for girls
+summary(zhfa11) # no result for girls
+summary(zhfa12) # same result for boys
+summary(zhfa13) # same result for boys
 
 
 ## weight for age
-zwfa1  <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="within")
-zwfa2  <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="between")
-zwfa3  <- plm(zwfa ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
-zwfa4  <- plm(zwfa ~ post_treatment*spen_man + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfa5  <- plm(zwfa ~ spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfa6  <- plm(zwfa ~ post_treatment*spen_man + post_treatment*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfa1  <- plm(zwfa ~ spen_man*event + spen_woman + hhincome, NIDS, model="within")
+zwfa2  <- plm(zwfa ~ spen_man*event + spen_woman + hhincome, NIDS, model="between")
+zwfa3  <- plm(zwfa ~ spen_man*event + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
+zwfa4  <- plm(zwfa ~ event*spen_man + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfa5  <- plm(zwfa ~ spen_man + event*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfa6  <- plm(zwfa ~ event*spen_man + event*spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfa7  <- plm(zwfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfa8  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6 , model="between")
-zwfa9  <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 2920, model='pooling')
-zwfa10 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
-zwfa11 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
-zwfa12 <- plm(zwfa ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome, NIDS, c_age_days1 > 180 & c_age_days1 < 2920 & woman==FALSE, model='pooling')
+zwfa8  <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6 , model="between")
+zwfa9  <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 2920, model='pooling')
+zwfa10 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
+zwfa11 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
+zwfa12 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, c_age_days1 > 180 & c_age_days1 < 2920 & woman==TRUE, model='pooling')
+zwfa13 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, c_age_days1 > 180 & c_age_days1 < 2920 & woman==FALSE, model='pooling')
 summary(zwfa2)
 summary(zwfa3)
 summary(zwfa4)
@@ -82,17 +86,20 @@ summary(zwfa8)
 summary(zwfa9) # work well
 summary(zwfa10) # works very well
 summary(zwfa11) # with random too
-summary(zwfa12) # with random too # MALE CHILDREN ONLY
+summary(zwfa12) # with random too # does not work for girls
+summary(zwfa13) # with random too # MALE CHILDREN ONLY
 
 ## weight for height
-zwfh1 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, model="within")
-zwfh2 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, model="between")
-zwfh3 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
-zwfh4 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh5 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman*post_treatment + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh6 <- plm(zwfh ~ post_treatment*man_60_65 + spen_woman*post_treatment + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh7 <- plm(zwfh ~ post_treatment*man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
-zwfh8 <- plm(zwfh ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
+zwfh1 <- plm(zwfh ~ event*man_60_65 + spen_woman + hhincome, NIDS, model="within")
+zwfh2 <- plm(zwfh ~ event*man_60_65 + spen_woman + hhincome, NIDS, model="between")
+zwfh3 <- plm(zwfh ~ event*man_60_65 + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
+zwfh4 <- plm(zwfh ~ event*man_60_65 + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh5 <- plm(zwfh ~ event*man_60_65 + spen_woman*event + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh6 <- plm(zwfh ~ event*man_60_65 + spen_woman*event + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh7 <- plm(zwfh ~ event*man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
+zwfh8 <- plm(zwfh ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
+zwfh9 <- plm(zwfh ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome, NIDS, best_age_yrs < 6 & woman==TRUE, model="between")
+zwfh10 <- plm(zwfh ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome, NIDS, best_age_yrs < 6 & woman==FALSE, model="between")
 summary(zwfh1) # these all do no work, suggesting the effect is more long run
 summary(zwfh2)
 summary(zwfh3)
@@ -101,14 +108,16 @@ summary(zwfh5)
 summary(zwfh6)
 summary(zwfh7) # something positive for woman_65, same as BMI
 summary(zwfh8)
+summary(zwfh9)
+summary(zwfh10)
 
 ## BMI (Body Mass Index)
-zbmi1 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="within")
-zbmi2 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, model="between")
-zbmi3 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
-zbmi4 <- plm(zbmi ~ spen_man*post_treatment + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
+zbmi1 <- plm(zbmi ~ spen_man*event + spen_woman + hhincome, NIDS, model="within")
+zbmi2 <- plm(zbmi ~ spen_man*event + spen_woman + hhincome, NIDS, model="between")
+zbmi3 <- plm(zbmi ~ spen_man*event + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="within")
+zbmi4 <- plm(zbmi ~ spen_man*event + spen_woman + hhincome, NIDS, best_age_yrs < 6, model="between")
 zbmi5 <- plm(zbmi ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
-zbmi6 <- plm(zbmi ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
+zbmi6 <- plm(zbmi ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, best_age_yrs < 6, model="between")
 summary(zbmi1) # these all do not work either also suggesting effect is long run, not short run
 summary(zbmi2)
 summary(zbmi3)
@@ -118,8 +127,8 @@ summary(zbmi6)
 
 
 # Food expenditure
-expf1 <- plm(expf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
-expf2 <- plm(expf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model='within')
+expf1 <- plm(expf ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
+expf2 <- plm(expf ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, model='within')
 summary(expf1)
 summary(expf2)
 
@@ -128,8 +137,8 @@ tidy( coeftest(expf1, vcov=vcovHC(expf1,type="HC0",cluster="group")) )
 
 
 # Non-Food expenditure
-expnf1 <- plm(expnf ~ post_treatment*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
-expnf2 <- plm(expnf ~ post_treatment*man_60_65 + post_treatment*man_65 + woman_60_65*post_treatment + post_treatment*woman_65 + hhincome + woman, NIDS, model='within')
+expnf1 <- plm(expnf ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
+expnf2 <- plm(expnf ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, model='within')
 summary(expnf1)
 summary(expnf2)
 
@@ -141,4 +150,4 @@ rm(NIDS)
 rm(child)
 
 ## save everything else
-save.image(file = 'data/results.RData')
+save.image(file = 'data/results-stata12.RData')
