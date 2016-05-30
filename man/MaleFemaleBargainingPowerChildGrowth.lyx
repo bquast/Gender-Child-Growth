@@ -525,22 +525,21 @@ ferences approach.
 \end_layout
 
 \begin_layout Standard
-I find that the above mentioned change leads to an increase in food expenditure,
- but shows no significant impact on non-food expenditure.
+I find that the transfer leads to an increase in food expenditure, but shows
+ no significant impact on non-food expenditure.
  The effects on the anthropometric of children in the same households are
  more ambiguous.
  The change led to an improvement in the Weight-for-Age Z-scores, as well
  as a regression in the Height-for-Age z-scores of younger children.
- When I estimate this separately for boys and girls, the same variables
- have to significant effect for girls, for boys the variables become more
- significant.
+ When I estimate these equations separately for boys and girls, the same
+ variables have no significant effect for girls, for boys the effects remain
+ intact at greater significance levels.
 \end_layout
 
 \begin_layout Standard
-The above results suggest that the increased expenditure in food results
- in improvements in the short-term Weight-for-Age indicators, but at the
- same time that the more long-term effect on Height-for-Age is opposite
- to this.
+These results suggest that the increased expenditure in food results in
+ improvements in the short-term Weight-for-Age indicators, but at the same
+ time that the more long-term effect on Height-for-Age is opposite to this.
  A possible explanation for this is that the increase food expenditure goes
  towards unhealthy food, increasing weight, but not leading to any long
  term increases in growth.
@@ -1394,41 +1393,12 @@ These are constructed on a weekly basis up to the age of 60 months, and
 \begin_layout Standard
 The NIDS uses a file and data structure which is ill suited for panel data
  analysis.
- We therefore transform the data to a format which is more conducive to
- our analysis.
- In doing so, we try to stay as close as possible to the `Tidy Data' structure,
- as described in 
+ I therefore transform the data to a format which is more conducive to panel
+ data analysis.
+ For this I used `Tidy Data' structure, as described in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "wickham2014tidy"
-
-\end_inset
-
-.
- In order to merge data and compute of these statistics, I make use of the
- dplyr and tidyr R packages 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "wickham2015dplyr,wickham2016tidyr"
-
-\end_inset
-
-.
- After having combined the various data.frames within each wave, the three
- waves can be combined by simply joining the rows using base R's 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-rbind()
-\end_layout
-
-\end_inset
-
- function
-\begin_inset CommandInset citation
-LatexCommand citep
-key "R"
 
 \end_inset
 
@@ -2563,7 +2533,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-print_hfa, echo=FALSE, cache=TRUE
+print_hfa, echo=FALSE
 \end_layout
 
 \end_inset
@@ -2628,7 +2598,7 @@ Additionally, I estimate these equation separately for boys and girls.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2736,7 +2706,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-print_hfa_girls, echo=FALSE, cache=TRUE
+print_hfa_girls, echo=FALSE
 \end_layout
 
 \end_inset
@@ -2746,7 +2716,7 @@ print_hfa_girls, echo=FALSE, cache=TRUE
 
 \begin_layout Plain Layout
 
-kable(summary(zhfa22)$coef)
+kable(summary(zhfa20)$coef)
 \end_layout
 
 \end_inset
@@ -2764,7 +2734,7 @@ kable(summary(zhfa22)$coef)
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2872,7 +2842,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-print_hfa_boys, echo=FALSE, cache=TRUE
+print_hfa_boys, echo=FALSE
 \end_layout
 
 \end_inset
@@ -2882,7 +2852,7 @@ print_hfa_boys, echo=FALSE, cache=TRUE
 
 \begin_layout Plain Layout
 
-kable(summary(zhfa23)$coef)
+kable(summary(zhfa22)$coef)
 \end_layout
 
 \end_inset
@@ -4020,6 +3990,37 @@ git clone https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth.git
 
 
 \end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In order to merge data and compute of these statistics, I make use of the
+ dplyr and tidyr R packages 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "wickham2015dplyr,wickham2016tidyr"
+
+\end_inset
+
+.
+ After having combined the various data.frames within each wave, the three
+ waves can be combined by simply joining the rows using base R's 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+rbind()
+\end_layout
+
+\end_inset
+
+ function
+\begin_inset CommandInset citation
+LatexCommand citep
+key "R"
 
 \end_inset
 
