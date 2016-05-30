@@ -151,17 +151,17 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-Increased male bargaining power in households causes greater expenditure
+An exogenous male-only increase in cash transfer causes greater expenditure
  on food, an improvement in Weight-for-Age Z-scores in young children, and
  a deterioration in Height-for-Age Z-scores in very young children, as observed
  in the context of South Africa's 2010 state pension expansion for males.
- When estimated separately, this effects disappear for girls, for boys they
- remain the same, at a greater significance level.
+ When estimated separately, these effects disappear for girls, however for
+ boys they remain intact, at a greater significance level.
  In 2010 the male eligibility age for the South-African state pension was
- brought to par with female eligibility age (60, previously 65).
- I exploit this policy change in order to estimate the effect of the male-only
+ brought on a par with female eligibility age (60, previously 65).
+ I exploit this policy change in order to estimate the effects of the male-only
  change in cash transfers, on growth of young children living in the same
- household, as well as food expenditure.
+ household, as well as on food expenditure.
  The policy change took place shortly after the completion of the first
  wave of South Africa's National Income Dynamics Survey and shortly before
  the start of the second wave, which lends itself well for a Difference-in-Diffe
@@ -306,27 +306,31 @@ name "sec:intro"
  countries, electronic systems have made it easier to administrate these
  at a large schale, with lower incidences of corruption.
  However, the efficacy of these schemes as compared in-kind benefits such
- as universal health care if often brought into question, especially so
- when the recipient of the transfer is male.
+ as universal health care if often brought into question, especially where
+ the recipient of the transfer is male.
  Although Conditional Cash Transfer schemes (CCTs) are much more common,
  it can be more informative to study Unconditional Cash Transfer schemes
  (UCTs) as these suffer less from selection bias issues.
 \end_layout
 
 \begin_layout Standard
-With this study I aim to provide a closer examination of the impact of cash
- transfers to male household members.
+With this study I provide a close examination of the impact of cash transfers
+ to male household members.
  I examine a policy change in the South African state pension that only
- benefits men.
- I find that this leads to an increased expenditure on food, improvements
- in weight-for-age and a deterioration in height-for-age z-scores of young
- children in the household.
- Futhermore, when estimated separately for boys and girls, the effect for
- girl disappears, for boys the same effects remain.
+ benefits men, bringing down the eligibility age from 65 to 60, on a par
+ with women.
 \end_layout
 
 \begin_layout Standard
-The link between CCTs and z-scores in particularly important, as malnutrition
+I find that this policy change leads to an increased expenditure on food,
+ improvements in weight-for-age and a deterioration in height-for-age z-scores
+ of young children in the household.
+ Futhermore, when estimated separately for boys and girls, the effect for
+ girl disappears, for boys the same effects remain intact.
+\end_layout
+
+\begin_layout Standard
+The debate on CCTs and athropometric status is closely linked, malnutrition
  can effect physical and cognitive development, which effect future productivity
  and income 
 \begin_inset Note Note
@@ -355,7 +359,7 @@ key "thomas1994like"
 status open
 
 \begin_layout Plain Layout
-1994
+1998
 \end_layout
 
 \end_inset
@@ -368,12 +372,12 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
- finds that income that acrues to a woman in the household causes improvements
- in anthropometic Z-scores of girls living in the same household using a
- recent pension expansion in South Africa.
+ finds that income that acrues to a woman in the household leads to improvements
+ in anthropometic status z-scores of girls living in the same household,
+ using a recent pension expansion in South Africa.
  At the time of this study in 1993, the male eligibility age was 65 and
  the female age was 60, while average life expectancy in South Africa then
- and now is significantly lower than that, making the comparison difficult.
+ and now is significantly lower than that, complicating the comparison.
  For instance, one might suspect that a healthy lifestyle, which increases
  the chance of one becoming a pension recipient, also has an effect on the
  lifestyle of household members.
@@ -396,8 +400,9 @@ Life expectancy is South Africa is substantially below the pension eligibility
 \end_layout
 
 \begin_layout Standard
-In 2010 the pension eligibility age for South African males was lowered
- from 65 to 60 years old, at par with female eligibility.
+In 2010 the pension eligibility age for South African men was lowered from
+ 65 to 60 years old, which had previously already been the eligibility age
+ for women.
  I exploit this change by estimating a Difference-in-Differences model,
  quantifying the effect of the male-only change in cash transfers in households
  with men aged 60 through 64.
@@ -431,44 +436,13 @@ key "tangwe2013impact"
 \end_layout
 
 \begin_layout Standard
-In addition to this, the system also meets the requirements of having few
- and general eligibility criteria.
- The primary criterium is the age of the recipient.
- In addition to this there is a maximum income threshold, which is not met
- by the vast majority of the population.
- This relatively general applicability of the program makes that there are
- few selection bias issues when studying its effects.
- Here allowing for a clean estimation of changes in bargaining power.
- However, the previously-existing eligibility-age differential made it hard
- to make a male/female comparison, especially since average life expectancy
- is South Africa is substantially lower than the pension eligibility age.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Causing a substantial selection bias in the pension recipient base.
- Moreover, the fact that men receive pension only at 65, and women at sixty,
- causes an even more pronounced selection bias in the male pension recipient
- base.
- This also makes the comparing of the effect of male pension recipient and
- female pension recipients, on the anthropometrics of children in the same
- household problematic, since much more attrition will have take place in
- the male pension base.
- The drop in life expectancy also aggravates the issue of attrition, and
- the associated selection bias.
- However, since pension eligibility becomes equal, for both men and women,
- at least, provides us with effects which internally more comparable.
- We say more, because the difference in attrition between the male and female
- pension base in our sample has not entirely been eliminated.
- Throughout the evolution of the average life expectancy at birth in South
- Africa, female life expectancy has been higher than male life expectancy
- by about one year.
- Bearing in mind that the difference between average life expectancy and
- pension eligibility is around 9 years, this additional selection bias effect,
- should not be underestimated.
+The previously-existing eligibility-age differential made it hard to make
+ a male/female comparison, especially since average life expectancy is South
+ Africa is substantially lower than the pension eligibility age.
 \end_layout
 
 \end_inset
@@ -477,6 +451,10 @@ Causing a substantial selection bias in the pension recipient base.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 The household-as-a-unit approach overlooks important aspects influencing
  the relative size of expenditure of households .
  The lack Pareto optimal allocation of resources within households as discussed
@@ -499,18 +477,29 @@ key "duflo2004intrahousehold"
  behaviour.
  However, conclusive evidence on the effects of male and female bargaining
  within the household remains scarce.
- In a previously study of the effects of the South-African state pension
- system, 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Child anthropometrics can be seen as a proxy for general health in the household.
- They are an effective way to capture both the effects of malnutrition,
- as well as disease.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Child anthropometrics are an effective way to capture both the effects of
+ malnutrition, as well as disease.
  Both of these factors adversely affect weight in the short run, as well
  as height in the long run.
  By comparing these anthropometrics against the international WHO standards,
  malnutrition and disease can hereby be captured, as well as changes herein.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -565,8 +554,8 @@ reference "sec:data"
 
 \end_inset
 
- discussed the National Income Dynamics Survey, as well as the WHO standards
- used to computer the anthropometirc Z-scores.
+ discusses the National Income Dynamics Survey, as well as the WHO standards
+ used to compute the anthropometirc z-scores.
  This is followed by 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -583,15 +572,15 @@ reference "sec:results"
 
 \end_inset
 
- I present the outcome of these estimations.
- Finally, in 
+, I present the outcome of these estimations.
+ Finally, I interpret these results and their limitations in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:conclusions"
 
 \end_inset
 
- I interpret these results and their limitations.
+.
 \end_layout
 
 \begin_layout Section
@@ -605,7 +594,7 @@ name "sec:data"
 
 \end_inset
 
-The main source of data is the South African National Income Dynamics Survey
+The main source of data is the South African National Income Dynamics Study
  
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -615,7 +604,7 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 \end_inset
 
 .
- Several of the dataset's key variables for this study, in turn rely on
+ Several of the dataset's variables that for this study, in turn rely on
  the World Health Organization's Child Growth Standards 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -627,17 +616,17 @@ key "who2006child"
 \end_layout
 
 \begin_layout Standard
-The National Income Dynamics Survey of South Africa is collected by 
+The National Income Dynamics Study of South Africa is collected by 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
 
- in cooperation with the World Bank, it collects information on a representative
+ together with the World Bank, it collects information on a representative
  set of approximately ten thousand South-African households over time.
  Currently three `waves' of data are available, these waves date from 2008,
- 2012, and 2013.
+ 2011, and 2013.
  The primary types of information that I use are: 
 \end_layout
 
@@ -718,7 +707,7 @@ man_60_65
 
 \end_inset
 
-, 
+; 
 \begin_inset Flex Code
 status open
 
@@ -728,7 +717,7 @@ woman_60_65
 
 \end_inset
 
-, 
+; 
 \begin_inset Flex Code
 status open
 
@@ -738,7 +727,7 @@ man_65
 
 \end_inset
 
-, 
+; 
 \begin_inset Flex Code
 status open
 
@@ -763,7 +752,7 @@ hhincome
 
 \end_inset
 
-), in the analysis.
+), and in the analysis.
 \end_layout
 
 \begin_layout Standard
@@ -1049,8 +1038,8 @@ reference "fig:man_60_65"
 
  descriptive statistics of the Right-Hand Side (RHS) variable of interest
  are presented.
- Income from the state pension system is generally the same just above 1000
- SAR.
+ Income from the state pension system is generally the same at slightly
+ more than 1000 SAR.
  I construct a dummy variable for children living in a household with a
  man aged 60 until 65 (
 \begin_inset Flex Code
@@ -1271,20 +1260,6 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-These z-scores are considered a good representation of short-term or long-term
- health issues, respectively.
- This relation is especially well observed for children between 6 and 60
- months old.
- I therefore stay with the best practice and only include those observations
- in the analysis.
-\end_layout
-
-\end_inset
-
 In 2006 the WHO published its standards for child growth
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1302,17 +1277,12 @@ key "nchs2000cdc"
 
 .
  The WHO charts map the average growth of a varied sample of children living
- in household with healthy lifestyles, setting a sort of ideal benchmark
- for growth.
- The actual values in these of minimal importance, as long as all observations
- are held against the same standards the results do not differ.
- 
+ in household with healthy lifestyles, setting a benchmark for growth.
 \end_layout
 
 \begin_layout Standard
-Z-score anthropometrics are used since they are considered to be a good
- representation of a child's health, and by extension, the household in
- which they grow up.
+These z-score anthropometrics are used since they are considered to be a
+ good representation of a child's health.
  Z-scores refer to the practice of standardising the anthropometrics using
  an `ideal' standard
 \begin_inset CommandInset citation
@@ -1397,7 +1367,7 @@ It is best practice to use only metrics for children between the ages of
 status open
 
 \begin_layout Plain Layout
-cite something for that
+cite something for that; Angus & Deaton ?
 \end_layout
 
 \end_inset
@@ -1482,11 +1452,10 @@ name "sec:methods"
  Between mid 2009 and December 31st 2010, this was gradually lowered to
  60.
  I combine this information with data from the South-African National Income
- Dynamics Survey, a full-panel dataset, which contains information on households
+ Dynamics Study, a full-panel dataset, which contains information on households
  from before and after this policy change.
- I study the effect of the policy change, on the growth anthropometrics
- of children in the same household.
- The research setup in discussed in further detail below.
+ I study the effect of this policy change, on the anthropometric status
+ of children in the same household as pension recipients.
  
 \end_layout
 
