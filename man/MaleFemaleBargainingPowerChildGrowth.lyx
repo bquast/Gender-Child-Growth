@@ -24,7 +24,7 @@ logicalmkup
 \begin_local_layout
 Provides natbib 1
 \end_local_layout
-\language english
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -44,9 +44,9 @@ Provides natbib 1
 \bibtex_command biber
 \index_command default
 \paperfontsize default
-\spacing single
+\spacing onehalf
 \use_hyperref true
-\pdf_title "Male/Female Income and Child Growth"
+\pdf_title "Grandfathers and Grandsons"
 \pdf_author "Bastiaan Quast"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -120,7 +120,7 @@ Effects of a Male only Pension Change
 status open
 
 \begin_layout Plain Layout
-http://qua.st/bargaining-power-growth
+http://qua.st/grandfathers-grandsons
 \end_layout
 
 \end_inset
@@ -159,9 +159,9 @@ Increased male bargaining power in households causes greater expenditure
  remain the same, at a greater significance level.
  In 2010 the male eligibility age for the South-African state pension was
  brought to par with female eligibility age (60, previously 65).
- I exploit this policy change in order to estimate the effect of the increased
- male bargaining power in the household, on growth of young children living
- in the same household, as well as food expenditure.
+ I exploit this policy change in order to estimate the effect of the male-only
+ change in cash transfers, on growth of young children living in the same
+ household, as well as food expenditure.
  The policy change took place shortly after the completion of the first
  wave of South Africa's National Income Dynamics Survey and shortly before
  the start of the second wave, which lends itself well for a Difference-in-Diffe
@@ -283,7 +283,7 @@ load(file = '../data/merged.RData')
 
 \begin_layout Plain Layout
 
-load(file = '../data/results.RData')
+load(file = '../data/results-new.RData')
 \end_layout
 
 \end_inset
@@ -302,14 +302,20 @@ name "sec:intro"
 
 \end_inset
 
- Cash transfer schemes are increasingly common in developing countries,
- electronic systems have made it easier to administrate these at a large
- schale, with lower incidence of corruption.
+ Conditional Cash Transfer schemes are increasingly common in developing
+ countries, electronic systems have made it easier to administrate these
+ at a large schale, with lower incidences of corruption.
  However, the efficacy of these schemes as compared in-kind benefits such
  as universal health care if often brought into question, especially so
- when the recipient is male.
- With this study I aim to provide a closer examination of the impact of
- male household member income.
+ when the recipient of the transfer is male.
+ Although Conditional Cash Transfer schemes (CCTs) are much more common,
+ it can be more informative to study Unconditional Cash Transfer schemes
+ (UCTs) as these suffer less from selection bias issues.
+\end_layout
+
+\begin_layout Standard
+With this study I aim to provide a closer examination of the impact of cash
+ transfers to male household members.
  I examine a policy change in the South African state pension that only
  benefits men.
  I find that this leads to an increased expenditure on food, improvements
@@ -320,63 +326,60 @@ name "sec:intro"
 \end_layout
 
 \begin_layout Standard
-In 2010 the pension eligibility age for South African males was lowered
- from 65 to 60 years old, at par with female eligibility.
- I exploit this change by estimating a Difference-in-Differences model,
- quantifying the effect of increased male bargaining power in households
- with men aged 60 through 64.
- I find the following effects: increased expenditure on food, improved Weight-fo
-r-Age Z-scores (WAZ) in young children, and deteriorated Height-for-Age
- Z-scores (HAZ) for very young children living in the same households.
+The link between CCTs and z-scores in particularly important, as malnutrition
+ can effect physical and cognitive development, which effect future productivity
+ and income 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Dasgupta 1993; Straus & Thomas 1998; Schultz 1999; new?
+\end_layout
+
+\end_inset
+
+, thereby being inefficiently low.
 \end_layout
 
 \begin_layout Standard
-The household-as-a-unit approach overlooks important aspects influencing
- the relative size of expenditure of households 
+Most of the literature suggests that cash transfers to women are more beneficial
+ to children 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "thomas1994like"
 
 \end_inset
 
-.
- The lack Pareto optimal allocation of resources within households as discussed
- in i.a.
  
-\begin_inset CommandInset citation
-LatexCommand cite
-key "udry1995gender,udry1996gender"
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1994
+\end_layout
 
 \end_inset
 
- and 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2004intrahousehold"
-
-\end_inset
-
- indicates that this assumption in many cases, does not correspond to revealed
- behaviour.
- However, conclusive evidence on the effects of male and female bargaining
- within the household remains scarce.
- In a previously study of the effects of the South-African state pension
- system, 
+.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
- finds that greater female bargaining power causes improvements in 
-\lang british
-anthropometic
-\lang english
- Z-scores of girls living in the same household.
- Unfortunately, at the time of this study in 1993, the male eligibility
- age was 65 and the female age was 60, while average life expectancy in
- South Africa then and now is significantly lower than that, making the
- comparison difficult.
+ finds that income that acrues to a woman in the household causes improvements
+ in anthropometic Z-scores of girls living in the same household using a
+ recent pension expansion in South Africa.
+ At the time of this study in 1993, the male eligibility age was 65 and
+ the female age was 60, while average life expectancy in South Africa then
+ and now is significantly lower than that, making the comparison difficult.
+ For instance, one might suspect that a healthy lifestyle, which increases
+ the chance of one becoming a pension recipient, also has an effect on the
+ lifestyle of household members.
+ In this is so, then our observed attrition would results in a selection
+ bias effect.
+ The equalising of eligibility age removes this limitation.
 \begin_inset Note Note
 status collapsed
 
@@ -390,22 +393,19 @@ Life expectancy is South Africa is substantially below the pension eligibility
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add paper find positive effect of male bargaining
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+In 2010 the pension eligibility age for South African males was lowered
+ from 65 to 60 years old, at par with female eligibility.
+ I exploit this change by estimating a Difference-in-Differences model,
+ quantifying the effect of the male-only change in cash transfers in households
+ with men aged 60 through 64.
 \end_layout
 
 \begin_layout Standard
 State pension systems are a useful variable of interest to study bargaining
- power, since they are generally available to most citizens upon reaching
- a certain age.
+ power, since they are unconditional upon reaching a certain age.
  This is unlike most other sources of income, such as labour, which are
  almost always influenced by other demographic factors such education, place
  of residence, etc., which give rise to selection bias issues in the estimation.
@@ -442,24 +442,9 @@ In addition to this, the system also meets the requirements of having few
  However, the previously-existing eligibility-age differential made it hard
  to make a male/female comparison, especially since average life expectancy
  is South Africa is substantially lower than the pension eligibility age.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-figures on life exp
 \end_layout
 
-\end_inset
-
-.
- For instance, one might suspect that a healthy lifestyle, which increases
- the chance of one becoming a pension recipient, also has an effect on the
- lifestyle of household members.
- In this is so, then our observed attrition would results in a selection
- bias effect.
- The equalising of eligibility age removes this limitation.
- 
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -492,6 +477,33 @@ Causing a substantial selection bias in the pension recipient base.
 \end_layout
 
 \begin_layout Standard
+The household-as-a-unit approach overlooks important aspects influencing
+ the relative size of expenditure of households .
+ The lack Pareto optimal allocation of resources within households as discussed
+ in i.a.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "udry1995gender,udry1996gender"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2004intrahousehold"
+
+\end_inset
+
+ indicates that this assumption in many cases, does not correspond to revealed
+ behaviour.
+ However, conclusive evidence on the effects of male and female bargaining
+ within the household remains scarce.
+ In a previously study of the effects of the South-African state pension
+ system, 
+\end_layout
+
+\begin_layout Standard
 Child anthropometrics can be seen as a proxy for general health in the household.
  They are an effective way to capture both the effects of malnutrition,
  as well as disease.
@@ -515,11 +527,12 @@ The lowering of the pension eligibility age for men took place in between
 
 \begin_layout Standard
 The availability of data directly prior to and after the policy change,
- allow us to estimate the effect of the increased bargaining power of the
- newly eligible group of males aged 60 through 64 in their households using
- a Difference-in-Differences approach.
+ enables me to estimate the effect of the cash transfer to the newly eligible
+ group of males aged 60 through 64 in their households using a Difference-in-Dif
+ferences approach.
  I estimate effect of this change on food/non-food expenditure as well as
- on the anthropometric z-scores of young children living in the same households.
+ on the anthropometric status z-scores of young children living in the same
+ households.
 \end_layout
 
 \begin_layout Standard
@@ -529,6 +542,9 @@ I find that the above mentioned change leads to an increase in food expenditure,
  more ambiguous.
  The change led to an improvement in the Weight-for-Age Z-scores, as well
  as a regression in the Height-for-Age z-scores of younger children.
+ When I estimate this separately for boys and girls, the same variables
+ have to significant effect for girls, for boys the variables become more
+ significant.
 \end_layout
 
 \begin_layout Standard
@@ -575,8 +591,7 @@ reference "sec:conclusions"
 
 \end_inset
 
- I discuss these results and their limitations, as well as some possible
- future directions for further research.
+ I interpret these results and their limitations.
 \end_layout
 
 \begin_layout Section
@@ -627,7 +642,7 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 \end_layout
 
 \begin_layout Itemize
-child anthropometrics (
+child anthropometrics status, Weight for Age & Height for Age (
 \begin_inset Flex Code
 status open
 
@@ -651,7 +666,7 @@ zhfa
 \end_layout
 
 \begin_layout Itemize
-food/non-food expenditure (
+food expenditure (
 \begin_inset Flex Code
 status open
 
@@ -661,21 +676,11 @@ expf
 
 \end_inset
 
-, 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-expnf
-\end_layout
-
-\end_inset
-
 );
 \end_layout
 
 \begin_layout Itemize
-child age (
+child age in days (
 \begin_inset Flex Code
 status open
 
@@ -694,7 +699,7 @@ sex of the child (
 status open
 
 \begin_layout Plain Layout
-c_woman
+woman
 \end_layout
 
 \end_inset
@@ -795,7 +800,7 @@ reference "tab:expf_descr"
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -847,7 +852,7 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  group_by(c_woman, wave) %>%
+  group_by(wave, c_woman) %>%
 \end_layout
 
 \begin_layout Plain Layout
@@ -870,7 +875,7 @@ NIDS %>%
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -922,7 +927,7 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  group_by(c_woman, wave) %>%
+  group_by(wave, c_woman) %>%
 \end_layout
 
 \begin_layout Plain Layout
@@ -945,7 +950,7 @@ NIDS %>%
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1026,11 +1031,7 @@ For adults several variables measure the different amounts and sources of
  pension recipient.
  This implies that, despite the fact that men are now eligible at the same
  age as women, the vast majority of pension recipients is female.
- Therefore, there is still a selection bias issue in the data we are 
-\lang british
-analysing
-\lang english
-.
+ Therefore, there is still a selection bias issue in the data we are analysing.
 \end_layout
 
 \end_inset
@@ -1090,7 +1091,7 @@ post_treatment
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1162,12 +1163,17 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot(aes(x=wave, weight=man_60_65, fill=c_woman)) + 
+  ggplot(aes(x=wave, y=man_60_65, colour=c_woman)) %+% 
 \end_layout
 
 \begin_layout Plain Layout
 
-  geom_bar(position='dodge')
+  geom_line() %+%
+\end_layout
+
+\begin_layout Plain Layout
+
+  scale_colour_brewer(palette='Set1')
 \end_layout
 
 \end_inset
@@ -2335,7 +2341,7 @@ zwfa
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2389,12 +2395,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  geom_bar(stat='identity') %+% 
+  geom_bar(position='dodge') %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  facet_grid(~man_60_65)
+  scale_fill_brewer(palette='Set1')
 \end_layout
 
 \end_inset
@@ -2653,13 +2659,13 @@ Additionally, I estimate these equation separately for boys and girls.
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Height for Age
+Girls Height for Age
 \end_layout
 
 \end_inset
@@ -2772,6 +2778,142 @@ print_hfa_girls, echo=FALSE, cache=TRUE
 \begin_layout Plain Layout
 
 kable(summary(zhfa22)$coef)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Boys Height for Age
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:haz1-boys"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+hfa_vis_boys, eval=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plm(zhfa ~ 	post_treatment*man_60_65 +
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*man_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_60_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		post_treatment*woman_65 + 
+\end_layout
+
+\begin_layout Plain Layout
+
+		hhincome,
+\end_layout
+
+\begin_layout Plain Layout
+
+		data = NIDS, 
+\end_layout
+
+\begin_layout Plain Layout
+
+		subset = best_age_yrs < 4 &
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman == FALSE,
+\end_layout
+
+\begin_layout Plain Layout
+
+		model='between')
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+print_hfa_boys, echo=FALSE, cache=TRUE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+kable(summary(zhfa23)$coef)
 \end_layout
 
 \end_inset
@@ -3137,7 +3279,7 @@ Additional Estimates
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3218,7 +3360,7 @@ tidy( coeftest(expf1, vcov=vcovHC(expf1,
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3288,7 +3430,7 @@ NIDS %>%
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3413,7 +3555,7 @@ kable(summary(expnf1)$coef)
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3538,7 +3680,7 @@ kable(summary(expf2)$coef)
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3663,7 +3805,7 @@ kable(summary(expnf1)$coef)
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3712,17 +3854,17 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  ggplot( aes(x=wave, y=zwfa, fill=man_65) ) %+%
+  ggplot( aes(x=wave, y=zwfa, colour=man_65) ) %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  geom_bar(stat='identity') %+%
+  geom_line() %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  facet_grid(~man_65)
+  scale_colour_brewer(palette='Set1')
 \end_layout
 
 \end_inset
@@ -3736,6 +3878,28 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hausmann
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Flex Chunk
 status open
 
@@ -3804,6 +3968,15 @@ re_expf2 <- plm(model_expf2, data=NIDS, model='random')
 \begin_layout Plain Layout
 
 phtest(fe_expf2, re_expf2)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
