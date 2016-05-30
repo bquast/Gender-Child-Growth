@@ -101,9 +101,20 @@ Provides natbib 1
 
 \begin_layout Title
 Grandfathers and Grandsons:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
 \end_layout
 
-\begin_layout Title
+\end_inset
+
 Effects of a Male only Pension Change
 \begin_inset Foot
 status open
@@ -295,12 +306,8 @@ name "sec:intro"
  electronic systems have made it easier to administrate these at a large
  schale, with lower incidence of corruption.
  However, the efficacy of these schemes as compared in-kind benefits such
- as universal health care if often brought into question.
-\end_layout
-
-\begin_layout Standard
-Previous evidence shows lesser or even no impact when extra income accrues
- to male members of the household.
+ as universal health care if often brought into question, especially so
+ when the recipient is male.
  With this study I aim to provide a closer examination of the impact of
  male household member income.
  I examine a policy change in the South African state pension that only
@@ -309,7 +316,7 @@ Previous evidence shows lesser or even no impact when extra income accrues
  in weight-for-age and a deterioration in height-for-age z-scores of young
  children in the household.
  Futhermore, when estimated separately for boys and girls, the effect for
- girl disappears, for boys the sam effects remain.
+ girl disappears, for boys the same effects remain.
 \end_layout
 
 \begin_layout Standard
@@ -1086,10 +1093,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1169,10 +1172,6 @@ NIDS %>%
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2521,7 +2520,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-haz_vis, eval=FALSE
+hfa_vis, eval=FALSE
 \end_layout
 
 \end_inset
@@ -2694,7 +2693,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-haz_vis_girls, eval=FALSE
+hfa_vis_girls, eval=FALSE
 \end_layout
 
 \end_inset
@@ -2724,12 +2723,7 @@ plm(zhfa ~ 	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		hhincome, 
-\end_layout
-
-\begin_layout Plain Layout
-
-		woman == TRUE, 
+		hhincome,
 \end_layout
 
 \begin_layout Plain Layout
@@ -2739,7 +2733,12 @@ plm(zhfa ~ 	post_treatment*man_60_65 +
 
 \begin_layout Plain Layout
 
-		subset = best_age_yrs < 4, 
+		subset = best_age_yrs < 4 &
+\end_layout
+
+\begin_layout Plain Layout
+
+		woman == TRUE,
 \end_layout
 
 \begin_layout Plain Layout
@@ -2762,7 +2761,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-print_hfa, echo=FALSE, cache=TRUE
+print_hfa_girls, echo=FALSE, cache=TRUE
 \end_layout
 
 \end_inset
@@ -2772,7 +2771,7 @@ print_hfa, echo=FALSE, cache=TRUE
 
 \begin_layout Plain Layout
 
-kable(summary(zhfa7)$coef)
+kable(summary(zhfa22)$coef)
 \end_layout
 
 \end_inset
@@ -3141,10 +3140,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3210,10 +3205,6 @@ tidy( coeftest(expf1, vcov=vcovHC(expf1,
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -3675,10 +3666,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3740,10 +3727,6 @@ NIDS %>%
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
