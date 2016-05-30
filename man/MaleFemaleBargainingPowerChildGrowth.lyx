@@ -440,21 +440,6 @@ key "tangwe2013impact"
 status open
 
 \begin_layout Plain Layout
-The previously-existing eligibility-age differential made it hard to make
- a male/female comparison, especially since average life expectancy is South
- Africa is substantially lower than the pension eligibility age.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 The household-as-a-unit approach overlooks important aspects influencing
  the relative size of expenditure of households .
  The lack Pareto optimal allocation of resources within households as discussed
@@ -477,24 +462,6 @@ key "duflo2004intrahousehold"
  behaviour.
  However, conclusive evidence on the effects of male and female bargaining
  within the household remains scarce.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Child anthropometrics are an effective way to capture both the effects of
- malnutrition, as well as disease.
- Both of these factors adversely affect weight in the short run, as well
- as height in the long run.
- By comparing these anthropometrics against the international WHO standards,
- malnutrition and disease can hereby be captured, as well as changes herein.
 \end_layout
 
 \end_inset
@@ -543,6 +510,7 @@ These results suggest that the increased expenditure in food results in
  A possible explanation for this is that the increase food expenditure goes
  towards unhealthy food, increasing weight, but not leading to any long
  term increases in growth.
+ Furthermore, the separate estimations suggest that this only affects boys.
 \end_layout
 
 \begin_layout Standard
@@ -1416,28 +1384,22 @@ name "sec:methods"
 
 \end_inset
 
- This study exploits on a policy change in the South-African state pension
- system.
+ The identification strategy in this paper is based on a policy change in
+ the pension eligibility age for men.
  Until mid 2009, men became eligible for pension at the age of 65.
  Between mid 2009 and December 31st 2010, this was gradually lowered to
  60.
  I combine this information with data from the South-African National Income
  Dynamics Study, a full-panel dataset, which contains information on households
  from before and after this policy change.
- I study the effect of this policy change, on the anthropometric status
- of children in the same household as pension recipients.
- 
+ This policy change falls between waves 1 and 2 of the NIDS, taking place
+ between 2008 and 2012 respectively.
 \end_layout
 
 \begin_layout Standard
-The identification strategy in this paper is based on a policy change in
- the pension eligibility age for men, which was introduced between mid 2009
- and December 31st 2010.
- This policy change thus falls between waves 1 and 2 of the NIDS, taking
- place between 2008 and 2012 respectively.
- Before this policy change, the eligibility age for men was 65 years old.
- Post the policy change, the eligibility age is 60 years old, which bring
- it at par with the pension eligibility age for women.
+I study the effect of this policy change, on the anthropometric status of
+ children in the same household as pension recipients.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1519,7 +1481,7 @@ Each of these models is estimated with both types of z-scores, as well as
 status open
 
 \begin_layout Plain Layout
-random effects...do a Hausmann test and explain.
+explain Hausman test
 \end_layout
 
 \end_inset
@@ -1621,17 +1583,16 @@ reference "sec:results"
 \end_layout
 
 \begin_layout Standard
-As we have only one time period before the treatment goes into effect, we
- cannot establish a common trend.
- The assumption here made is thus that the effects of 
-\begin_inset Formula $P_{it}^{f}$
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+standard error correction for clustering
+\end_layout
+
 \end_inset
 
- and 
-\begin_inset Formula $P_{it}^{m}$
-\end_inset
 
- are level over time.
 \end_layout
 
 \begin_layout Section
@@ -2334,7 +2295,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  geom_bar(position='dodge') %+%
+  geom_bar(stat='identity') %+% 
+\end_layout
+
+\begin_layout Plain Layout
+
+  facet_grid(~man_60_65) %+%
 \end_layout
 
 \begin_layout Plain Layout
@@ -2908,27 +2874,6 @@ post_treatmentTRUE:man_60_65TRUE
  effect of the interaction term on the Height-for-Age Z-scores.
  Both of these effect are consistent across the different specifications
  used in our estimations.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The impetus for this paper is better understanding the role that male vs.
- female bargaining power plays in household expenditure.
- A typical application of this would be Conditional or Unconditional Cash
- Transfer schemes (CCTs/UCTs), where the recipient of the transfer is typically
- the (male) head of the household, which might not be optimal under all
- circumstances.
- Which is the optimal manner in which these grants are distributed, measured
- along the bars of health, as well as education and work force participation.
- 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
