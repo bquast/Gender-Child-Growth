@@ -308,9 +308,7 @@ name "sec:intro"
  However, the efficacy of these schemes as compared in-kind benefits such
  as universal health care if often brought into question, especially where
  the recipient of the transfer is male.
- Although Conditional Cash Transfer schemes (CCTs) are much more common,
- it can be more informative to study Unconditional Cash Transfer schemes
- (UCTs) as these suffer less from selection bias issues.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -342,7 +340,10 @@ Dasgupta 1993; Straus & Thomas 1998; Schultz 1999; new?
 
 \end_inset
 
-, thereby being inefficiently low.
+, yet low levels of investment in Child health are often observed, despite
+ the ineffeciency of this.
+ On a societal level this affects i.a.
+ growth, distribution, and welfare.
 \end_layout
 
 \begin_layout Standard
@@ -372,18 +373,16 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
- finds that income that acrues to a woman in the household leads to improvements
- in anthropometic status z-scores of girls living in the same household,
- using a recent pension expansion in South Africa.
+ studies South African state pension shortly after the policy change that
+ expended the system to include the black and other non-white populations
+ in 1993.
+ That study finds that income that acrues to a woman in the household leads
+ to improvements in anthropometic status z-scores of girls living in the
+ same household.
  At the time of this study in 1993, the male eligibility age was 65 and
  the female age was 60, while average life expectancy in South Africa then
  and now is significantly lower than that, complicating the comparison.
- For instance, one might suspect that a healthy lifestyle, which increases
- the chance of one becoming a pension recipient, also has an effect on the
- lifestyle of household members.
- In this is so, then our observed attrition would results in a selection
- bias effect.
- The equalising of eligibility age removes this limitation.
+ 
 \begin_inset Note Note
 status collapsed
 
@@ -400,20 +399,23 @@ Life expectancy is South Africa is substantially below the pension eligibility
 \end_layout
 
 \begin_layout Standard
-In 2010 the pension eligibility age for South African men was lowered from
- 65 to 60 years old, which had previously already been the eligibility age
- for women.
- I exploit this change by estimating a Difference-in-Differences model,
- quantifying the effect of the male-only change in cash transfers in households
- with men aged 60 through 64.
+This age discepancy was always considered discriminatory on the basis of
+ age.
+ As a consequence of this, in 2010 the pension eligibility age for South
+ African men was lowered from 65 to 60 years old, at a par with women's
+ eligibile age.
+ I exploit this policy change by estimating a Difference-in-Differences
+ model, quantifying the effect of the male-only increase in cash transfers
+ in households with men aged 60 through 64.
 \end_layout
 
 \begin_layout Standard
-State pension systems are a useful variable of interest to study bargaining
- power, since they are unconditional upon reaching a certain age.
- This is unlike most other sources of income, such as labour, which are
- almost always influenced by other demographic factors such education, place
- of residence, etc., which give rise to selection bias issues in the estimation.
+Although Conditional Cash Transfer schemes (CCTs) are much more common,
+ it can be more informative to study Unconditional Cash Transfer schemes
+ (UCTs) as these suffer less from selection bias issues.
+ State pension systems are an opportune subject of study, since they are
+ unconditional upon reaching a certain age.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -429,10 +431,115 @@ key "tangwe2013impact"
 \end_inset
 
 .
- As a result of this, although the pension system was intended as a form
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+current comparison
+\end_layout
+
+\end_inset
+
+As a result of this, although the pension system was intended as a form
  of poverty relief for the elderly population, it has also become that for
  the South-African rural population, serving as a general source of income
  to many households.
+\end_layout
+
+\begin_layout Standard
+The lowering of the pension eligibility age for men took place in between
+ the first and the second wave of data collection for the South African
+ National Income Dynamics Study 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "saldru2008nids,saldru2012nids,saldru2013nids"
+
+\end_inset
+
+, which took place respectively in 2008 and 2012.
+ This household survey includes data on age, state-pension eligibility and
+ receipts, children's anthropometric z-scores, income, food/non-food expenditure
+, etc.
+ The children's z-scores are computed by comparing their anthropometics
+ against the WHO Child Growth Standards 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "who2006child"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The availability of data directly prior to and after the policy change,
+ enables me to estimate the effect of the cash transfer to the newly eligible
+ group of males aged 60 through 64 in their households using a Difference-in-Dif
+ferences approach.
+ I estimate effect of this change on food/non-food expenditure as well as
+ on the anthropometric status z-scores of young children living in the same
+ households.
+\end_layout
+
+\begin_layout Standard
+I find that the transfer leads to an increase in food expenditure, but shows
+ no significant impact on non-food expenditure.
+ The effects on the anthropometric of children in the same households are
+ more ambiguous.
+ The change led to an improvement in the Weight-for-Age z-scores, as well
+ as a regression in the Height-for-Age z-scores of younger children.
+ When I estimate these equations separately for boys and girls, the same
+ variables have no significant effect for girls, for boys the effects remain
+ intact, at greater significance levels.
+\end_layout
+
+\begin_layout Standard
+These results suggest that the increased expenditure in food results in
+ improvements in the short-term Weight-for-Age indicators, but at the same
+ time that the more long-term effect on Height-for-Age is opposite to this.
+ A possible explanation for this is that the increase food expenditure goes
+ towards unhealthy food, increasing weight, but not leading to any long
+ term increases in growth.
+ Furthermore, the separate estimations suggest that this change only affects
+ boys.
+\end_layout
+
+\begin_layout Standard
+The following 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:data"
+
+\end_inset
+
+ discusses the National Income Dynamics Study, as well as the WHO Child
+ Growth Standards used to compute the anthropometric z-scores.
+ This is followed by 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:methods"
+
+\end_inset
+
+ which discusses the empirical model estimated, as well as the tools employed
+ for this.
+ In 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:results"
+
+\end_inset
+
+, I present the outcome of these estimations.
+ Finally, I interpret these results and their limitations in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:conclusions"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -469,87 +576,6 @@ key "duflo2004intrahousehold"
 
 \end_layout
 
-\begin_layout Standard
-The lowering of the pension eligibility age for men took place in between
- the first and the second wave of data collection for the South African
- National Income Dynamics Survey (NIDS), which took place respectively in
- 2008 and 2012.
- This survey includes data on age, state-pension eligibility and receipts,
- children's anthropometric z-scores, income, food/non-food expenditure,
- etc.
- The children's Z-scores are computed by comparing their anthropometics
- against the WHO Child Growth standards.
-\end_layout
-
-\begin_layout Standard
-The availability of data directly prior to and after the policy change,
- enables me to estimate the effect of the cash transfer to the newly eligible
- group of males aged 60 through 64 in their households using a Difference-in-Dif
-ferences approach.
- I estimate effect of this change on food/non-food expenditure as well as
- on the anthropometric status z-scores of young children living in the same
- households.
-\end_layout
-
-\begin_layout Standard
-I find that the transfer leads to an increase in food expenditure, but shows
- no significant impact on non-food expenditure.
- The effects on the anthropometric of children in the same households are
- more ambiguous.
- The change led to an improvement in the Weight-for-Age Z-scores, as well
- as a regression in the Height-for-Age z-scores of younger children.
- When I estimate these equations separately for boys and girls, the same
- variables have no significant effect for girls, for boys the effects remain
- intact at greater significance levels.
-\end_layout
-
-\begin_layout Standard
-These results suggest that the increased expenditure in food results in
- improvements in the short-term Weight-for-Age indicators, but at the same
- time that the more long-term effect on Height-for-Age is opposite to this.
- A possible explanation for this is that the increase food expenditure goes
- towards unhealthy food, increasing weight, but not leading to any long
- term increases in growth.
- Furthermore, the separate estimations suggest that this only affects boys.
-\end_layout
-
-\begin_layout Standard
-The following 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:data"
-
-\end_inset
-
- discusses the National Income Dynamics Survey, as well as the WHO standards
- used to compute the anthropometirc z-scores.
- This is followed by 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:methods"
-
-\end_inset
-
- which discusses the empirical model estimated, as well as the tools employed
- for this.
- In 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:results"
-
-\end_inset
-
-, I present the outcome of these estimations.
- Finally, I interpret these results and their limitations in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:conclusions"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Section
 Data
 \end_layout
@@ -583,15 +609,10 @@ key "who2006child"
 \end_layout
 
 \begin_layout Standard
-The National Income Dynamics Study of South Africa is collected by 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "saldru2008nids,saldru2012nids,saldru2013nids"
-
-\end_inset
-
- together with the World Bank, it collects information on a representative
- set of approximately ten thousand South-African households over time.
+The National Income Dynamics Study of South Africa is collected by the South
+ African Labour and Demographics Unit together with the World Bank, it collects
+ information on a representative set of approximately ten thousand South-African
+ households over time.
  Currently three `waves' of data are available, these waves date from 2008,
  2011, and 2013.
  The primary types of information that I use are: 
@@ -973,7 +994,7 @@ NIDS %>%
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 For adults several variables measure the different amounts and sources of
@@ -981,13 +1002,13 @@ For adults several variables measure the different amounts and sources of
  Among those, a variable if the adult receives a state pension, and if so,
  how much.
  This is a numeric variable, the values of which lie very close together.
- We observe that 22.99% of household in our dataset have a female pension
+ I observe that 22.99% of household in our dataset have a female pension
  recipient as part of the household.
- Furthermore, we observe that 9.06% of households in our dataset have a male
+ Furthermore, I observe that 9.06% of households in our dataset have a male
  pension recipient.
  This implies that, despite the fact that men are now eligible at the same
  age as women, the vast majority of pension recipients is female.
- Therefore, there is still a selection bias issue in the data we are analysing.
+ Therefore, there is still a selection bias issue in the data.
 \end_layout
 
 \end_inset
@@ -1243,22 +1264,15 @@ key "nchs2000cdc"
 \end_inset
 
 .
- The WHO charts map the average growth of a varied sample of children living
- in household with healthy lifestyles, setting a benchmark for growth.
+ The WHO charts map the average growth of an ethnically varied sample of
+ children living in households with healthy lifestyles, setting a benchmark
+ for growth.
 \end_layout
 
 \begin_layout Standard
 These z-score anthropometrics are used since they are considered to be a
  good representation of a child's health.
- Z-scores refer to the practice of standardising the anthropometrics using
- an `ideal' standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "who2006child"
-
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1392,25 +1406,26 @@ name "sec:methods"
  I combine this information with data from the South-African National Income
  Dynamics Study, a full-panel dataset, which contains information on households
  from before and after this policy change.
- This policy change falls between waves 1 and 2 of the NIDS, taking place
- between 2008 and 2012 respectively.
+ This policy change falls between waves 1 and 2 of the NIDS, which took
+ place in 2008 and 2012 respectively.
 \end_layout
 
 \begin_layout Standard
 I study the effect of this policy change, on the anthropometric status of
- children in the same household as pension recipients.
+ children in the same household as pension recipients as well as on food
+ and non-food expenditure.
  
 \end_layout
 
 \begin_layout Standard
-I operationalise this identification strategy, by constructing a policy
- or event dummy.
+This identification strategy is operationalised by constructing a policy
+ change or event dummy.
  This event dummy is called 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-post_treatment
+event
 \end_layout
 
 \end_inset
@@ -1444,8 +1459,19 @@ status open
 \end_inset
 
 wave 1).
- By also including household income as a covariate, I can isolate the causal
- bargaining effect from the income effect.
+ This dummy is interacted with a dummy variable for having a man between
+ 60 and 65 in the household (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
+\end_layout
+
+\end_inset
+
+), as well as with dummies for men age 65 or older and dummies for women
+ of the same ages.
 \end_layout
 
 \begin_layout Standard
@@ -1462,20 +1488,47 @@ I have only one data period before the policy change, which means that we
 \end_inset
 
 In order to identify the effect of the policy change, I employ a Difference-in-D
-ifference estimation.
- This estimator operationalised by using the fixed-effects estimator.
+ifference estimation, using the fixed-effects estimator.
  I formulate two base models.
- One model with the event dummy, and an interaction term with male pension
- recipient.
- The second model has the event dummy and an interaction term with the eligibili
-ty dummy, as well as interaction term with the dummies for women between
- 60 and 65 and women and men 65 and above.
+ One model with the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+ dummy, and an interaction term with male pension recipient (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
+\end_layout
+
+\end_inset
+
+).
+ The second model has the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+ dummy and an interaction term with the eligibility dummy, as well as interactio
+n term with the dummies for women between 60 and 65 and women and men 65
+ and above.
 \end_layout
 
 \begin_layout Standard
 Each of these models is estimated with both types of z-scores, as well as
- food and non-food expenditure as dependent variables, which gives a total
- of twelve estimation equations, to be estimated with random effects.
+ food and non-food expenditure as dependent variables.
  
 \begin_inset Note Note
 status open
@@ -1543,12 +1596,38 @@ The outcome variable is
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{it}=\gamma_{i}+\lambda_{t}+\mu P_{it}^{f}+\nu P_{it}^{m}+X_{it}+\delta T_{it}+\rho T_{it}*P_{it}^{m}+\epsilon_{it}\label{sa:eq:interaction}
+y_{it}=α_{i}+\lambda_{t}+\delta D{}_{it}+βX_{it}+\epsilon_{it}\label{eq:m1}
 \end{equation}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $α_{i}$
+\end_inset
+
+ represents the individual fixed effects, 
+\begin_inset Formula $\lambda_{t}$
+\end_inset
+
+ represent the time fixed effects, and 
+\begin_inset Formula $X_{it}$
+\end_inset
+
+ are the time varying covariates.
+ The 
+\begin_inset Formula $\epsilon_{it}$
+\end_inset
+
+ is the error term.
+ Finally the term of interest is 
+\begin_inset Formula $D_{it}$
+\end_inset
+
+ which represents the treatment effect.
 \end_layout
 
 \begin_layout Standard
