@@ -596,23 +596,13 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
 
-.
- Several of the dataset's variables that for this study, in turn rely on
- the World Health Organization's Child Growth Standards 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "who2006child"
-
-\end_inset
-
-, which are discussed at the end of this section.
+, which is collected by the South African Labour and Demographics Unit together
+ with the World Bank.
 \end_layout
 
 \begin_layout Standard
-The National Income Dynamics Study of South Africa is collected by the South
- African Labour and Demographics Unit together with the World Bank, it collects
- information on a representative set of approximately ten thousand South-African
- households over time.
+It collects information on a representative set of approximately ten thousand
+ South-African households over time.
  Currently three `waves' of data are available, these waves date from 2008,
  2011, and 2013.
  The primary types of information that I use are: 
@@ -740,44 +730,54 @@ hhincome
 
 \end_inset
 
-), and in the analysis.
+), in the analysis.
 \end_layout
 
 \begin_layout Standard
-In 
+The child anthropometric status variables, in turn rely on the World Health
+ Organization's Child Growth Standards 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "who2006child"
+
+\end_inset
+
+.
+ Children's anthropometrics are taken, these include length/height, weight,
+ and waist, these measurement are combined with the WHO growth standards,
+ to calculate the z-scores.
+ In 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:haz_descr"
 
 \end_inset
 
-, 
+ and
 \begin_inset CommandInset ref
-LatexCommand eqref
+LatexCommand formatted
 reference "tab:waz_descr"
 
 \end_inset
 
-, and 
+ the distributions of both variables for both boys and girls are presented.
+ 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:expf_descr"
 
 \end_inset
 
- descriptive statistics of each of the different Left-Hand Side (LHS) variables
- are presented.
- Children's anthropometrics are taken, these are length/height, weight,
- and waist.
- Using these anthropometrics and WHO growth standards, z-scores are calculated.
+ present descriptive statistics of each on the food expenditure variable.
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -809,7 +809,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-waz_descr, cache=TRUE
+waz_boxplot, message=FALSE, warning=FALSE, cache=TRUE
 \end_layout
 
 \end_inset
@@ -824,17 +824,22 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  filter(!is.na(c_woman)) %>%
+    filter(wave==1) %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-  group_by(wave, c_woman) %>%
+    ggplot( aes(x=c_woman, y=zwfa) ) %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  do(tidy(summary(.$zwfa)))
+    geom_boxplot(outlier.size = .1, outlier.color = 'red') %+%
+\end_layout
+
+\begin_layout Plain Layout
+
+    stat_boxplot(geom='errorbar')
 \end_layout
 
 \end_inset
@@ -848,11 +853,11 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
+\begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -884,7 +889,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-haz_descr, cache=TRUE
+haz_boxplot, warning=FALSE, cache=TRUE
 \end_layout
 
 \end_inset
@@ -899,17 +904,22 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  filter(!is.na(c_woman)) %>%
+    filter(wave==1) %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-  group_by(wave, c_woman) %>%
+    ggplot( aes(x=c_woman, y=zhfa) ) %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  do(tidy(summary(.$zhfa)))
+    geom_boxplot(outlier.size = .1, outlier.color = 'red') %+%
+\end_layout
+
+\begin_layout Plain Layout
+
+    stat_boxplot(geom='errorbar')
 \end_layout
 
 \end_inset
@@ -927,7 +937,7 @@ NIDS %>%
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1027,7 +1037,7 @@ reference "fig:man_60_65"
  descriptive statistics of the Right-Hand Side (RHS) variable of interest
  are presented.
  Income from the state pension system is generally the same at slightly
- more than 1000 SAR.
+ more than 1000 ZAR, which is about half of median income in the data set.
  I construct a dummy variable for children living in a household with a
  man aged 60 until 65 (
 \begin_inset Flex Code
@@ -1065,10 +1075,18 @@ post_treatment
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+MOVE THIS TO TEXT
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1163,18 +1181,23 @@ NIDS %>%
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 In addition to the explanandum, a number of relevant covariates are included
- in the RHS.
+ on the RHS.
  
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "tab:income"
 
 \end_inset
 
  gives a description of the distribution of income as found in the NIDS
- data sets.
+ dataset.
 \end_layout
 
 \begin_layout Standard
@@ -1189,7 +1212,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-NIDS Income distribution
+Income distribution
 \end_layout
 
 \end_inset
@@ -1214,7 +1237,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-hhincome_descr, cache=TRUE
+hhincome_descr, echo=FALSE, cache=TRUE
 \end_layout
 
 \end_inset
@@ -1440,11 +1463,7 @@ status open
 
 \end_inset
 
- for data after the policy change (i.e.
-\begin_inset space ~
-\end_inset
-
-waves 2 & 3), and the value 
+ for data after the policy change (waves 2 & 3), and the value 
 \begin_inset Flex Code
 status open
 
@@ -1454,11 +1473,7 @@ status open
 
 \end_inset
 
- otherwise (i.e.
-\begin_inset space ~
-\end_inset
-
-wave 1).
+ otherwise (wave 1).
  This dummy is interacted with a dummy variable for having a man between
  60 and 65 in the household (
 \begin_inset Flex Code
@@ -1475,18 +1490,6 @@ man_60_65
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-I have only one data period before the policy change, which means that we
- cannot test for a common trend.
- The implicit assumption here is thus that the effects are level over the
- time period studied here.
-\end_layout
-
-\end_inset
-
 In order to identify the effect of the policy change, I employ a Difference-in-D
 ifference estimation, using the fixed-effects estimator.
  I formulate two base models.
@@ -1605,7 +1608,7 @@ y_{it}=α_{i}+\lambda_{t}+\delta D{}_{it}+βX_{it}+\epsilon_{it}\label{eq:m1}
 \end_layout
 
 \begin_layout Standard
-Where 
+In this, 
 \begin_inset Formula $α_{i}$
 \end_inset
 
@@ -1618,19 +1621,27 @@ Where
 \end_inset
 
  are the time varying covariates.
- The 
+ The error term is 
 \begin_inset Formula $\epsilon_{it}$
 \end_inset
 
- is the error term.
+.
  Finally the term of interest is 
 \begin_inset Formula $D_{it}$
 \end_inset
 
- which represents the treatment effect.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+which represents the treatment effect
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+.
+ 
 \begin_inset Note Note
 status open
 
@@ -1641,24 +1652,6 @@ add other specification with all interaction terms
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-As described above, I use a total of four dependent variables, Height-for-Age
- (HAZ), Weight-for-Age (WAZ), and food and non-food expenditure.
- Each of these is used in a different estimation as the Left-Hand Side (LHS)
- variable.
- Combining these four LHSs with each of the three RHSs, gives a total of
- twelve estimation equations.
- The results of the estimation of each of these twelve equations is presented
- in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "sec:results"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -1674,6 +1667,23 @@ standard error correction for clustering
 
 \end_layout
 
+\begin_layout Standard
+As described above, I use a total of four dependent variables, Height-for-Age
+ (HAZ), Weight-for-Age (WAZ), and food and non-food expenditure.
+ Each of these is used in a different estimation as the Left-Hand Side (LHS)
+ variable.
+ Combining these four LHSs with each of the three RHSs, gives a total of
+ twelve estimation equations.
+ I present the results of the estimation in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:results"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Results
 \end_layout
@@ -1685,24 +1695,6 @@ name "sec:results"
 
 \end_inset
 
- In 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:expf"
-
-\end_inset
-
-, the results of the estimation using food expenditure (
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-expf
-\end_layout
-
-\end_inset
-
-) as a dependent variable are presented.
  In 
 \begin_inset Note Note
 status open
@@ -1735,8 +1727,29 @@ reference "tab:haz1"
 
 \end_inset
 
- I present the estimation results for the age-based z-scores.
- 
+ I present the estimation results for the equations with anthropometric
+ status as the dependent variables.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:expf"
+
+\end_inset
+
+, the results of the estimation using food expenditure (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+expf
+\end_layout
+
+\end_inset
+
+) as a dependent variable are presented.
 \end_layout
 
 \begin_layout Standard
@@ -1794,7 +1807,7 @@ woman_65
 status open
 
 \begin_layout Plain Layout
-post_treatment
+event
 \end_layout
 
 \end_inset
@@ -1843,7 +1856,7 @@ status open
 \end_inset
 
 ) for data collected before then.
- Lastly, we include the covariate 
+ Lastly, I include the covariate 
 \begin_inset Flex Code
 status open
 
@@ -1854,6 +1867,16 @@ hhincome
 \end_inset
 
  which represents total household income.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+best edu?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1995,7 +2018,7 @@ reference "tab:expf"
 status open
 
 \begin_layout Plain Layout
-post_treatmentTRUE:man_60_65TRUE
+eventTRUE:man_60_65TRUE
 \end_layout
 
 \end_inset
@@ -2021,7 +2044,13 @@ status open
 \end_inset
 
 .
- The coefficient estimates for the other independent variables take form
+ This represents a 97.76 Rand (ZAR) increase on food expenditure in the household
+s which received the additional income through pension reciepts of men aged
+ between 60 and 65.
+\end_layout
+
+\begin_layout Standard
+The coefficient estimates for the other independent variables take form
  as is to be expected.
  The estimate for household income is positive at 
 \begin_inset Flex Code

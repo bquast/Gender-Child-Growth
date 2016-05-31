@@ -72,7 +72,7 @@ zwfa6  <- plm(zwfa ~ event*spen_man + event*spen_woman + hhincome, NIDS, best_ag
 zwfa7  <- plm(zwfa ~ spen_man_60_65 + spen_man_65 + spen_woman_60_65 + spen_woman_65 + hhincome, NIDS, best_age_yrs < 6, model="between")
 zwfa8  <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, best_age_yrs < 6 , model="between")
 zwfa9  <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 2920, model='pooling')
-zwfa20 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
+zwfa10 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
 zwfa21 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, c_age_days1 > 180 & c_age_days1 < 3285, model='pooling')
 zwfa22 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, c_age_days1 > 180 & c_age_days1 < 2920 & woman==TRUE, model='pooling')
 zwfa23 <- plm(zwfa ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome, NIDS, c_age_days1 > 180 & c_age_days1 < 2920 & woman==FALSE, model='pooling')
@@ -84,7 +84,7 @@ summary(zwfa6)
 summary(zwfa7)
 summary(zwfa8)
 summary(zwfa9) # work well
-summary(zwfa20) # works very well
+summary(zwfa10) # works very well
 summary(zwfa21) # with random too
 summary(zwfa22) # with random too # does not work for girls
 summary(zwfa23) # with random too # MALE CHILDREN ONLY
