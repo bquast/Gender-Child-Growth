@@ -142,10 +142,6 @@ http://qua.st | bastiaan.quast@graduateinstitute.ch | bquast@gmail.com
 
 \end_layout
 
-\begin_layout Date
-April 2016
-\end_layout
-
 \begin_layout Section*
 Abstract
 \end_layout
@@ -1894,7 +1890,7 @@ name "tab:foodexp"
 <column alignment="right" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1903,7 +1899,7 @@ name "tab:foodexp"
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1912,7 +1908,7 @@ Food
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1921,7 +1917,7 @@ Food
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1930,7 +1926,7 @@ Non-Food
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1941,7 +1937,7 @@ Non-Food
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1950,7 +1946,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1961,7 +1957,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1970,7 +1966,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1979,7 +1975,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1990,7 +1986,7 @@ event * Man 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2008,7 +2004,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2037,7 +2033,7 @@ event * Man 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2055,7 +2051,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2084,7 +2080,7 @@ event * Woman 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2104,7 +2100,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2133,7 +2129,7 @@ event * Woman 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2151,7 +2147,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2180,7 +2176,7 @@ Man 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2200,7 +2196,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2229,7 +2225,7 @@ Man 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2247,7 +2243,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2276,7 +2272,7 @@ Woman 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2296,7 +2292,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2325,7 +2321,7 @@ Woman 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2343,7 +2339,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2372,7 +2368,7 @@ event
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2392,7 +2388,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2423,7 +2419,7 @@ Household Income
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2441,7 +2437,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2470,7 +2466,7 @@ Girl
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2490,7 +2486,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2519,7 +2515,7 @@ Intercept
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2528,7 +2524,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2537,7 +2533,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2546,7 +2542,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2555,7 +2551,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2569,10 +2565,6 @@ Observations
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2629,7 +2621,7 @@ name "tab:WAZ-full"
 <column alignment="right" valignment="top">
 <column alignment="left" valignment="top">
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2638,7 +2630,7 @@ name "tab:WAZ-full"
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2647,7 +2639,7 @@ name "tab:WAZ-full"
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2656,7 +2648,7 @@ General
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2665,7 +2657,7 @@ General
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2674,7 +2666,7 @@ Boys
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2683,7 +2675,7 @@ Boys
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2692,7 +2684,7 @@ Girls
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2703,7 +2695,7 @@ Girls
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2712,7 +2704,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2721,7 +2713,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2732,7 +2724,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2741,7 +2733,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2752,7 +2744,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2761,7 +2753,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2770,7 +2762,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2781,7 +2773,7 @@ event * Man 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2808,7 +2800,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2826,7 +2818,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2857,7 +2849,7 @@ event * Man 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2884,7 +2876,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2902,7 +2894,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2931,7 +2923,7 @@ event * Woman 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2958,7 +2950,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2976,7 +2968,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3005,7 +2997,7 @@ event * Woman 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3034,7 +3026,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3054,7 +3046,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3083,7 +3075,7 @@ Man 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3110,7 +3102,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3130,7 +3122,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3161,7 +3153,7 @@ Man 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3190,7 +3182,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3208,7 +3200,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3237,7 +3229,7 @@ Woman 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3264,7 +3256,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3282,7 +3274,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3311,7 +3303,7 @@ Woman 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3340,7 +3332,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3358,7 +3350,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3387,7 +3379,7 @@ event
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3416,7 +3408,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3436,7 +3428,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3465,7 +3457,7 @@ Household Income
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3494,7 +3486,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3512,7 +3504,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3541,7 +3533,7 @@ Girl
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3570,7 +3562,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3590,7 +3582,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3621,7 +3613,7 @@ Intercept
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3630,7 +3622,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3639,7 +3631,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3648,7 +3640,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3657,7 +3649,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3666,7 +3658,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3675,7 +3667,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3684,7 +3676,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3748,15 +3740,15 @@ name "tab:HAZ-full"
 \begin_inset Tabular
 <lyxtabular version="3" rows="16" columns="7">
 <features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top">
-<column alignment="right" valignment="top">
 <column alignment="left" valignment="top">
-<column alignment="right" valignment="top">
 <column alignment="left" valignment="top">
-<column alignment="right" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3765,7 +3757,7 @@ name "tab:HAZ-full"
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3774,7 +3766,7 @@ General
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3783,7 +3775,7 @@ General
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3792,7 +3784,7 @@ Boys
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3801,7 +3793,7 @@ Boys
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3810,7 +3802,7 @@ Girls
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3821,7 +3813,7 @@ Girls
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3830,7 +3822,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3841,7 +3833,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3850,7 +3842,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3861,7 +3853,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="middle" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3870,7 +3862,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3879,7 +3871,7 @@ event * Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3890,7 +3882,7 @@ event * Man 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3899,7 +3891,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3908,7 +3900,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3917,7 +3909,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3926,7 +3918,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3935,7 +3927,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3944,7 +3936,7 @@ event * Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3955,7 +3947,7 @@ event * Man 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3964,7 +3956,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3973,7 +3965,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3982,7 +3974,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3991,7 +3983,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4000,7 +3992,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4009,7 +4001,7 @@ event * Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4020,7 +4012,7 @@ event * Woman 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4029,7 +4021,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4038,7 +4030,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4047,7 +4039,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4056,7 +4048,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4065,7 +4057,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4074,7 +4066,7 @@ event * Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4085,7 +4077,7 @@ event * Woman 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4094,7 +4086,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4103,7 +4095,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4112,7 +4104,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4121,7 +4113,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4130,7 +4122,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4139,7 +4131,7 @@ Man 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4150,7 +4142,7 @@ Man 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4159,7 +4151,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4168,7 +4160,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4177,7 +4169,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4186,7 +4178,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4195,7 +4187,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4204,7 +4196,7 @@ Man 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4215,7 +4207,7 @@ Man 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4224,7 +4216,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4235,7 +4227,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4244,7 +4236,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4253,7 +4245,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4262,7 +4254,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4271,7 +4263,7 @@ Woman 60-65
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4282,7 +4274,7 @@ Woman 60-65
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4291,7 +4283,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4300,7 +4292,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4309,7 +4301,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4318,7 +4310,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4327,7 +4319,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4336,7 +4328,7 @@ Woman 65+
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4347,7 +4339,7 @@ Woman 65+
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4356,7 +4348,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4365,7 +4357,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4374,7 +4366,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4383,7 +4375,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4392,7 +4384,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4401,7 +4393,7 @@ event
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4412,7 +4404,7 @@ event
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4421,7 +4413,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4432,7 +4424,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4441,7 +4433,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4450,7 +4442,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4459,7 +4451,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4470,7 +4462,7 @@ Household Income
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4481,7 +4473,7 @@ Household Income
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4490,7 +4482,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4501,7 +4493,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4510,7 +4502,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4519,7 +4511,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4528,7 +4520,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4537,7 +4529,7 @@ Girl
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4548,7 +4540,7 @@ Girl
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4557,7 +4549,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4568,7 +4560,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4577,7 +4569,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4588,7 +4580,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4597,7 +4589,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4608,7 +4600,7 @@ Intercept
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4619,7 +4611,7 @@ Intercept
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4628,7 +4620,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4637,7 +4629,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4646,7 +4638,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4655,7 +4647,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4664,7 +4656,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4673,7 +4665,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4684,7 +4676,7 @@ Observations
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4693,7 +4685,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4702,7 +4694,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4711,7 +4703,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4720,7 +4712,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4729,7 +4721,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4738,7 +4730,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4749,7 +4741,7 @@ Observations
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4758,7 +4750,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4767,7 +4759,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4776,7 +4768,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4785,7 +4777,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4794,7 +4786,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4803,7 +4795,7 @@ Observations
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
