@@ -9,11 +9,6 @@
 \usepackage{appendix}
 \usepackage[style=philosophy-modern,natbib=true,backend=biber]{biblatex}
 \addbibresource{/Users/quast/MaleFemale-Bargaining-Power-Child-Growth/man/bibliography.bib}
-
-\AtBeginDocument{%
-\let\ref\autoref
-\renewcommand\equationautorefname{\@gobble}
-}
 \end_preamble
 \use_default_options true
 \begin_modules
@@ -492,7 +487,7 @@ reference "sec:data"
  This is followed by 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:methods"
+reference "sec:methodology"
 
 \end_inset
 
@@ -1285,7 +1280,7 @@ Empirical methodology
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:methods"
+name "sec:methodology"
 
 \end_inset
 
@@ -1364,7 +1359,7 @@ ferences, using the fixed-effects estimator (the Hausman test rejected random
  effects as biased, see 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "sec:appendix"
+reference "sec:add_estimates"
 
 \end_inset
 
@@ -1527,13 +1522,81 @@ add other specification with all interaction terms
 \end_layout
 
 \begin_layout Standard
+The event variable 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+ is a dummy which takes the value 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+TRUE
+\end_layout
+
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+) for the data collected after the policy change, i.e.
+ waves 2 and 3 and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+FALSE
+\end_layout
+
+\end_inset
+
+ (i.e.
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+
+) for data collected before then.
+ Lastly, I include the covariate 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+hhincome
+\end_layout
+
+\end_inset
+
+ which represents total household income.
+\end_layout
+
+\begin_layout Standard
 As the variables of interest living with a man between 60 and 65, as well
  as the other household member dummy variables are determined at a household
  level, I apply strandard error corrections to take this into account, the
  full procedure is outlined in 
 \begin_inset CommandInset ref
 LatexCommand formatted
-reference "sec:appendix"
+reference "sec:add_estimates"
 
 \end_inset
 
@@ -1606,7 +1669,7 @@ man_60_65
 \end_inset
 
  is a dummy variable for the child living in the same household as a male
- aged 60 through 64.
+ aged 60 until 65.
 \end_layout
 
 \begin_layout Standard
@@ -1622,7 +1685,7 @@ woman_60_65
 \end_inset
 
  represents the dummy variable for children living in a household with a
- state pension eligible woman aged 60 through 64.
+ state pension eligible woman aged 60 until 65.
  The variables 
 \begin_inset Flex Code
 status open
@@ -1644,71 +1707,30 @@ woman_65
 \end_inset
 
  represent pension eligible men an women over the age of 65 respectively.
- The event variable 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-event
-\end_layout
-
-\end_inset
-
- is a dummy which takes the value 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-TRUE
-\end_layout
-
-\end_inset
-
- (i.e.
  
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-1
 \end_layout
+
+\begin_layout Standard
+As mentioned in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:methodology"
 
 \end_inset
 
-) for the data collected after the policy change, i.e.
- waves 2 and 3 and 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-FALSE
-\end_layout
-
-\end_inset
-
- (i.e.
- 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-0
-\end_layout
+ I estimate the equations using only the interaction term with man_60_65
+ as well as with all household member of age dummies, such as woman_65,
+ etc.
+ I only present the results here using all interaction terms.
+ The estimates with the sole interaction term are qualitatively and quantitative
+ly similar to the full estimates and are available in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:add_estimates"
 
 \end_inset
 
-) for data collected before then.
- Lastly, I include the covariate 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-hhincome
-\end_layout
-
-\end_inset
-
- which represents total household income.
+.
 \end_layout
 
 \begin_layout Standard
@@ -2447,69 +2469,18 @@ reference "tab:foodexp"
 
 \end_inset
 
- is the coefficient estimate for the interaction term 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-event * man_60_65
-\end_layout
-
-\end_inset
-
-, which is positive at 103.82 with a corresponding p-value of 0.03.
- This represents a 103.82 Rand (ZAR) increase on food expenditure in the
- households which received the additional income through pension receipts
- of men aged between 60 and 65.
+ is the coefficient estimate for the interaction term event * man_60_65,
+ which is positive at 103.82 with a corresponding p-value of 0.03.
+ This coefficient estimate represents a 103.82 Rand (ZAR) increase on food
+ expenditure in the households which received the additional income through
+ pension receipts of men aged between 60 and 65.
 \end_layout
 
 \begin_layout Standard
-The coefficient estimates for the other independent variables take form
- as is to be expected.
- The estimate for household income is positive at 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-0.03
-\end_layout
-
-\end_inset
-
- and highly significant at 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-
-.
- The parameter estimates for the other household member dummies are all
- positive and generally significant.
- The estimate for the child being a girl (
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-womanTRUE
-\end_layout
-
-\end_inset
-
-) is negative at 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
--12.61
-\end_layout
-
-\end_inset
-
- but not significant.
+The coefficient estimates for the other independent variables expected forms.
+ The estimate for household income is positive at 0.03 and highly significant
+ at 0.00.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3636,7 +3607,7 @@ Observations
 \begin_layout Standard
 When using Weight-for-Age as a dependent variable, the coefficient of interest
  is positive at 0.33 and significant, with a p-value of 0.02.
- This respresents an increase of 33% of the standard deviation of the WHO
+ This respresents an increase of 33% of a standard deviation of the WHO
  Child Growth Standards towards the WHO target mean value.
 \end_layout
 
@@ -3672,9 +3643,15 @@ woman_65
 
 \end_inset
 
-, are nowhere close to significant with p-values of 0.74, 0.18, and 0.58.
- A graphical illustration of this result can be seen in Figure 2, which
- shows the average lag in 
+, are not significant with p-values of 0.74, 0.18, and 0.58 respectively.
+ A graphical illustration of this result can be seen in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:waz-bars"
+
+\end_inset
+
+, which shows the average lag in 
 \begin_inset Flex Code
 status open
 
@@ -3687,7 +3664,11 @@ zwfa
  for children living with a man between 60 and 65, before and after the
  policy change on the left, as compared to children who do not have such
  a household member on the right.
- I also estimate this equation separately for boys and for girls.
+ 
+\end_layout
+
+\begin_layout Standard
+I also estimate this equation separately for boys and for girls.
  The estimation including only boys gives a somewhat higher estimate of
  0.44, with a p-value of 0.03.
  The estimate for girls is lower at 0.26 and insignificant at a p-value of
@@ -3707,6 +3688,16 @@ status open
 \begin_layout Plain Layout
 Weight for Age
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:waz-bars"
 
 \end_inset
 
@@ -3777,7 +3768,8 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
-When using Height-for-Age as a dependent variable to results is the opposite.
+When I use Height-for-Age as a dependent variable to result found is the
+ opposite.
  I find a negative effect -0.52 of the treatment on the dependent variable,
  at a p-value of 0.09.
  This represents a drop of 52% of a standard deviation in the WHO Child
@@ -3809,6 +3801,7 @@ The value of the household income coefficient is very low (rounded to 0.00)
 
 \begin_layout Standard
 \begin_inset Float table
+placement H
 wide false
 sideways false
 status open
@@ -3839,7 +3832,7 @@ name "tab:HAZ-full"
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="16" columns="7">
+<lyxtabular version="3" rows="14" columns="7">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top">
@@ -4776,136 +4769,6 @@ Observations
 \end_inset
 </cell>
 </row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 </lyxtabular>
 
 \end_inset
@@ -4935,12 +4798,15 @@ The impetus for this paper is to gain a greater understanding of the efficiency
 \end_layout
 
 \begin_layout Standard
-I analyse data from the National Income Dynamics Study around a policy change
- in the South African state pension system, which lowers the pension eligibility
- age for men from 65 to 60, which brings it on a par with women's pension
- eligibility age.
- I compare differences in the anthropometric status of children using a
- Difference-in-Differences based identification strategy.
+I analyse data from the National Income Dynamics Study around a lowering
+ of the pension eligibility age for men, from 65 to 60, in the South African
+ state pension system.
+\end_layout
+
+\begin_layout Standard
+Using a Difference-in-Differences based identification strategy, I compare
+ differences in the anthropometric status of children living in the same
+ household as men of the newly eligible age.
 \end_layout
 
 \begin_layout Standard
@@ -4970,16 +4836,21 @@ The estimation of these equations gives three key results.
 
 \begin_layout Standard
 These effects suggest that the male income resulted in greater food expenditure,
- but possibly also a change in the nature of the expenditure on food, helping
- improve the Weight-for-Age, but not improving the Height-for-Age, with
- the later being a more long term health indicator.
+ which improved the Weight-for-Height anthropometric status.
+ Since the estimation includes data from two waves after the policy change,
+ we would expect this additional food expenditure to also lead to an improvement
+ in the more long-term metric of Height-for-Age.
+ Surprisingly we observe an opposite effect here.
+ An explation for this could be that nature of the expenditure on food has
+ changed, helping improve the Weight-for-Age, but not improving the Height-for-A
+ge, with the later being a more long term health indicator.
 \end_layout
 
 \begin_layout Standard
-When I subset to a dataset which only includes girls, no significant effects
- are found.
- However, using a dataset of only boys give the same results and at greater
- significance levels.
+When I subset to a data to only includes girls and reestimate the equation
+ with the two z-score dependent variables, I find no significant effects.
+ However, using a subset of only boys gives the same results as in the original
+ estimation and at greater significance levels.
  This makes it unlikely that the surprising deterioration in Height-for-Age
  can be attributed to another factor such as the 2008 global financial crisis,
  since this would in all likelyhood also have affected girls as it did boys.
@@ -5124,7 +4995,7 @@ Additional Estimates
 \begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:appendix"
+name "sec:add_estimates"
 
 \end_inset
 
