@@ -28,6 +28,14 @@ NIDS %>%
   facet_grid(~man_60_65) %+%
   scale_fill_brewer(palette='Set1')
 
+# weight for age II
+NIDS %>%
+  group_by(wave, man_60_65) %>%
+  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
+  ggplot( aes(x=wave,y=zwfa, fill=man_60_65)) %+%
+  geom_area(position="identity", alpha=0.7) %+%
+  scale_fill_brewer(palette='Set1')
+
 # height for age
 NIDS %>%
   group_by(wave, man_60_65) %>%
