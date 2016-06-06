@@ -3710,7 +3710,7 @@ name "fig:waz-bars"
 
 \begin_layout Plain Layout
 \begin_inset Flex Chunk
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3733,32 +3733,32 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-  group_by(wave, man_60_65) %>%
+	group_by(wave, man_60_65)                   %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-  summarise( zwfa=mean(zwfa, na.rm=TRUE) ) %>%
+	summarise( zwfa=mean(zwfa, na.rm=TRUE) )    %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-  ggplot( aes(x=wave, y=zwfa, fill=man_60_65) ) %+%
+	ggplot( aes(x=wave,y=zwfa, fill=man_60_65)) %+%  
 \end_layout
 
 \begin_layout Plain Layout
 
-  geom_bar(stat='identity') %+% 
+	geom_area(position="identity")              %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  facet_grid(~man_60_65) %+%
+	facet_grid(~man_60_65)                      %+%
 \end_layout
 
 \begin_layout Plain Layout
 
-  scale_fill_brewer(palette='Set1')
+	scale_fill_brewer(palette='Set1')
 \end_layout
 
 \end_inset
