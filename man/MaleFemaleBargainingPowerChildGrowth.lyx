@@ -166,7 +166,7 @@ rences approach on the right hand side.
 status open
 
 \begin_layout Plain Layout
-mechanics of effect
+add Weight-for-Height and BMI
 \end_layout
 
 \end_inset
@@ -280,38 +280,40 @@ name "sec:intro"
 \end_inset
 
  Conditional Cash Transfer schemes are increasingly common in developing
- countries, electronic systems have made it easier to administrate these
- at a large schale, with lower incidences of corruption.
- However, the efficacy of these schemes as compared in-kind benefits such
- as universal health care if often brought into question, especially where
- the recipient of the transfer is male.
+ countries.
+ However, the efficacy of these schemes - in particular in terms of the
+ investments in children - as compared to in-kind benefits such as universal
+ health care are often brought into question, especially when the recipient
+ of the transfer is male.
  
 \end_layout
 
 \begin_layout Standard
-With this study I seek to answer the question, if conditional cash transfers
- are effective if the recipient is male and when looking at the effects
- on the anthropometric status of children in the household, if these effects
- are different based on the gender of the child.
+With this study I seek to answer the question, whether conditional cash
+ transfers are effective if the recipient is male, when looking at the effects
+ on the anthropometric status of children in the household, and if these
+ effects are different for boys and girls.
 \end_layout
 
 \begin_layout Standard
-I examine a policy change in the South African state pension that only benefits
- men, bringing down the eligibility age from 65 to 60, on a par with women.
+In order to answer this question, I examine a policy change in the South
+ African state pension scheme that only benefits men, namely the bringing
+ down of the eligibility age from 65 years of age to 60 year, on a par with
+ women's eligibility age.
 \end_layout
 
 \begin_layout Standard
 I find that this policy change leads to an increased expenditure on food,
  improvements in weight-for-age and a deterioration in height-for-age z-scores
  of young children in the household.
- Futhermore, when estimated separately for boys and girls, the effect for
- girl disappears, for boys the same effects remain intact.
+ Futhermore, when estimated separately, the effect for girl disappears,
+ for boys the same effects remain intact.
 \end_layout
 
 \begin_layout Standard
 The debate on CCTs and athropometric status is closely linked, malnutrition
- can effect physical and cognitive development, which effect future productivity
- and income 
+ can affect physical and cognitive development, which effects future productivit
+y and income 
 \begin_inset Note Note
 status open
 
@@ -321,73 +323,10 @@ Dasgupta 1993; Straus & Thomas 1998; Schultz 1999; new?
 
 \end_inset
 
-, yet low levels of investment in Child health are often observed, despite
- the ineffeciency of this.
- On a societal level this affects i.a.
- growth, distribution, and welfare.
-\end_layout
-
-\begin_layout Standard
-Most of the literature suggests that cash transfers to women are more beneficial
- to children 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "thomas1994like"
-
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-1998
-\end_layout
-
-\end_inset
-
 .
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2000child,duflo2003grandmothers"
-
-\end_inset
-
- studies South African state pension shortly after the policy change that
- expended the system to include the black and other non-white populations
- in 1993.
- That study finds that income that acrues to a woman in the household leads
- to improvements in anthropometic status z-scores of girls living in the
- same household.
- At the time of this study in 1993, the male eligibility age was 65 and
- the female age was 60, while average life expectancy in South Africa then
- and now is significantly lower than that, complicating the comparison.
- 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Life expectancy is South Africa is substantially below the pension eligibility
- age.
- Around the end of the 10s, which is when our data was collected, the average
- life expectancy at birth was only slightly above 50 years old.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This age discepancy was always considered discriminatory on the basis of
- age.
- As a consequence of this, in 2010 the pension eligibility age for South
- African men was lowered from 65 to 60 years old, at a par with women's
- eligibile age.
- I exploit this policy change by estimating a Difference-in-Differences
- model, quantifying the effect of the male-only increase in cash transfers
- in households with men aged 60 through 64.
+ In spite of this, low levels of investment in child health are often observed,
+ despite the ineffeciency of this, the effects of which also perculate to
+ a societal level.
 \end_layout
 
 \begin_layout Standard
@@ -421,7 +360,56 @@ key "tangwe2013impact"
 \end_layout
 
 \begin_layout Standard
-The lowering of the pension eligibility age for men took place in between
+Most of the literature suggests that cash transfers to women are more beneficial
+ to children 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "thomas1994like"
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+1998
+\end_layout
+
+\end_inset
+
+.
+ In particular, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "duflo2000child,duflo2003grandmothers"
+
+\end_inset
+
+ studies the effects of South African state pension shortly after the policy
+ change that expended the system to include the black and other non-white
+ populations in 1993.
+ That study finds that income that acrues to a woman in the household leads
+ to improvements in anthropometic status z-scores of girls living in the
+ same household.
+ At the time of this study in 1993, the male eligibility age was 65 and
+ the female age was 60, while average life expectancy in South Africa being
+ significantly lower than that, complicating the comparison.
+ 
+\end_layout
+
+\begin_layout Standard
+This age discepancy has always been considered discriminatory and thereby
+ unconstitutional by the South African government.
+ As a consequence of this, in 2010 the pension eligibility age for South
+ African men was lowered from 65 to 60 years old, eliminating the discrepancy.
+ I exploit this policy change by estimating a Difference-in-Differences
+ model, quantifying the effects of the male-only increase in cash transfers
+ in households with male houehold members aged 60 through 64.
+\end_layout
+
+\begin_layout Standard
+This lowering of the pension eligibility age for men, took place between
  the first and the second wave of data collection for the South African
  National Income Dynamics Study 
 \begin_inset CommandInset citation
@@ -430,12 +418,12 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
 
-, which took place respectively in 2008 and 2012.
+, which took place respectively in 2008 and 2011.
  This household survey includes data on age, state-pension eligibility and
  receipts, children's anthropometric z-scores, income, food/non-food expenditure
 , etc.
  The children's z-scores are computed by comparing their anthropometics
- against the WHO Child Growth Standards 
+ with the WHO Child Growth Standards 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "who2006child"
@@ -450,9 +438,9 @@ The availability of data directly prior to and after the policy change,
  enables me to estimate the effect of the cash transfer to the newly eligible
  group of males aged 60 through 64 in their households using a Difference-in-Dif
 ferences approach.
- I estimate effect of this change on food/non-food expenditure as well as
- on the anthropometric status z-scores of young children living in the same
- households.
+ In particular, I estimate effect of this change on food and non-food expenditur
+e as well as on the anthropometric status z-scores of young children living
+ in the same households.
 \end_layout
 
 \begin_layout Standard
@@ -461,7 +449,7 @@ I find that the transfer leads to an increase in food expenditure, but shows
  The effects on the anthropometric of children in the same households are
  more ambiguous.
  The change led to an improvement in the Weight-for-Age z-scores, as well
- as a regression in the Height-for-Age z-scores of younger children.
+ as a regression in the Height-for-Age z-scores of children.
  When I estimate these equations separately for boys and girls, the same
  variables have no significant effect for girls, for boys the effects remain
  intact, at greater significance levels.
