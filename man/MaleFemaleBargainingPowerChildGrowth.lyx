@@ -548,8 +548,7 @@ name "sec:data"
 
 \end_inset
 
-The main source of data is the South African National Income Dynamics Study
- 
+The South African National Income Dynamics Study 
 \begin_inset CommandInset citation
 LatexCommand citep
 before "NIDS,"
@@ -558,7 +557,7 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 \end_inset
 
 , which is collected by the South African Labour and Demographics Unit together
- with the World Bank.
+ with the World Bank is the primary source of data.
 \end_layout
 
 \begin_layout Standard
@@ -695,17 +694,8 @@ hhincome
 \end_layout
 
 \begin_layout Standard
-The child anthropometric status variables, rely on the World Health Organization
-'s Child Growth Standards 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "who2006child"
-
-\end_inset
-
-.
- Children's anthropometrics including length/height, weight, and waist,
- are combined with the WHO growth standards, to calculate the z-scores.
+Children's anthropometrics including length/height, weight, and waist, are
+ combined with the WHO growth standards, to calculate the z-scores.
  In 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -728,7 +718,7 @@ reference "tab:expf_descr"
 
 \end_inset
 
- present descriptive statistics of each on the food expenditure variable.
+ presents distributions statistics on the food expenditure variable.
  
 \end_layout
 
@@ -963,32 +953,22 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
 For adults several variables measure the different amounts and sources of
  income.
  Among those, a variable if the adult receives a state pension, and if so,
  how much.
  This is a numeric variable, the values of which lie very close together.
- I observe that 22.99% of household in our dataset have a female pension
- recipient as part of the household.
- Furthermore, I observe that 9.06% of households in our dataset have a male
- pension recipient.
- This implies that, despite the fact that men are now eligible at the same
- age as women, the vast majority of pension recipients is female.
- Therefore, there is still a selection bias issue in the data.
-\end_layout
-
-\end_inset
-
-
+ About 22.99% of households in the dataset have a female pension recipient
+ as a household member.
+ Conversely, only 9.06% of households in the dataset have a male pension
+ recipient as a household members.
+ 
 \end_layout
 
 \begin_layout Standard
-Income from the state pension system is generally the same at slightly more
- than 1000 ZAR, which is about half of median income in the data set.
+The income received by state pension recipients is generally the same amount,
+ which slightly more than 1000 ZAR.
+ This is about half of median household income, as recorded in this dataset.
 \end_layout
 
 \begin_layout Standard
@@ -1015,17 +995,28 @@ man_65
 \end_inset
 
 ) and these same dummies for children living with women of those ages.
- The interaction of this dummy variable with the event dummy 
+ The coefficient of interest relates to the interaction of the 
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-post_treatment
+man_60_65
 \end_layout
 
 \end_inset
 
- is the variable of interest.
+ dummy variable with the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+ dummy, whereby the interaction with the additional household member dummies
+ serve to distinquish the outcome.
 \end_layout
 
 \begin_layout Standard
@@ -1042,8 +1033,8 @@ add number of chidren living with man_60_65
 \end_layout
 
 \begin_layout Standard
-In addition to the explanandum, a number of relevant covariates are included
- on the RHS.
+In addition to the explanandum, I include number of relevant covariates
+ on the Right-Hand Side (RHS).
  
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -1051,8 +1042,8 @@ reference "tab:income"
 
 \end_inset
 
- gives a description of the distribution of income as found in the NIDS
- dataset.
+ gives a description of the distribution of household income as found in
+ the dataset.
 \end_layout
 
 \begin_layout Standard
@@ -1148,9 +1139,20 @@ key "nchs2000cdc"
 \end_layout
 
 \begin_layout Standard
-These z-score anthropometrics are used since they are considered to be a
- good representation of a child's health.
- 
+The various anthropometric z-scores are representative of child health in
+ related but somewhat different ways.
+ The overarching idea is that factors that harm the child's health, such
+ as malnutrition on illness, adversely affects these variables.
+ Both malnutition and illness can cause the child to grow less for a certain
+ amount of time, as a result, the height of the child is on average less
+ than that other children of the same age that have not suffered this period
+ of malnutrition or disease.
+ This effect not disappear over time, making Height-for-Age an indicator
+ that can reflect past malnutition or illness, even after quite some time.
+ The Weight-for-Height is an indicator that relates children's weight to
+ their height, irrespective of their age.
+ Weight can also be adversely affected by malnutrition or disease, but unlike
+ Height-for-Age, this effect disappears of time in healthy periods.
 \end_layout
 
 \begin_layout Standard
@@ -1158,7 +1160,7 @@ These z-score anthropometrics are used since they are considered to be a
 status open
 
 \begin_layout Plain Layout
-add descriptive stats on the growth standard
+add descriptive stats on Weight-for-Age
 \end_layout
 
 \end_inset
