@@ -175,19 +175,6 @@ add Weight-for-Height and BMI
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-include price index and dependency ratio
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Flex Chunk
 status collapsed
 
@@ -314,25 +301,28 @@ I find that this policy change leads to an increased expenditure on food,
 The debate on CCTs and athropometric status is closely linked, malnutrition
  can affect physical and cognitive development, which effects future productivit
 y and income 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Dasgupta 1993; Straus & Thomas 1998; Schultz 1999; new?
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand citet
+key "strauss1986does,dasgupta1997nutritional"
 
 \end_inset
 
 .
  In spite of this, low levels of investment in child health are often observed,
- despite the ineffeciency of this, the effects of which also perculate to
- a societal level.
+ despite the ineffeciency of this 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rosenzweig1982market,rosenzweig1983estimating,arcand2001undernourishment"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Although Conditional Cash Transfer schemes (CCTs) are much more common,
  it can be more informative to study Unconditional Cash Transfer schemes
- (UCTs) as these suffer less from selection bias issues.
+ (UCTs) as these are inherently less prone to selection bias issues.
  State pension systems are an opportune subject of study, since they are
  unconditional upon reaching a certain age.
  
@@ -345,7 +335,6 @@ The South African pension system is of particular interest, because of the
  income 
 \begin_inset CommandInset citation
 LatexCommand citep*
-before "see"
 key "tangwe2013impact"
 
 \end_inset
@@ -357,6 +346,16 @@ key "tangwe2013impact"
  of poverty relief for the elderly population, it has also become that for
  the South-African rural population, serving as a general source of income
  to many households.
+ In addition to this, as a result of parents often working out of state,
+ grandparents are often the primary caregivers, with less than one in three
+ children living with their biological parents 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "stats2016statistics"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -365,16 +364,6 @@ Most of the literature suggests that cash transfers to women are more beneficial
 \begin_inset CommandInset citation
 LatexCommand citep
 key "thomas1994like"
-
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-1998
-\end_layout
 
 \end_inset
 
@@ -392,9 +381,20 @@ key "duflo2000child,duflo2003grandmothers"
  That study finds that income that acrues to a woman in the household leads
  to improvements in anthropometic status z-scores of girls living in the
  same household.
+ Studying the grandparents is particularly relevant in the South African
+ context, as they are often the primary caregivers when parents works in
+ other parts of the country.
  At the time of this study in 1993, the male eligibility age was 65 and
  the female age was 60, while average life expectancy in South Africa being
- significantly lower than that, complicating the comparison.
+ significantly lower than that at around 56, complicating the comparison
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "stats2016statistics"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -426,7 +426,7 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
  with the WHO Child Growth Standards 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "who2006child"
+key "who2006child,world2006world,onyango2009world"
 
 \end_inset
 
@@ -446,8 +446,8 @@ e as well as on the anthropometric status z-scores of young children living
 \begin_layout Standard
 I find that the transfer leads to an increase in food expenditure, but shows
  no significant impact on non-food expenditure.
- The effects on the anthropometric of children in the same households are
- more ambiguous.
+ The effects on the anthropometric status of children in the same households
+ are more ambiguous.
  The change led to an improvement in the Weight-for-Age z-scores, as well
  as a regression in the Height-for-Age z-scores of children.
  When I estimate these equations separately for boys and girls, the same
@@ -1153,27 +1153,11 @@ The various anthropometric z-scores are representative of child health in
  their height, irrespective of their age.
  Weight can also be adversely affected by malnutrition or disease, but unlike
  Height-for-Age, this effect disappears of time in healthy periods.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-add descriptive stats on Weight-for-Age
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-update to use only HAZ and WAZ
+add description on Weight-for-Age
 \end_layout
 
 \end_inset
