@@ -72,7 +72,7 @@ Provides natbib 1
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
 \index Index
 \shortcut idx
 \color #008000
@@ -110,7 +110,7 @@ status open
 
 \end_inset
 
-Effects of a Male only Pension Change
+Effects of a Male-Only Pension Change
 \begin_inset Foot
 status open
 
@@ -142,12 +142,13 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-An exogenous male-only increase in cash transfer causes greater expenditure
- on food, an improvement in Weight-for-Age Z-scores in young children, and
- a deterioration in Height-for-Age Z-scores in very young children, as observed
- in the context of South Africa's 2010 state pension expansion for males.
- When estimated separately, these effects disappear for girls, however for
- boys they remain intact, at a greater significance level.
+An exogenous male-only increase in cash transfer causes an increase in expenditu
+re on food, an improvement in Weight-for-Age z-scores, a deterioration in
+ Height-for-Age z-scores and no change in Weight-for-Height scores in children
+ in the same household, as observed in the context of South Africa's 2010
+ state pension expansion for males.
+ When estimated separately, these effects disappear for girls, whereas for
+ boys they remain intact.
  In 2010 the male eligibility age for the South-African state pension was
  brought on a par with female eligibility age (60, previously 65).
  I exploit this policy change in order to estimate the effects of the male-only
@@ -156,22 +157,9 @@ An exogenous male-only increase in cash transfer causes greater expenditure
  The policy change took place shortly after the completion of the first
  wave of South Africa's National Income Dynamics Survey and shortly before
  the start of the second wave, which lends itself well for a Difference-in-Diffe
-rences approach on the right hand side.
- On the left hand side I use z-scores of the anthropometrics status of young
+rences approach on the Right-Hand Side.
+ On the Left-Hand Side I use z-scores of the anthropometrics status of young
  children in the household (against WHO standards) as well as food expenditure.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add Weight-for-Height and BMI
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -276,42 +264,56 @@ name "sec:intro"
 \end_layout
 
 \begin_layout Standard
-With this study I seek to answer the question, whether conditional cash
- transfers are effective if the recipient is male, when looking at the effects
- on the anthropometric status of children in the household, and if these
- effects are different for boys and girls.
+With this study I seek to answer the question, whether cash transfers can
+ be effective if the recipient is male, specifically, when looking at the
+ effects on the anthropometric status of children in the household, and
+ if these effects are different for boys and girls.
 \end_layout
 
 \begin_layout Standard
 In order to answer this question, I examine a policy change in the South
  African state pension scheme that only benefits men, namely the bringing
- down of the eligibility age from 65 years of age to 60 year, on a par with
- women's eligibility age.
-\end_layout
-
-\begin_layout Standard
-I find that this policy change leads to an increased expenditure on food,
- improvements in weight-for-age and a deterioration in height-for-age z-scores
- of young children in the household.
- Futhermore, when estimated separately, the effect for girl disappears,
- for boys the same effects remain intact.
-\end_layout
-
-\begin_layout Standard
-The debate on CCTs and athropometric status is closely linked, malnutrition
- can affect physical and cognitive development, which effects future productivit
-y and income 
+ down of the eligibility age from 65 years of age to 60 years, on a par
+ with women's eligibility age 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
+key "ralston2015benefits,SAinfo2008pension"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+I find that this policy change leads to increased expenditure on food, improveme
+nts in Weight-for-Age, a deterioration in Height-for-Age, and no effect
+ on Weight-for-Height of young children in the household.
+ Furthermore, when estimated separately, for girls the effect disappears,
+ for boys the same effects remain intact at greater significance levels.
+ This suggest that the additional income of newly eligible men only affected
+ boys and not girls.
+ Additionally, it shows that increased expenditure on food has ambiguous
+ effect on anthropometrics.
+\end_layout
+
+\begin_layout Standard
+The debate on Conditional Cash Transfer (CCT) schemes and anthropometric
+ status is closely linked.
+ One of the key determinants of a lag in anthropometric status z-scores
+ is malnutrition.
+ Malnutrition can affect physical and cognitive development, which effects
+ future productivity and income 
+\begin_inset CommandInset citation
+LatexCommand citep
 key "strauss1986does,dasgupta1997nutritional"
 
 \end_inset
 
 .
  In spite of this, low levels of investment in child health are often observed,
- despite the ineffeciency of this 
+ despite the inefficiency of this 
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "rosenzweig1982market,rosenzweig1983estimating,arcand2001undernourishment"
 
 \end_inset
@@ -320,19 +322,19 @@ key "rosenzweig1982market,rosenzweig1983estimating,arcand2001undernourishment"
 \end_layout
 
 \begin_layout Standard
-Although Conditional Cash Transfer schemes (CCTs) are much more common,
- it can be more informative to study Unconditional Cash Transfer schemes
- (UCTs) as these are inherently less prone to selection bias issues.
+Although Conditional Cash Transfer schemes are much more common, it can
+ be more informative to study Unconditional Cash Transfer schemes (UCTs)
+ as these are inherently less prone to selection bias issues.
  State pension systems are an opportune subject of study, since they are
- unconditional upon reaching a certain age.
- 
+ often virtually unconditional upon reaching a certain age.
 \end_layout
 
 \begin_layout Standard
 The South African pension system is of particular interest, because of the
- relatively high amount of the payout, upon the initial expansion to include
- the black population, in 1991, this was a much as twice the mean monthly
- income 
+ relatively high amount of the payout.
+ Upon the initial expansion to include the black population, in 1991, this
+ amount was as much as twice the median monthly income for the rural population
+ 
 \begin_inset CommandInset citation
 LatexCommand citep*
 key "tangwe2013impact"
@@ -340,18 +342,15 @@ key "tangwe2013impact"
 \end_inset
 
 .
- Currently, the state pension payout of just over 1000 ZAR is about half
- of median income in South Africa.
+ At the time of this study, the state pension payout of is just over 1000
+ ZAR, which is about half of median income in South Africa.
  As a result of this, although the pension system was intended as a form
  of poverty relief for the elderly population, it has also become that for
- the South-African rural population, serving as a general source of income
- to many households.
- In addition to this, as a result of parents often working out of state,
- grandparents are often the primary caregivers, with less than one in three
- children living with their biological parents 
+ the South-African general population, serving as a general source of income
+ to many households 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "stats2016statistics"
+key "ralston2015benefits"
 
 \end_inset
 
@@ -360,14 +359,7 @@ key "stats2016statistics"
 
 \begin_layout Standard
 Most of the literature suggests that cash transfers to women are more beneficial
- to children 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "thomas1994like"
-
-\end_inset
-
-.
+ to children.
  In particular, 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -378,34 +370,58 @@ key "duflo2000child,duflo2003grandmothers"
  studies the effects of South African state pension shortly after the policy
  change that expended the system to include the black and other non-white
  populations in 1993.
- That study finds that income that acrues to a woman in the household leads
+ That study finds that income that accrues to a woman in the household leads
  to improvements in anthropometic status z-scores of girls living in the
  same household.
  Studying the grandparents is particularly relevant in the South African
  context, as they are often the primary caregivers when parents works in
  other parts of the country.
- At the time of this study in 1993, the male eligibility age was 65 and
- the female age was 60, while average life expectancy in South Africa being
- significantly lower than that at around 56, complicating the comparison
+ Currently less than one in three children lives with their biological parents
  
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "stats2016statistics"
 
 \end_inset
 
 .
- 
+ At the time of this study in 1993, the male eligibility age was 65 and
+ the female age was 60, while average life expectancy in South Africa being
+ significantly lower than that at around 56 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "stats2016statistics"
+
+\end_inset
+
+, complicating the comparison.
+ In addition to this, since then, social security coverage has expanded
+ from a rate of 2.5-million in 1994 to over 12.7-million in 2008 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SAinfo2008pension"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-This age discepancy has always been considered discriminatory and thereby
- unconstitutional by the South African government.
+This age discrepancy has always been considered discriminatory on the basis
+ of age and thereby unconstitutional by the South African government.
  As a consequence of this, in 2010 the pension eligibility age for South
- African men was lowered from 65 to 60 years old, eliminating the discrepancy.
+ African men was lowered from 65 to 60 years old, eliminating the discrepancy
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SAinfo2008pension"
+
+\end_inset
+
+.
  I exploit this policy change by estimating a Difference-in-Differences
  model, quantifying the effects of the male-only increase in cash transfers
- in households with male houehold members aged 60 through 64.
+ to households with male household members aged 60 until 65.
 \end_layout
 
 \begin_layout Standard
@@ -436,8 +452,8 @@ key "who2006child,world2006world,onyango2009world"
 \begin_layout Standard
 The availability of data directly prior to and after the policy change,
  enables me to estimate the effect of the cash transfer to the newly eligible
- group of males aged 60 through 64 in their households using a Difference-in-Dif
-ferences approach.
+ group of males aged 60 until 65 in their households using a Difference-in-Diffe
+rences approach.
  In particular, I estimate effect of this change on food and non-food expenditur
 e as well as on the anthropometric status z-scores of young children living
  in the same households.
@@ -469,7 +485,7 @@ These results suggest that the increased expenditure in food results in
 \begin_layout Standard
 The following 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:data"
 
 \end_inset
@@ -478,7 +494,7 @@ reference "sec:data"
  Growth Standards used to compute the anthropometric z-scores.
  This is followed by 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:methodology"
 
 \end_inset
@@ -487,7 +503,7 @@ reference "sec:methodology"
  for this.
  In 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:results"
 
 \end_inset
@@ -495,46 +511,12 @@ reference "sec:results"
 , I present the outcome of these estimations.
  Finally, I interpret these results and their limitations in 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand formatted
 reference "sec:conclusions"
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The household-as-a-unit approach overlooks important aspects influencing
- the relative size of expenditure of households .
- The lack Pareto optimal allocation of resources within households as discussed
- in i.a.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "udry1995gender,udry1996gender"
-
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "duflo2004intrahousehold"
-
-\end_inset
-
- indicates that this assumption in many cases, does not correspond to revealed
- behaviour.
- However, conclusive evidence on the effects of male and female bargaining
- within the household remains scarce.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -556,8 +538,8 @@ key "saldru2008nids,saldru2012nids,saldru2013nids"
 
 \end_inset
 
-, which is collected by the South African Labour and Demographics Unit together
- with the World Bank is the primary source of data.
+, which is collected by the Southern Africa Labour and Development Research
+ Unit together with the World Bank is the primary source of data.
 \end_layout
 
 \begin_layout Standard
@@ -569,12 +551,23 @@ The study collects information on a representative set of approximately
 \end_layout
 
 \begin_layout Itemize
-child anthropometrics status, Weight for Age & Height for Age (
+child anthropometrics status, Weight for Age, Weight for Height, and Height
+ for Age (
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
 zwfa
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zwfh
 \end_layout
 
 \end_inset
@@ -593,12 +586,22 @@ zhfa
 \end_layout
 
 \begin_layout Itemize
-food expenditure (
+food and non-food expenditure (
 \begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
 expf
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+expnf
 \end_layout
 
 \end_inset
@@ -621,7 +624,7 @@ c_age_days1
 \end_layout
 
 \begin_layout Itemize
-sex of the child (
+gender of the child (
 \begin_inset Flex Code
 status open
 
@@ -645,7 +648,7 @@ man_60_65
 
 \end_inset
 
-; 
+, 
 \begin_inset Flex Code
 status open
 
@@ -655,7 +658,7 @@ woman_60_65
 
 \end_inset
 
-; 
+, 
 \begin_inset Flex Code
 status open
 
@@ -665,7 +668,7 @@ man_65
 
 \end_inset
 
-; 
+, 
 \begin_inset Flex Code
 status open
 
@@ -703,7 +706,7 @@ reference "tab:haz_descr"
 
 \end_inset
 
- and
+ and 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "tab:waz_descr"
@@ -774,12 +777,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-    filter(wave==1) %>%
+    filter(wave==1)                                        %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-    ggplot( aes(x=c_woman, y=zwfa) ) %+%
+    ggplot( aes(x=c_woman, y=zwfa) )                       %+%
 \end_layout
 
 \begin_layout Plain Layout
@@ -789,7 +792,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-    stat_boxplot(geom='errorbar')
+    stat_boxplot(geom='errorbar')                          %+%
+\end_layout
+
+\begin_layout Plain Layout
+
+    coord_flip()
 \end_layout
 
 \end_inset
@@ -854,12 +862,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-    filter(wave==1) %>%
+    filter(wave==1)                                        %>%
 \end_layout
 
 \begin_layout Plain Layout
 
-    ggplot( aes(x=c_woman, y=zhfa) ) %+%
+    ggplot( aes(x=c_woman, y=zhfa) )                       %+%
 \end_layout
 
 \begin_layout Plain Layout
@@ -869,7 +877,12 @@ NIDS %>%
 
 \begin_layout Plain Layout
 
-    stat_boxplot(geom='errorbar')
+    stat_boxplot(geom='errorbar')                          %+%
+\end_layout
+
+\begin_layout Plain Layout
+
+    coord_flip()
 \end_layout
 
 \end_inset
@@ -958,7 +971,7 @@ For adults several variables measure the different amounts and sources of
  Among those, a variable if the adult receives a state pension, and if so,
  how much.
  This is a numeric variable, the values of which lie very close together.
- About 22.99% of households in the dataset have a female pension recipient
+ A total of 22.99% of households in the dataset have a female pension recipient
  as a household member.
  Conversely, only 9.06% of households in the dataset have a male pension
  recipient as a household members.
@@ -1016,20 +1029,7 @@ event
 \end_inset
 
  dummy, whereby the interaction with the additional household member dummies
- serve to distinquish the outcome.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add number of chidren living with man_60_65
-\end_layout
-
-\end_inset
-
-
+ serve to distinguish the outcome.
 \end_layout
 
 \begin_layout Standard
@@ -1143,12 +1143,12 @@ The various anthropometric z-scores are representative of child health in
  related but somewhat different ways.
  The overarching idea is that factors that harm the child's health, such
  as malnutrition on illness, adversely affects these variables.
- Both malnutition and illness can cause the child to grow less for a certain
+ Both malnutrition and illness can cause the child to grow less for a certain
  amount of time, as a result, the height of the child is on average less
  than that other children of the same age that have not suffered this period
  of malnutrition or disease.
  This effect not disappear over time, making Height-for-Age an indicator
- that can reflect past malnutition or illness, even after quite some time.
+ that can reflect past malnutrition or illness, even after quite some time.
  The Weight-for-Height is an indicator that relates children's weight to
  their height, irrespective of their age.
  Weight can also be adversely affected by malnutrition or disease, but unlike
@@ -1262,12 +1262,30 @@ name "sec:methodology"
 
 \end_inset
 
- The identification strategy in this paper is based on a policy change in
+With this study I aim to answer the question whether a male-only cash can
+ be effective, in particular with regard to the effects on the growth of
+ young children in the same household.
+ 
+\end_layout
+
+\begin_layout Subsection
+Identification strategy
+\end_layout
+
+\begin_layout Standard
+The identification strategy in this paper is based on a policy change in
  the pension eligibility age for men.
  Until the middle of 2009, men became eligible for the state pension at
  the age of 65.
  Between mid 2009 and December 31st 2010, this was gradually lowered to
- 60.
+ 60 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ralston2015benefits"
+
+\end_inset
+
+.
  I combine this information with data from the South-African National Income
  Dynamics Study, a full-panel dataset, which contains information on households
  from before and after this policy change.
@@ -1329,6 +1347,10 @@ man_60_65
 
 ), as well as with dummies for men age 65 or older and dummies for women
  of the same ages.
+\end_layout
+
+\begin_layout Subsection
+Regression specification
 \end_layout
 
 \begin_layout Standard
@@ -1395,8 +1417,8 @@ The outcome variable is
 \begin_inset Formula $y_{it}$
 \end_inset
 
-, this outcome variable takes the form of the of the z-scores, such as HAZ
- or WAZ or food/non-food expenditure.
+, this outcome variable takes the form of the of the z-scores, such as Weight-fo
+r-Age or Height-for-Age, food/non-food expenditure.
  Here 
 \begin_inset Formula $t$
 \end_inset
@@ -1475,28 +1497,41 @@ In this,
 \begin_inset Formula $D_{it}$
 \end_inset
 
- 
-\begin_inset Note Note
+ , which is the interaction of the 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-which represents the treatment effect
+man_60_65
 \end_layout
 
+\end_inset
+
+ dummy variable with the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+event
+\end_layout
+
+\end_inset
+
+ dummy variable.
+ Whereby the coefficient of interest being 
+\begin_inset Formula $\delta$
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-add other specification with all interaction terms
-\end_layout
-
+ In the second specification, I also include dummy variables for male household
+ members of 65 years and over, and for woman aged 60-65 and 65 years and
+ over.
+ In this specification, 
+\begin_inset Formula $D_{it}$
 \end_inset
 
-
+ represent the interaction of the vector of household member dummies, with
+ the event dummy.
 \end_layout
 
 \begin_layout Standard
@@ -1570,7 +1605,7 @@ hhincome
 \begin_layout Standard
 As the variables of interest living with a man between 60 and 65, as well
  as the other household member dummy variables are determined at a household
- level, I apply strandard error corrections to take this into account, the
+ level, I apply standard error corrections to take this into account, the
  full procedure is outlined in 
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -1582,13 +1617,13 @@ reference "sec:add_estimates"
 \end_layout
 
 \begin_layout Standard
-As described above, I use a total of four dependent variables, Height-for-Age
- (HAZ), Weight-for-Age (WAZ), and food and non-food expenditure.
+As described above, I use a total of five dependent variables, Height-for-Age
+ (HAZ), Weight-for-Height (HAZ), Weight-for-Age (WAZ), and food and non-food
+ expenditure.
  Each of these is used in a different estimation as the Left-Hand Side (LHS)
  variable.
- Combining these four LHSs with each of the three RHSs, gives a total of
- twelve estimation equations.
- I present the results of the estimation in 
+ Combining these five LHSs with each of the RHS specifications.
+ I present the key results of these estimations in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "sec:results"
@@ -1633,8 +1668,12 @@ reference "tab:HAZ-full"
 \end_inset
 
  I present the estimation results for the equations with anthropometric
- status as the dependent variables.
- The first four items in each table represent the interaction terms between
+ status as the dependent variables, coefficients with a corresponding p-value
+ of less than 0.1 are printed in bold font.
+\end_layout
+
+\begin_layout Standard
+The first four items in each table represent the interaction terms between
  the event dummy and the various household member dummies, e.g.
  the variable 
 \begin_inset Flex Code
@@ -1696,19 +1735,54 @@ reference "sec:methodology"
 
 \end_inset
 
- I estimate the equations using only the interaction term with man_60_65
+ I estimate the equations using only the interaction term with 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
+\end_layout
+
+\end_inset
+
  as well as with all household member of age dummies, such as woman_65,
  etc.
  I only present the results here using all interaction terms.
  The estimates with the sole interaction term are qualitatively and quantitative
-ly similar to the full estimates and are available in 
+ly similar to the full estimates and are available in appendix 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sec:add_estimates"
 
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+The key result in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:foodexp"
+
+\end_inset
+
+ is that in the estimation with food expenditure as the explanandum the
+ coefficient estimate for the interaction term event * man_60_65, is positive
+ at 103.82 with a corresponding p-value of 0.03.
+ This coefficient estimate represents a 103.82 Rand (ZAR) increase on food
+ expenditure in the households which received the additional income through
+ pension receipts of men aged between 60 and 65.
+ The interaction term with Woman 65+ is also positive and significant, although
+ as we will see below, this effect does not permeate to any of the anthropometri
+c z-scores.
+ In addition to this, the estimate for household income is positive at 0.03
+ and highly significant at 0.00.
+\end_layout
+
+\begin_layout Standard
+In the estimation with non-food expenditure as the explanandum, I find so
+ significant effects other than household income.
 \end_layout
 
 \begin_layout Standard
@@ -1748,7 +1822,7 @@ name "tab:foodexp"
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="5">
+<lyxtabular version="3" rows="12" columns="5">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
@@ -2285,102 +2359,6 @@ Household Income
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Girl
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
--12.49
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.22)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Intercept
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-810.81
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -2440,25 +2418,84 @@ Observations
 \end_layout
 
 \begin_layout Standard
-The key result in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:foodexp"
-
-\end_inset
-
- is the coefficient estimate for the interaction term event * man_60_65,
- which is positive at 103.82 with a corresponding p-value of 0.03.
- This coefficient estimate represents a 103.82 Rand (ZAR) increase on food
- expenditure in the households which received the additional income through
- pension receipts of men aged between 60 and 65.
+When using Weight-for-Age as a dependent variable, the coefficient of interest
+ is positive at 0.33 and significant, with a p-value of 0.02.
+ This represents an increase of 33% of a standard deviation of the WHO Child
+ Growth Standards towards the WHO target mean value.
 \end_layout
 
 \begin_layout Standard
-The coefficient estimates for the other independent variables expected forms.
- The estimate for household income is positive at 0.03 and highly significant
- at 0.00.
- 
+The interaction terms of the event dummy with the other household member
+ dummies, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_65
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_60_65
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+woman_65
+\end_layout
+
+\end_inset
+
+, are not significant with p-values of 0.74, 0.18, and 0.58 respectively.
+\end_layout
+
+\begin_layout Standard
+Household income is positive and highly significant, although effect of
+ one additional Rand on the z-scores is very small.
+ The coefficient of Girl is position at 0.09 and significant, indicating
+ that girl's have a lag 9% less of a WHO Standards standard deviation.
+\end_layout
+
+\begin_layout Standard
+I also estimate this equation separately for boys and for girls.
+ The estimation including only boys gives a somewhat higher estimate of
+ 0.44, with a p-value of 0.03.
+ The estimate for girls is lower at 0.26 and insignificant at a p-value of
+ 0.23.
+\end_layout
+
+\begin_layout Standard
+A graphical illustration of the result on the variable of interest can be
+ found in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:waz-bars"
+
+\end_inset
+
+, which shows the average lag in 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+zwfa
+\end_layout
+
+\end_inset
+
+ for children living with a man between 60 and 65, before and after the
+ policy change on the right, as compared to children who do not have such
+ a household member on the left.
 \end_layout
 
 \begin_layout Standard
@@ -2494,7 +2531,7 @@ name "tab:WAZ-full"
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="8">
+<lyxtabular version="3" rows="13" columns="8">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top">
@@ -3417,86 +3454,6 @@ Girl
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Intercept
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
--0.31
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
--0.33
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
--0.23
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -3580,77 +3537,6 @@ Observations
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-When using Weight-for-Age as a dependent variable, the coefficient of interest
- is positive at 0.33 and significant, with a p-value of 0.02.
- This respresents an increase of 33% of a standard deviation of the WHO
- Child Growth Standards towards the WHO target mean value.
-\end_layout
-
-\begin_layout Standard
-The interaction terms of the event dummy with the other household member
- dummies, 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-man_65
-\end_layout
-
-\end_inset
-
-, 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-woman_60_65
-\end_layout
-
-\end_inset
-
-, and 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-woman_65
-\end_layout
-
-\end_inset
-
-, are not significant with p-values of 0.74, 0.18, and 0.58 respectively.
- A graphical illustration of this result can be seen in 
-\begin_inset CommandInset ref
-LatexCommand formatted
-reference "fig:waz-bars"
-
-\end_inset
-
-, which shows the average lag in 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-zwfa
-\end_layout
-
-\end_inset
-
- for children living with a man between 60 and 65, before and after the
- policy change on the left, as compared to children who do not have such
- a household member on the right.
- 
-\end_layout
-
-\begin_layout Standard
-I also estimate this equation separately for boys and for girls.
- The estimation including only boys gives a somewhat higher estimate of
- 0.44, with a p-value of 0.03.
- The estimate for girls is lower at 0.26 and insignificant at a p-value of
- 0.23.
 \end_layout
 
 \begin_layout Standard
@@ -3746,35 +3632,31 @@ NIDS %>%
 \end_layout
 
 \begin_layout Standard
-When I use Height-for-Age as a dependent variable to result found is the
- opposite.
- I find a negative effect -0.52 of the treatment on the dependent variable,
+When I use Height-for-Age as a dependent variable, the result is very different.
+ I find a negative effect of -0.52 of the treatment on the dependent variable,
  at a p-value of 0.09.
  This represents a drop of 52% of a standard deviation in the WHO Child
- Growth Standards, falling futher below the WHO target mean value.
+ Growth Standards, falling further below the WHO target mean value.
 \end_layout
 
 \begin_layout Standard
 None of the interaction terms with any of the other household member dummies
  are significant, at p-values of 0.31, 0.24, and 0.98 respectively.
- When I reestimate the equation to only include boys in the sample, I find
- a much greater effect of -0.94, which is also more significant, at a p-value
- of 0.04.
- The same is not true of the restimation which only includes girls, where
- the estimate is -0.24 and entirely insignificant at a p-value of 0.57.
+ When I re-estimate this equation to only include boys in the sample, I
+ find a much greater effect of -0.94, which is also more significant, with
+ a p-value of 0.04.
+ The same is not true of the re-estimation which only includes girls, where
+ the estimate is -0.24 and entirely insignificant with a p-value of 0.57.
 \end_layout
 
 \begin_layout Standard
-The coefficient estimate for Girl is 0.09, which means that on average across
- all three waves, girls z-scores are 9% of a WHO standard deviation less
+The coefficient estimate for Girl is 0.22, which means that on average across
+ all three waves, girls z-scores are 22% of a WHO standard deviation less
  below the WHO target mean value than boys are.
-\end_layout
-
-\begin_layout Standard
-The value of the household income coefficient is very low (rounded to 0.00)
- but highly significant at a p-value of 0.00, this is simply because the
- margin effect of one additional Rand is very small but nevertheless decisively
- positive.
+ Again, the value of the household income coefficient is very low (rounded
+ to 0.00) but highly significant at a p-value of 0.00, this is simply because
+ the marginal effect of one additional Rand is very small but nevertheless
+ decisively positive.
 \end_layout
 
 \begin_layout Standard
@@ -3810,7 +3692,7 @@ name "tab:HAZ-full"
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="14" columns="7">
+<lyxtabular version="3" rows="13" columns="7">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="left" valignment="top">
@@ -4612,77 +4494,6 @@ Girl
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Intercept
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
--1.30
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
--1.30
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
--1.08
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-(0.00)
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -4773,43 +4584,58 @@ name "sec:conclusions"
 The impetus for this paper is to gain a greater understanding of the efficiency
  of cash transfers to male household members, to for instance improve the
  designs of CCTs.
+ To do this I seek to answer the question if cash transfers to men are effective
+ in influencing the health of household members, particularly the growth
+ of children in the same household.
 \end_layout
 
 \begin_layout Standard
-I analyse data from the National Income Dynamics Study around a lowering
- of the pension eligibility age for men, from 65 to 60, in the South African
- state pension system.
+I analyse data from the National Income Dynamics Study around the exogenous
+ lowering of the pension eligibility age for men, from 65 to 60, in the
+ South African state pension system.
 \end_layout
 
 \begin_layout Standard
-Using a Difference-in-Differences based identification strategy, I compare
- differences in the anthropometric status of children living in the same
- household as men of the newly eligible age.
+Using a Difference-in-Differences based estimation, I compare differences
+ in the anthropometric status of children living in the same household as
+ men of the newly eligible age with children live in a household without
+ such a member.
 \end_layout
 
 \begin_layout Standard
 On the Right-Hand Side I use a dummy variable for the policy change as well
- as dummy variables for men aged 60-65, men age 65+ and the same ones for
- women as household members.
- On the Left-Hand Side (LHS) I use two different anthropometric z-scores,
- Height-for-Age (HAZ) and Weight-for-Age as well as food en non-food expenditure.
+ as dummy variables for men aged 60-65, men aged 65+ and the same two dummy
+ variables for women of those ages as household members.
+ On the Left-Hand Side (LHS) I use three different anthropometric z-scores,
+ Height-for-Age, Weight-for-Age, and Weight-for-Height, as well as food
+ and non-food expenditure.
  In addition to the general estimates using z-scores as a dependent variable,
- I also reestimate these two equations once using only boys in sample and
- once using only girls.
+ I also re-estimate these three equations once using only boys in the sample
+ and once using only girls.
 \end_layout
 
 \begin_layout Standard
 The estimation of these equations gives three key results.
  Firstly, I find that there is a significant and consistent positive effect
- of the interaction term of the event dummy and the man_60_65 dummy, on
- food expenditure.
+ of the interaction term of the event dummy and the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+man_60_65
+\end_layout
+
+\end_inset
+
+ dummy, on food expenditure.
  Secondly, there is a significant and consistent positive effect of the
  same interaction term on the Weight-for-Age Z-score, the interaction terms
  with other household member dummies are not significant.
  Thirdly, I find a consistent and negative effect of the interaction term
  on the Height-for-Age Z-scores.
- All of these effect are consistent across the different specifications
- as well as standard error corrections.
+ I find no significant effect on Weight-for-Height.
+ All of these effects are consistent across the different specifications
+ and use standard error corrections.
 \end_layout
 
 \begin_layout Standard
@@ -4819,9 +4645,9 @@ These effects suggest that the male income resulted in greater food expenditure,
  we would expect this additional food expenditure to also lead to an improvement
  in the more long-term metric of Height-for-Age.
  Surprisingly we observe an opposite effect here.
- An explation for this could be that nature of the expenditure on food has
- changed, helping improve the Weight-for-Age, but not improving the Height-for-A
-ge, with the later being a more long term health indicator.
+ An explanation for this could be that nature of the expenditure on food
+ has changed, helping improve the Weight-for-Age, but not improving the
+ Height-for-Age, with the later being a more long term health indicator.
 \end_layout
 
 \begin_layout Standard
@@ -4831,7 +4657,7 @@ When I subset to a data to only includes girls and reestimate the equation
  estimation and at greater significance levels.
  This makes it unlikely that the surprising deterioration in Height-for-Age
  can be attributed to another factor such as the 2008 global financial crisis,
- since this would in all likelyhood also have affected girls as it did boys.
+ since this would in all likelihood also have affected girls as it did boys.
 \end_layout
 
 \begin_layout Standard
@@ -4844,16 +4670,16 @@ reference "tab:waz_descr"
 
 \end_inset
 
-, the boys in the dataset scored slightly worse in the Weight-for-Height
- z-scores.
+, the boys in the dataset scored slightly worse in the Weight-for-Age z-scores
+ before the policy change.
  One possible explanation for the improvement in Weight-for-Age in boys
- could be that they benefitted more in terms of this metric because they
- were behind more.
- However, this is at odds with the detioration in Height-for-Age, since
+ could be that they benefitted more in terms of this metric because the
+ addition food expenditure had a relatively large effect due as a result
+ of the initial greater lag.
+ However, this is at odds with the deterioration in Height-for-Age, since
  also here, boys scored worse even in wave 1 of the dataset.
  Should a greater lag have been the cause of the effect in the improvement
- in Weight-for-Height then we would expect a similar improvement in Height-for-A
-ge.
+ in Weight-for-Age then we would expect a similar improvement in Height-for-Age.
 \end_layout
 
 \begin_layout Standard
@@ -4868,8 +4694,18 @@ key "duflo2000child,duflo2003grandmothers"
 
 \end_inset
 
-, where the central result is an improvement in girls anthropometric status
+, where the central result is an improvement in girls' anthropometric status
  when they live with a female pension recipient.
+ The combination of these two results is in that sense similar to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "thomas1994like"
+
+\end_inset
+
+, who finds that within households, father's education has a larger effect
+ on the anthropometric status of boys and mother's education has a larger
+ effect on the anthropometric status of girls.
 \end_layout
 
 \begin_layout Standard
@@ -4880,7 +4716,8 @@ The first key outcome of this research is that food expenditure is some
  In context such as these, the increased food expenditure would generally
  be thought of as a positive development.
  By further analysing the types of food purchased, it might be possible
- to better understand the deterioration in Height-for-Age.
+ to better understand the deterioration in Height-for-Age and the lack of
+ an effect on Weight-for-Height.
 \end_layout
 
 \begin_layout Standard
@@ -6193,7 +6030,17 @@ key "croissant2008panel"
 
 .
  Generalized Linear Models for the panel data set are estimated using the
- pglm package by 
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+pglm
+\end_layout
+
+\end_inset
+
+ package by 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "croissant2013pglm"
@@ -6214,13 +6061,13 @@ key "git"
  and publicly available on GitHub at 
 \begin_inset CommandInset href
 LatexCommand href
-target "https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth/"
+target "https://github.com/bquast/Grandfathers-Grandsonds/"
 
 \end_inset
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The repository can by cloned to a local computer by entering in following
@@ -6233,7 +6080,7 @@ The repository can by cloned to a local computer by entering in following
 status open
 
 \begin_layout Plain Layout
-git clone https://github.com/bquast/MaleFemale-Bargaining-Power-Child-Growth.git
+git clone https://github.com/bquast/Grandfathers-Grandsons.git
 \end_layout
 
 \end_inset

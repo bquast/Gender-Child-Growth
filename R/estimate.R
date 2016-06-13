@@ -137,8 +137,8 @@ tidy( coeftest(expf1, vcov=vcovHC(expf1,type="HC0",cluster="group")) )
 
 
 # Non-Food expenditure
-expnf1 <- plm(expnf ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='within')
-expnf2 <- plm(expnf ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, model='within')
+expnf1 <- plm(expnf ~ event*man_60_65 + man_65 + woman_60_65 + woman_65 + hhincome + woman, NIDS, model='between')
+expnf2 <- plm(expnf ~ event*man_60_65 + event*man_65 + woman_60_65*event + event*woman_65 + hhincome + woman, NIDS, model='between')
 summary(expnf1)
 summary(expnf2)
 
